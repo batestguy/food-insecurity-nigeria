@@ -197,9 +197,26 @@ Verified by DOI (OpenAlex, 2026-11-22). The method is **not** novel and the pape
   Applied Statistics 2025, `10.1214/24-aoas1969` — spatial ML for small-area prediction already exists,
   so it is the natural anchor for any ML comparison.
 
-**The defensible claim is narrow: first state- and LGA-level small-area estimates of household food
-insecurity for Nigeria, with threshold-exceedance probabilities a policymaker can act on.** That is
-novelty by absence, and absence claims must be worded as such ("we found none"), never as "no one has".
+**The defensible claim is narrow, and narrower than it was this morning (corrected 2026-11-23 after
+reading the closest paper in full).** Chacón-Montalván et al. (2025, *Annals of Applied Statistics*,
+`10.1214/25-aoas2072`) **does** report threshold-exceedance probabilities: it maps `Pr(θ_k(s) > 0)`,
+applies a 0.7 rule, labels hotspots, and counts them (4 in the full data, 1 dry season, 4 rainy). So "none
+of the closest published models report exceedance probabilities" is **false** and must not appear.
+
+What is still not published, each checkable against that paper's text:
+- estimates at **administrative-area** level at all — its output is a continuous point-referenced surface
+  inside one municipality, with the finest administrative unit being 8 census sectors;
+- an exceedance probability for a **prevalence** threshold — its threshold is `θ > 0` on a latent factor
+  scale, i.e. "above the mean", not "more than half of households";
+- **any uncertainty statement about the count** of areas above a line — the hotspot count is reported
+  descriptively, with no interval;
+- **any out-of-sample validation** — only DIC and MCMC diagnostics; `not found in text`.
+
+So the claim is: *we found no published estimates of household food insecurity at local-government level
+for Nigeria, and no published interval for the number of areas above a prevalence threshold.* Novelty by
+absence, worded as "we found none", never as "no one has". The paper's methodological weight therefore
+sits on the sharp bounds and the calibration protocol, not on the exceedance idea — which is where our
+evidence actually is.
 
 The Moran's I of 0.011 in `MathematicsApplied Paper.txt` traces by content to a 2026 policy-journal
 paper whose abstract does not contain the number. It is unverified and irrelevant now: we computed our

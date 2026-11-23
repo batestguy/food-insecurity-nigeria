@@ -119,6 +119,25 @@ projections from the 2006 census.
 
 Do not reopen these without a recorded reason.
 
+0. **Venue and register — settled 2026-11-23: theory first.** Target: *Journal of Mathematical Sciences*,
+   National Mathematical Centre Abuja, Vol. 8 Issue 1, deadline **30 December 2026**, open access, no fee.
+   Submission by email to the editor named on the call-for-papers poster; no portal, no account.
+   **The poster's own scope sentences carry this paper**: "*Manuscripts devoted to the theoretical analysis
+   of new techniques to practical problems are within the scope of the Journal*" and "*a technical note which
+   is a short communication generally dedicated to the analysis or evaluation of an existing methodology*."
+   Both describe what we now have — the propositions lead, Nigeria is the demonstration, and the calibration
+   study is an evaluation of existing methodology. **Write theory first**: the propositions are the spine, the
+   application is the evidence, and the paper is not framed as a case study with a methods appendix.
+   **Format contract** (from the poster, authoritative; nothing greppable in an image, so it lives here):
+   LaTeX or Word, 12 pt, A4, English; page 1 carries title, authors, affiliations, emails, abstract, subject
+   classification, keywords; **the corresponding author is listed first**; abstract **≤ 250 words**,
+   single-spaced; body order fixed as Introduction, Methods, Results, Discussion, Conclusions, Declaration,
+   References (APA 7th); tables and figures numbered `Table 1`, `Figure 1` and cited in that form.
+   Skeleton: `docs/manuscript/main.tex`, which compiles with sections appearing as they are written.
+   **Open question, to raise once the draft exists:** whether the paper is a full paper or a *technical note*.
+   If the empirical claims stay as narrow as the calibration evidence makes them, the honest vehicle may be
+   the technical note. Do not decide before the Results section exists.
+
 1. **Outcome.** Severe food insecurity = `hfs_sev >= 0.5`, which in this file is exactly the households
    affirming all eight FIES items. National 29.1%; states 4.6% (Niger) to 85.0% (Yobe).
    *Reason:* the Rasch/probability route is the only citable construct. "Six or more of eight" has no
@@ -128,9 +147,15 @@ Do not reopen these without a recorded reason.
 3. **Centre of the paper is LGA level, not state.** *Reason:* at ~1,000 households per state the direct
    estimates are already more precise than the between-state spread (γ median 0.9866), so state-level
    small-area estimation is nearly a no-op. See `AGENTS.md`.
-4. **The method is not novel.** Four published papers own the components (Brazilian Amazon AOAS 2025;
-   heavy-tailed SMMR 2024; Beta–Beta Prime JSSAM 2025; spatial random forest AOAS 2025). The claim is
-   Nigeria, LGA level, and a decision layer — novelty by absence, worded as "we found none".
+4. **The method is not novel, and neither is the exceedance idea (corrected 2026-11-23).** Four published
+   papers own the components (Brazilian Amazon AOAS 2025; heavy-tailed SMMR 2024; Beta–Beta Prime JSSAM
+   2025; spatial random forest AOAS 2025). The Amazon paper was read in full and **already publishes
+   threshold-exceedance probabilities, a 0.7 decision rule and a hotspot count**. What it does not do:
+   administrative-area estimates (continuous surface, one municipality), a *prevalence* threshold (its
+   threshold is `θ > 0` on a latent scale), any interval for the count, and **any out-of-sample
+   validation**. The claim is therefore Nigeria at LGA level plus a validated interval for the count —
+   novelty by absence, worded as "we found none". The paper's weight is the sharp bounds (P7d) and the
+   calibration protocol (P7b). See `.agent/T20-closest-papers.md`.
 5. **Survey design is modelled and disclosed.** Weights are not silently ignored.
 6. **Novelty is carried by functionals of the joint posterior, not by the prior or the estimator** (decided
    2026-11-22). Three, in order:

@@ -1,0 +1,80 @@
+% Journal of Mathematical Sciences — National Mathematical Centre, Abuja
+% Vol. 8 Issue 1. 12 pt, A4, English. First page carries title, authors, affiliations,
+% emails, abstract (<= 250 words, single-spaced), subject classification, keywords.
+% Body order is fixed: Introduction, Methods, Results, Discussion, Conclusions,
+% Declaration, References (APA 7th). Do not reorder or rename these sections.
+% Submission: Editor, Professor James I. Ajie <nmmcmathsprog@gmail.com>. Deadline 2026-12-30.
+
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{setspace}
+\usepackage{hyperref}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}[proposition]{Lemma}
+\newtheorem{corollary}[proposition]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[proposition]{Definition}
+\newtheorem{assumption}[proposition]{Assumption}
+\theoremstyle{remark}
+\newtheorem{remark}[proposition]{Remark}
+
+% Missing-number marker. Every \todo must be empty before submission.
+\newcommand{\todo}[1]{\textbf{[TODO: #1]}}
+
+\title{Sharp bounds for the number of areas above a threshold, and what spatial
+cross-validation says about them: local government areas in Nigeria}
+
+% The journal requires the corresponding author to be listed FIRST in a multi-author paper.
+\author{%
+  \todo{author name}\\          % corresponding author, first
+  \todo{affiliation}\\
+  \texttt{\todo{email}}
+}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+\todo{abstract, maximum 250 words, single-spaced. It must state: the count functional and why its
+variance is not identified by the marginals; the sharp bounds; the calibration result at the exposure
+the unsampled areas actually face (coverage about 0.89, not 0.95); and the identification bound for
+the national count. Do not claim a new estimator. Do not quote 101--130 without its caveat. Count the
+words before submitting.}
+\end{abstract}
+
+\vspace{0.5em}
+\noindent\textbf{Subject classification (MSC 2020):} 62F15 (primary); 60E15; 62H11; 62D05; 62P25.
+
+\vspace{0.3em}
+\noindent\textbf{Keywords:} small-area estimation; partial identification; Fr\'echet--Hoeffding bounds;
+comonotonicity; spatial cross-validation; food insecurity; Nigeria.
+
+% ---------------------------------------------------------------------------
+% Fixed section order. Each section lives in its own file and is included when
+% it exists, so the document compiles while sections are still being drafted.
+% ---------------------------------------------------------------------------
+\IfFileExists{introduction.tex}{\input{introduction}}{}
+\IfFileExists{methods.tex}{\input{methods}}{}
+\IfFileExists{results.tex}{\input{results}}{}
+\IfFileExists{discussion.tex}{\input{discussion}}{}
+\IfFileExists{conclusions.tex}{\input{conclusions}}{}
+\IfFileExists{declaration.tex}{\input{declaration}}{}
+
+% Theory section: docs/theory.tex is written as a set of propositions. It sits
+% inside Methods unless the journal prefers a standalone section; that decision
+% is recorded in PLAN.md.
+
+\begin{thebibliography}{99}
+% APA 7th. Every entry must have been opened; see .agent/T19-citations.md.
+\end{thebibliography}
+
+\end{document}
