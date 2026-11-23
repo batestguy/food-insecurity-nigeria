@@ -11,50 +11,126 @@ Last updated: 2026-11-23, after P6 (identification bounds) landed and was re-che
 
 ## Resume here — read this first next session
 
-**One paragraph of orientation.** The project is a Bayesian small-area study of **severe household food
-insecurity in Nigeria** from the 2024 DHS, fitted in R-INLA. Its contribution is not the estimator — that
-is published work — but a **functional of the joint posterior**: the number of LGAs above a crisis line,
-with the variance split into an independent and a pairwise term. That has now been computed. The repo is
-public at **https://github.com/batestguy/food-insecurity-nigeria** (`main`, clean tree). No agents are
-running; nothing is queued.
+**One paragraph of orientation.** The paper is a Bayesian small-area study of **severe household food
+insecurity in Nigeria** from the 2024 DHS, fitted in R-INLA, written for the **Journal of Mathematical
+Sciences** (NMC Abuja, Vol. 8 Issue 1, deadline **30 December 2026**, free, submitted by email to the editor
+on the call-for-papers poster). Its contribution is not the estimator — that is published work — but three
+things that are ours to defend: **sharp bounds on the variance of the count of areas above a threshold given
+only the marginals**, a **spatial cross-validation protocol with pass rules fixed in advance and applied in
+four designs**, and a **partial-identification statement** for the areas with no cluster. The Nigerian
+application is the demonstration, not the claim. The repository is public at
+**https://github.com/batestguy/food-insecurity-nigeria** (`main`). Nothing is running and nothing is queued
+at the end of this session.
 
-**The headline numbers, all verified and reproducible from `scripts/lga_model.R`:**
+**What the session of 2026-11-23 established, in one place.** Everything below was recomputed by the
+secretary from artefacts, not taken from an agent's summary. Where a number and its caveat are inseparable,
+they are written together so no draft can separate them.
+
+| what | value | where |
+|---|---|---|
+| count of LGAs above 50%, model | **114.975**, 95% interval **101–130**, sd 7.383 | `count_functional.json` |
+| variance split | independent 40.258, pairwise 14.248, ratio 0.354; comparator ratio 0.187 | same |
+| **what the marginals alone permit** | `Var(C)` in **[0.0244, 5492.63]**, sd **[0.156, 74.11]**; the model sits **0.99% of the way up** | `theory_counts.R` |
+| **what the design can place** | **87 to 231**, width 144, of which **120 is assumption** | `identif_bounds.json` |
+| population share in a crisis area | observed 13.72%; identified **10.63% to 24.90%** | same |
+| calibration, whole region removed | coverage **0.775**, mean z −0.654, sd 1.648 | `calibration_summary.json` |
+| calibration, one area, neighbours kept | coverage **0.940**, mean z −0.052, sd 1.111 | `calibration_lga_cv.json` |
+| **calibration at the 120 areas' own exposure** | coverage **0.890**, mean z −0.058, sd 1.178 | `calibration_exact.json` |
+| inflation factor for unsampled areas | **k = 1.178**, coverage after widening 0.940, out-of-fold 0.875/1.000/0.925/0.975/0.950 | same |
+| area covariates | 3 of 8 could not be interpolated; the 5 that could are **inert — 19 of 20 coefficient intervals contain zero** | `calibration_cov_summary.json` |
+
+**The manuscript as it stands.** Builds with `pdflatex`, twice, **23 pages**, exit 0, no undefined references.
+
+| file | content | words |
+|---|---|---|
+| `docs/manuscript/main.tex` | preamble, title, author block, abstract placeholder, MSC codes, section includes | — |
+| `docs/manuscript/introduction.tex` | done, verified | ~1,258 |
+| `docs/manuscript/methods.tex` | done; includes `docs/theory.tex` before Computation | ~2,112 |
+| `docs/theory.tex` | four propositions, lemmas, proofs, numerical table, attribution | ~2,428 |
+| `docs/manuscript/results.tex` | done; three tables, four figures | ~2,168 |
+| `docs/manuscript/figures/*.pdf` | four vector figures from `scripts/make_figures.R` | — |
+
+**The claim, exactly as it may be written, and nothing stronger.**
+> We found no published estimates of household food insecurity at local-government level for Nigeria, and in
+> the closest paper we were able to read in full, no administrative-area estimates and no out-of-sample
+> validation.
+
+"First", "novel", "unprecedented" and "no one has" are forbidden. The closest paper
+(`10.1214/25-aoas2072`) **does** publish exceedance probabilities, a 0.7 rule and hotspot counts of 4/1/4, and
+the Introduction says so before narrowing. The second Brazilian paper (`10.1093/jssam/smaf002`) is closed
+access, **unread, and stays that way** — one sentence of acknowledgement, no assertion about its contents. The
+author has declined to request a copy.
+
+**Do this first next session, in this order.**
+
+1. **Look at the four figures.** This is the largest unverified item in the paper. No image viewer was
+   available, so axis ranges, label collisions, and whether the 120 unclustered areas are actually
+   distinguishable have never been seen by anyone. Open `fig_estimates.pdf` first; if it is legible the other
+   three are quick glances. Everything else in the manuscript is checked against artefacts; these are not.
+2. **Discussion** — the interpretation, the limits, and the four things the paper does not claim: no
+   validated count interval, no regional extrapolation, no calibrated map for the 120, no design weights in the
+   likelihood.
+3. **Conclusions** — short; the count bounds, the protocol, the identification statement.
+4. **Declaration** — competing interests, funding (none), data availability (DHS terms: restricted files are
+   not redistributable; the code is MIT, the results CC BY 4.0), ethics, and the DHS project-description
+   amendment, which is still outstanding and is a user action.
+5. **Abstract last**, ≤ 250 words, single-spaced. It must carry the sharp bounds and the 0.89 coverage figure
+   without either implying more than is shown, and must not quote 101–130 without its caveat.
+6. **References**, APA 7th. **Four entries only**, each verified: Chacón-Montalván et al. (2025);
+   Moura, Pereira and Silva (2025); Michal, Schmidt, Freitas and Cruz (2024); MacBride, Davies and Lee (2025).
+   The theory section carries no bibliography on purpose — six sources could not be opened, so their results
+   are proved in the text instead.
+7. **Formatting check against the poster**: 12 pt, A4, abstract ≤ 250 words, corresponding author first,
+   Table/Figure numbering, section order Introduction → Methods → Results → Discussion → Conclusions →
+   Declaration → References. Then send to the editor named on the poster.
+
+**Traps, all of them paid for once already.**
+
+- **Cluster counts.** `lga_estimates.csv` has a column named `n_clusters` that duplicates `n_households`
+  (identical in all 774 rows). `lga_coverage.csv` carries the **pre-correction** assignment (123 empty LGAs,
+  not 120). The only correct source is `cluster_lga_fixed.csv`: 654 LGAs with at least one cluster, 120 with
+  none, 1,380 clusters. Three files have now carried a wrong cluster count; do not make it four.
+- **Coverage is not "the direct estimate inside the model interval".** That check under-covers by construction.
+  Coverage is the share with `|z| ≤ 1.96` on the combined variance. The Methods says so; do not let a draft
+  soften it.
+- **Never write "coverage declines with exposure".** The three designs between 0.88 and 1.67 exposure give
+  0.940, 0.890 and 0.900 — within noise. The supported contrast is single-area interpolation against
+  whole-region extrapolation.
+- **The count interval never appears without its caveat** in the same paragraph: the marginals permit sd from
+  0.156 to 74.11, so 101–130 is a property of the model's dependence structure, not of the data.
+- **No area covariates in the primary model.** Every headline number comes from the fit with household
+  covariates only. The five area covariates were a separate experiment that found nothing.
+- **No citation that has not been opened.** The reference list is four entries and should stay small. Naming a
+  classical result in passing is not a citation; asserting a specific paper contains it is.
+
+**The descriptive numbers, all reproducible from `scripts/lga_model.R` and `scripts/extract_fi_state.py`:**
 
 | | |
 |---|---|
-| National severe food insecurity (`hfs_sev ≥ 0.5`) | 29.10% weighted |
-| States | 4.6% (Niger) to 85.0% (Yobe) |
-| LGAs above 50% | **115 of 774** (14.9%), 95% interval 101–130, sd 7.38 — **but the interval is model-dependent: given the marginals alone, sd(C) could be anywhere from 0.16 to 74.11** |
+| National severe food insecurity (`hfs_sev ≥ 0.5`) | 29.10% weighted, 27.74% unweighted |
+| States | 4.6% (Niger) to 85.0% (Yobe), median 23.5% |
+| LGAs above 50% | **115 of 774** (14.9%), 95% interval 101–130, sd 7.38 — **the interval is model-dependent: given the marginals alone, sd(C) could be anywhere from 0.16 to 74.11** |
 | Variance, independent term | 40.26 (sd 6.34) |
 | Variance, pairwise term | **14.25**, ratio 0.354 |
 | Same ratio with an exchangeable area effect | **0.187** — so about half the pairwise term is geography |
 | LGAs decided above / below / undecided | 32 / 509 / **40 in the 0.40–0.60 band** |
 | LGAs with no cluster | 120 (15.5%), holding **11.04% of the population** |
 | **Count the design cannot place** | **87 to 231** — the 101–130 sits inside it; 120 of the 144-wide interval is assumption |
+| Moran's I, severe / moderate-or-severe | 0.204 (p = 0.018) / −0.012 (p = 0.427) |
 
 **Do this first, in this order.**
 
-1. ~~**P6 — the identification bounds.**~~ **Done 2026-11-23**, `.agent/T11-report.md`,
-   `data/derived/identif_bounds.json`. Result below. Re-checked independently by the secretary.
-2. **P7b — calibration.** ~~Run.~~ **The first test failed, badly** (see P7b below): leave-a-zone-out
-   gives 77.5% coverage against a nominal 95%, and the model cannot place a removed region at all. The
-   fair test — one LGA removed, neighbours kept — is the one that matches the paper's claim and is
-   running now. **The paper cannot claim a calibrated map until it lands.**
-3. **P8 — benchmarks.** Gradient boosting under the same spatial folds with conformal intervals
-   (`scikit-learn` 1.9 is installed — `HistGradientBoostingClassifier`; LightGBM, XGBoost, PyTorch and
-   `mapie` are **not**), plus the published spatial random forest as the external anchor.
-4. **Then draft.** Methods and Results are writable from artefacts. The Introduction is not, until the two
-   nearest competitor papers are read **in full** — the novelty claim still rests on abstracts.
+1. **P6 — identification bounds.** ~~Done 2026-11-23.~~ See P6 below; 87 to 231.
+2. **P7b — calibration.** ~~Done.~~ Four designs, all pre-declared, all reported whether they passed or failed.
+   See P7b below. **The count interval is still unvalidated** and the paper says so.
+3. **P8 — benchmarks.** **Not done and now optional.** Gradient boosting under the same spatial folds
+   (`scikit-learn` 1.9 is installed; LightGBM, XGBoost, PyTorch and `mapie` are **not**). Worth doing only if
+   time remains after the manuscript is complete: it would turn "our model's intervals under-cover" into "this
+   class of method, as usually reported, under-covers", which is a larger claim. It must not delay the draft.
+4. **The manuscript.** Introduction, Methods, theory and Results are written. Discussion, Conclusions,
+   Declaration, the abstract and the references are not. See the ordered list at the top.
 
-**A debt to settle before drafting starts.** `lga_estimates.csv` carries a column named `n_clusters` that
-is a duplicate of `n_households` (identical in all 774 rows, both summing to 39,877). The observed /
-unobserved mask is unaffected, so P6 and P7 stand, but any sentence about "LGAs with one cluster" must
-read cluster counts from `cluster_lga_fixed.csv` (654 LGAs with at least one, 120 with none) and **not**
-from `lga_coverage.csv`, whose `n_clusters` is the pre-correction assignment (123 with none). Renaming
-the column is a five-minute job; doing it before the manuscript means no draft can quote the wrong
-number.
-
-**Commands that build things** (all run from the repo root; all paths are now relative):
+**Commands that build things** (all run from the repo root; all paths are relative):
 
 ```
 python scripts/build_analysis_households.py     # analysis dataset, prints retention and prevalence
@@ -62,9 +138,23 @@ python scripts/extract_fi_state.py              # direct state estimates, both e
 Rscript scripts/lga_assign.R                    # clusters to LGAs (sf; python has no shapely)
 Rscript scripts/lga_dataset.R                   # population denominators, household merge
 Rscript scripts/lga_model.R                     # THE RESULT: fit + count functional (~35 min)
+Rscript scripts/identif_bounds.R                # identification bounds, 5 s, reads the saved draws
+Rscript scripts/theory_counts.R                 # the four propositions checked numerically, 0.3 s
+Rscript scripts/lga_covariates.R                # the area covariate surface + its cross-validation
+Rscript scripts/calibration_spatial.R           # calibration design 1: whole region removed
+Rscript scripts/calibration_lga_cv.R            # calibration design 2: single areas, neighbours kept
+Rscript scripts/calibration_matched_exposure.R  # design 3: matched exposure
+Rscript scripts/calibration_exact_exposure.R    # design 4: the 120 areas' own exposure
+Rscript scripts/calibration_covariates.R        # the covariate refit (finds nothing, by design)
+Rscript scripts/make_figures.R                  # the four manuscript figures
 Rscript scripts/moran_fi.R                      # Moran's I on the state estimates
 python scripts/qa_panel.py                      # legacy: CPI panel checks
 ```
+
+Build the manuscript from `docs/manuscript/`: copy `main.tex`, the section files and `docs/theory.tex` into
+one directory with `figures/`, then `pdflatex main.tex` **twice** (once leaves cross-references undefined).
+`pdflatex` lives at `C:\Users\TOSHIBA\AppData\Roaming\TinyTeX\bin\windows\pdflatex.exe`. `siunitx` is **not**
+installed in that distribution; do not add it back.
 
 `lga_model.R` takes about 35 minutes: a 60-second fit, then ~14 minutes of draws per model (two models).
 Run it detached (`Start-Process`), because a shell background job dies with the session — that happened once.
@@ -80,18 +170,25 @@ sample. Do not reconstruct the BYM2 field from `inla.posterior.sample` — use p
 a new estimator: all four propositions are classical. **Do not use any disability variable anywhere.**
 
 **Waiting on the user.**
-- Amend the DHS project description to cover a food-insecurity outcome (an edit to the existing
-  registration), and send a PDF of the paper to references@dhsprogram.com.
+- **Look at the four figures.** The only part of the manuscript never inspected by anyone. Start with
+  `fig_estimates.pdf`.
+- **Amend the DHS project description** to cover a food-insecurity outcome (an edit to the existing
+  registration), and send a PDF of the paper to `references@dhsprogram.com` once it is accepted or submitted.
 - Decide whether to rewrite history to remove the account email that survives in commit `9dce997`
   (redacted from the working tree in `103dd3a`; force-push was gated, so it needs explicit authorisation).
 - The local folder is still `ConferenceMaths`; the repo is `food-insecurity-nigeria`. The scripts are
   path-portable, so the rename is safe whenever.
 
-**Unproven, stated plainly.** The literature review read abstracts only. The survey design is not in the
-likelihood (unweighted national 0.2774 against weighted 0.2910). No geospatial covariate has entered a fit.
-Calibration has never been checked. The pairwise term is 14.2 ± ~1.7 (split-half 13.37 vs 15.12 at 20,000
-draws). LGA assignment relies on geoBoundaries polygons, not DHS's, and population denominators are 2020
-projections from the 2006 census.
+**Declined, so do not reopen.** Requesting a copy of the closed-access Brazilian paper: the author has said no
+one replies. Paper 2 stays unread and the claim is written to survive that.
+
+**Unproven, stated plainly.** The survey design is not in the likelihood (unweighted 27.74% against weighted
+29.10%). The count interval has never been validated. Regional extrapolation fails and the paper says so. The
+120 unclustered LGAs cannot be scored against truth because none exists for them. LGA assignment relies on
+geoBoundaries polygons, not DHS's, and population denominators are 2020 projections from the 2006 census. The
+pairwise variance term is 14.2 ± ~1.7 (split-half 13.37 against 15.12 at 20,000 draws). The literature
+position rests on one paper read in full, two abstracts, and one paper that could not be obtained. **And the
+figures have never been looked at by a human.**
 
 ---
 
@@ -105,13 +202,14 @@ projections from the 2006 census.
 | P3 | Direct estimates and spatial diagnostics at state level | **done** | `data/derived/fi_state_direct.csv` |
 | P4 | Design-aware state-level model (baseline) | **superseded** — measured analytically instead (γ 0.9866) | `AGENTS.md` |
 | P5 | Clusters → LGAs, population denominators, LGA model | **done** | `lga_estimates.csv`, `lga_fit_summary.json` |
-| P6 | Identification bounds at LGA level (Imbens–Manski) | **done 2026-11-23** — count ∈ [87, 231] | `data/derived/identif_bounds.json` |
+| P6 | Identification bounds at LGA level | **done 2026-11-23** — count ∈ [87, 231] | `data/derived/identif_bounds.json` |
 | P7 | Count functional | **done** — E[C] = 115, ratio 0.354 | `count_functional.json` |
-| P7b | Calibration by spatial cross-validation | **failed 2026-11-23** — see P7b; fair test running | `data/derived/calibration_summary.json` |
-| P8 | Benchmarks: gradient boosting, spatial random forest | pending | — |
-| P9 | Manuscript | pending | — |
-| P10 | Submission compliance: DHS amendment, PDF to DHS | pending — **waiting on user** | — |
-| P10 | Submission compliance | pending | — |
+| P7b | Calibration, four designs | **done 2026-11-23 — fails at 0.890** at the exposure that matters | `calibration_exact.json` |
+| P7c | Area covariates | **done 2026-11-23 — inert**, 19 of 20 intervals cross zero | `calibration_cov_summary.json` |
+| P7d | Theory: sharp bounds, proofs | **done 2026-11-23** | `docs/theory.tex`, `scripts/theory_counts.R` |
+| P8 | Benchmarks: gradient boosting, spatial random forest | **optional, not done** | — |
+| P9 | Manuscript | **part done** — Intro, Methods, theory, Results written; Discussion, Conclusions, Declaration, abstract, references outstanding | `docs/manuscript/` |
+| P10 | Submission compliance: DHS amendment, email to the editor | **pending — user action** | — |
 
 ---
 
