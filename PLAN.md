@@ -24,7 +24,7 @@ running; nothing is queued.
 |---|---|
 | National severe food insecurity (`hfs_sev ≥ 0.5`) | 29.10% weighted |
 | States | 4.6% (Niger) to 85.0% (Yobe) |
-| **LGAs above 50%** | **115 of 774** (14.9%), 95% interval 101–130, sd 7.38 |
+| LGAs above 50% | **115 of 774** (14.9%), 95% interval 101–130, sd 7.38 — **but the interval is model-dependent: given the marginals alone, sd(C) could be anywhere from 0.16 to 74.11** |
 | Variance, independent term | 40.26 (sd 6.34) |
 | Variance, pairwise term | **14.25**, ratio 0.354 |
 | Same ratio with an exchangeable area effect | **0.187** — so about half the pairwise term is geography |
@@ -458,6 +458,31 @@ it. Both T16 and T17 have one group of 40 carrying the verdict; that fragility m
 **Practical consequences for the manuscript:** quote ≈0.89 (range 0.878–0.900) for the 120; widen unsampled
 intervals by **k ≈ 1.18**, validated out of fold (0.875, 1.000, 0.925, 0.975, 0.950); never quote a nominal
 95%. The count interval 101–130 remains untested and must be labelled so.
+
+### P7d — the mathematics of the count (done 2026-11-23)
+
+`.agent/T18-theory.md`, `docs/theory.tex` (compiles), `scripts/theory_counts.R` (exit 0, 24 checks).
+
+**Three errors in the secretary's brief were caught by the analyst, all of which would have reached a
+referee.**
+
+1. **The pairwise Fréchet route to the lower bound is invalid** for `n ≥ 3` and returns a variance of
+   **−4436.63** on our marginals. The sharp lower bound is `f(1−f) = 0.024375` with `f = frac(Σp) = 0.975`,
+   attained by the cyclic coupling (verified by 400,000-draw simulation).
+2. **P1's if-and-only-if is false.** Signed covariances cancel: a dependent joint with covariances
+   `(+0.1, 0, −0.1)` has `Var(C)` exactly equal to the independence value. The statement is one-directional.
+3. **P3 needs no monotonicity** — it is the union bound. Monotonicity buys the interpretable sentence that the
+   identified set is inside whenever the statistic is central; both estimands satisfy it (slopes exactly 1
+   and exactly `p`).
+
+**The result that changes the headline.** Given the 774 marginals and nothing else,
+`Var(C) ∈ [0.0244, 5492.63]`, i.e. `sd(C) ∈ [0.156, 74.11]`. The model's 54.509 sits **0.99% of the way up
+its own feasible range**. So the marginals do not identify the count's variance, and the reported interval
+101–130 is a statement about the model's dependence structure. State that in Results, not Limitations.
+
+**Blocking before submission:** the attribution table cites Fréchet, Hoeffding, Meilijson–Nádas, Dhaene,
+Popoviciu, Bhatia–Davis, Manski and Imbens–Manski, and **none was opened**. The project rule applies; each must
+be confirmed or the attribution rebuilt.
 
 **The paper this becomes, if the covariates help.** Not "a map of 774 LGAs" but: an area-level surface
 whose precision is demonstrated by spatial cross-validation, an identification bound on what the design

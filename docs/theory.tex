@@ -1,0 +1,393 @@
+% =============================================================================
+% docs/theory.tex  ---  T18
+% Fragment for the manuscript. No preamble; include inside the body with \input.
+% Requires: amsmath, amsthm.
+%
+% The five \newtheorem lines below are part of the fragment so that it compiles
+% on its own under a bare \documentclass{article} wrapper.  If the manuscript
+% preamble already declares these environments, delete this block instead.
+% =============================================================================
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+
+% =============================================================================
+\subsection{The count functional: what the marginals determine}
+% =============================================================================
+
+Let the country be divided into $n$ areas, $s=1,\dots,n$.  Area $s$ has latent
+prevalence $\theta_s$, and for a crisis line $c$ define the indicator
+$I_s = \mathbf{1}\{\theta_s > c\}$ and the marginal exceedance probability
+$p_s = \operatorname{E}[I_s] = \operatorname{P}(\theta_s > c)$.  Write
+$P_{st} = \operatorname{P}(I_s = 1,\ I_t = 1)$ for $s \neq t$,
+$S = \sum_{s=1}^{n} p_s$, and
+\begin{equation}
+  C \;=\; \sum_{s=1}^{n} I_s \;=\; \#\{\, s : \theta_s > c \,\},
+  \label{eq:count}
+\end{equation}
+the number of areas above the line.  $\operatorname{Var}(C)$ refers to the
+variance under a \emph{joint} distribution for $(\theta_1,\dots,\theta_n)$;
+the marginals $(p_s)$ are held fixed throughout.  A single number
+$\operatorname{E}[C]$ and a single interval are reported in the application,
+but the propositions below say exactly which of the reported quantities the
+marginals can carry.
+
+% -----------------------------------------------------------------------------
+\begin{proposition}[mean and variance of the count]
+\label{prop:meanvar}
+For any joint distribution of $(\theta_1,\dots,\theta_n)$ with
+$\operatorname{P}(\theta_s > c) = p_s$,
+\begin{align}
+  \operatorname{E}[C] &= \sum_{s=1}^{n} p_s, \label{eq:mean}\\
+  \operatorname{Var}(C) &= \sum_{s=1}^{n} p_s(1-p_s)
+     \;+\; 2\sum_{1 \le s < t \le n}\bigl(P_{st} - p_s p_t\bigr). \label{eq:var}
+\end{align}
+The right-hand side of \eqref{eq:mean} involves the marginals only.  The second
+sum in \eqref{eq:var} vanishes for \emph{every} joint distribution with these
+marginals if and only if $P_{st} = p_s p_t$ for all $s<t$.
+\end{proposition}
+
+\begin{proof}
+$C$ is a finite sum and expectation is linear, so
+$\operatorname{E}[C] = \sum_s \operatorname{E}[I_s] = \sum_s p_s$, which is
+\eqref{eq:mean}; no property of the joint distribution is used.  For
+\eqref{eq:var}, $\operatorname{Var}(C) = \sum_s \operatorname{Var}(I_s)
++ 2\sum_{s<t}\operatorname{Cov}(I_s,I_t)$.  Since $I_s$ is Bernoulli with mean
+$p_s$, $\operatorname{Var}(I_s) = p_s(1-p_s)$, and
+$\operatorname{Cov}(I_s,I_t) = \operatorname{E}[I_s I_t] - p_s p_t = P_{st} - p_s p_t$.
+
+For the last sentence: if $P_{st} = p_s p_t$ for all $s<t$ then every summand
+is zero.  Conversely, if some $P_{s_0 t_0} \ne p_{s_0} p_{t_0}$, choose the joint
+distribution that differs from the product law only in the
+$(s_0,t_0)$ cell; then the second sum is $2(P_{s_0t_0} - p_{s_0}p_{t_0}) \ne 0$.
+Hence the sum vanishes identically on the set of joints with these marginals
+only under pairwise independence.
+\end{proof}
+
+\begin{remark}[the converse fails, and this matters for exposition]
+\label{rem:converse}
+For a \emph{particular} joint distribution the second sum can vanish while the
+indicators remain dependent, because covariances of opposite sign cancel.  With
+$n=3$, $p_1=p_2=p_3=\tfrac12$ and the law
+\[
+  \begin{array}{c|cccccccc}
+    (I_1,I_2,I_3) & (1,1,1) & (1,1,0) & (1,0,1) & (0,1,1) & (1,0,0) & (0,1,0) & (0,0,1) & (0,0,0)\\[2pt]
+    \hline
+    \text{probability} & 0.10 & 0.25 & 0.15 & 0.05 & 0.00 & 0.10 & 0.20 & 0.15
+  \end{array}
+\]
+the marginals are all $\tfrac12$, the covariances are $+0.1$, $0$ and $-0.1$,
+the variance is $\operatorname{Var}(C) = 0.75$, exactly the value
+$\sum_s p_s(1-p_s)$ that independence would give, and yet
+$\operatorname{P}(I_1=1,I_3=1)=0.25 \neq p_1p_3$.  The correct statement is
+one-directional: pairwise uncorrelatedness implies the second sum vanishes;
+a vanishing second sum does not imply pairwise uncorrelatedness for $n \ge 3$.
+(The equivalence does hold when $n=2$.)
+\end{remark}
+
+\begin{remark}[what a marginal-only report can and cannot claim]
+\label{rem:consequence}
+By Proposition~\ref{prop:meanvar}, $\operatorname{E}[C]$ is a function of the
+marginals alone: any method that publishes per-area probabilities $p_s$
+reproduces $\operatorname{E}[C]$ exactly, however it obtained them.  Every
+other functional of $C$ --- its variance, its quantiles, the probability that
+the count exceeds a policy-relevant number --- depends on the joint
+distribution, and Proposition~\ref{prop:sharp} shows that the marginals leave
+that joint free over a range wide enough to reverse qualitative conclusions.
+A marginal-only method is therefore exact about the mean and unevidenced about
+everything else.
+\end{remark}
+
+% -----------------------------------------------------------------------------
+\begin{proposition}[sharp bounds on the variance given the marginals]
+\label{prop:sharp}
+Fix $p_1,\dots,p_n \in [0,1]$, let $S=\sum_s p_s$, $k=\lfloor S \rfloor$ and
+$f = S-k \in [0,1)$.  Then
+\begin{equation}
+  f(1-f) \;\le\; \operatorname{Var}(C) \;\le\;
+  \sum_{s=1}^{n}\sum_{t=1}^{n} \min(p_s,p_t) \;-\; S^2 ,
+  \label{eq:sharp}
+\end{equation}
+both endpoints are attained by explicit joint distributions with these
+marginals, and every value in the interval is attained.
+\end{proposition}
+
+\begin{proof}
+\emph{Upper end.}  By the Fr\'echet--Hoeffding upper bound,
+$P_{st} \le \min(p_s,p_t)$ for every pair.  The right-hand side of
+\eqref{eq:var} is increasing in each $P_{st}$ with coefficient $2>0$, so
+\[
+  \operatorname{Var}(C) \le \sum_s p_s(1-p_s)
+   + 2\sum_{s<t}\bigl(\min(p_s,p_t) - p_s p_t\bigr)
+   = \sum_{s,t}\min(p_s,p_t) - S^2 ,
+\]
+using $\sum_s p_s(1-p_s) = S - \sum_s p_s^2$ and
+$S^2 = \sum_s p_s^2 + 2\sum_{s<t}p_sp_t$.  Attainment is Lemma~\ref{lem:comon}.
+
+\emph{Lower end.}  The bound uses only that $C$ is integer-valued with mean
+$S$; it is Lemma~\ref{lem:floor}.  Attainment is Lemma~\ref{lem:cyclic}.
+
+\emph{Every intermediate value.}  The set of joint distributions with fixed
+marginals is convex and $\operatorname{Var}(C) = \operatorname{E}[C^2]-S^2$ is
+linear in the joint law, so its image is an interval.
+\end{proof}
+
+\begin{lemma}[integer floor]
+\label{lem:floor}
+If $X$ is integer-valued with $\operatorname{E}[X]=S$, then
+$\operatorname{Var}(X) \ge f(1-f)$ with $f = S-\lfloor S\rfloor$.
+\end{lemma}
+
+\begin{proof}
+For every integer $x$ the parabola $(x-k)(x-k-1) \ge 0$ gives
+$x^2 \ge (2k+1)x - k(k+1)$, with equality at $x=k$ and $x=k+1$.  Taking
+expectations and using $\operatorname{E}[X]=k+f$,
+\[
+  \operatorname{E}[X^2] \;\ge\; (2k+1)(k+f) - k(k+1)
+  \;=\; k^2 + 2kf + f .
+\]
+Since $k^2(1-f)+(k+1)^2 f = k^2+2kf+f$, this is
+$\operatorname{E}[X^2] \ge k^2(1-f)+(k+1)^2f$, and subtracting
+$S^2=(k+f)^2$ gives $\operatorname{Var}(X) \ge f(1-f)$.
+\end{proof}
+
+\begin{lemma}[comonotone coupling attains the upper end]
+\label{lem:comon}
+Let $U$ be uniform on $[0,1]$ and set $I_s = \mathbf{1}\{U \le p_s\}$.  Then
+$\operatorname{P}(I_s=1)=p_s$ and
+$\operatorname{Var}(C) = \sum_{s,t}\min(p_s,p_t) - S^2$.
+\end{lemma}
+
+\begin{proof}
+$\operatorname{P}(U \le p_s) = p_s$, and
+$\operatorname{P}(I_s=I_t=1) = \operatorname{P}(U \le \min(p_s,p_t)) =
+\min(p_s,p_t)$, so every pairwise upper bound in the proof of
+Proposition~\ref{prop:sharp} holds with equality simultaneously.  Substituting
+into \eqref{eq:var} gives the stated value.
+\end{proof}
+
+\begin{lemma}[cyclic coupling attains the lower end]
+\label{lem:cyclic}
+Let $U$ be uniform on $[0,1]$, let $c_0=0$ and $c_s = p_1+\dots+p_s$, and set
+\begin{equation}
+  I_s \;=\; \mathbf{1}\bigl\{\, (U - c_{s-1}) \bmod 1 \;<\; p_s \,\bigr\},
+  \qquad s = 1,\dots,n .
+  \label{eq:cyclic}
+\end{equation}
+Then $\operatorname{P}(I_s=1)=p_s$ for every $s$, and $C$ takes only the two
+values $k$ and $k+1$, with $\operatorname{P}(C=k+1)=f$.  Hence
+$\operatorname{Var}(C)=f(1-f)$.
+\end{lemma}
+
+\begin{proof}
+Each $I_s$ is an arc of the circle of circumference $1$ of length $p_s$, so
+$\operatorname{P}(I_s=1)=p_s$.  For $u \in [0,1)$, $I_s(u)=1$ if and only if
+$u+j \in [c_{s-1},c_s)$ for some integer $j$.  The intervals
+$[c_{s-1},c_s)$, $s=1,\dots,n$, partition $[0,S)$; a point $u+j$ therefore lies
+in exactly one of them when $u+j \in [0,S)$ and in none otherwise.  Hence
+\[
+  C(u) \;=\; \#\{\, j \text{ integer} : 0 \le u+j < S \,\}
+        \;=\; \#\{\, j \text{ integer} : -u \le j < S-u \,\}.
+\]
+For $u \in (0,1)$ the bounds $-\lceil u \rceil = 0$ and $\lfloor S-u \rfloor$
+give $C(u) = \lfloor k+f-u \rfloor + 1$, which equals $k+1$ when $u<f$ and $k$
+when $u>f$.  Thus $\operatorname{P}(C=k+1)=f$ and the variance is
+$f(1-f)$.
+\end{proof}
+
+\begin{corollary}[equal marginals, and the degenerate case]
+\label{cor:equal}
+If $p_s \equiv p$ then the upper end of \eqref{eq:sharp} is $n^2p(1-p)$, so
+\[
+  \frac{\operatorname{sd}(C)}{\sqrt{\sum_s p_s(1-p_s)}} \;\le\; \sqrt{n}
+\]
+with equality at the comonotone coupling; the ratio is $\sqrt n$, not $n$.  If
+$np$ is an integer then $f=0$, the lower end is $0$, and
+$C \equiv np$ under the coupling \eqref{eq:cyclic}: the count is then
+determined by the marginals, and the ``lower bound'' is degenerate rather than
+positive.  For the unequal marginals of the application the extremal ratio is
+smaller than $\sqrt n$, because heterogeneity in $p_s$ shrinks
+$\sum_{s,t}\min(p_s,p_t)$.
+\end{corollary}
+
+\begin{remark}[the pairwise route to the lower end is invalid]
+\label{rem:pairwise}
+It is tempting to insert the Fr\'echet--Hoeffding \emph{lower} bounds
+$\max(0,p_s+p_t-1)$ into \eqref{eq:var} and call the result the minimum.  This
+is wrong for $n \ge 3$: the pairwise lower bounds need not be attained by any
+single joint distribution.  For $p_s \equiv \tfrac12$ and $n=3$ all three
+bounds are $0$, which would require $C \in \{0,1\}$ and hence $S \le 1$,
+contradicting $S=\tfrac32$.  On the $774$ marginals of the application the
+formula returns a \emph{negative} variance, and is therefore visibly
+impossible.  The bound in \eqref{eq:sharp} must be used instead; it is
+attained, and it is attained by \eqref{eq:cyclic}, not by a coupling that
+satisfies every pairwise bound.
+\end{remark}
+
+\begin{remark}[what the marginals do not determine: the upper tail]
+\label{rem:tail}
+Two joint distributions with identical marginals give
+$\operatorname{P}(C \ge 101) = 0.476$ (comonotone) and
+$\operatorname{P}(C \ge 101) = 1.000$ (cyclic) on the application's own
+$774$ marginals, against $0.984$ under the fitted model.  The extremal-variance
+couplings need not extremise the tail probability, so these two numbers are a
+demonstration that the tail is not a marginal quantity, not the endpoints of
+its feasible range.
+\end{remark}
+
+% -----------------------------------------------------------------------------
+\begin{proposition}[coverage of the identified set when the bounds are estimated]
+\label{prop:coverage}
+Let $T$ be a random variable, let $L \le U$ be functions of $T$, and let
+$q_\beta(X) = \inf\{x : \operatorname{P}(X \le x) \ge \beta\}$.  Then for
+$0<\alpha<1$,
+\begin{equation}
+  \operatorname{P}\Bigl(\,[L(T),U(T)] \subseteq
+    \bigl[\,q_{\alpha/2}(L(T)),\ q_{1-\alpha/2}(U(T))\,\bigr]\,\Bigr)
+  \;\ge\; 1-\alpha ,
+  \label{eq:coverage}
+\end{equation}
+with no monotonicity assumption on $L$ or $U$.  If in addition $L$ and $U$ are
+non-decreasing in $T$, then the event in \eqref{eq:coverage} is a single
+interval of values of $T$; if they are continuous and strictly increasing the
+event is exactly the central $(1-\alpha)$ interval of $T$ and
+\eqref{eq:coverage} holds with equality.
+\end{proposition}
+
+\begin{proof}
+For any real random variable $X$ and any $\beta \in (0,1)$, the definition of
+$q_\beta$ as an infimum gives $\operatorname{P}(X < q_\beta(X)) \le \beta$, and
+right-continuity of $x \mapsto \operatorname{P}(X \le x)$ gives
+$\operatorname{P}(X \le q_\beta(X)) \ge \beta$.  Apply this to $L(T)$ with
+$\beta=\alpha/2$ and to $U(T)$ with $\beta=1-\alpha/2$: the events
+$A=\{L(T) \ge q_{\alpha/2}(L(T))\}$ and
+$B=\{U(T) \le q_{1-\alpha/2}(U(T))\}$ satisfy
+$\operatorname{P}(A) \ge 1-\alpha/2$ and
+$\operatorname{P}(B) \ge 1-\alpha/2$.  Since $L \le U$, containment of the
+identified set is exactly $A \cap B$, so
+\[
+  \operatorname{P}(A \cap B) \;\ge\; \operatorname{P}(A) + \operatorname{P}(B) - 1
+  \;\ge\; 1-\alpha .
+\]
+For the refinement: if $L$ is non-decreasing then $A=\{T \ge a\}$ with
+$a=\inf\{t : L(t) \ge q_{\alpha/2}(L(T))\}$, and if $U$ is non-decreasing then
+$B=\{T \le b\}$ with $b=\sup\{t: U(t) \le q_{1-\alpha/2}(U(T))\}$, so
+$A\cap B = \{a \le T \le b\}$ is an interval.  If both bounds are continuous
+and strictly increasing, $a$ and $b$ are the $\alpha/2$ and $1-\alpha/2$
+quantiles of $T$ itself, and the two tail probabilities add to exactly
+$\alpha$.
+\end{proof}
+
+\begin{remark}[what Proposition~\ref{prop:coverage} does not give]
+\label{rem:p3limits}
+The probability in \eqref{eq:coverage} is taken over the distribution of $T$,
+which in the application is the posterior distribution of the model.  It is a
+posterior statement: it carries no frequentist coverage guarantee for the
+identified set, and it conditions on the model for $\theta$ in the observed
+areas being correct --- which is the object under dispute.  It treats the
+observed/unobserved partition and the population share $p$ as known, so error
+in assigning clusters to areas is outside it.  It is also a statement about one
+estimand at a time: reporting a count and a population share together, each
+with its own $95\%$ interval, gives no simultaneous guarantee for the pair.
+Finally, the monotonicity hypothesis is what licenses the sentence ``the
+identified set lies inside the reported interval exactly when $T$ lies in its
+own central interval''.  That sentence is false without monotonicity even
+though the inequality \eqref{eq:coverage} survives, so the hypothesis should be
+stated and checked rather than assumed.
+\end{remark}
+
+% -----------------------------------------------------------------------------
+\begin{proposition}[monotonicity in the crisis line]
+\label{prop:monotone}
+For $c < c'$, $C(c') \le C(c)$ for every realisation of
+$(\theta_1,\dots,\theta_n)$.  Consequently $\operatorname{E}[C(c)]$ is
+non-increasing in $c$, the identified sets are nested,
+$[L(c'),U(c')] \subseteq [L(c),U(c)]$, and both endpoints of the reported
+interval --- and every quantile of $C(c)$ --- are non-increasing in $c$.
+\end{proposition}
+
+\begin{proof}
+If $\theta_s > c'$ then $\theta_s > c$, so
+$\mathbf{1}\{\theta_s>c'\} \le \mathbf{1}\{\theta_s>c\}$ for every $s$ and every
+outcome; summing over $s$ gives $C(c') \le C(c)$ pathwise.  Expectation and
+quantiles are monotone with respect to pathwise domination, so
+$\operatorname{E}[C(c')] \le \operatorname{E}[C(c)]$ and
+$q_\beta(C(c')) \le q_\beta(C(c))$ for every $\beta$.  For nesting, the
+identified set of the application has the form $[C_O(c), C_O(c)+w]$ with $w$
+the number of unobserved areas (respectively $[p\,\pi_O(c),
+p\,\pi_O(c)+(1-p)]$ with $w=1-p$ for the population share).  The width $w$ does
+not depend on $c$, and $C_O(c') \le C_O(c)$ pathwise, so
+$[C_O(c'), C_O(c')+w] \subseteq [C_O(c), C_O(c)+w]$.
+\end{proof}
+
+\begin{remark}
+\label{rem:sdnot}
+Proposition~\ref{prop:monotone} does not extend to the standard deviation:
+a stochastically non-increasing family can have non-monotone spread.  In the
+application $\operatorname{sd}(C(c))$ does decrease over
+$c \in \{0.4,0.5,0.6\}$, but that is an observation on one fit, not a
+consequence of the proposition, and it should not be presented as one.
+\end{remark}
+
+% -----------------------------------------------------------------------------
+\subsection*{Numerical values for this application}
+
+Table~\ref{tab:countnumbers} reports each quantity in
+Propositions~\ref{prop:meanvar}--\ref{prop:monotone} evaluated on the $774$
+area-level exceedance probabilities of the fitted model.  Every value is
+produced by \texttt{scripts/theory\_counts.R}, which also simulates the two
+extremal couplings and reproduces the closed forms.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{lr}
+\hline
+quantity & value \\
+\hline
+areas $n$ & $774$ \\
+$\sum_s p_s = \operatorname{E}[C]$ & $114.975$ \\
+$\sum_s p_s(1-p_s)$ (independence) & $40.258$ \\
+lower end $f(1-f)$ of \eqref{eq:sharp} & $0.0244$ \\
+upper end $\sum_{s,t}\min(p_s,p_t)-S^2$ & $5492.63$ \\
+fitted posterior variance & $54.509$ \\
+$\operatorname{sd}(C)$ at lower end / fitted / upper end & $0.156$ / $7.383$ / $74.112$ \\
+extremal ratio $R$ at lower end / fitted / upper end & $0.025$ / $1.164$ / $11.681$ \\
+\hline
+\end{tabular}
+\caption{The count functional at $c=0.50$ on $n=774$ areas.  The mean is a
+marginal quantity; the variance is not.  The fitted variance lies at $0.99\%$
+of the way up its feasible range, and the marginals alone permit a standard
+deviation forty-seven times smaller or ten times larger than the fitted one.}
+\label{tab:countnumbers}
+\end{table}
+
+% -----------------------------------------------------------------------------
+\subsection*{Attribution}
+
+Nothing above is new method.  The ingredients are classical and are named in
+Table~\ref{tab:attribution}; what is assembled here is the statement of what
+the marginals determine for this count, and its consequence for a method that
+reports per-area probabilities.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{p{0.30\textwidth}p{0.28\textwidth}p{0.32\textwidth}}
+\hline
+result & classical source & status here \\
+\hline
+pairwise bounds $P_{st} \le \min(p_s,p_t)$ & Fr\'echet (1951); Hoeffding (1940) & quoted \\
+comonotone sum is maximal in convex order & Hoeffding (1940); Meilijson and N\'adas (1979); Dhaene et al.\ (2002) & quoted, applied to the count \\
+variance bound for a bounded or lattice variable & Popoviciu (1935); Bhatia and Davis (2000) & Lemma~\ref{lem:floor} is a self-contained proof of the lattice case \\
+identified set without assumptions on unobserved areas & Manski (1990); Manski and Pepper (2000) & quoted \\
+interval for an estimated identified set & Imbens and Manski (2004), different object & the union-bound form \eqref{eq:coverage} is proved here; it is not their confidence set \\
+monotone quantiles, monotone expectation & elementary & proved \\
+\hline
+\end{tabular}
+\caption{Classical results used, and what is done with them.  Proposition~
+\ref{prop:sharp} and Lemma~\ref{lem:cyclic} assemble the first three rows; we
+make no claim that the assembly is itself a new result.}
+\label{tab:attribution}
+\end{table}
