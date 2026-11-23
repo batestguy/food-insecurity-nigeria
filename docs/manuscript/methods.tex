@@ -78,7 +78,7 @@ For an area-level crisis threshold \(c\), let \(I_s=\mathbf{1}\{\theta_s>c\}\) a
 \]
 The target is the posterior distribution of this count, not only a list of separate LGA estimates. For each joint posterior draw, we calculate every \(\theta_s\), apply the threshold, and sum the resulting indicators. We use those same draws to obtain the posterior mean, interval, and variance of \(C(c)\); these functionals require no additional likelihood evaluations.
 
-Write \(p_s=\Pr(\theta_s>c)\) and \(P_{st}=\Pr(\theta_s>c,\theta_t>c)\). Proposition 1 in the theory section gives
+Write \(p_s=\Pr(\theta_s>c)\) and \(P_{st}=\Pr(\theta_s>c,\theta_t>c)\). Proposition~\ref{prop:meanvar} in the theory section gives
 \[
   \operatorname{E}[C(c)] = \sum_s p_s,\qquad
   \operatorname{Var}\{C(c)\}
@@ -136,6 +136,8 @@ The pass rule required the mean \(z\) to lie between \(-0.15\) and \(0.15\), its
 The exact-exposure verdict is sensitive to one prediction group: omitting that group changes the pass/fail classification. Each prediction group contained 40 LGAs. The group-level range and this sensitivity preclude treating the pooled coverage as a precise estimate of a stable rate. The three designs with exposure between 0.88 and 1.67 do not show a monotone exposure pattern, so we do not fit or describe a coverage curve. The contrast supported by these designs is between single-area interpolation among sampled neighbours and whole-region extrapolation.
 
 For intervals at unsampled LGAs, we used an inflation factor \(k=1.178\) and widened the model intervals by that factor. Coverage after widening was 0.940. We also assessed the factor out of fold, estimating it from all but one prediction group and checking coverage in the omitted group in turn; the resulting coverages were 0.875, 1.000, 0.925, 0.975, and 0.950. This check does not make the held-out covariates uncertain: covariate values were supplied as known in every fold. Nor does area-level validation establish calibration for the joint count \(C(c)\); the count interval depends on cross-area dependence and was not validated by these four designs.
+
+\input{theory}
 
 \subsection{Computation and reproducibility}
 

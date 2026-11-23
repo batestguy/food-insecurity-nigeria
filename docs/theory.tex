@@ -1,5 +1,7 @@
 % =============================================================================
 % docs/theory.tex  ---  T18
+% Edited under T25: attributions that could not be opened removed, and the
+% elementary bounds they supported are now proved in the text.
 % Fragment for the manuscript. No preamble; include inside the body with \input.
 % Requires: amsmath, amsthm.
 %
@@ -7,12 +9,8 @@
 % on its own under a bare \documentclass{article} wrapper.  If the manuscript
 % preamble already declares these environments, delete this block instead.
 % =============================================================================
-\newtheorem{proposition}{Proposition}
-\newtheorem{lemma}{Lemma}
-\newtheorem{corollary}{Corollary}
-\theoremstyle{remark}
-\newtheorem{remark}{Remark}
-\newtheorem{example}{Example}
+% Theorem environments are declared once, in the manuscript preamble.
+% For a standalone compile, declare them in the wrapper.
 
 % =============================================================================
 \subsection{The count functional: what the marginals determine}
@@ -116,8 +114,9 @@ marginals, and every value in the interval is attained.
 \end{proposition}
 
 \begin{proof}
-\emph{Upper end.}  By the Fr\'echet--Hoeffding upper bound,
-$P_{st} \le \min(p_s,p_t)$ for every pair.  The right-hand side of
+\emph{Upper end.}  For each pair, $\{I_s=1,\,I_t=1\}$ is a subset of
+$\{I_s=1\}$ and of $\{I_t=1\}$, so $P_{st} \le \min(p_s,p_t)$; that pairwise
+inequality is all the upper end uses.  The right-hand side of
 \eqref{eq:var} is increasing in each $P_{st}$ with coefficient $2>0$, so
 \[
   \operatorname{Var}(C) \le \sum_s p_s(1-p_s)
@@ -215,10 +214,15 @@ $\sum_{s,t}\min(p_s,p_t)$.
 
 \begin{remark}[the pairwise route to the lower end is invalid]
 \label{rem:pairwise}
-It is tempting to insert the Fr\'echet--Hoeffding \emph{lower} bounds
-$\max(0,p_s+p_t-1)$ into \eqref{eq:var} and call the result the minimum.  This
-is wrong for $n \ge 3$: the pairwise lower bounds need not be attained by any
-single joint distribution.  For $p_s \equiv \tfrac12$ and $n=3$ all three
+It is tempting to insert the \emph{lower} bounds
+$P_{st} \ge \max(0,p_s+p_t-1)$ into \eqref{eq:var} and call the result the
+minimum.  Each of those bounds is one line: $P_{st} \ge 0$ is clear, and
+inclusion--exclusion gives
+$P_{st} = p_s+p_t-\operatorname{P}(I_s=1 \text{ or } I_t=1) \ge p_s+p_t-1$,
+because a probability is at most $1$.  (The upper and lower pairwise bounds
+together are commonly named the Fr\'echet--Hoeffding bounds.)  Inserting them
+is nevertheless wrong for $n \ge 3$: the pairwise lower bounds need not be
+attained by any single joint distribution.  For $p_s \equiv \tfrac12$ and $n=3$ all three
 bounds are $0$, which would require $C \in \{0,1\}$ and hence $S \le 1$,
 contradicting $S=\tfrac32$.  On the $774$ marginals of the application the
 formula returns a \emph{negative} variance, and is therefore visibly
@@ -300,6 +304,52 @@ stated and checked rather than assumed.
 \end{remark}
 
 % -----------------------------------------------------------------------------
+% -----------------------------------------------------------------------------
+\begin{lemma}[identified set when some areas are unobserved]
+\label{lem:identified}
+Partition the $n$ areas into an observed set $O$ and an unobserved set $U$,
+with $w=|U|$, and suppose the observed statuses $I_s$, $s\in O$, are known.
+Let $\omega_s$ be the population of area $s$, let $p$ be the population share
+held by observed areas, let $C_O = \sum_{s\in O} I_s$, and let $\pi_O$ be the
+population-weighted share above the line among observed areas:
+\[
+  p \;=\; \frac{\sum_{s\in O}\omega_s}{\sum_{s=1}^{n}\omega_s},
+  \qquad
+  \pi_O \;=\; \frac{\sum_{s\in O}\omega_s I_s}{\sum_{s\in O}\omega_s}.
+\]
+Then the identified set for the count is
+\begin{equation}
+  \bigl[\,C_O,\; C_O + w\,\bigr],
+  \label{eq:identset-count}
+\end{equation}
+and the identified set for the population share above the line is
+\begin{equation}
+  \bigl[\,p\,\pi_O,\; p\,\pi_O + (1-p)\,\bigr].
+  \label{eq:identset-share}
+\end{equation}
+Every value in each interval is attained by some configuration of the
+unobserved areas.  In the application the observed statuses are read from a
+posterior draw, so the two sets are conditional on that draw.
+\end{lemma}
+
+\begin{proof}
+Write $C = C_O + C_U$ with $C_U = \sum_{s\in U} I_s$.  Each term of $C_U$ is
+$0$ or $1$, so $0 \le C_U \le w$, and every integer in $[0,w]$ is attained by
+placing exactly that many unobserved areas above $c$ and the rest below; no
+assumption is imposed on $(\theta_s)_{s\in U}$ that would exclude such a
+configuration.  For the share, let
+$N = \sum_{s=1}^{n}\omega_s I_s / \sum_{s=1}^{n}\omega_s$ be the national
+quantity and let $\pi_U = \sum_{s\in U}\omega_s I_s / \sum_{s\in U}\omega_s$
+be the unobserved areas' share.  Then
+\[
+  N \;=\; p\,\pi_O + (1-p)\,\pi_U ,
+\]
+with $\pi_U \in [0,1]$.  The right-hand side is increasing in $\pi_U$, so its
+image over $[0,1]$ is \eqref{eq:identset-share}, and $\pi_U=0$ and $\pi_U=1$
+are both attained.
+\end{proof}
+
+% -----------------------------------------------------------------------------
 \begin{proposition}[monotonicity in the crisis line]
 \label{prop:monotone}
 For $c < c'$, $C(c') \le C(c)$ for every realisation of
@@ -315,12 +365,13 @@ $\mathbf{1}\{\theta_s>c'\} \le \mathbf{1}\{\theta_s>c\}$ for every $s$ and every
 outcome; summing over $s$ gives $C(c') \le C(c)$ pathwise.  Expectation and
 quantiles are monotone with respect to pathwise domination, so
 $\operatorname{E}[C(c')] \le \operatorname{E}[C(c)]$ and
-$q_\beta(C(c')) \le q_\beta(C(c))$ for every $\beta$.  For nesting, the
-identified set of the application has the form $[C_O(c), C_O(c)+w]$ with $w$
-the number of unobserved areas (respectively $[p\,\pi_O(c),
-p\,\pi_O(c)+(1-p)]$ with $w=1-p$ for the population share).  The width $w$ does
-not depend on $c$, and $C_O(c') \le C_O(c)$ pathwise, so
-$[C_O(c'), C_O(c')+w] \subseteq [C_O(c), C_O(c)+w]$.
+$q_\beta(C(c')) \le q_\beta(C(c))$ for every $\beta$.  For nesting,
+Lemma~\ref{lem:identified} gives the identified set $[C_O(c), C_O(c)+w]$
+for the count and $[p\,\pi_O(c), p\,\pi_O(c)+(1-p)]$ for the population
+share.  Neither width depends on $c$, and $C_O(c') \le C_O(c)$ and
+$\pi_O(c') \le \pi_O(c)$ pathwise, so
+$[C_O(c'), C_O(c')+w] \subseteq [C_O(c), C_O(c)+w]$, and likewise for the
+share.
 \end{proof}
 
 \begin{remark}
@@ -367,10 +418,28 @@ deviation forty-seven times smaller or ten times larger than the fitted one.}
 % -----------------------------------------------------------------------------
 \subsection*{Attribution}
 
-Nothing above is new method.  The ingredients are classical and are named in
-Table~\ref{tab:attribution}; what is assembled here is the statement of what
-the marginals determine for this count, and its consequence for a method that
-reports per-area probabilities.
+Nothing above is new method.  The ingredients are classical, and
+Table~\ref{tab:attribution} records what each one is and where it is dealt
+with; what is assembled here is the statement of what the marginals determine
+for this count, and its consequence for a method that reports per-area
+probabilities.
+
+Two of those ingredients carry names that readers will recognise, and neither
+is given a bibliography entry.  The pairwise bounds of
+Proposition~\ref{prop:sharp} and Remark~\ref{rem:pairwise} are commonly called
+the Fr\'echet--Hoeffding bounds, and the identified sets of
+Lemma~\ref{lem:identified} are commonly called Manski bounds.  Both are
+elementary, and both are proved in the text where they are used --- two lines
+and one line respectively --- so neither rests on a citation.  The names are
+kept for orientation only.
+
+One result here is deliberately not claimed, and one citation is deliberately indirect. The interval
+\eqref{eq:coverage} is \emph{not} a confidence set for a partially identified parameter in the sense of
+Imbens and Manski (2004). Their object is built to cover the true value of the parameter with a fixed
+probability; ours is built to contain the whole identified set, which is the more demanding requirement and
+is what the union bound buys us. The two are routinely confused in applied work, which is why the distinction
+is stated rather than left to the reader. Selection among interval estimators for partially identified
+parameters is theirs, not ours, and we take no position on it.
 
 \begin{table}[htbp]
 \centering
@@ -378,12 +447,12 @@ reports per-area probabilities.
 \hline
 result & classical source & status here \\
 \hline
-pairwise bounds $P_{st} \le \min(p_s,p_t)$ & Fr\'echet (1951); Hoeffding (1940) & quoted \\
-comonotone sum is maximal in convex order & Hoeffding (1940); Meilijson and N\'adas (1979); Dhaene et al.\ (2002) & quoted, applied to the count \\
-variance bound for a bounded or lattice variable & Bhatia and Davis (2000) --- background only; the inequality they prove is $(M-m)^2/4$ on the range, which Lemma~\ref{lem:floor} does not use & Lemma~\ref{lem:floor} is a self-contained proof of the lattice case, and the count is lattice-valued, so no cited inequality is relied upon \\
-identified set without assumptions on unobserved areas & Manski (1990); Manski and Pepper (2000) & quoted \\
-interval for an estimated identified set & Imbens and Manski (2004), different object & the union-bound form \eqref{eq:coverage} is proved here; it is not their confidence set \\
-monotone quantiles, monotone expectation & elementary & proved \\
+pairwise bounds $P_{st} \le \min(p_s,p_t)$ and $P_{st} \ge \max(0,p_s+p_t-1)$ & commonly named the Fr\'echet--Hoeffding bounds; no bibliography entry & proved here: Proposition~\ref{prop:sharp} (upper), Remark~\ref{rem:pairwise} (lower) \\
+comonotone sum is maximal in convex order & Meilijson and N\'adas (1979); Dhaene et al.\ (2002) & the convex-order statement is theirs; Lemma~\ref{lem:comon} proves the variance consequence directly for indicators \\
+variance bound for a lattice variable & none used & Lemma~\ref{lem:floor}: an integer-valued $X$ with mean $S$ has $\operatorname{Var}(X) \ge f(1-f)$; proved here, with no cited inequality \\
+identified set when some areas are unobserved & commonly named the Manski bound; no bibliography entry & proved here: Lemma~\ref{lem:identified}, for the count and for the population share \\
+interval for an estimated identified set & Imbens and Manski (2004), a different object & the union-bound form \eqref{eq:coverage} is proved here; it is not their confidence set \\
+monotone quantiles, monotone expectation & elementary & proved, Proposition~\ref{prop:monotone} \\
 \hline
 \end{tabular}
 \caption{Classical results used, and what is done with them.  Proposition~
