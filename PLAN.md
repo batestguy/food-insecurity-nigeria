@@ -5,7 +5,7 @@ where the work actually stands, what each phase must produce, and what to do whe
 
 Update it whenever a ticket finishes. If a phase changes status, the change goes here first.
 
-Last updated: 2026-11-23, after a context clear.
+Last updated: 2026-11-23, after P6 (identification bounds) landed and was re-checked independently.
 
 ---
 
@@ -30,15 +30,13 @@ running; nothing is queued.
 | Same ratio with an exchangeable area effect | **0.187** — so about half the pairwise term is geography |
 | LGAs decided above / below / undecided | 32 / 509 / **40 in the 0.40–0.60 band** |
 | LGAs with no cluster | 120 (15.5%), holding **11.04% of the population** |
+| **Count the design cannot place** | **87 to 231** — the 101–130 sits inside it; 120 of the 144-wide interval is assumption |
 
 **Do this first, in this order.**
 
-1. **P6 — the identification bounds.** Cheapest and most distinctive. Now that LGAs are mapped and
-   population denominators exist, compute the Imbens–Manski confidence set for the tail prevalence: the
-   bounds are themselves estimated, so the honest object is an interval covering the identified set. The
-   answer — **how many LGAs the data cannot rule out being in crisis** — belongs in the Discussion.
-   Arithmetic on existing artefacts, about half an hour.
-2. **P7 — calibration.** Spatial cross-validation, holding out whole states, refitting, and checking that
+1. ~~**P6 — the identification bounds.**~~ **Done 2026-11-23**, `.agent/T11-report.md`,
+   `data/derived/identif_bounds.json`. Result below. Re-checked independently by the secretary.
+2. **P7b — calibration.** Spatial cross-validation, holding out whole states, refitting, and checking that
    the credible intervals cover. Without it the intervals are a claim, not a demonstrated property, and
    it is the first thing a statistical referee will ask.
 3. **P8 — benchmarks.** Gradient boosting under the same spatial folds with conformal intervals
@@ -46,6 +44,14 @@ running; nothing is queued.
    `mapie` are **not**), plus the published spatial random forest as the external anchor.
 4. **Then draft.** Methods and Results are writable from artefacts. The Introduction is not, until the two
    nearest competitor papers are read **in full** — the novelty claim still rests on abstracts.
+
+**A debt to settle before drafting starts.** `lga_estimates.csv` carries a column named `n_clusters` that
+is a duplicate of `n_households` (identical in all 774 rows, both summing to 39,877). The observed /
+unobserved mask is unaffected, so P6 and P7 stand, but any sentence about "LGAs with one cluster" must
+read cluster counts from `cluster_lga_fixed.csv` (654 LGAs with at least one, 120 with none) and **not**
+from `lga_coverage.csv`, whose `n_clusters` is the pre-correction assignment (123 with none). Renaming
+the column is a five-minute job; doing it before the manuscript means no draft can quote the wrong
+number.
 
 **Commands that build things** (all run from the repo root; all paths are now relative):
 
@@ -98,7 +104,7 @@ projections from the 2006 census.
 | P3 | Direct estimates and spatial diagnostics at state level | **done** | `data/derived/fi_state_direct.csv` |
 | P4 | Design-aware state-level model (baseline) | **superseded** — measured analytically instead (γ 0.9866) | `AGENTS.md` |
 | P5 | Clusters → LGAs, population denominators, LGA model | **done** | `lga_estimates.csv`, `lga_fit_summary.json` |
-| P6 | Identification bounds at LGA level (Imbens–Manski) | **next** | — |
+| P6 | Identification bounds at LGA level (Imbens–Manski) | **done 2026-11-23** — count ∈ [87, 231] | `data/derived/identif_bounds.json` |
 | P7 | Count functional | **done** — E[C] = 115, ratio 0.354 | `count_functional.json` |
 | P7b | Calibration by spatial cross-validation | pending | — |
 | P8 | Benchmarks: gradient boosting, spatial random forest | pending | — |
@@ -275,12 +281,30 @@ the eight household covariates, no geospatial covariates yet.
   29% relative difference, i.e. Monte Carlo noise. Raised to 20,000. The pairwise term must be reported
   with its Monte Carlo uncertainty, not as a bare number.
 
-### P6 — identification and missingness
+### P6 — identification and missingness (done 2026-11-23)
 
-- Apply the Manski bounds from `AGENTS.md` / `.agent/T5-theory.md` at LGA level: which LGAs have no
-  cluster, what the identified set is for each, and how wide the national tail interval becomes.
-- **This is the paper's distinctive contribution.** It answers "is Yobe really at 85%" with a statement
-  about what the data can and cannot identify, rather than a point estimate.
+`.agent/T11-report.md`, `scripts/identif_bounds.R`, `data/derived/identif_bounds.json`,
+`data/derived/identif_bounds_lga.csv`. Reads the saved 20,000 × 774 joint prevalence draws, so the spatial
+dependence is preserved and the model was not refitted.
+
+- Partition: 654 LGAs hold at least one cluster, **120 hold none**, and the unclustered ones hold 11.04% of
+  the population (`p = 0.88963`, re-checked independently).
+- **Count of LGAs above 50%.** With the 120 treated as completely unknown, each counts 0 or 1, so the
+  identified set is `[C_O, C_O + 120]`. Endpoint-wise across draws: **87 to 231**. The model's 101–130 sits
+  inside it; the model's upper end is 101 LGAs below what the design can rule out.
+- **Share of people living in a crisis LGA.** Observed-only 13.72%; identified interval **10.63% to 24.90%**.
+- **120 of the 144-wide interval is the assumption**, not the data. That sentence is the paper's honest
+  statement and belongs in the Discussion.
+- The monotonicity variant (`π_U ≥ π_O`) buys only 1.3 points of width and rests on an assumption these
+  data cannot test. Recorded in its own key, deliberately not the headline.
+- **The name matters.** It is a 95% posterior interval for the sample-analogue identified set, and the JSON
+  records `is_imbens_manski_confidence_set: false`. It must never be called an Imbens–Manski confidence
+  set: that object buys frequentist coverage under moment inequalities and this construction does not.
+- **Conceded before a referee finds it:** `C_O` is computed from BYM2-smoothed prevalences, so the *lower*
+  end of the bound is model-based at the end where it is supposed to discipline the model. A direct-estimate
+  count is possible as a glance — 97 of 654 observed LGAs above 0.5 on the raw proportions, giving [97, 217],
+  which brackets the model answer too — but thresholding a noisy direct estimate is not a valid bound. Say
+  the limitation, do not paper over it.
 
 ### P7 — decision layer and calibration
 
@@ -333,6 +357,7 @@ relative difference at 20,000 draws. Report the interval, never the point estima
 | Dataset: wrong outcome, 30% silent attrition | this file, P2 |
 | Theory: wrong MSE formula (mine), Kish does not match this design | `AGENTS.md`, `.agent/T5-theory.md` |
 | Literature: abstracts only, no full texts read | `.agent/T4-litreview.md` |
+| **LGA files: `lga_estimates.csv` `n_clusters` is a duplicate of `n_households`; `lga_coverage.csv` `n_clusters` is the pre-correction assignment (123 zeros, not 120)** | this file, "A debt to settle" above |
 
 ## Evidence index
 
@@ -344,11 +369,17 @@ relative difference at 20,000 draws. Report the interval, never the point estima
 | Covariate definitions | `data/derived/covariate_spec.md` |
 | CPI panel build and defects | `.agent/T1-report.md`, `data/panel/qc_flags.csv` |
 | Dispatch history | `~/.config/opencode/runtime/ledger.jsonl` |
+| Identification bounds, p, count and share | `data/derived/identif_bounds.json`, `.agent/T11-report.md` |
 
 ## Unproven
 
 - The "nothing exists for Nigeria" claim rests on abstract-level screening only. The two nearest papers
   must be read in full before the introduction is written.
-- No Bayesian posterior exists yet, so the decision layer has never been computed.
-- LGA assignment of displaced coordinates is untested.
+- **Calibration has still never been checked.** No spatial cross-validation exists, so the 95% intervals
+  are a claim about the model, not a demonstrated property. This is now the first thing a referee asks.
+- The lower end of the identification bound is model-based (smoothed prevalences), and `π_O` is not
+  design-weighted because the fit is unweighted. Both are disclosed, neither is fixed.
+- Whether the 120 unclustered LGAs are better or worse off is untestable here — and the whole
+  identification exercise rests on assuming nothing about them.
+- LGA assignment of displaced coordinates is untested against DHS's own boundaries.
 - The covariate reduction in between-area variance has not been measured on our data.
