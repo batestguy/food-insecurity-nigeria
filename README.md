@@ -76,6 +76,9 @@ Rscript scripts/lga_model.R        # the fit and the count functional (~30 min)
 
 ## Data and licences
 
+**Code is MIT.** **Results, documentation and write-ups are CC BY 4.0** — see `DATA_LICENSE.md`. The survey
+microdata is not included and is not licensed here; the third-party inputs below keep their own terms.
+
 | Input | Source | Licence |
 |---|---|---|
 | NDHS 2024 microdata | DHS Program | DHS data-use agreement; not redistributed here |
