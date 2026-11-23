@@ -213,10 +213,20 @@ What is still not published, each checkable against that paper's text:
 - **any out-of-sample validation** — only DIC and MCMC diagnostics; `not found in text`.
 
 So the claim is: *we found no published estimates of household food insecurity at local-government level
-for Nigeria, and no published interval for the number of areas above a prevalence threshold.* Novelty by
-absence, worded as "we found none", never as "no one has". The paper's methodological weight therefore
-sits on the sharp bounds and the calibration protocol, not on the exceedance idea — which is where our
-evidence actually is.
+for Nigeria, and in the closest paper we were able to read in full, no administrative-area estimates and no
+out-of-sample validation.* Novelty by absence, worded as "we found none", never as "no one has". The paper's
+methodological weight therefore sits on the sharp bounds and the calibration protocol, not on the exceedance
+idea — which is where our evidence actually is.
+
+**The second closest paper could not be read at all (2026-11-23).** *Moura, Pereira and Silva, "A Beta–Beta
+Prime Model for Rates and their Precision for Small Area Estimation", JSSAM 14(2): 430–451,
+`10.1093/jssam/smaf002`* is closed access: Unpaywall, OpenAlex and Semantic Scholar all report
+`is_oa: false`, the publisher returns 403 to automated requests, and twenty-nine routes found no copy. Its
+abstract describes a food-insecurity index estimated at small-area level in one Brazilian state, which is
+close enough to our contribution that it **must be acknowledged in the Introduction**, and far enough from
+verified that **nothing may be asserted about what it contains**. Absence from an abstract is not evidence of
+absence from the paper. Full analysis in `.agent/T23-paper2.md`. To close it: an interlibrary loan or a
+three-line request to the authors.
 
 The Moran's I of 0.011 in `MathematicsApplied Paper.txt` traces by content to a 2026 policy-journal
 paper whose abstract does not contain the number. It is unverified and irrelevant now: we computed our
