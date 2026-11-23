@@ -1,0 +1,775 @@
+"lga_id","lga_name","state_iso","population","population_year","source","nbs_lga_name","nbs_pcode","match_type","name_distance"
+"59680162B7891718144591","Eastern Obolo","NG-AK",125525,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EASTERN OBOLO","NG003002","exact",0
+"59680162B22876202690460","Ekeremor","NG-BY",509038,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EKEREMOR","NG006002","exact",0
+"59680162B23543460253472","Degema","NG-RI",564498,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DEGEMA","NG033008","exact",0
+"59680162B90577513466378","Andoni","NG-RI",306807,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ANDONI","NG033005","exact",0
+"59680162B58958286313368","Akpabuyo","NG-CR",620174,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AKPABUYO","NG009003","exact",0
+"59680162B48458945930175","Oron","NG-AK",130175,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ORON","NG003025","exact",0
+"59680162B77398299052023","Bakassi","NG-CR",NA,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)",NA,NA,NA,NA
+"59680162B50827827535662","Calabar South","NG-CR",190551,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","CALABAR SOUTH","NG009009","exact",0
+"59680162B95559320678868","Udung Uko","NG-AK",79201,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","UDUNG UKO","NG003027","exact",0
+"59680162B89388744582495","Southern Ijaw","NG-BY",337743,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SOUTHERN IJAW","NG006007","exact",0
+"59680162B76564266679550","Iwajowa","NG-OY",161526,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IWAJOWA","NG031018","exact",0
+"59680162B62922932811240","Ibarapa North","NG-OY",163931,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IBARAPA NORTH","NG031013","exact",0
+"59680162B90615098764032","Okrika","NG-RI",286321,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OKRIKA","NG033018","exact",0
+"59680162B69679397491551","Imeko Afon","NG-OG",84298,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IMEKO-AFON","NG028013","exact",0
+"59680162B15406999540209","Ibeno","NG-AK",110123,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IBENO","NG003008","exact",0
+"59680162B49362321791702","Nembe","NG-BY",128934,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NEMBE","NG006004","exact",0
+"59680162B44253410475450","Ilaje","NG-ON",394324,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ILAJE","NG029010","exact",0
+"59680162B87797979497124","Brass","NG-BY",181265,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BRASS","NG006001","exact",0
+"59680162B93651715341205","Warri North","NG-DE",177744,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","WARRI NORTH","NG010023","exact",0
+"59680162B74748273614391","Ese Odo","NG-ON",215306,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ESE-ODO","NG029007","exact",0
+"59680162B33993495702938","Jalingo","NG-TA",198275,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","JALINGO","NG035007","exact",0
+"59680162B9558481059390","Burutu","NG-DE",224975,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BURUTU","NG010004","exact",0
+"59680162B61760155439631","Girei","NG-AD",185302,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GIREI","NG002005","exact",0
+"59680162B40051654285197","Yorro","NG-TA",121141,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","YORRO","NG035015","exact",0
+"59680162B5954014037791","Ardo-Kola","NG-TA",124041,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Ardo-Kola","NG035001","exact",0
+"59680162B21673152212894","Yola North","NG-AD",267312,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","YOLA NORTH","NG002020","exact",0
+"59680162B24147659958725","Yola South","NG-AD",262658,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","YOLA SOUTH","NG002021","exact",0
+"59680162B50421987640425","Mbo","NG-AK",135183,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MBO","NG003017","exact",0
+"59680162B35636298384814","Lau","NG-TA",124321,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","LAU","NG035010","exact",0
+"59680162B68133263226567","Ibarapa Central","NG-OY",168755,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IBARAPA CENTRAL","NG031011","exact",0
+"59680162B29721937623471","Abeokuta North","NG-OG",366133,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ABEOKUTA NORTH","NG028001","exact",0
+"59680162B83694422254145","Bonny","NG-RI",527903,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BONNY","NG033007","exact",0
+"59680162B46174350236230","Warri South-West","NG-DE",184512,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","WARRI SOUTH WEST","NG010025","exact",0
+"59680162B21053239387442","Warri South","NG-DE",493917,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","WARRI SOUTH","NG010024","exact",0
+"59680162B59329233871626","Akuku Toru","NG-RI",221371,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Akuku Toru","NG033004","exact",0
+"59680162B6205124943279","Isokan","NG-OS",161457,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ISOKAN","NG030022","exact",0
+"59680162B22633527707210","Irewole","NG-OS",225916,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IREWOLE","NG030021","exact",0
+"59680162B25032665557199","Essien Udim","NG-AK",249990,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ESSIEN UDIM","NG003005","exact",0
+"59680162B70948216254513","Onna","NG-AK",117100,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ONNA","NG003024","exact",0
+"59680162B44643250914735","Udenu","NG-EN",258136,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","UDENU","NG014015","exact",0
+"59680162B82820769085578","Ogu Bolo","NG-RI",96971,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OGU/BOLO","NG033017","exact",0
+"59680162B14374608149112","Enugu South","NG-EN",249424,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ENUGU SOUTH","NG014005","exact",0
+"59680162B36804655757784","Ikot Ekpene","NG-AK",219360,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IKOT EKPENE","NG003014","exact",0
+"59680162B36558878931890","Nsit Ubium","NG-AK",190584,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NSIT UBIUM","NG003021","exact",0
+"59680162B91433810506609","Urue Offong/Oruko","NG-AK",141720,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Urue-Offong/Oruko","NG003030","exact",0
+"59680162B70631413452384","Abak","NG-AK",154945,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ABAK","NG003001","exact",0
+"59680162B97802053648263","Nkanu East","NG-EN",192386,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NKANU EAST","NG014011","exact",0
+"59680162B63088628372837","Igbo-Eze-South","NG-EN",250018,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Igbo-Eze South","NG014009","exact",0
+"59680162B36149280961759","Nsukka","NG-EN",378716,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Nsukka","NG014013","exact",0
+"59680162B30773772502776","Tai","NG-RI",247839,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","TAI","NG033023","exact",0
+"59680162B27814311157346","Ife North","NG-OS",153753,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IFE NORTH","NG030013","exact",0
+"59680162B94327255764727","Ayedade","NG-OS",205691,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Aiyedade","NG030001","fuzzy",0.0417
+"59680162B61434523060701","Ayedire","NG-OS",121823,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Aiyedire","NG030002","fuzzy",0.1369
+"59680162B72068294191364","Ahoada East","NG-RI",330861,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AHOADA EAST","NG033002","exact",0
+"59680162B71074793306885","Iseyin","NG-OY",498497,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ISEYIN","NG031016","exact",0
+"59680162B74485110483501","Itesiwaju","NG-OY",248458,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ITESIWAJU","NG031017","exact",0
+"59680162B64506251287847","Kajola","NG-OY",314943,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KAJOLA","NG031019","exact",0
+"59680162B79793295224635","Nkanu West","NG-EN",184613,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NKANU WEST","NG014012","exact",0
+"59680162B68024378624756","Afikpo North","NG-EB",198719,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AFIKPO NORTH","NG011002","exact",0
+"59680162B72688070781247","Donga","NG-TA",200979,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DONGA","NG035003","exact",0
+"59680162B15532351721986","Oji-River","NG-EN",167271,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Oji-River","NG014014","exact",0
+"59680162B5525087107293","Oyun","NG-KW",138789,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OYUN","NG024015","exact",0
+"59680162B61116944198945","Ogbia","NG-BY",174801,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OGBIA","NG006005","exact",0
+"59680162B173222965225","Asari-Toru","NG-RI",252511,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ASARI-TORU","NG033006","exact",0
+"59680162B78634023582239","Uyo","NG-AK",408011,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","UYO","NG003031","exact",0
+"59680162B21074533395167","Ikono","NG-AK",163348,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IKONO","NG003012","exact",0
+"59680162B46396512293260","Baruten","NG-KW",336459,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BARUTEN","NG024002","exact",0
+"59680162B50724647943907","Lagelu","NG-OY",277253,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","LAGELU","NG031020","exact",0
+"59680162B89596725903657","Idah","NG-KO",109609,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IDAH","NG023007","exact",0
+"59680162B29257457515537","Machina","NG-YO",73256,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MACHINA","NG036011","exact",0
+"59680162B39308677673484","Ibaji","NG-KO",175333,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IBAJI","NG023006","exact",0
+"59680162B38183120701356","Municipal Area Council","NG-FC",2969407,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ABUJA MUNICIPAL","NG015002","sole_remaining",0.3218
+"59680162B83662033692716","Kaiama","NG-KW",309847,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KAIAMA","NG024011","exact",0
+"59680162B24502748844916","Bakura","NG-ZA",240612,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BAKURA","NG037002","exact",0
+"59680162B38485988708032","Nguru","NG-YO",174222,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NGURU","NG036013","exact",0
+"59680162B37513478805829","Gummi","NG-ZA",288495,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GUMMI","NG037006","exact",0
+"59680162B27639129809368","Ajingi","NG-KN",238274,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AJINGI","NG020001","exact",0
+"59680162B27901935497545","Port-Harcourt","NG-RI",574199,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Port-Harcourt","NG033022","exact",0
+"59680162B78681214723365","Augie","NG-KE",157176,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AUGIE","NG022004","exact",0
+"59680162B95103667512911","Kebbe","NG-SO",171869,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KEBBE","NG034010","exact",0
+"59680162B17719625697929","Surulere","NG-OY",267480,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Surulere","NG031033","exact",0
+"59680162B52609098277437","Ringim","NG-JI",204049,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","RINGIM","NG018023","exact",0
+"59680162B36304665045822","Emuoha","NG-RI",227500,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Emohua","NG033010","fuzzy",0.0833
+"59680162B86026568122675","Isi-Uzo","NG-EN",214668,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Isi-Uzo","NG014010","exact",0
+"59680162B64829234996535","Yenegoa","NG-BY",776979,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Yenegoa","NG006008","exact",0
+"59680162B49050440888294","Ilorin East","NG-KW",203309,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ILORIN EAST","NG024006","exact",0
+"59680162B61092998371306","Alkaleri","NG-BA",525495,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ALKALERI","NG005001","exact",0
+"59680162B88302028338466","Omumma","NG-RI",126520,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Omumma","NG033019","exact",0
+"59680162B7272699675434","Birnin Kudu","NG-JI",382488,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Birni Kudu","NG018004","fuzzy",0.0303
+"59680162B27926848768432","Takum","NG-TA",197120,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","TAKUM","NG035012","exact",0
+"59680162B32427656470349","Esan South-East","NG-ED",287946,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ESAN SOUTH EAST","NG012005","exact",0
+"59680162B7861486631755","Ifedayo","NG-OS",49701,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IFEDAYO","NG030015","exact",0
+"59680162B81796058650879","Ori Ire","NG-OY",187794,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Ori Ire","NG031028","exact",0
+"59680162B15317000449503","Ifelodun","NG-KW",235490,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IFELODUN","NG024005","exact",0
+"59680162B87372052025364","Maradun","NG-ZA",285666,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MARADUN","NG037009","exact",0
+"59680162B49286325204061","Aninri","NG-EN",170514,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ANINRI","NG014001","exact",0
+"59680162B3222658090770","Abakaliki","NG-EB",164717,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ABAKALIKI","NG011001","exact",0
+"59680162B29829764060990","Pategi","NG-KW",217339,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Pategi","NG024016","exact",0
+"59680162B74336355497846","Biriniwa","NG-JI",143051,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Biriniwa","NG018003","exact",0
+"59680162B61170702756328","Ussa","NG-TA",139057,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","USSA","NG035013","exact",0
+"59680162B89701706643364","Silame","NG-SO",146403,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SILAME","NG034015","exact",0
+"59680162B89970230221745","Takai","NG-KN",275249,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","TAKAI","NG020037","exact",0
+"59680162B85175001165051","Bwari","NG-FC",880943,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BWARI","NG015003","exact",0
+"59680162B33186191897384","Edu","NG-KW",395310,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EDU","NG024003","exact",0
+"59680162B37059166930142","Jema'A","NG-KD",475942,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","JEMA'A","NG019007","exact",0
+"59680162B20002653395444","Gumel","NG-JI",187985,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GUMEL","NG018009","exact",0
+"59680162B68799842423101","Binji","NG-SO",174587,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BINJI","NG034001","exact",0
+"59680162B33139882700556","Kware","NG-SO",135010,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KWARE","NG034011","exact",0
+"59680162B46976557303871","Bunza","NG-KE",175861,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BUNZA","NG022007","exact",0
+"59680162B35933805912396","Mopa-Muro","NG-KO",82137,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MOPA-MURO","NG023013","exact",0
+"59680162B91492845849591","Sokoto North","NG-SO",315779,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SOKOTO NORTH","NG034016","exact",0
+"59680162B51512347513243","Musawa","NG-KT",317751,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MUSAWA","NG021029","exact",0
+"59680162B36658267128816","Ethiope West","NG-DE",338052,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ETHIOPE WEST","NG010006","exact",0
+"59680162B77807256215392","Ishielu","NG-EB",157728,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ISHIELU","NG011008","exact",0
+"59680162B48034518845808","Sakaba","NG-KE",151941,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SAKABA","NG022016","exact",0
+"59680162B63511927639310","Kudan","NG-KD",170338,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KUDAN","NG019016","exact",0
+"59680162B32850327292174","Kachia","NG-KD",522675,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KACHIA","NG019008","exact",0
+"59680162B48318677941344","Sabon Birni","NG-SO",245270,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SABON BIRNI","NG034013","exact",0
+"59680162B64770944232121","Uzo-Uwani","NG-EN",159934,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Uzo-Uwani","NG014017","exact",0
+"59680162B63355484795141","Jaba","NG-KD",320195,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","JABA","NG019006","exact",0
+"59680162B22561739962750","Ibesikpo Asutan","NG-AK",217014,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IBESIKPO ASUTAN","NG003009","exact",0
+"59680162B89921626898623","Sokoto South","NG-SO",267906,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SOKOTO SOUTH","NG034017","exact",0
+"59680162B68131021355449","Yabo","NG-SO",163224,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","YABO","NG034023","exact",0
+"59680162B27422550871896","Damboa","NG-BO",441163,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DAMBOA","NG008007","exact",0
+"59680162B62360966111253","Matazu","NG-KT",152494,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MATAZU","NG021028","exact",0
+"59680162B54666922464494","Sandamu","NG-KT",274904,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SANDAMU","NG021033","exact",0
+"59680162B19433829654146","Mashi","NG-KT",222050,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MASHI","NG021027","exact",0
+"59680162B93375949891062","Dan Musa","NG-KT",147509,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DAN MUSA","NG021007","exact",0
+"59680162B62375507242594","Kura","NG-KN",212536,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KURA","NG020027","exact",0
+"59680162B33448314455063","Lere","NG-KD",488848,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","LERE","NG019017","exact",0
+"59680162B91454305469147","Zango","NG-KT",233663,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ZANGO","NG021034","exact",0
+"59680162B797578221173","Wurno","NG-SO",227633,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","WURNO","NG034022","exact",0
+"59680162B43671986122418","Gudu","NG-SO",136360,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GUDU","NG034007","exact",0
+"59680162B64636531363939","Gwiwa","NG-JI",247923,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GWIWA","NG018012","exact",0
+"59680162B77130024076735","Birnin Kebbi","NG-KE",417590,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BIRNIN KEBBI","NG022006","exact",0
+"59680162B61567493958965","Suru","NG-KE",164328,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SURU","NG022018","exact",0
+"59680162B26521045145337","Numan","NG-AD",124030,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NUMAN","NG002016","exact",0
+"59680162B23952502219543","Biu","NG-BO",246386,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BIU","NG008005","exact",0
+"59680162B16574916896740","Kaduna South","NG-KD",361208,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KADUNA SOUTH","NG019010","exact",0
+"59680162B86155479852967","Dikwa","NG-BO",126966,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DIKWA","NG008008","exact",0
+"59680162B50201894093674","Zaria","NG-KD",507817,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ZARIA","NG019023","exact",0
+"59680162B5199404243189","Kalgo","NG-KE",120896,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KALGO","NG022012","exact",0
+"59680162B90957738044815","Yankwashi","NG-JI",166139,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","YANKWASHI","NG018027","exact",0
+"59680162B84224544107566","Kaura","NG-KD",261858,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KAURA","NG019013","exact",0
+"59680162B57364751970918","Lamurde","NG-AD",150728,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","LAMURDE","NG002009","exact",0
+"59680162B31936578466171","Monguno","NG-BO",153438,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MONGUNO","NG008024","exact",0
+"59680162B73078519517404","Enugu East","NG-EN",382922,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ENUGU EAST","NG014003","exact",0
+"59680162B65219804693248","Ngala","NG-BO",467268,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NGALA","NG008025","exact",0
+"59680162B83800309048446","Gubio","NG-BO",456198,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GUBIO","NG008009","exact",0
+"59680162B47068494760958","Yagba East","NG-KO",277099,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","YAGBA EAST","NG023020","exact",0
+"59680162B32856652540007","Chibok","NG-BO",125503,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","CHIBOK","NG008006","exact",0
+"59680162B25728635468586","Tureta","NG-SO",102366,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","TURETA","NG034020","exact",0
+"59680162B87534880716336","Gashaka","NG-TA",133004,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GASHAKA","NG035004","exact",0
+"59680162B24167581171767","Bauchi","NG-BA",595357,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BAUCHI","NG005002","exact",0
+"59680162B65118596491840","Hawul","NG-BO",146119,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","HAWUL","NG008012","exact",0
+"59680162B72404517830917","Uruan","NG-AK",149747,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","URUAN","NG003029","exact",0
+"59680162B66628176907248","Mayo-Belwa","NG-AD",162790,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MAYO-BELWA","NG002012","exact",0
+"59680162B11164722545286","Mubi South","NG-AD",129969,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MUBI SOUTH","NG002015","exact",0
+"59680162B35912483761792","Etsako West","NG-ED",402584,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ETSAKO WEST","NG012009","exact",0
+"59680162B1470225488806","Fune","NG-YO",635522,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","FUNE","NG036005","exact",0
+"59680162B87872962443621","Mobbar","NG-BO",197378,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MOBBAR","NG008023","exact",0
+"59680162B46130456424051","Potiskum","NG-YO",217373,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","POTISKUM","NG036014","exact",0
+"59680162B2846194934808","Gwoza","NG-BO",456687,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GWOZA","NG008011","exact",0
+"59680162B36028411577107","Guzamala","NG-BO",190348,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GUZAMALA","NG008010","exact",0
+"59680162B24409102010221","Maiha","NG-AD",127214,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MAIHA","NG002011","exact",0
+"59680162B10585943230735","Gulani","NG-YO",144673,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GULANI","NG036008","exact",0
+"59680162B60568566930973","Zing","NG-TA",180616,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ZING","NG035016","exact",0
+"59680162B54897023187709","Orelope","NG-OY",137491,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Orelope","NG031027","exact",0
+"59680162B17891920174093","Nsit Ibom","NG-AK",160139,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NSIT IBOM","NG003020","exact",0
+"59680162B6607126567740","Fufore","NG-AD",241883,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","FUFORE","NG002002","exact",0
+"59680162B9896757167153","Mkpat Enin","NG-AK",262998,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MKPAT ENIN","NG003018","exact",0
+"59680162B12689851933854","Owan West","NG-ED",121542,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OWAN WEST","NG012017","exact",0
+"59680162B15311652495769","Kaga","NG-BO",135771,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KAGA","NG008014","exact",0
+"59680162B13157392837231","Karim Lamido","NG-TA",244134,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Karim-Lamido","NG035008","exact",0
+"59680162B26946733152657","Kukawa","NG-BO",403174,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KUKAWA","NG008017","exact",0
+"59680162B13073760931893","Gombi","NG-AD",214698,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GOMBI","NG002004","exact",0
+"59680162B83966420631158","Guyuk","NG-AD",384325,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GUYUK","NG002006","exact",0
+"59680162B84327981884458","Tudun Wada","NG-KN",322456,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","TUDUN WADA","NG020041","exact",0
+"59680162B14133510851755","Saki West","NG-OY",533711,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SAKI WEST","NG031032","exact",0
+"59680162B46313771844948","Toungo","NG-AD",68798,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","TOUNGO","NG002019","exact",0
+"59680162B70529740290920","Abua/Odual","NG-RI",516528,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ABUA/ODUAL","NG033001","exact",0
+"59680162B44112457363104","Bungudu","NG-ZA",307291,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BUNGUDU","NG037005","exact",0
+"59680162B31817043180897","Shani","NG-BO",134137,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SHANI","NG008027","exact",0
+"59680162B23595872951211","Shagari","NG-SO",222126,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SHAGARI","NG034014","exact",0
+"59680162B1638752109374","Yunusari","NG-YO",181455,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","YUNUSARI","NG036016","exact",0
+"59680162B41420170912929","Ganye","NG-AD",224066,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GANYE","NG002003","exact",0
+"59680162B17489209533224","Jada","NG-AD",198119,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","JADA","NG002008","exact",0
+"59680162B98222207712503","Bali","NG-TA",263024,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BALI","NG035002","exact",0
+"59680162B98903295811344","Shelleng","NG-AD",365396,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SHELLENG","NG002017","exact",0
+"59680162B5540117047510","Okitipupa","NG-ON",270613,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OKITIPUPA","NG029014","exact",0
+"59680162B41297071563530","Bayo","NG-BO",112603,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BAYO","NG008004","exact",0
+"59680162B30032590265448","Ikot Abasi","NG-AK",277543,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IKOT ABASI","NG003013","exact",0
+"59680162B20780696540875","Maiduguri","NG-BO",539817,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MAIDUGURI","NG008021","exact",0
+"59680162B90037113183568","Gujba","NG-YO",181402,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GUJBA","NG036007","exact",0
+"59680162B23598949397905","Esan North-East","NG-ED",146279,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ESAN NORTH EAST","NG012004","exact",0
+"59680162B48786148420785","Tafawa-Balewa","NG-BA",327981,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Tafawa-Balewa","NG005017","exact",0
+"59680162B90533313280833","Nangere","NG-YO",92865,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NANGERE","NG036012","exact",0
+"59680162B87230656090923","Ika","NG-AK",95077,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IKA","NG003011","exact",0
+"59680162B91029831757376","Dambam","NG-BA",245698,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Damban","NG005004","fuzzy",0.1111
+"59680162B89766877463651","Ganjuwa","NG-BA",466518,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GANJUWA","NG005008","exact",0
+"59680162B84828583281462","Nganzai","NG-BO",276492,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NGANZAI","NG008026","exact",0
+"59680162B31457176745984","Ahoada West","NG-RI",495755,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AHOADA WEST","NG033003","exact",0
+"59680162B82996162763265","Song","NG-AD",278537,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SONG","NG002018","exact",0
+"59680162B77604659700593","Oshimili North","NG-DE",219906,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OSHIMILI NORTH","NG010014","exact",0
+"59680162B60219664923389","Gokana","NG-RI",298820,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GOKANA","NG033012","exact",0
+"59680162B43558777101724","Bukkuyum","NG-ZA",336772,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BUKKUYUM","NG037004","exact",0
+"59680162B76704120420691","Damaturu","NG-YO",127041,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DAMATURU","NG036003","exact",0
+"59680162B70118559758614","Geidam","NG-YO",242881,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GEIDAM","NG036006","exact",0
+"59680162B67238968218645","Tarmuwa","NG-YO",112500,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Tarmua","NG036015","fuzzy",0.0476
+"59680162B31090464189446","Madagali","NG-AD",176551,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MADAGALI","NG002010","exact",0
+"59680162B49393703134220","Michika","NG-AD",178535,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MICHIKA","NG002013","exact",0
+"59680162B22484757822523","Mubi North","NG-AD",151528,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MUBI NORTH","NG002014","exact",0
+"59680162B90522809362613","Owan East","NG-ED",229102,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OWAN EAST","NG012016","exact",0
+"59680162B84612216171504","Hong","NG-AD",212806,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","HONG","NG002007","exact",0
+"59680162B98184498564097","Nassarawa","NG-KN",1032652,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NASSARAWA","NG020031","exact",0
+"59680162B20254719160886","Sabuwa","NG-KT",226872,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SABUWA","NG021031","exact",0
+"59680162B76130047047659","Ohaozara","NG-EB",257530,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OHAOZARA","NG011011","exact",0
+"59680162B64690225464412","Kaura Namoda","NG-ZA",430450,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Kaura Namoda","NG037008","exact",0
+"59680162B60349541451220","Dutsi","NG-KT",156936,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DUTSI","NG021011","exact",0
+"59680162B55022918372626","Kabo","NG-KN",226675,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KABO","NG020020","exact",0
+"59680162B23965546094498","Dandume","NG-KT",186364,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DANDUME","NG021008","exact",0
+"59680162B97642938083661","Dawakin Tofa","NG-KN",337638,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DAWAKIN TOFA","NG020010","exact",0
+"59680162B10012275275709","Gezawa","NG-KN",449000,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GEZAWA","NG020017","exact",0
+"59680162B56562801938729","Bodinga","NG-SO",232122,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BODINGA","NG034002","exact",0
+"59680162B55239717258244","Zurmi","NG-ZA",426183,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ZURMI","NG037014","exact",0
+"59680162B63361885953813","Warawa","NG-KN",185514,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","WARAWA","NG020043","exact",0
+"59680162B53228015633193","Tangaza","NG-SO",164046,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","TANGAZA","NG034019","exact",0
+"59680162B93100308813933","Maigatari","NG-JI",255730,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MAIGATARI","NG018020","exact",0
+"59680162B42687104490462","Danja","NG-KT",139345,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DANJA","NG021009","exact",0
+"59680162B24316958669382","Fagge","NG-KN",346503,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","FAGGE","NG020012","exact",0
+"59680162B54988677972163","Jibia","NG-KT",195952,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","JIBIA","NG021016","exact",0
+"59680162B65190975434062","Eleme","NG-RI",391778,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ELEME","NG033009","exact",0
+"59680162B69796164397605","Bebeji","NG-KN",270078,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BEBEJI","NG020004","exact",0
+"59680162B88243538379460","Rano","NG-KN",227996,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","RANO","NG020032","exact",0
+"59680162B24840578600877","Tarauni","NG-KN",384168,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","TARAUNI","NG020038","exact",0
+"59680162B79884468001879","Etinan","NG-AK",275885,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ETINAN","NG003007","exact",0
+"59680162B97490121732821","Yewa South","NG-OG",173355,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Egbado South","NG028005","exact",0
+"59680162B80605638185127","Argungu","NG-KE",270471,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ARGUNGU","NG022003","exact",0
+"59680162B20086286793745","Kiru","NG-KN",397149,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KIRU","NG020024","exact",0
+"59680162B37340403082689","Batagarawa","NG-KT",366602,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BATAGARAWA","NG021002","exact",0
+"59680162B43870676483034","Bomadi","NG-DE",106019,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BOMADI","NG010003","exact",0
+"59680162B43497988326934","Kwaya Kusar","NG-BO",80746,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KWAYA KUSAR","NG008018","exact",0
+"59680162B4108100426512","Igbo-Etiti","NG-EN",273316,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Igbo-Etiti","NG014007","exact",0
+"59680162B97563361057366","Doguwa","NG-KN",237126,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DOGUWA","NG020011","exact",0
+"59680162B86291828303656","Bade","NG-YO",200690,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BADE","NG036001","exact",0
+"59680162B41031546236215","Itu","NG-AK",189435,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ITU","NG003016","exact",0
+"59680162B41357004175190","Bama","NG-BO",325552,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BAMA","NG008003","exact",0
+"59680162B52281011363885","Gada","NG-SO",365354,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GADA","NG034004","exact",0
+"59680162B80813578140782","Gusau","NG-ZA",494830,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GUSAU","NG037007","exact",0
+"59680162B78639882894514","Lagos Mainland","NG-LA",330565,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","LAGOS MAINLAND","NG025015","exact",0
+"59680162B53208862785263","Kaita","NG-KT",284482,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KAITA","NG021018","exact",0
+"59680162B51390103580898","Minjibir","NG-KN",300741,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MINJIBIR","NG020030","exact",0
+"59680162B87442417129591","Ini","NG-AK",120052,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","INI","NG003015","exact",0
+"59680162B53803782710688","Talata Mafara","NG-ZA",291895,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","TALATA MAFARA","NG037012","exact",0
+"59680162B64610537243626","Gwandu","NG-KE",185202,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GWANDU","NG022010","exact",0
+"59680162B42162352171568","Birnin Magaji-Kiyaw","NG-ZA",277675,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Birnin Magaji","NG037003","fuzzy",0.1053
+"59680162B7876035432306","Shanono","NG-KN",198752,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SHANONO","NG020035","exact",0
+"59680162B53174064204838","Rogo","NG-KN",320258,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ROGO","NG020034","exact",0
+"59680162B85415328791745","Batsari","NG-KT",262255,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BATSARI","NG021003","exact",0
+"59680162B97039944509950","Eket","NG-AK",314900,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EKET","NG003003","exact",0
+"59680162B18997887117478","Okobo","NG-AK",132539,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OKOBO","NG003023","exact",0
+"59680162B28367664307560","Kano Municipal","NG-KN",295605,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KANO MUNICIPAL","NG020021","exact",0
+"59680162B10627743467335","Bursari","NG-YO",149102,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BURSARI","NG036002","exact",0
+"59680162B34961354684930","Maiyama","NG-KE",232704,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MAIYAMA","NG022014","exact",0
+"59680162B72688390978538","Lagos Island","NG-LA",237632,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","LAGOS ISLAND","NG025014","exact",0
+"59680162B5579026585541","Madobi","NG-KN",209251,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MADOBI","NG020028","exact",0
+"59680162B14319741144045","Miga","NG-JI",152059,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MIGA","NG018022","exact",0
+"59680162B87154562016330","Rimi","NG-KT",202722,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","RIMI","NG021030","exact",0
+"59680162B83052310642670","Gabasawa","NG-KN",254327,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GABASAWA","NG020013","exact",0
+"59680162B45442733436767","Aleiro","NG-KE",96081,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Aleiro","NG022001","exact",0
+"59680162B36976404849364","Ungogo","NG-KN",691480,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","UNGOGO","NG020042","exact",0
+"59680162B21010588258079","Tambuwal","NG-SO",302633,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","TAMBUWAL","NG034018","exact",0
+"59680162B13498430232382","Jega","NG-KE",283274,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","JEGA","NG022011","exact",0
+"59680162B91304502238334","Katsina","NG-KT",394471,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KATSINA","NG021021","exact",0
+"59680162B24430291126178","Dawakin Kudu","NG-KN",270842,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DAWAKIN KUDU","NG020009","exact",0
+"59680162B65662189989638","Arewa Dandi","NG-KE",228157,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AREWA-DANDI","NG022002","exact",0
+"59680162B44584437839531","Etim Ekpo","NG-AK",138392,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ETIM EKPO","NG003006","exact",0
+"59680162B46612932493253","Albasu","NG-KN",263118,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ALBASU","NG020002","exact",0
+"59680162B30227281044650","Marte","NG-BO",243359,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MARTE","NG008022","exact",0
+"59680162B97880726687240","Kumbotso","NG-KN",453273,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KUMBOTSO","NG020025","exact",0
+"59680162B26576505992161","Kazaure","NG-JI",279941,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KAZAURE","NG018017","exact",0
+"59680162B59256397716169","Malumfashi","NG-KT",184233,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MALUMFASHI","NG021025","exact",0
+"59680162B18977545928744","Udi","NG-EN",308387,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","UDI","NG014016","exact",0
+"59680162B76882427234764","Dutse","NG-JI",396787,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DUTSE","NG018006","exact",0
+"59680162B43366957039329","Gwaram","NG-JI",326730,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GWARAM","NG018011","exact",0
+"59680162B76884691739548","Zangon Kataf","NG-KD",631500,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Zango-Kataf","NG019022","fuzzy",0.0278
+"59680162B95265909286240","Kiyawa","NG-JI",242547,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KIYAWA","NG018019","exact",0
+"59680162B26282391091652","Zaki","NG-BA",191468,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ZAKI","NG005020","exact",0
+"59680162B46802984315739","Opobo/Nkoro","NG-RI",215165,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OPOBO/NKORO","NG033020","exact",0
+"59680162B33775428128459","Shira","NG-BA",313040,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SHIRA","NG005016","exact",0
+"59680162B55124041708975","Dass","NG-BA",140686,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DASS","NG005006","exact",0
+"59680162B72641942292242","Enugu North","NG-EN",334592,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ENUGU NORTH","NG014004","exact",0
+"59680162B86414227144381","Buji","NG-JI",118464,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BUJI","NG018005","exact",0
+"59680162B24434385919413","Ukanafun","NG-AK",159668,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","UKANAFUN","NG003028","exact",0
+"59680162B6425058524044","Agaie","NG-NI",190206,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AGAIE","NG027001","exact",0
+"59680162B58679994750141","Bagwai","NG-KN",213240,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BAGWAI","NG020003","exact",0
+"59680162B79502957035648","Kajuru","NG-KD",145741,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KAJURU","NG019012","exact",0
+"59680162B69752440983216","Katcha","NG-NI",186658,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KATCHA","NG027010","exact",0
+"59680162B10083289652159","Kafur","NG-KT",279212,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KAFUR","NG021017","exact",0
+"59680162B4050907661224","Wasagu-Danko","NG-KE",409309,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","WASAGU/DANKO","NG022019","exact",0
+"59680162B96484505623852","Bida","NG-NI",286490,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BIDA","NG027003","exact",0
+"59680162B60638866528984","Kirfi","NG-BA",233130,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KIRFI","NG005013","exact",0
+"59680162B35628626888177","Dandi","NG-KE",182834,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DANDI","NG022008","exact",0
+"59680162B25890229119009","Bagudu","NG-KE",320717,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BAGUDO","NG022005","fuzzy",0.1111
+"59680162B8390528040617","Kankara","NG-KT",337587,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KANKARA","NG021019","exact",0
+"59680162B90895100901083","Itas/Gadau","NG-BA",335289,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ITAS/GADAU","NG005010","exact",0
+"59680162B5781056238943","Apapa","NG-LA",464774,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","APAPA","NG025005","exact",0
+"59680162B42065071303183","Ondo East","NG-ON",95924,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ONDO EAST","NG029015","exact",0
+"59680162B82946706311025","Warji","NG-BA",179216,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","WARJI","NG005019","exact",0
+"59680162B44758551949173","Katagum","NG-BA",383627,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KATAGUM","NG005012","exact",0
+"59680162B59976260592487","Mani","NG-KT",222271,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MANI","NG021026","exact",0
+"59680162B60875368726655","Sanga","NG-KD",259165,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SANGA","NG019020","exact",0
+"59680162B11671066128606","Bogoro","NG-BA",124207,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BOGORO","NG005003","exact",0
+"59680162B28106531466158","Fika","NG-YO",137125,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","FIKA","NG036004","exact",0
+"59680162B82387239737873","Kuje","NG-FC",185623,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KUJE","NG015005","exact",0
+"59680162B44120553871969","Sule Tankarkar","NG-JI",135431,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Sule-Tankarkar","NG018025","exact",0
+"59680162B74859155842016","Ibadan North East","NG-OY",347535,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IBADAN NORTH EAST","NG031007","exact",0
+"59680162B3936014826761","Bindawa","NG-KT",164811,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BINDAWA","NG021005","exact",0
+"59680162B63804955714699","Ilorin South","NG-KW",205060,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ILORIN SOUTH","NG024007","exact",0
+"59680162B43637132059207","Gamawa","NG-BA",388977,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GAMAWA","NG005007","exact",0
+"59680162B31389051207927","Kafin Hausa","NG-JI",402196,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KAFIN HAUSA","NG018015","exact",0
+"59680162B74094197759690","Ado Odo/Ota","NG-OG",1030829,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ADO-ODO/OTA","NG028003","exact",0
+"59680162B51570410917379","Garko","NG-KN",212011,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GARKO","NG020014","exact",0
+"59680162B90439441381954","Kubau","NG-KD",367803,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KUBAU","NG019015","exact",0
+"59680162B18982121994254","Wukari","NG-TA",314847,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","WUKARI","NG035014","exact",0
+"59680162B96182902271382","Gwarzo","NG-KN",247390,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GWARZO","NG020019","exact",0
+"59680162B52775693188226","Oyigbo","NG-RI",160443,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OYIGBO","NG033021","exact",0
+"59680162B30773939854921","Ughelli South","NG-DE",281982,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","UGHELLI SOUTH","NG010020","exact",0
+"59680162B55504856664882","Fakai","NG-KE",175247,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","FAKAI","NG022009","exact",0
+"59680162B31064170938287","Kaugama","NG-JI",150052,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KAUGAMA","NG018016","exact",0
+"59680162B14396821090751","Esan Central","NG-ED",146113,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ESAN CENTRAL","NG012003","exact",0
+"59680162B20432910054227","Goronyo","NG-SO",270899,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GORONYO","NG034006","exact",0
+"59680162B5704166644463","Ibarapa East","NG-OY",202001,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IBARAPA EAST","NG031012","exact",0
+"59680162B29680565367836","Ikpoba-Okha","NG-ED",439794,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IKPOBA-OKHA","NG012011","exact",0
+"59680162B11400589438827","Awgu","NG-EN",246958,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AWGU","NG014002","exact",0
+"59680162B59717618896779","Olorunsogo","NG-OY",136877,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OLORUNSOGO","NG031024","exact",0
+"59680162B92155854422456","Kabba/Bunu","NG-KO",228788,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Kabba/Bunu","NG023010","exact",0
+"59680162B85522063023223","Ningi","NG-BA",601609,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NINGI","NG005015","exact",0
+"59680162B29995960925404","Kurmi","NG-TA",113925,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KURMI","NG035009","exact",0
+"59680162B75348496545912","Bakori","NG-KT",146667,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BAKORI","NG021001","exact",0
+"59680162B33769534671223","Nsit Atai","NG-AK",142835,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NSIT ATAI","NG003019","exact",0
+"59680162B50176982462081","Kankia","NG-KT",194307,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KANKIA","NG021020","exact",0
+"59680162B30447030328077","Gagarawa","NG-JI",145182,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GAGARAWA","NG018007","exact",0
+"59680162B9145923747098","Giade","NG-BA",208723,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GIADE","NG005009","exact",0
+"59680162B67610911656226","Iguegben","NG-ED",97568,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IGUEBEN","NG012010","fuzzy",0.0417
+"59680162B82334724733824","Akure North","NG-ON",172369,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AKURE NORTH","NG029005","exact",0
+"59680162B16294292751838","Khana","NG-RI",361163,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KHANA","NG033014","exact",0
+"59680162B34726688570577","Oruk Anam","NG-AK",203136,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ORUK ANAM","NG003026","exact",0
+"59680162B30906229675123","Misau","NG-BA",427567,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MISAU","NG005014","exact",0
+"59680162B30593466404451","Kolokuma/Opokuma","NG-BY",174908,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KOLOKUMA/OPOKUMA","NG006003","exact",0
+"59680162B44599338364171","Karaye","NG-KN",202678,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KARAYE","NG020022","exact",0
+"59680162B84100135495566","Sagbama","NG-BY",254106,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SAGBAMA","NG006006","exact",0
+"59680162B71065109904105","Garki","NG-JI",183369,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GARKI","NG018008","exact",0
+"59680162B73440349718888","Mai'Adua","NG-KT",257257,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MAI'ADUA","NG021024","exact",0
+"59680162B95600296408215","Ezza North","NG-EB",182020,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EZZA NORTH","NG011005","exact",0
+"59680162B80393484388201","Ibi","NG-TA",106523,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IBI","NG035006","exact",0
+"59680162B69944768623609","Omala","NG-KO",143151,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OMALA","NG023019","exact",0
+"59680162B60046857326615","Ile Oluji/Okeigbo","NG-ON",221782,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Ile-Oluji-Okeigbo","NG029011","exact",0
+"59680162B19484855656708","Baure","NG-KT",303880,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BAURE","NG021004","exact",0
+"59680162B60516342630503","Dutsin Ma","NG-KT",217109,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DUTSIN-MA","NG021012","exact",0
+"59680162B15998169506024","Uhunmwonde","NG-ED",130872,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","UHUNMWONDE","NG012018","exact",0
+"59680162B96971531554224","Taura","NG-JI",155882,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","TAURA","NG018026","exact",0
+"59680162B70966513794539","Ughelli North","NG-DE",539407,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","UGHELLI NORTH","NG010019","exact",0
+"59680162B17520648889441","Orhionmwon","NG-ED",200079,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ORHIONMWON","NG012013","exact",0
+"59680162B47761767082139","Soba","NG-KD",424002,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SOBA","NG019021","exact",0
+"59680162B67680561366569","Karasuwa","NG-YO",151935,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KARASUWA","NG036010","exact",0
+"59680162B72514771239598","Ondo West","NG-ON",364155,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ONDO WEST","NG029016","exact",0
+"59680162B51019344443676","Ika South","NG-DE",222730,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IKA SOUTH","NG010008","exact",0
+"59680162B43824241108050","Oye","NG-EK",143684,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OYE","NG013016","exact",0
+"59680162B73114171000075","Bichi","NG-KN",369538,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BICHI","NG020005","exact",0
+"59680162B82021418174103","Kwali","NG-FC",231276,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KWALI","NG015006","exact",0
+"59680162B62394297156991","Oyo West","NG-OY",195419,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OYO WEST","NG031030","exact",0
+"59680162B88881037507986","Kusada","NG-KT",126221,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KUSADA","NG021023","exact",0
+"59680162B41504820717654","Roni","NG-JI",94548,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","RONI","NG018024","exact",0
+"59680162B15165581574851","Toro","NG-BA",498489,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","TORO","NG005018","exact",0
+"59680162B21108805782195","Akure South","NG-ON",474892,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AKURE SOUTH","NG029006","exact",0
+"59680162B83099166959131","Igabi","NG-KD",524732,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IGABI","NG019004","exact",0
+"59680162B23991224305955","Okene","NG-KO",294657,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OKENE","NG023017","exact",0
+"59680162B59497895637604","Onitsha South","NG-AN",232352,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ONITSHA SOUTH","NG004018","exact",0
+"59680162B61995403132351","Agatu","NG-BE",200704,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AGATU","NG007002","exact",0
+"59680162B56865757670534","Dala","NG-KN",574172,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DALA","NG020007","exact",0
+"59680162B63960569375521","Anka","NG-ZA",204761,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ANKA","NG037001","exact",0
+"59680162B46902450612836","Tofa","NG-KN",130768,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","TOFA","NG020039","exact",0
+"59680162B27261417712833","Ingawa","NG-KT",216973,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","INGAWA","NG021015","exact",0
+"59680162B58427071840888","Uvwie","NG-DE",281467,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","UVWIE","NG010022","exact",0
+"59680162B2298430697284","Idanre","NG-ON",171174,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IDANRE","NG029008","exact",0
+"59680162B68325668602500","Okpe","NG-DE",191491,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OKPE","NG010013","exact",0
+"59680162B97377368460903","Anambra West","NG-AN",153846,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ANAMBRA WEST","NG004003","exact",0
+"59680162B75104511306168","Mushin","NG-LA",644842,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MUSHIN","NG025016","exact",0
+"59680162B49213136576829","Shagamu","NG-OG",366363,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SHAGAMU","NG028020","exact",0
+"59680162B11436342937739","Biase","NG-CR",243516,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BIASE","NG009007","exact",0
+"59680162B19536521240899","Gaya","NG-KN",286326,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GAYA","NG020016","exact",0
+"59680162B50452180674611","Charanchi","NG-KT",180221,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","CHARANCHI","NG021006","exact",0
+"59680162B80670265641804","Etsako Central","NG-ED",190675,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ETSAKO CENTRAL","NG012007","exact",0
+"59680162B8258215962885","Darazo","NG-BA",332330,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DARAZO","NG005005","exact",0
+"59680162B15951041920960","Ijumu","NG-KO",183951,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IJUMU","NG023009","exact",0
+"59680162B70509973828236","Irepodun","NG-KW",176401,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IREPODUN","NG024009","exact",0
+"59680162B66692684641238","Egbeda","NG-OY",540916,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EGBEDA","NG031005","exact",0
+"59680162B2512996274201","Akoko South East","NG-ON",126707,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AKOKO SOUTH EAST","NG029003","exact",0
+"59680162B51925471610757","Faskari","NG-KT",313498,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","FASKARI","NG021013","exact",0
+"59680162B77220990792423","Makarfi","NG-KD",179677,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Markafi","NG019018","fuzzy",0.0714
+"59680162B80910542790982","Udu","NG-DE",212489,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","UDU","NG010018","exact",0
+"59680162B46455483877403","Bunkure","NG-KN",215967,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BUNKURE","NG020006","exact",0
+"59680162B95285688800937","Funtua","NG-KT",288740,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","FUNTUA","NG021014","exact",0
+"59680162B98747212970025","Dambatta","NG-KN",368353,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DAMBATTA","NG020008","exact",0
+"59680162B40329870656537","Jakusko","NG-YO",584828,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","JAKUSKO","NG036009","exact",0
+"59680162B24203265637376","Gwale","NG-KN",490622,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GWALE","NG020018","exact",0
+"59680162B12953009585437","Babura","NG-JI",281946,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BABURA","NG018002","exact",0
+"59680162B63156374952276","Sapele","NG-DE",185653,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SAPELE","NG010017","exact",0
+"59680162B56433787774877","Ika North East","NG-DE",230192,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IKA NORTH EAST","NG010007","exact",0
+"59680162B1513568068009","Surulere","NG-LA",1047767,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SURULERE","NG025020","exact",0
+"59680162B19163785016026","Garun Malam","NG-KN",176190,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Garum Mallam","NG020015","fuzzy",0.1859
+"59680162B40988548898234","Offa","NG-KW",92150,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OFFA","NG024013","exact",0
+"59680162B68379866165825","Shomolu","NG-LA",495541,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Shomolu","NG025019","exact",0
+"59680162B1898458611197","Makoda","NG-KN",385190,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MAKODA","NG020029","exact",0
+"59680162B46553103488347","Rimin Gado","NG-KN",153568,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","RIMIN GADO","NG020033","exact",0
+"59680162B61002782115608","Yusufari","NG-YO",212272,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","YUSUFARI","NG036017","exact",0
+"59680162B66680936539808","Bassa","NG-KO",192142,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BASSA","NG023004","exact",0
+"59680162B13393519160177","Jahun","NG-JI",273358,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","JAHUN","NG018014","exact",0
+"59680162B7192144408722","Kurfi","NG-KT",160336,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KURFI","NG021022","exact",0
+"59680162B89634889188856","Esan West","NG-ED",158642,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ESAN WEST","NG012006","exact",0
+"59680162B72659245241320","Kaduna North","NG-KD",333089,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KADUNA NORTH","NG019009","exact",0
+"59680162B94433697734962","Daura","NG-KT",451408,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DAURA","NG021010","exact",0
+"59680162B86116731035265","Gassol","NG-TA",305483,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GASSOL","NG035005","exact",0
+"59680162B19523503473687","Auyo","NG-JI",185537,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AUYO","NG018001","exact",0
+"59680162B14541309037731","Wudil","NG-KN",246924,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","WUDIL","NG020044","exact",0
+"59680162B12574760496394","Ikara","NG-KD",255146,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IKARA","NG019005","exact",0
+"59680162B99856631560735","Ifedore","NG-ON",264096,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IFEDORE","NG029009","exact",0
+"59680162B89203090045374","Lavun","NG-NI",317990,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","LAVUN","NG027013","exact",0
+"59680162B96995039930644","Dange Shuni","NG-SO",289446,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DANGE-SHUNI","NG034003","exact",0
+"59680162B21216344152794","Yewa North","NG-OG",186815,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Egbado North","NG028004","exact",0
+"59680162B12426298681132","Tsafe","NG-ZA",379693,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","TSAFE","NG037013","exact",0
+"59680162B94527775336179","Ekiti","NG-KW",69185,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EKITI","NG024004","exact",0
+"59680162B28239494939120","Zuru","NG-KE",241916,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ZURU","NG022021","exact",0
+"59680162B26925253941931","Yagba West","NG-KO",221676,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","YAGBA WEST","NG023021","exact",0
+"59680162B62255786160615","Kogi","NG-KO",140014,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KOGI","NG023011","exact",0
+"59680162B45171834970391","Olamaboro","NG-KO",209082,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Olamabolo","NG023018","fuzzy",0.0741
+"59680162B61774592523326","Odigbo","NG-ON",304734,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ODIGBO","NG029013","exact",0
+"59680162B37327775180775","Agege","NG-LA",549699,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AGEGE","NG025001","exact",0
+"59680162B54095353953704","Kibiya","NG-KN",213147,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KIBIYA","NG020023","exact",0
+"59680162B97277051818349","Isin","NG-KW",71089,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ISIN","NG024010","exact",0
+"59680162B7149387462115","Sabon Gari","NG-KD",330314,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Sabon-Gari","NG019019","exact",0
+"59680162B52658055469559","Malam Madori","NG-JI",234370,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MALAM MADORI","NG018021","exact",0
+"59680162B326996000256","Lokoja","NG-KO",664979,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","LOKOJA","NG023012","exact",0
+"59680162B73824932270854","Ede South","NG-OS",73682,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EDE SOUTH","NG030008","exact",0
+"59680162B2967434957315","Giwa","NG-KD",435392,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GIWA","NG019003","exact",0
+"59680162B9357675593038","Ikole","NG-EK",211314,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IKOLE","NG013011","exact",0
+"59680162B19874744513454","Kunchi","NG-KN",161504,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KUNCHI","NG020026","exact",0
+"59680162B66353567053476","Guri","NG-JI",159249,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GURI","NG018010","exact",0
+"59680162B25309364748934","Maru","NG-ZA",417882,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MARU","NG037010","exact",0
+"59680162B57621312639176","Dukku","NG-GO",239728,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DUKKU","NG016004","exact",0
+"59680162B10831398447622","Wamakko","NG-SO",199901,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","WAMAKO","NG034021","fuzzy",0.0476
+"59680162B41605859942250","Oke Ero","NG-KW",72461,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OKE-ERO","NG024014","exact",0
+"59680162B18924931802221","Oshodi/Isolo","NG-LA",766906,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OSHODI-ISOLO","NG025018","exact",0
+"59680162B89355923746110","Abadam","NG-BO",169340,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ABADAM","NG008001","exact",0
+"59680162B58812788921078","Moba","NG-EK",160712,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MOBA","NG013015","exact",0
+"59680162B34682847069002","Gwagwalada","NG-FC",425598,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GWAGWALADA","NG015004","exact",0
+"59680162B89404589930000","Kagarko","NG-KD",494729,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KAGARKO","NG019011","exact",0
+"59680162B29524904273451","Abaji","NG-FC",141900,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ABAJI","NG015001","exact",0
+"59680162B82734256395858","Sardauna","NG-TA",280013,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SARDAUNA","NG035011","exact",0
+"59680162B85769693016783","Shanga","NG-KE",167790,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SHANGA","NG022017","exact",0
+"59680162B79463473975333","Birnin Gwari","NG-KD",407085,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Birnin-Gwari","NG019001","exact",0
+"59680162B87284296025200","Ngaski","NG-KE",201323,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NGASKI","NG022015","exact",0
+"59680162B24550873512487","Chikun","NG-KD",494082,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","CHIKUN","NG019002","exact",0
+"59680162B47779539071975","Yauri","NG-KE",132714,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","YAURI","NG022020","exact",0
+"59680162B79526209894783","Kauru","NG-KD",366709,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KAURU","NG019014","exact",0
+"59680162B45761287530482","Demsa","NG-AD",291354,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DEMSA","NG002001","exact",0
+"59680162B33788323646847","Umuahia South","NG-AB",199382,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","UMUAHIA SOUTH","NG001016","exact",0
+"59680162B29331014496737","Obokun","NG-OS",194248,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OBOKUN","NG030024","exact",0
+"59680162B78900735102434","Owerri West","NG-IM",123515,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OWERRI WEST","NG017025","exact",0
+"59680162B9133954487337","Nasarawa","NG-NA",238977,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Nasarawa","NG026009","exact",0
+"59680162B38736391522213","Idemili South","NG-AN",271999,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IDEMILI SOUTH","NG004011","exact",0
+"59680162B53329994117155","Aba North","NG-AB",115305,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ABA NORTH","NG001001","exact",0
+"59680162B82944797684000","Odeda","NG-OG",120293,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ODEDA","NG028016","exact",0
+"59680162B17778966736574","Ijebu East","NG-OG",170329,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IJEBU EAST","NG028008","exact",0
+"59680162B94450341733030","Okpokwu","NG-BE",297557,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OKPOKWU","NG007018","exact",0
+"59680162B64183111122385","Shomgom","NG-GO",233775,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Shomgom","NG016010","exact",0
+"59680162B25214275797379","Ado-Ekiti","NG-EK",548794,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Ado Ekiti","NG013001","exact",0
+"59680162B56887411771488","Ahiazu-Mbaise","NG-IM",264321,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Ahiazu-Mbaise","NG017002","exact",0
+"59680162B11863934245151","Ankpa","NG-KO",352915,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ANKPA","NG023003","exact",0
+"59680162B31302026198632","Nkwerre","NG-IM",115409,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NKWERRE","NG017014","exact",0
+"59680162B6932812925911","Apa","NG-BE",168031,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","APA","NG007003","exact",0
+"59680162B2505789698133","Kwande","NG-BE",298866,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KWANDE","NG007011","exact",0
+"59680162B83284995722346","Ikom","NG-CR",187481,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IKOM","NG009012","exact",0
+"59680162B17555212909244","Ido-Osi","NG-EK",226277,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IDO-OSI","NG013008","exact",0
+"59680162B72042998542035","Ukwa East","NG-AB",90755,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","UKWA EAST","NG001013","exact",0
+"59680162B46910461063287","Ukwa West","NG-AB",136659,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","UKWA WEST","NG001014","exact",0
+"59680162B31350853830247","Nnewi South","NG-AN",321893,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NNEWI SOUTH","NG004015","exact",0
+"59680162B50576086706147","Bende","NG-AB",244495,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BENDE","NG001004","exact",0
+"59680162B88090020431393","Okigwe","NG-IM",200665,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OKIGWE","NG017019","exact",0
+"59680162B54185205976265","Jama'Are","NG-BA",170727,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Jama'are","NG005011","exact",0
+"59680162B28903777440270","Kokona","NG-NA",142132,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KOKONA","NG026007","exact",0
+"59680162B20020413332718","Mafa","NG-BO",205610,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MAFA","NG008019","exact",0
+"59680162B95139171035149","Akko","NG-GO",421273,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AKKO","NG016001","exact",0
+"59680162B69595078054024","Ushongo","NG-BE",260656,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","USHONGO","NG007022","exact",0
+"59680162B95469939765095","Ehime-Mbano","NG-IM",153012,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Ehime-Mbano","NG017003","exact",0
+"59680162B23369049466603","Ideato South","NG-IM",280111,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IDEATO SOUTH","NG017006","exact",0
+"59680162B5974853059370","Ife South","NG-OS",178785,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IFE SOUTH","NG030014","exact",0
+"59680162B91981903970684","Oyi","NG-AN",343277,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OYI","NG004021","exact",0
+"59680162B46774046834533","Ekiti South-West","NG-EK",169544,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EKITI SOUTH WEST","NG013005","exact",0
+"59680162B31003411858547","Ayamelum","NG-AN",322772,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AYAMELUM","NG004007","exact",0
+"59680162B96723309662383","Aboh-Mbaise","NG-IM",286533,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Aboh-Mbaise","NG017001","exact",0
+"59680162B76636581595069","Ilejemeje","NG-EK",48036,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Ilejemeji","NG013012","fuzzy",0.0741
+"59680162B59739898555342","Mbatoli","NG-IM",330849,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MBAITOLI","NG017011","fuzzy",0.1369
+"59680162B55799213409467","Akamkpa","NG-CR",164948,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AKAMKPA","NG009002","exact",0
+"59680162B7784772599553","Obi Nwga","NG-AB",238027,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Obi Ngwa","NG001009","fuzzy",0.0417
+"59680162B24857715869577","Logo","NG-BE",250105,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","LOGO","NG007012","exact",0
+"59680162B47044873054392","Guma","NG-BE",282350,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GUMA","NG007006","exact",0
+"59680162B30816727026324","Ogoja","NG-CR",245819,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OGOJA","NG009017","exact",0
+"59680162B76876152340896","Ohafia","NG-AB",353882,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OHAFIA","NG001010","exact",0
+"59680162B54356159238049","Orumba North","NG-AN",204146,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ORUMBA NORTH","NG004019","exact",0
+"59680162B34366982763718","Ado","NG-BE",284411,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ADO","NG007001","exact",0
+"59680162B43531883815254","Toto","NG-NA",137915,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","TOTO","NG026012","exact",0
+"59680162B61270202433812","Egbedore","NG-OS",118279,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EGBEDORE","NG030009","exact",0
+"59680162B39513276000218","Owerri North","NG-IM",214044,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OWERRI NORTH","NG017024","exact",0
+"59680162B93345317219884","Idemili North","NG-AN",566845,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IDEMILI NORTH","NG004010","exact",0
+"59680162B80116312922204","Isiala-Ngwa South","NG-AB",165135,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Isiala-Ngwa South","NG001007","exact",0
+"59680162B83394095212312","Funakaye","NG-GO",400032,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","FUNAKAYE","NG016005","exact",0
+"59680162B67606782034303","Katsina-Ala","NG-BE",332550,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KATSINA-ALA","NG007009","exact",0
+"59680162B23155718085687","Mokwa","NG-NI",522341,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MOKWA","NG027017","exact",0
+"59680162B9128777704300","Aba South","NG-AB",384940,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ABA SOUTH","NG001002","exact",0
+"59680162B83278495681126","Edati","NG-NI",242261,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EDATI","NG027007","exact",0
+"59680162B50359341822283","Odogbolu","NG-OG",155729,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ODOGBOLU","NG028017","exact",0
+"59680162B30817931145163","Balanga","NG-GO",301885,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BALANGA","NG016002","exact",0
+"59680162B36139632039116","Ijebu North East","NG-OG",85605,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IJEBU NORTH EAST","NG028010","exact",0
+"59680162B20372712773645","Oturkpo","NG-BE",406929,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Oturkpo","NG007019","exact",0
+"59680162B64112154685735","Abi","NG-CR",231238,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ABI","NG009001","exact",0
+"59680162B2351853936587","Ideato North","NG-IM",179391,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IDEATO NORTH","NG017005","exact",0
+"59680162B70922239420655","Oriade","NG-OS",237243,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ORIADE","NG030028","exact",0
+"59680162B27389948970996","Illela","NG-SO",149006,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ILLELA","NG034008","exact",0
+"59680162B11133908611483","Nwangele","NG-IM",183590,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NWANGELE","NG017015","exact",0
+"59680162B92942987363648","Ife East","NG-OS",312801,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IFE EAST","NG030012","exact",0
+"59680162B73921161942586","Obanliku","NG-CR",215222,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OBANLIKU","NG009013","exact",0
+"59680162B32871052171758","Onuimo","NG-IM",150261,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Unuimo","NG017027","fuzzy",0.1778
+"59680162B7635361694273","Qua'An Pan","NG-PL",240467,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","QUA'AN PAN","NG032014","exact",0
+"59680162B61451583552190","Ngor-Okpala","NG-IM",160137,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NGOR-OKPALA","NG017012","exact",0
+"59680162B85361781814064","Ona Ara","NG-OY",498930,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Ona-Ara","NG031026","exact",0
+"59680162B31217574251855","Igbo-Eze North","NG-EN",418902,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Igbo-Eze North","NG014008","exact",0
+"59680162B46226733150895","Oju","NG-BE",228736,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OJU","NG007017","exact",0
+"59680162B7029176012538","Boluwaduro","NG-OS",95075,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BOLUWADURO","NG030005","exact",0
+"59680162B85493721249292","Shinkafi","NG-ZA",186114,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SHINKAFI","NG037011","exact",0
+"59680162B44850901768514","Orsu","NG-IM",143970,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ORSU","NG017021","exact",0
+"59680162B92640548002056","Anaocha","NG-AN",351001,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ANAOCHA","NG004004","exact",0
+"59680162B86980115162892","Bekwarra","NG-CR",151146,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Bekwara","NG009006","fuzzy",0.0417
+"59680162B46179290363212","Umu-Nneochi","NG-AB",255058,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Umu-Nneochi","NG001017","exact",0
+"59680162B83455285452940","Ose","NG-ON",194616,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OSE","NG029017","exact",0
+"59680162B73952515985037","Nnewi North","NG-AN",210730,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NNEWI NORTH","NG004014","exact",0
+"59680162B56866992006033","Akoko North West","NG-ON",327826,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AKOKO NORTH WEST","NG029002","exact",0
+"59680162B9948554175301","Ilesha East","NG-OS",139822,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Ilesha East","NG030018","exact",0
+"59680162B42022523568798","Njikoka","NG-AN",250171,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NJIKOKA","NG004013","exact",0
+"59680162B99262810585367","Ohaji/Egbema","NG-IM",244727,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OHAJI/EGBEMA","NG017018","exact",0
+"59680162B83386112613514","Gombe","NG-GO",371350,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GOMBE","NG016006","exact",0
+"59680162B94225169025314","Owerri Municipal","NG-IM",152147,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Owerri-Municipal","NG017026","exact",0
+"59680162B98467355573765","Keana","NG-NA",113033,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KEANA","NG026005","exact",0
+"59680162B24000905354670","Ohaukwu","NG-EB",196619,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OHAUKWU","NG011012","exact",0
+"59680162B53652676960042","Gbonyin","NG-EK",277739,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Aiyekire (Gbonyin)","NG013002","sole_remaining",0.5724
+"59680162B35426409409773","Isiala Mbano","NG-IM",321358,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ISIALA MBANO","NG017009","exact",0
+"59680162B16609728895319","Irepodun/Ifelodun","NG-EK",136417,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IREPODUN/IFELODUN","NG013013","exact",0
+"59680162B2017456399117","Obowo","NG-IM",186875,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OBOWO","NG017016","exact",0
+"59680162B83041511737206","Isuikwuato","NG-AB",181063,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Isiukwuato","NG001008","fuzzy",0.0333
+"59680162B75733324884372","Makurdi","NG-BE",327946,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MAKURDI","NG007013","exact",0
+"59680162B69095881694103","Gboko","NG-BE",449938,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GBOKO","NG007005","exact",0
+"59680162B28710912427622","Ife Central","NG-OS",277298,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IFE CENTRAL","NG030011","exact",0
+"59680162B87049040782715","Isiala-Ngwa North","NG-AB",221635,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Isiala-Ngwa North","NG001006","exact",0
+"59680162B19335323694639","Yakurr","NG-CR",249139,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","YAKURR","NG009018","exact",0
+"59680162B8070211954831","Billiri","NG-GO",413004,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BILLIRI","NG016003","exact",0
+"59680162B76413580563978","Dunukofia","NG-AN",162715,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DUNUKOFIA","NG004008","exact",0
+"59680162B33112577829488","Osisioma Ngwa","NG-AB",288754,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OSISIOMA NGWA","NG001011","exact",0
+"59680162B48244867814587","Ola Oluwa","NG-OS",128262,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Ola-oluwa","NG030026","exact",0
+"59680162B37281482686762","Wamba","NG-NA",108280,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","WAMBA","NG026013","exact",0
+"59680162B47985033068277","Boripe","NG-OS",191183,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BORIPE","NG030006","exact",0
+"59680162B30655337934726","Yala","NG-CR",249115,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","YALA","NG009019","exact",0
+"59680162B7486965108625","Aguata","NG-AN",415964,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AGUATA","NG004001","exact",0
+"59680162B59054541310664","Calabar Municipal","NG-CR",182756,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Calabar-Municipal","NG009010","exact",0
+"59680162B73411137510562","Onitsha North","NG-AN",213259,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ONITSHA NORTH","NG004017","exact",0
+"59680162B14415495238729","Ukum","NG-BE",245413,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","UKUM","NG007021","exact",0
+"59680162B66631777088899","Isa","NG-SO",205692,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ISA","NG034009","exact",0
+"59680162B53764009147535","Ogun Waterside","NG-OG",77587,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OGUN WATERSIDE","NG028018","exact",0
+"59680162B54301811333050","Ifelodun","NG-OS",105933,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IFELODUN","NG030016","exact",0
+"59680162B7938799528038","Arochukwu","NG-AB",255439,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AROCHUKWU","NG001003","exact",0
+"59680162B95372959647234","Ijebu Ode","NG-OG",195546,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Ijebu Ode","NG028011","exact",0
+"59680162B56106136996502","Magumeri","NG-BO",322463,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MAGUMERI","NG008020","exact",0
+"59680162B37931278966472","Boki","NG-CR",209387,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BOKI","NG009008","exact",0
+"59680162B2944873791560","Kwami","NG-GO",269972,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KWAMI","NG016008","exact",0
+"59680162B97170897047692","Ekiti East","NG-EK",259618,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EKITI EAST","NG013004","exact",0
+"59680162B98306169506823","Moro","NG-KW",118542,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MORO","NG024012","exact",0
+"59680162B50771081897552","Ezinihitte","NG-IM",268321,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EZINIHITTE","NG017004","exact",0
+"59680162B27876975276040","Kala Balge","NG-BO",120214,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KALA/BALGE","NG008015","exact",0
+"59680162B80791368745463","Awe","NG-NA",156261,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AWE","NG026002","exact",0
+"59680162B59567965419701","Orolu","NG-OS",129916,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OROLU","NG030029","exact",0
+"59680162B46550202368720","Obubra","NG-CR",193386,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OBUBRA","NG009014","exact",0
+"59680162B54275853767873","Akoko-Edo","NG-ED",481546,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AKOKO-EDO","NG012001","exact",0
+"59680162B73238408569532","Osogbo","NG-OS",198127,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OSOGBO","NG030030","exact",0
+"59680162B94034829608504","Ise/Orun","NG-EK",147267,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ISE/ORUN","NG013014","exact",0
+"59680162B71691370147242","Njaba","NG-IM",267657,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NJABA","NG017013","exact",0
+"59680162B75172896497028","Obi","NG-BE",134000,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OBI","NG007014","exact",0
+"59680162B99039921741080","Buruku","NG-BE",284075,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BURUKU","NG007004","exact",0
+"59680162B9948575660850","Obudu","NG-CR",267735,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OBUDU","NG009015","exact",0
+"59680162B21498960785654","Orlu","NG-IM",151525,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ORLU","NG017020","exact",0
+"59680162B23671729796425","Iwo","NG-OS",302585,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IWO","NG030023","exact",0
+"59680162B18488232241930","Awka North","NG-AN",180535,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AWKA NORTH","NG004005","exact",0
+"59680162B13650355505793","Tarka","NG-BE",98721,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","TARKA","NG007020","exact",0
+"59680162B14302921886514","Umuahia North","NG-AB",319932,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","UMUAHIA NORTH","NG001015","exact",0
+"59680162B86061563506110","Odo Otin","NG-OS",184667,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Odo-Otin","NG030025","exact",0
+"59680162B44242102017414","Ihiala","NG-AN",423374,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IHIALA","NG004012","exact",0
+"59680162B98234428566305","Ilesha West","NG-OS",141670,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Ilesha West","NG030019","exact",0
+"59680162B43215766185997","Kaltungo","NG-GO",248399,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KALTUNGO","NG016007","exact",0
+"59680162B77368104900520","Irepodun","NG-OS",151088,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IREPODUN","NG030020","exact",0
+"59680162B19549725656045","Ebonyi","NG-EB",140003,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EBONYI","NG011004","exact",0
+"59680162B86357482908219","Lafia","NG-NA",394289,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","LAFIA","NG026008","exact",0
+"59680162B7511527862302","Ijebu North","NG-OG",461996,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IJEBU NORTH","NG028009","exact",0
+"59680162B28606864431003","Ndokwa West","NG-DE",192436,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NDOKWA WEST","NG010012","exact",0
+"59680162B47841916602322","Ikeduru","NG-IM",180365,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IKEDURU","NG017008","exact",0
+"59680162B48603200461333","Okehi","NG-KO",297835,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OKEHI","NG023016","exact",0
+"59680162B47339407576735","Yamaltu/Deba","NG-GO",257083,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","YAMALTU/DEBA","NG016011","exact",0
+"59680162B54887547034560","Emure","NG-EK",121821,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EMURE","NG013007","exact",0
+"59680162B84830000650933","Ikere","NG-EK",327595,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IKERE","NG013010","exact",0
+"59680162B16893313163973","Oguta","NG-IM",201960,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OGUTA","NG017017","exact",0
+"59680162B50777093344409","Konshisha","NG-BE",307008,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KONSHISHA","NG007010","exact",0
+"59680162B4821538642969","Ejigbo","NG-OS",220477,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EJIGBO","NG030010","exact",0
+"59680162B25446485561557","Gwer West","NG-BE",174768,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GWER WEST","NG007008","exact",0
+"59680162B25131261753844","Etung","NG-CR",91670,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ETUNG","NG009011","exact",0
+"59680162B99060674505372","Ekwusigo","NG-AN",214782,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EKWUSIGO","NG004009","exact",0
+"59680162B51712615582520","Ijero","NG-EK",449216,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IJERO","NG013009","exact",0
+"59680162B43108992465432","Ugwunagbo","NG-AB",111713,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","UGWUNAGBO","NG001012","exact",0
+"59680162B28193395760126","Olorunda","NG-OS",181207,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OLORUNDA","NG030027","exact",0
+"59680162B44675208679717","Nasarawa Egon","NG-NA",262232,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Nasarawa-Eggon","NG026010","fuzzy",0.0238
+"59680162B47259322211203","Ede North","NG-OS",81810,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EDE NORTH","NG030007","exact",0
+"59680162B28595276838631","Afikpo South","NG-EB",309829,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AFIKPO SOUTH","NG011003","exact",0
+"59680162B53120698145103","Oru West","NG-IM",152725,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ORU WEST","NG017023","exact",0
+"59680162B18196869714953","Anambra East","NG-AN",310520,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ANAMBRA EAST","NG004002","exact",0
+"59680162B81014786719276","Vandeikya","NG-BE",296296,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","VANDEIKYA","NG007023","exact",0
+"59680162B20429116941940","Atakunmosa West","NG-OS",87687,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Atakumosa West","NG030004","fuzzy",0.0222
+"59680162B97395677882832","Ogbaru","NG-AN",226795,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OGBARU","NG004016","exact",0
+"59680162B4745386112936","Ikwuano","NG-AB",316803,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IKWUANO","NG001005","exact",0
+"59680162B35305934518280","Keffi","NG-NA",121174,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KEFFI","NG026006","exact",0
+"59680162B7261312330016","Adavi","NG-KO",261841,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ADAVI","NG023001","exact",0
+"59680162B91755424681987","Oru East","NG-IM",147495,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ORU EAST","NG017022","exact",0
+"59680162B54973397451304","Remo North","NG-OG",83352,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","REMO NORTH","NG028019","exact",0
+"59680162B13670821264537","Karu","NG-NA",339039,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KARU","NG026004","exact",0
+"59680162B19467626863877","Ikenne","NG-OG",166165,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IKENNE","NG028012","exact",0
+"59680162B66079212084305","Ila","NG-OS",80919,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ILA","NG030017","exact",0
+"59680162B87556890682936","Doma","NG-NA",185585,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DOMA","NG026003","exact",0
+"59680162B63392407575553","Nafada","NG-GO",235944,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NAFADA","NG016009","exact",0
+"59680162B99778789604362","Gwer East","NG-BE",210795,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GWER EAST","NG007007","exact",0
+"59680162B55690925628014","Efon","NG-EK",92462,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EFON","NG013003","exact",0
+"59680162B14530293305891","Ihitte/Uboma","NG-IM",180034,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IHITTE/UBOMA","NG017007","exact",0
+"59680162B72061925749770","Ekiti West","NG-EK",190456,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EKITI WEST","NG013006","exact",0
+"59680162B75725109309044","Atisbo","NG-OY",214803,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Atigbo","NG031004","fuzzy",0.1111
+"59680162B73807077480910","Isu","NG-IM",306530,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ISU","NG017010","exact",0
+"59680162B26648923761656","Ogbadibo","NG-BE",167103,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OGBADIBO","NG007015","exact",0
+"59680162B38390932765307","Atakunmosa East","NG-OS",97635,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Atakumosa East","NG030003","fuzzy",0.0222
+"59680162B44141715713069","Akwanga","NG-NA",166694,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AKWANGA","NG026001","exact",0
+"59680162B49809531314946","Rafi","NG-NI",258109,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","RAFI","NG027020","exact",0
+"59680162B36423706884187","Odukpani","NG-CR",264982,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ODUKPANI","NG009016","exact",0
+"59680162B42207826884677","Gbako","NG-NI",157994,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GBAKO","NG027008","exact",0
+"59680162B21365932465956","Ukwuani","NG-DE",152684,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","UKWUANI","NG010021","exact",0
+"59680162B42338651294858","Awka South","NG-AN",239941,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AWKA SOUTH","NG004006","exact",0
+"59680162B85303802109421","Gurara","NG-NI",147101,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GURARA","NG027009","exact",0
+"59680162B51611927546147","Kontagora","NG-NI",191099,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KONTAGORA","NG027011","exact",0
+"59680162B45761990386675","Mashegu","NG-NI",287189,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MASHEGU","NG027016","exact",0
+"59680162B62313947241233","Wushishi","NG-NI",109107,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","WUSHISHI","NG027025","exact",0
+"59680162B70265669805684","Shiroro","NG-NI",347580,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SHIRORO","NG027022","exact",0
+"59680162B99837769325291","Borgu","NG-NI",235930,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BORGU","NG027004","exact",0
+"59680162B14261849329471","Lapai","NG-NI",162029,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","LAPAI","NG027012","exact",0
+"59680162B66461609617276","Akoko South West","NG-ON",350999,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AKOKO SOUTH WEST","NG029004","exact",0
+"59680162B75618838886778","Rijau","NG-NI",221727,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","RIJAU","NG027021","exact",0
+"59680162B49614598703533","Chanchaga","NG-NI",247555,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","CHANCHAGA","NG027006","exact",0
+"59680162B84198311358077","Mariga","NG-NI",251001,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MARIGA","NG027015","exact",0
+"59680162B69298252864907","Munya","NG-NI",152595,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MUYA","NG027018","fuzzy",0.0667
+"59680162B93998087230069","Bosso","NG-NI",221601,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BOSSO","NG027005","exact",0
+"59680162B91872344495309","Suleja","NG-NI",370055,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SULEJA","NG027023","exact",0
+"59680162B6318880418470","Paikoro","NG-NI",199429,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","PAIKORO","NG027019","exact",0
+"59680162B46182656305392","Kanke","NG-PL",188473,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KANKE","NG032008","exact",0
+"59680162B88998270560680","Jos North","NG-PL",484532,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","JOS NORTH","NG032005","exact",0
+"59680162B89640587380951","Jos East","NG-PL",97871,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","JOS EAST","NG032004","exact",0
+"59680162B51317919954642","Oredo","NG-ED",442670,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OREDO","NG012012","exact",0
+"59680162B21067903036313","Patani","NG-DE",83066,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","PATANI","NG010016","exact",0
+"59680162B53080807091718","Shendam","NG-PL",247983,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SHENDAM","NG032016","exact",0
+"59680162B99535636657731","Egor","NG-ED",402217,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EGOR","NG012002","exact",0
+"59680162B43697273286299","Langtang North","NG-PL",186387,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","LANGTANG NORTH","NG032009","exact",0
+"59680162B91711719497512","Jos South","NG-PL",356086,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","JOS SOUTH","NG032006","exact",0
+"59680162B72495617993590","Mikang","NG-PL",116529,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MIKANG","NG032012","exact",0
+"59680162B6096372749080","Barkin Ladi","NG-PL",307696,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Barikin Ladi","NG032001","fuzzy",0.149
+"59680162B11957186029310","Pankshin","NG-PL",288341,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","PANKSHIN","NG032013","exact",0
+"59680162B1032840889978","Bokkos","NG-PL",294878,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BOKKOS","NG032003","exact",0
+"59680162B1443452948914","Wase","NG-PL",217622,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","WASE","NG032017","exact",0
+"59680162B94726154492089","Bassa","NG-PL",258154,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Bassa","NG032002","exact",0
+"59680162B16963737840115","Orumba South","NG-AN",319867,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ORUMBA SOUTH","NG004020","exact",0
+"59680162B74099392913903","Kanam","NG-PL",215757,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KANAM","NG032007","exact",0
+"59680162B99351931357354","Langtang South","NG-PL",204396,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","LANGTANG SOUTH","NG032010","exact",0
+"59680162B68239008143557","Mangu","NG-PL",419947,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MANGU","NG032011","exact",0
+"59680162B63010488329613","Tafa","NG-NI",144316,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","TAFA","NG027024","exact",0
+"59680162B40491222708573","Magama","NG-NI",221249,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","MAGAMA","NG027014","exact",0
+"59680162B64027612781435","Agwara","NG-NI",73657,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AGWARA","NG027002","exact",0
+"59680162B48237076936000","Riyom","NG-PL",225513,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","RIYOM","NG032015","exact",0
+"59680162B28016750993437","Rabah","NG-SO",212732,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","RABAH","NG034012","exact",0
+"59680162B29308605862653","Ikwo","NG-EB",260913,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IKWO","NG011007","exact",0
+"59680162B21692666530817","Safana","NG-KT",241359,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SAFANA","NG021032","exact",0
+"59680162B51331479839153","Ajeromi/Ifelodun","NG-LA",1431755,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AJEROMI-IFELODUN","NG025002","exact",0
+"59680162B63684780260143","Koko-Besse","NG-KE",194943,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KOKO/BESSE","NG022013","exact",0
+"59680162B97817900806996","Epe","NG-LA",283549,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EPE","NG025007","exact",0
+"59680162B87731060313783","Sumaila","NG-KN",332650,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SUMAILA","NG020036","exact",0
+"59680162B76072611977433","Ogori/Magongo","NG-KO",36034,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OGORI/MAGONGO","NG023015","exact",0
+"59680162B96890005302109","Amuwo Odofin","NG-LA",260027,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AMUWO-ODOFIN","NG025004","exact",0
+"59680162B88365177272018","Tsanyawa","NG-KN",231231,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","TSANYAWA","NG020040","exact",0
+"59680162B89638160160445","Ibeju Lekki","NG-LA",482793,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Ibeju/Lekki","NG025009","exact",0
+"59680162B23949108035203","Ajaokuta","NG-KO",133506,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AJAOKUTA","NG023002","exact",0
+"59680162B43339423021624","Irepo","NG-OY",204025,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IREPO","NG031015","exact",0
+"59680162B76063539046075","Isoko North","NG-DE",160557,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ISOKO NORTH","NG010009","exact",0
+"59680162B4656907626813","Ezeagu","NG-EN",224970,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EZEAGU","NG014006","exact",0
+"59680162B53064832422435","Irele","NG-ON",180858,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IRELE","NG029012","exact",0
+"59680162B88663407419721","Owo","NG-ON",273949,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OWO","NG029018","exact",0
+"59680162B92999716235821","Dekina","NG-KO",334401,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","DEKINA","NG023005","exact",0
+"59680162B30693560799830","Akoko North East","NG-ON",269085,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AKOKO NORTH EAST","NG029001","exact",0
+"59680162B11018926765325","Oluyole","NG-OY",393677,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OLUYOLE","NG031025","exact",0
+"59680162B28887917480980","Ogba/Egbema/Ndoni","NG-RI",366698,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OGBA/EGBEMA/NDONI","NG033016","exact",0
+"59680162B58622494857171","Ovia South-West","NG-ED",205830,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OVIA SOUTH WEST","NG012015","exact",0
+"59680162B10854216301983","Ndokwa East","NG-DE",122906,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","NDOKWA EAST","NG010011","exact",0
+"59680162B31759462460359","Saki East","NG-OY",212832,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","SAKI EAST","NG031031","exact",0
+"59680162B38335311272259","Onicha","NG-EB",435295,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ONICHA","NG011013","exact",0
+"59680162B29085579275088","Ethiope East","NG-DE",308741,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ETHIOPE EAST","NG010005","exact",0
+"59680162B90915593246984","Obi","NG-NA",191389,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Obi","NG026011","exact",0
+"59680162B21986463159939","Oyo East","NG-OY",177714,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OYO EAST","NG031029","exact",0
+"59680162B35701990596564","Ivo","NG-EB",210728,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IVO","NG011009","exact",0
+"59680162B2904770846082","Etsako East","NG-ED",136817,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ETSAKO EAST","NG012008","exact",0
+"59680162B32979491305099","Oshimili South","NG-DE",278317,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OSHIMILI SOUTH","NG010015","exact",0
+"59680162B3302114520233","Izzi","NG-EB",302606,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IZZI","NG011010","exact",0
+"59680162B89324456878264","Isoko South","NG-DE",319461,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ISOKO SOUTH","NG010010","exact",0
+"59680162B18578493945657","Ezza South","NG-EB",166426,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EZZA SOUTH","NG011006","exact",0
+"59680162B1935816053049","Ofu","NG-KO",295472,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OFU","NG023014","exact",0
+"59680162B16701148271715","Aniocha North","NG-DE",154667,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ANIOCHA NORTH","NG010001","exact",0
+"59680162B29589714384573","Aniocha South","NG-DE",164355,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ANIOCHA SOUTH","NG010002","exact",0
+"59680162B24636018787341","Igalamela-Odolu","NG-KO",202102,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Igalamela-Odolu","NG023008","exact",0
+"59680162B99910214526625","Ibiono Ibom","NG-AK",279438,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IBIONO IBOM","NG003010","exact",0
+"59680162B95147302907135","Obot Akara","NG-AK",228476,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OBOT AKARA","NG003022","exact",0
+"59680162B3334363185534","Ogo Oluwa","NG-OY",102325,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OGO OLUWA","NG031023","exact",0
+"59680162B537197556674","Atiba","NG-OY",240939,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ATIBA","NG031003","exact",0
+"59680162B1338580155275","Ogbomosho South","NG-OY",133134,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Ogbomosho South","NG031022","exact",0
+"59680162B48615386953659","Ovia North-East","NG-ED",172794,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OVIA NORTH EAST","NG012014","exact",0
+"59680162B11241948791785","Afijio","NG-OY",183904,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AFIJIO","NG031001","exact",0
+"59680162B8886032648131","Ogbomosho North","NG-OY",330218,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Ogbomosho North","NG031021","exact",0
+"59680162B85189896765318","Ikwerre","NG-RI",248111,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IKWERRE","NG033013","exact",0
+"59680162B89342314449475","Esit Eket","NG-AK",93225,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Esit - Eket","NG003004","exact",0
+"59680162B6299894636493","Obio/Akpor","NG-RI",708008,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","Obia/Akpor","NG033015","fuzzy",0.1037
+"59680162B93423525469915","Etche","NG-RI",314993,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ETCHE","NG033011","exact",0
+"59680162B18672795330723","Askira Uba","NG-BO",145231,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ASKIRA/UBA","NG008002","exact",0
+"59680162B7305913438202","Gwadabawa","NG-SO",326766,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","GWADABAWA","NG034005","exact",0
+"59680162B39799007570945","Hadejia","NG-JI",146284,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","HADEJIA","NG018013","exact",0
+"59680162B41078826165134","Kiri Kasama","NG-JI",270533,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KIRI KASAMMA","NG018018","fuzzy",0.0278
+"59680162B88504568355174","Konduga","NG-BO",163946,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KONDUGA","NG008016","exact",0
+"59680162B64727590098747","Jere","NG-BO",209083,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","JERE","NG008013","exact",0
+"59680162B38204256572023","Eti Osa","NG-LA",399420,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ETI-OSA","NG025008","exact",0
+"59680162B6009908161486","Kosofe","NG-LA",838360,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","KOSOFE","NG025013","exact",0
+"59680162B6783963116345","Ibadan North","NG-OY",273931,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IBADAN NORTH","NG031006","exact",0
+"59680162B96934818178887","Akinyele","NG-OY",279058,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","AKINYELE","NG031002","exact",0
+"59680162B23843497952419","Ido","NG-OY",176092,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IDO","NG031014","exact",0
+"59680162B17793632216798","Ibadan North West","NG-OY",139914,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IBADAN NORTH WEST","NG031008","exact",0
+"59680162B83508950999506","Ibadan South West","NG-OY",252308,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IBADAN SOUTH WEST","NG031010","exact",0
+"59680162B26854390786792","Ibadan South East","NG-OY",274195,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IBADAN SOUTH EAST","NG031009","exact",0
+"59680162B79825109156569","Abeokuta South","NG-OG",193165,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ABEOKUTA SOUTH","NG028002","exact",0
+"59680162B54313559089261","Alimosho","NG-LA",3499809,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ALIMOSHO","NG025003","exact",0
+"59680162B46296414727789","Ifako/Ijaye","NG-LA",509217,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IFAKO-IJAYE","NG025010","exact",0
+"59680162B53104406185271","Ikorodu","NG-LA",1311043,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IKORODU","NG025012","exact",0
+"59680162B2266540401620","Ifo","NG-OG",1294626,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IFO","NG028007","exact",0
+"59680162B78935719106444","Ikeja","NG-LA",432247,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IKEJA","NG025011","exact",0
+"59680162B67809263123643","Ewekoro","NG-OG",132436,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","EWEKORO","NG028006","exact",0
+"59680162B67711641000031","Ojo","NG-LA",481190,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OJO","NG025017","exact",0
+"59680162B33139344805421","Badagry","NG-LA",412618,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","BADAGRY","NG025006","exact",0
+"59680162B74248263036628","Obafemi Owode","NG-OG",354562,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OBAFEMI-OWODE","NG028015","exact",0
+"59680162B19485775159758","Ipokia","NG-OG",154871,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","IPOKIA","NG028014","exact",0
+"59680162B2835516393243","Ohimini","NG-BE",107970,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","OHIMINI","NG007016","exact",0
+"59680162B83241100924072","Ilorin West","NG-KW",565233,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ILORIN WEST","NG024008","exact",0
+"59680162B59525703418999","Asa","NG-KW",172043,2020,"HDX cod-ps-nga nga_admpop_2020.xlsx (COD-PS NBS/UNFPA, projected from the 2006 census)","ASA","NG024001","exact",0

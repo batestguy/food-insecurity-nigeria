@@ -1,0 +1,53 @@
+# ---------------------------------------------------------------------------
+# LICENSED MICRODATA — never commit, never redistribute.
+# The DHS data-use agreement permits neither redistribution nor use outside the
+# registered project. Household-level derivatives are equally restricted.
+# ---------------------------------------------------------------------------
+data/restricted/
+
+# Household-level and area-level derivatives of the licensed microdata
+data/derived/analysis_households.csv
+data/derived/analysis_households_lga.csv
+data/derived/cluster_lga.csv
+data/derived/cluster_lga_fixed.csv
+data/derived/lga_posterior_draws.rds
+data/derived/raw_pop/
+
+# Raw downloads: NBS CPI files, DHS zips, e-library pages
+data/raw/
+
+# ---------------------------------------------------------------------------
+# Everything else that should not be in version control
+# ---------------------------------------------------------------------------
+logs/
+*.log
+
+# Browser automation artefacts
+.playwright-mcp/
+
+# Not published: the journal's call-for-papers image, and the AI critique that
+# started this project. Both stay local; AGENTS.md records what they said.
+IMG-*.jpg
+MathematicsApplied Paper.txt
+
+# Aggregates inherited from the disability project, with an unconfirmed licence
+data/public/dhs/
+
+# Session and scratch
+.agent/*-progress.md
+.agent/*-brief.md
+.agent/T5-verification/
+.agent/*-probe*.R
+.agent/*.orig
+__pycache__/
+*.pyc
+.Rhistory
+.RData
+.Rproj.user/
+renv/library/
+
+# Large binaries
+*.dta
+*.zip
+*.gpkg
+*.rds

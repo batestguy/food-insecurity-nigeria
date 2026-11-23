@@ -1,0 +1,1796 @@
+{
+  "generated_by": "scripts/lga_dataset.R",
+  "generated_on": "2026-11-22",
+  "command": "Rscript scripts/lga_dataset.R",
+  "ticket": "T9",
+  "inputs": {
+    "clusters": {
+      "path": "data/restricted/dhs-2024/ge/NGGE8AFL.shp",
+      "n": 1380
+    },
+    "households": {
+      "path": "data/derived/analysis_households.csv",
+      "n": 39877
+    },
+    "t8_cluster_assignment": {
+      "path": "data/derived/cluster_lga.csv",
+      "n": 1380,
+      "note": "T8 output, used as the baseline; never modified"
+    },
+    "t8_coverage": {
+      "path": "data/derived/lga_coverage.csv",
+      "n": 774
+    },
+    "boundaries": {
+      "adm1": "data/public/boundaries/geoBoundaries-NGA-ADM1_simplified.geojson",
+      "adm2": "data/public/boundaries/geoBoundaries-NGA-ADM2_simplified.geojson",
+      "licence": "CC BY 4.0 (geoBoundaries)"
+    }
+  },
+  "state_correction": {
+    "rule": "where the polygon parent state differs from the survey's own state (microdata `geography`), the survey state is kept and the cluster is moved to the nearest LGA inside that state, by planar distance in EPSG:32632",
+    "authority": "data/restricted/dhs-2024/ge/GPS_Displacement_README.txt lines 5-7: displacement keeps the point inside the same admin0/admin1/admin2 area, so DHS guarantees the cluster's LGA and the simplified polygon is the weaker link",
+    "clusters_state_disagreeing": 15,
+    "clusters_moved": 15,
+    "moved": [
+      {
+        "DHSCLUST": 119,
+        "survey_state": "NG-JI",
+        "polygon_state": "NG-KT",
+        "previous_lga": "Baure",
+        "new_lga": "Babura",
+        "distance_to_new_lga_m": 32.3,
+        "second_choice_lga": "Baure",
+        "second_choice_distance_m": 0
+      },
+      {
+        "DHSCLUST": 130,
+        "survey_state": "NG-JI",
+        "polygon_state": "NG-BA",
+        "previous_lga": "Zaki",
+        "new_lga": "Kiri Kasama",
+        "distance_to_new_lga_m": 144.3,
+        "second_choice_lga": "Zaki",
+        "second_choice_distance_m": 0
+      },
+      {
+        "DHSCLUST": 155,
+        "survey_state": "NG-YO",
+        "polygon_state": "NG-GO",
+        "previous_lga": "Nafada",
+        "new_lga": "Fika",
+        "distance_to_new_lga_m": 437.7,
+        "second_choice_lga": "Nafada",
+        "second_choice_distance_m": 0
+      },
+      {
+        "DHSCLUST": 273,
+        "survey_state": "NG-GO",
+        "polygon_state": "NG-BA",
+        "previous_lga": "Alkaleri",
+        "new_lga": "Akko",
+        "distance_to_new_lga_m": 138.8,
+        "second_choice_lga": "Alkaleri",
+        "second_choice_distance_m": 0
+      },
+      {
+        "DHSCLUST": 347,
+        "survey_state": "NG-KN",
+        "polygon_state": "NG-JI",
+        "previous_lga": "Babura",
+        "new_lga": "Dambatta",
+        "distance_to_new_lga_m": 23.7,
+        "second_choice_lga": "Babura",
+        "second_choice_distance_m": 0
+      },
+      {
+        "DHSCLUST": 490,
+        "survey_state": "NG-NI",
+        "polygon_state": "NG-KD",
+        "previous_lga": "Kagarko",
+        "new_lga": "Tafa",
+        "distance_to_new_lga_m": 28833,
+        "second_choice_lga": "Kagarko",
+        "second_choice_distance_m": 0
+      },
+      {
+        "DHSCLUST": 649,
+        "survey_state": "NG-BE",
+        "polygon_state": "NG-KO",
+        "previous_lga": "Ankpa",
+        "new_lga": "Apa",
+        "distance_to_new_lga_m": 2437.2,
+        "second_choice_lga": "Ankpa",
+        "second_choice_distance_m": 0
+      },
+      {
+        "DHSCLUST": 655,
+        "survey_state": "NG-BE",
+        "polygon_state": "NG-TA",
+        "previous_lga": "Wukari",
+        "new_lga": "Ukum",
+        "distance_to_new_lga_m": 9595.5,
+        "second_choice_lga": "Wukari",
+        "second_choice_distance_m": 0
+      },
+      {
+        "DHSCLUST": 697,
+        "survey_state": "NG-KO",
+        "polygon_state": "NG-ED",
+        "previous_lga": "Etsako East",
+        "new_lga": "Ajaokuta",
+        "distance_to_new_lga_m": 1407.9,
+        "second_choice_lga": "Etsako East",
+        "second_choice_distance_m": 0
+      },
+      {
+        "DHSCLUST": 899,
+        "survey_state": "NG-ON",
+        "polygon_state": "NG-DE",
+        "previous_lga": "Warri North",
+        "new_lga": "Ilaje",
+        "distance_to_new_lga_m": 4665.9,
+        "second_choice_lga": "Warri North",
+        "second_choice_distance_m": 0
+      },
+      {
+        "DHSCLUST": 1025,
+        "survey_state": "NG-EB",
+        "polygon_state": "NG-BE",
+        "previous_lga": "Ado",
+        "new_lga": "Ohaukwu",
+        "distance_to_new_lga_m": 161,
+        "second_choice_lga": "Ado",
+        "second_choice_distance_m": 0
+      },
+      {
+        "DHSCLUST": 1043,
+        "survey_state": "NG-EB",
+        "polygon_state": "NG-CR",
+        "previous_lga": "Abi",
+        "new_lga": "Afikpo North",
+        "distance_to_new_lga_m": 198.4,
+        "second_choice_lga": "Abi",
+        "second_choice_distance_m": 0
+      },
+      {
+        "DHSCLUST": 1121,
+        "survey_state": "NG-AB",
+        "polygon_state": "NG-AK",
+        "previous_lga": "Ini",
+        "new_lga": "Arochukwu",
+        "distance_to_new_lga_m": 27,
+        "second_choice_lga": "Ini",
+        "second_choice_distance_m": 0
+      },
+      {
+        "DHSCLUST": 1143,
+        "survey_state": "NG-AB",
+        "polygon_state": "NG-IM",
+        "previous_lga": "Ihitte/Uboma",
+        "new_lga": "Umuahia North",
+        "distance_to_new_lga_m": 227.8,
+        "second_choice_lga": "Ihitte/Uboma",
+        "second_choice_distance_m": 0
+      },
+      {
+        "DHSCLUST": 1195,
+        "survey_state": "NG-RI",
+        "polygon_state": "NG-BY",
+        "previous_lga": "Yenegoa",
+        "new_lga": "Ahoada West",
+        "distance_to_new_lga_m": 302.5,
+        "second_choice_lga": "Yenegoa",
+        "second_choice_distance_m": 0
+      }
+    ],
+    "lgas_gaining_clusters": ["Ilaje", "Afikpo North", "Ahoada West", "Fika", "Dambatta", "Apa", "Akko", "Ohaukwu", "Ukum", "Arochukwu", "Umuahia North", "Tafa", "Ajaokuta", "Kiri Kasama"],
+    "lgas_losing_clusters": ["Warri North", "Yenegoa", "Alkaleri", "Ini", "Zaki", "Wukari", "Baure", "Kagarko", "Ankpa", "Ado", "Abi", "Nafada", "Ihitte/Uboma", "Etsako East"],
+    "lgas_to_zero_clusters": 1,
+    "lgas_from_zero_clusters": 4,
+    "lgas_whose_count_changed": 28
+  },
+  "population": {
+    "status": "matched, with gaps",
+    "source": "HDX cod-ps-nga, nga_admpop_2020.xlsx sheet nga_admpop_adm2_2020 (COD-PS: NBS/UNFPA, projected from the 2006 census; reference year 2020)",
+    "source_url": "https://data.humdata.org/dataset/a7c3de5e-ff27-4746-99cd-05f2ad9b1066/resource/3597a93e-3b1d-4d06-ad2c-109c84a951b6/download/nga_admpop_2020.xlsx",
+    "source_retrieved": "2026-11-22",
+    "source_file": "data/derived/raw_pop/nga_admpop_2020.xlsx",
+    "source_md5": "F9D6F37A85F23CE959DDD9055CB0D9C8",
+    "source_bytes": 1672647,
+    "reference_year": 2020,
+    "gazetteer_downloaded_not_used": {
+      "path": "data/derived/raw_pop/nga_admgz.xlsx",
+      "md5": "B952D7703CCD46A86C2473A7583A1AF2",
+      "reason": "downloaded while locating the dataset; the workbook's own Admin2 sheet carries the pcodes, so the gazetteer was not needed"
+    },
+    "lgas_in_source": 773,
+    "lgas_matched_exact": 743,
+    "lgas_matched_fuzzy": 28,
+    "lgas_matched_sole_remaining": 2,
+    "lgas_unmatched": 1,
+    "unmatched_lgas": [
+      "Bakassi"
+    ],
+    "unmatched_lgas_states": [
+      "NG-CR"
+    ],
+    "fuzzy_matches": [
+      {
+        "lga_name": "Ayedade",
+        "nbs_name": "Aiyedade",
+        "jw_distance": 0.0417
+      },
+      {
+        "lga_name": "Ayedire",
+        "nbs_name": "Aiyedire",
+        "jw_distance": 0.1369
+      },
+      {
+        "lga_name": "Emuoha",
+        "nbs_name": "Emohua",
+        "jw_distance": 0.0833
+      },
+      {
+        "lga_name": "Birnin Kudu",
+        "nbs_name": "Birni Kudu",
+        "jw_distance": 0.0303
+      },
+      {
+        "lga_name": "Dambam",
+        "nbs_name": "Damban",
+        "jw_distance": 0.1111
+      },
+      {
+        "lga_name": "Tarmuwa",
+        "nbs_name": "Tarmua",
+        "jw_distance": 0.0476
+      },
+      {
+        "lga_name": "Birnin Magaji-Kiyaw",
+        "nbs_name": "Birnin Magaji",
+        "jw_distance": 0.1053
+      },
+      {
+        "lga_name": "Zangon Kataf",
+        "nbs_name": "Zango-Kataf",
+        "jw_distance": 0.0278
+      },
+      {
+        "lga_name": "Bagudu",
+        "nbs_name": "BAGUDO",
+        "jw_distance": 0.1111
+      },
+      {
+        "lga_name": "Iguegben",
+        "nbs_name": "IGUEBEN",
+        "jw_distance": 0.0417
+      },
+      {
+        "lga_name": "Makarfi",
+        "nbs_name": "Markafi",
+        "jw_distance": 0.0714
+      },
+      {
+        "lga_name": "Garun Malam",
+        "nbs_name": "Garum Mallam",
+        "jw_distance": 0.1859
+      },
+      {
+        "lga_name": "Olamaboro",
+        "nbs_name": "Olamabolo",
+        "jw_distance": 0.0741
+      },
+      {
+        "lga_name": "Wamakko",
+        "nbs_name": "WAMAKO",
+        "jw_distance": 0.0476
+      },
+      {
+        "lga_name": "Ilejemeje",
+        "nbs_name": "Ilejemeji",
+        "jw_distance": 0.0741
+      },
+      {
+        "lga_name": "Mbatoli",
+        "nbs_name": "MBAITOLI",
+        "jw_distance": 0.1369
+      },
+      {
+        "lga_name": "Obi Nwga",
+        "nbs_name": "Obi Ngwa",
+        "jw_distance": 0.0417
+      },
+      {
+        "lga_name": "Onuimo",
+        "nbs_name": "Unuimo",
+        "jw_distance": 0.1778
+      },
+      {
+        "lga_name": "Bekwarra",
+        "nbs_name": "Bekwara",
+        "jw_distance": 0.0417
+      },
+      {
+        "lga_name": "Isuikwuato",
+        "nbs_name": "Isiukwuato",
+        "jw_distance": 0.0333
+      },
+      {
+        "lga_name": "Nasarawa Egon",
+        "nbs_name": "Nasarawa-Eggon",
+        "jw_distance": 0.0238
+      },
+      {
+        "lga_name": "Atakunmosa West",
+        "nbs_name": "Atakumosa West",
+        "jw_distance": 0.0222
+      },
+      {
+        "lga_name": "Atisbo",
+        "nbs_name": "Atigbo",
+        "jw_distance": 0.1111
+      },
+      {
+        "lga_name": "Atakunmosa East",
+        "nbs_name": "Atakumosa East",
+        "jw_distance": 0.0222
+      },
+      {
+        "lga_name": "Munya",
+        "nbs_name": "MUYA",
+        "jw_distance": 0.0667
+      },
+      {
+        "lga_name": "Barkin Ladi",
+        "nbs_name": "Barikin Ladi",
+        "jw_distance": 0.149
+      },
+      {
+        "lga_name": "Obio/Akpor",
+        "nbs_name": "Obia/Akpor",
+        "jw_distance": 0.1037
+      },
+      {
+        "lga_name": "Kiri Kasama",
+        "nbs_name": "KIRI KASAMMA",
+        "jw_distance": 0.0278
+      }
+    ],
+    "alias_rules": [
+      "YEWA NORTH = EGBADO NORTH (Ogun)",
+      "YEWA SOUTH = EGBADO SOUTH (Ogun)",
+      "ABUJA MUNICIPAL * = MUNICIPAL AREA COUNCIL (FCT)"
+    ],
+    "population_total_matched_lgas": 204909220,
+    "population_total_workbook_state_sheet": 204909220,
+    "population_total_states_sheet_equals_lga_sum": true,
+    "population_total_all_lgas_if_complete_note": "the source workbook has 773 LGA rows for a 774-LGA country; the missing LGA is Bakassi, whose population is absent rather than apportioned. Its absence is not recoverable by subtraction: the workbook's own state-level sheet totals 204,909,220 persons, equal to the sum of the 773 LGA rows, so Bakassi is excluded from the source's national total as well",
+    "n_households_with_null_population": 0,
+    "n_lgas_with_null_population": 1,
+    "method": "normalised exact name match inside state, then one-to-one greedy Jaro-Winkler within state (ceiling 0.3), then the sole remaining pair in a state; no area apportionment, no interpolation"
+  },
+  "identification_shares": {
+    "note": "p is a POPULATION share: the identified-set width 1-p is about people. Both denominators are the 773 LGAs with a population figure.",
+    "before_correction": {
+      "assignment": "T8 geometry assignment (before correction)",
+      "lgas_zero_cluster": 123,
+      "lgas_with_data": 651,
+      "count_share_with_data": 0.841085,
+      "count_share_no_cluster": 0.158915,
+      "population_in_zero_cluster_lgas": 23723896,
+      "population_known_total": 204909220,
+      "population_share_no_cluster": 0.115778,
+      "lgas_zero_without_population": 1,
+      "households_in_zero_cluster_lgas": 0
+    },
+    "after_correction": {
+      "assignment": "survey-state correction (after)",
+      "lgas_zero_cluster": 120,
+      "lgas_with_data": 654,
+      "count_share_with_data": 0.844961,
+      "count_share_no_cluster": 0.155039,
+      "population_in_zero_cluster_lgas": 22616352,
+      "population_known_total": 204909220,
+      "population_share_no_cluster": 0.110373,
+      "lgas_zero_without_population": 1,
+      "households_in_zero_cluster_lgas": 28
+    },
+    "population_share_caveat": "LGAs with no population figure are excluded from both numerator and denominator. 1 zero-cluster LGA(s) before and 1 after have no figure, so the population share is a lower bound; the largest it could rise by is that LGA's share of the total, which is at most the largest LGA population in the file (3499809 people, 1.71% of the total)",
+    "area_share_for_comparison": "the count share is the area share and is what T8 reported (123/774)"
+  },
+  "counts": {
+    "zero_cluster_lgas_before": 123,
+    "zero_cluster_lgas_after": 120,
+    "buckets_before": {
+      "0": 123,
+      "1": 260,
+      "2-4": 357,
+      "5+": 34
+    },
+    "buckets_after": {
+      "0": 120,
+      "1": 266,
+      "2-4": 354,
+      "5+": 34
+    },
+    "reached_123_baseline": true
+  },
+  "merge_checks": {
+    "households": 39877,
+    "clusters": 1380,
+    "lgas": 774,
+    "household_lga_join": "one row per household, one lga_id each, asserted",
+    "cluster_to_lga_one_to_one": true,
+    "covariate_columns": 134,
+    "covariate_columns_renamed_by_read": 0
+  },
+  "covariates": {
+    "n_columns": 134,
+    "n_lga_with_two_or_more_clusters": 388,
+    "n_columns_constant_within_every_lga": 9,
+    "n_columns_with_any_missing": 17,
+    "n_columns_fully_missing": 0,
+    "definition": "constant_within_lga: for every LGA with two or more clusters, the column takes a single value; between_lga_var_share: between-LGA sum of squares over total sum of squares, computed on the 1380 clusters",
+    "table": [
+      {
+        "column": "DHSID",
+        "class": "character",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1380,
+        "n_lga_varying": 388,
+        "constant_within_lga": false,
+        "between_lga_var_share": "NA"
+      },
+      {
+        "column": "GPS_Dataset",
+        "class": "character",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1,
+        "n_lga_varying": 0,
+        "constant_within_lga": true,
+        "between_lga_var_share": "NA"
+      },
+      {
+        "column": "DHSCC",
+        "class": "character",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1,
+        "n_lga_varying": 0,
+        "constant_within_lga": true,
+        "between_lga_var_share": "NA"
+      },
+      {
+        "column": "DHSYEAR",
+        "class": "integer",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1,
+        "n_lga_varying": 0,
+        "constant_within_lga": true,
+        "between_lga_var_share": "NA"
+      },
+      {
+        "column": "SurveyID",
+        "class": "character",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1,
+        "n_lga_varying": 0,
+        "constant_within_lga": true,
+        "between_lga_var_share": "NA"
+      },
+      {
+        "column": "All_Population_Count_2000",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.854344
+      },
+      {
+        "column": "All_Population_Count_2005",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.834324
+      },
+      {
+        "column": "All_Population_Count_2010",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.856427
+      },
+      {
+        "column": "All_Population_Count_2015",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.837327
+      },
+      {
+        "column": "All_Population_Count_2020",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1256,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.836115
+      },
+      {
+        "column": "Aridity_2000",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.998728
+      },
+      {
+        "column": "Aridity_2005",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.998418
+      },
+      {
+        "column": "Aridity_2010",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.998613
+      },
+      {
+        "column": "Aridity_2015",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.998821
+      },
+      {
+        "column": "Aridity_2020",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.998689
+      },
+      {
+        "column": "Day_Land_Surface_Temp_2000",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.966159
+      },
+      {
+        "column": "Day_Land_Surface_Temp_2005",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.966839
+      },
+      {
+        "column": "Day_Land_Surface_Temp_2010",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.959293
+      },
+      {
+        "column": "Day_Land_Surface_Temp_2015",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.954057
+      },
+      {
+        "column": "Day_Land_Surface_Temp_2020",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.939082
+      },
+      {
+        "column": "Diurnal_Temperature_Range_2000",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1250,
+        "n_lga_varying": 376,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.999132
+      },
+      {
+        "column": "Diurnal_Temperature_Range_2005",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1246,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.99916
+      },
+      {
+        "column": "Diurnal_Temperature_Range_2010",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1255,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.999153
+      },
+      {
+        "column": "Diurnal_Temperature_Range_2015",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1253,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.999175
+      },
+      {
+        "column": "Diurnal_Temperature_Range_2020",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1255,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.999181
+      },
+      {
+        "column": "Drought_Episodes",
+        "class": "integer",
+        "n_missing": 136,
+        "pct_missing": 9.86,
+        "n_distinct": 7,
+        "n_lga_varying": 35,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.958792
+      },
+      {
+        "column": "Elevation",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.97903
+      },
+      {
+        "column": "Enhanced_Vegetation_Index_2000",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.950918
+      },
+      {
+        "column": "Enhanced_Vegetation_Index_2005",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.934987
+      },
+      {
+        "column": "Enhanced_Vegetation_Index_2010",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.927421
+      },
+      {
+        "column": "Enhanced_Vegetation_Index_2015",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.923273
+      },
+      {
+        "column": "Enhanced_Vegetation_Index_2020",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.903595
+      },
+      {
+        "column": "Frost_Days_2000",
+        "class": "integer",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1,
+        "n_lga_varying": 0,
+        "constant_within_lga": true,
+        "between_lga_var_share": "NA"
+      },
+      {
+        "column": "Frost_Days_2005",
+        "class": "integer",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1,
+        "n_lga_varying": 0,
+        "constant_within_lga": true,
+        "between_lga_var_share": "NA"
+      },
+      {
+        "column": "Frost_Days_2010",
+        "class": "integer",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1,
+        "n_lga_varying": 0,
+        "constant_within_lga": true,
+        "between_lga_var_share": "NA"
+      },
+      {
+        "column": "Frost_Days_2015",
+        "class": "integer",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1,
+        "n_lga_varying": 0,
+        "constant_within_lga": true,
+        "between_lga_var_share": "NA"
+      },
+      {
+        "column": "Frost_Days_2020",
+        "class": "integer",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1,
+        "n_lga_varying": 0,
+        "constant_within_lga": true,
+        "between_lga_var_share": "NA"
+      },
+      {
+        "column": "Global_Human_Footprint",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1217,
+        "n_lga_varying": 376,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.778726
+      },
+      {
+        "column": "Growing_Season_Length",
+        "class": "integer",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 11,
+        "n_lga_varying": 62,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.994792
+      },
+      {
+        "column": "Irrigation",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 410,
+        "n_lga_varying": 192,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.901534
+      },
+      {
+        "column": "ITN_Coverage_2000",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.94341
+      },
+      {
+        "column": "ITN_Coverage_2005",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.913405
+      },
+      {
+        "column": "ITN_Coverage_2010",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.985843
+      },
+      {
+        "column": "ITN_Coverage_2015",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.989843
+      },
+      {
+        "column": "ITN_Coverage_2020",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.981885
+      },
+      {
+        "column": "Land_Surface_Temperature_2000",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.957777
+      },
+      {
+        "column": "Land_Surface_Temperature_2005",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.950514
+      },
+      {
+        "column": "Land_Surface_Temperature_2010",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.94483
+      },
+      {
+        "column": "Land_Surface_Temperature_2015",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.939121
+      },
+      {
+        "column": "Land_Surface_Temperature_2020",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.924879
+      },
+      {
+        "column": "Livestock_Cattle",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1243,
+        "n_lga_varying": 376,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.828593
+      },
+      {
+        "column": "Livestock_Chickens",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1244,
+        "n_lga_varying": 376,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.736232
+      },
+      {
+        "column": "Livestock_Goats",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1244,
+        "n_lga_varying": 376,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.565255
+      },
+      {
+        "column": "Livestock_Pigs",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 718,
+        "n_lga_varying": 265,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.837252
+      },
+      {
+        "column": "Livestock_Sheep",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1244,
+        "n_lga_varying": 376,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.89838
+      },
+      {
+        "column": "Malaria_Incidence_2000",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.963964
+      },
+      {
+        "column": "Malaria_Incidence_2005",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.944576
+      },
+      {
+        "column": "Malaria_Incidence_2010",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.926382
+      },
+      {
+        "column": "Malaria_Incidence_2015",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.957514
+      },
+      {
+        "column": "Malaria_Incidence_2020",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.930011
+      },
+      {
+        "column": "Malaria_Prevalence_2000",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.965283
+      },
+      {
+        "column": "Malaria_Prevalence_2005",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.95421
+      },
+      {
+        "column": "Malaria_Prevalence_2010",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.904345
+      },
+      {
+        "column": "Malaria_Prevalence_2015",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.943855
+      },
+      {
+        "column": "Malaria_Prevalence_2020",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.931636
+      },
+      {
+        "column": "Maximum_Temperature_2000",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1247,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.992343
+      },
+      {
+        "column": "Maximum_Temperature_2005",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1244,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.994675
+      },
+      {
+        "column": "Maximum_Temperature_2010",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1254,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.994723
+      },
+      {
+        "column": "Maximum_Temperature_2015",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1251,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.992848
+      },
+      {
+        "column": "Maximum_Temperature_2020",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1246,
+        "n_lga_varying": 376,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.992404
+      },
+      {
+        "column": "Mean_Temperature_2000",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1248,
+        "n_lga_varying": 377,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.984407
+      },
+      {
+        "column": "Mean_Temperature_2005",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1248,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.985468
+      },
+      {
+        "column": "Mean_Temperature_2010",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1252,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.985065
+      },
+      {
+        "column": "Mean_Temperature_2015",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1236,
+        "n_lga_varying": 377,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.984599
+      },
+      {
+        "column": "Mean_Temperature_2020",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1247,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.985005
+      },
+      {
+        "column": "Minimum_Temperature_2000",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1255,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.993528
+      },
+      {
+        "column": "Minimum_Temperature_2005",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1252,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.99177
+      },
+      {
+        "column": "Minimum_Temperature_2010",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1243,
+        "n_lga_varying": 376,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.991724
+      },
+      {
+        "column": "Minimum_Temperature_2015",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1247,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.992846
+      },
+      {
+        "column": "Minimum_Temperature_2020",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1246,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.993892
+      },
+      {
+        "column": "Nightlights_Composite",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 864,
+        "n_lga_varying": 327,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.598631
+      },
+      {
+        "column": "Night_Land_Surface_Temp_2000",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1256,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.931764
+      },
+      {
+        "column": "Night_Land_Surface_Temp_2005",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1256,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.946205
+      },
+      {
+        "column": "Night_Land_Surface_Temp_2010",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1255,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.936307
+      },
+      {
+        "column": "Night_Land_Surface_Temp_2015",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.938839
+      },
+      {
+        "column": "Night_Land_Surface_Temp_2020",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.9526
+      },
+      {
+        "column": "PET_2000",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1245,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.9989
+      },
+      {
+        "column": "PET_2005",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1249,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.998949
+      },
+      {
+        "column": "PET_2010",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1242,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.998952
+      },
+      {
+        "column": "PET_2015",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1243,
+        "n_lga_varying": 377,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.998884
+      },
+      {
+        "column": "PET_2020",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1252,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.998904
+      },
+      {
+        "column": "Precipitation_2000",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.998687
+      },
+      {
+        "column": "Precipitation_2005",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.997165
+      },
+      {
+        "column": "Precipitation_2010",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.998376
+      },
+      {
+        "column": "Precipitation_2015",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.998852
+      },
+      {
+        "column": "Precipitation_2020",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1256,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.998583
+      },
+      {
+        "column": "Rainfall_2000",
+        "class": "numeric",
+        "n_missing": 2,
+        "pct_missing": 0.14,
+        "n_distinct": 1256,
+        "n_lga_varying": 377,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.99455
+      },
+      {
+        "column": "Rainfall_2005",
+        "class": "numeric",
+        "n_missing": 2,
+        "pct_missing": 0.14,
+        "n_distinct": 1256,
+        "n_lga_varying": 377,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.993939
+      },
+      {
+        "column": "Rainfall_2010",
+        "class": "numeric",
+        "n_missing": 2,
+        "pct_missing": 0.14,
+        "n_distinct": 1256,
+        "n_lga_varying": 377,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.995068
+      },
+      {
+        "column": "Rainfall_2015",
+        "class": "numeric",
+        "n_missing": 2,
+        "pct_missing": 0.14,
+        "n_distinct": 1255,
+        "n_lga_varying": 377,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.992487
+      },
+      {
+        "column": "Rainfall_2020",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1258,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.976183
+      },
+      {
+        "column": "Temperature_January",
+        "class": "numeric",
+        "n_missing": 3,
+        "pct_missing": 0.22,
+        "n_distinct": 1256,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.993077
+      },
+      {
+        "column": "Temperature_February",
+        "class": "numeric",
+        "n_missing": 3,
+        "pct_missing": 0.22,
+        "n_distinct": 1256,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.987286
+      },
+      {
+        "column": "Temperature_March",
+        "class": "numeric",
+        "n_missing": 3,
+        "pct_missing": 0.22,
+        "n_distinct": 1255,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.976491
+      },
+      {
+        "column": "Temperature_April",
+        "class": "numeric",
+        "n_missing": 3,
+        "pct_missing": 0.22,
+        "n_distinct": 1256,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.989328
+      },
+      {
+        "column": "Temperature_May",
+        "class": "numeric",
+        "n_missing": 3,
+        "pct_missing": 0.22,
+        "n_distinct": 1256,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.991197
+      },
+      {
+        "column": "Temperature_June",
+        "class": "numeric",
+        "n_missing": 3,
+        "pct_missing": 0.22,
+        "n_distinct": 1253,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.988573
+      },
+      {
+        "column": "Temperature_July",
+        "class": "numeric",
+        "n_missing": 3,
+        "pct_missing": 0.22,
+        "n_distinct": 1255,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.981276
+      },
+      {
+        "column": "Temperature_August",
+        "class": "numeric",
+        "n_missing": 3,
+        "pct_missing": 0.22,
+        "n_distinct": 1255,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.97828
+      },
+      {
+        "column": "Temperature_September",
+        "class": "numeric",
+        "n_missing": 3,
+        "pct_missing": 0.22,
+        "n_distinct": 1256,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.979752
+      },
+      {
+        "column": "Temperature_October",
+        "class": "numeric",
+        "n_missing": 3,
+        "pct_missing": 0.22,
+        "n_distinct": 1255,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.98281
+      },
+      {
+        "column": "Temperature_November",
+        "class": "numeric",
+        "n_missing": 3,
+        "pct_missing": 0.22,
+        "n_distinct": 1256,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.980338
+      },
+      {
+        "column": "Temperature_December",
+        "class": "numeric",
+        "n_missing": 3,
+        "pct_missing": 0.22,
+        "n_distinct": 1256,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.992129
+      },
+      {
+        "column": "Travel_Times",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1200,
+        "n_lga_varying": 373,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.703539
+      },
+      {
+        "column": "U5_Population_2000",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.813545
+      },
+      {
+        "column": "U5_Population_2005",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.815766
+      },
+      {
+        "column": "U5_Population_2010",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.814177
+      },
+      {
+        "column": "U5_Population_2015",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.818374
+      },
+      {
+        "column": "U5_Population_2020",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.817584
+      },
+      {
+        "column": "UN_Population_Count_2000",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1224,
+        "n_lga_varying": 372,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.879231
+      },
+      {
+        "column": "UN_Population_Count_2005",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1221,
+        "n_lga_varying": 372,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.879173
+      },
+      {
+        "column": "UN_Population_Count_2010",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1222,
+        "n_lga_varying": 375,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.879087
+      },
+      {
+        "column": "UN_Population_Count_2015",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1221,
+        "n_lga_varying": 374,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.878975
+      },
+      {
+        "column": "UN_Population_Count_2020",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1219,
+        "n_lga_varying": 374,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.878846
+      },
+      {
+        "column": "UN_Population_Density_2000",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1109,
+        "n_lga_varying": 335,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.881353
+      },
+      {
+        "column": "UN_Population_Density_2005",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1100,
+        "n_lga_varying": 332,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.881303
+      },
+      {
+        "column": "UN_Population_Density_2010",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1090,
+        "n_lga_varying": 337,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.881225
+      },
+      {
+        "column": "UN_Population_Density_2015",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1092,
+        "n_lga_varying": 330,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.881121
+      },
+      {
+        "column": "UN_Population_Density_2020",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1086,
+        "n_lga_varying": 329,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.880997
+      },
+      {
+        "column": "Wet_Days_2000",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.997893
+      },
+      {
+        "column": "Wet_Days_2005",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1256,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.99648
+      },
+      {
+        "column": "Wet_Days_2010",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.997536
+      },
+      {
+        "column": "Wet_Days_2015",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1257,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.998189
+      },
+      {
+        "column": "Wet_Days_2020",
+        "class": "numeric",
+        "n_missing": 0,
+        "pct_missing": 0,
+        "n_distinct": 1256,
+        "n_lga_varying": 378,
+        "constant_within_lga": false,
+        "between_lga_var_share": 0.997678
+      }
+    ]
+  },
+  "assertions": {
+    "clusters_is_1380": true,
+    "lgas_is_774": true,
+    "every_cluster_in_survey_state": true,
+    "every_cluster_has_lga": true,
+    "cluster_ids_unique": true,
+    "households_rows_unchanged": true,
+    "every_household_has_one_lga": true,
+    "cluster_maps_to_one_lga": true,
+    "lga_population_ids_unique": true,
+    "population_matched_ge_770": true,
+    "population_within_plausible_range": true,
+    "population_never_zero": true,
+    "covariates_all_retained": true,
+    "covariate_names_unchanged": true,
+    "reassignment_small": true
+  },
+  "limitations": ["LGA boundaries are geoBoundaries simplified (GRID3 source), not DHS's own admin2 layer, so a cluster near an edge may belong to a different LGA than the polygon implies. The second-choice columns quantify that.", "The population is a 2020 projection from the 2006 census. No LGA-level 2024 figure is published on HDX: the current COD-PS release carries ADM0-ADM1 only (2022). Shares therefore rest on 2020 LGA weights.", "One LGA (see unmatched_LGAs) has no row in the source workbook and keeps NA. Its population is not estimated.", "These are working boundaries and projected denominators for reporting, not a legal or census record."]
+}

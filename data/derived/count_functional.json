@@ -1,0 +1,165 @@
+{
+  "generated_by": "scripts/lga_model.R",
+  "command": "Rscript scripts/lga_model.R",
+  "ticket": "T10",
+  "seed": 20261122,
+  "n_draws": 20000,
+  "n_areas": 774,
+  "primary_threshold": 0.5,
+  "estimand": "C = #{s : theta_s > c}, theta_s the LGA prevalence for a household with the LGA's mean covariate profile, cluster effect marginalised over N(0,sd_v^2)",
+  "decomposition": "Var(C) = sum_s P_s(1-P_s) + sum_{s!=t}(P_st - P_s P_t); all three matrices evaluated under the same draws, so the identity is exact and identity_residual is floating-point error",
+  "headline": {
+    "E_C": 114.975,
+    "sd_C": 7.38300077,
+    "median_C": 115,
+    "variance_independent_term": 40.25832955,
+    "variance_pairwise_term": 14.24764546,
+    "ratio_pairwise_to_independent": 0.35390553,
+    "sd_if_independent": 6.3449452,
+    "sd_actual": 7.38300077
+  },
+  "primary": {
+    "threshold": 0.5,
+    "n_draws": 20000,
+    "expectation": 114.975,
+    "sd": 7.38300077,
+    "median": 115,
+    "quantiles": {
+      "q025": 101,
+      "q05": 103,
+      "q50": 115,
+      "q95": 127,
+      "q975": 130
+    },
+    "variance_independent_term": 40.25832955,
+    "variance_pairwise_term": 14.24764546,
+    "variance_from_the_two_terms": 54.505975,
+    "variance_from_the_draws": 54.50870044,
+    "identity_residual": -0.00272544,
+    "ratio_pairwise_to_independent": 0.35390553,
+    "independent_variance_sd": 6.3449452,
+    "sd_if_lgas_treated_as_independent": 6.3449452,
+    "sd_inflation_from_pairwise": 1.16360355,
+    "fraction_of_areas_above_threshold": 0.14854651,
+    "P_C_gt": {
+      "k100": 0.97575,
+      "k150": 0,
+      "k200": 0,
+      "k250": 0,
+      "k300": 0
+    },
+    "P_C_ge": {
+      "k100": 0.98345,
+      "k150": 0,
+      "k200": 0,
+      "k250": 0,
+      "k300": 0
+    }
+  },
+  "threshold_sensitivity": {
+    "0.4": {
+      "threshold": 0.4,
+      "n_draws": 20000,
+      "expectation": 196.27685,
+      "sd": 8.3835266,
+      "median": 196,
+      "quantiles": {
+        "q025": 180,
+        "q05": 183,
+        "q50": 196,
+        "q95": 210,
+        "q975": 213
+      },
+      "variance_independent_term": 53.62581145,
+      "variance_pairwise_term": 16.65419263,
+      "variance_from_the_two_terms": 70.28000408,
+      "variance_from_the_draws": 70.28351825,
+      "identity_residual": -0.00351418,
+      "ratio_pairwise_to_independent": 0.310563,
+      "independent_variance_sd": 7.32296466,
+      "sd_if_lgas_treated_as_independent": 7.32296466,
+      "sd_inflation_from_pairwise": 1.14482685,
+      "fraction_of_areas_above_threshold": 0.25358766,
+      "P_C_gt": {
+        "k100": 1,
+        "k150": 1,
+        "k200": 0.30735,
+        "k250": 0,
+        "k300": 0
+      },
+      "P_C_ge": {
+        "k100": 1,
+        "k150": 1,
+        "k200": 0.34945,
+        "k250": 0,
+        "k300": 0
+      }
+    },
+    "0.6": {
+      "threshold": 0.6,
+      "n_draws": 20000,
+      "expectation": 61.2794,
+      "sd": 5.62554157,
+      "median": 61,
+      "quantiles": {
+        "q025": 51,
+        "q05": 52,
+        "q50": 61,
+        "q95": 71,
+        "q975": 73
+      },
+      "variance_independent_term": 23.69230456,
+      "variance_pairwise_term": 7.95283108,
+      "variance_from_the_two_terms": 31.64513564,
+      "variance_from_the_draws": 31.64671798,
+      "identity_residual": -0.00158234,
+      "ratio_pairwise_to_independent": 0.33567149,
+      "independent_variance_sd": 4.86747415,
+      "sd_if_lgas_treated_as_independent": 4.86747415,
+      "sd_inflation_from_pairwise": 1.15574144,
+      "fraction_of_areas_above_threshold": 0.07917235,
+      "P_C_gt": {
+        "k100": 0,
+        "k150": 0,
+        "k200": 0,
+        "k250": 0,
+        "k300": 0
+      },
+      "P_C_ge": {
+        "k100": 0,
+        "k150": 0,
+        "k200": 0,
+        "k250": 0,
+        "k300": 0
+      }
+    }
+  },
+  "monte_carlo": {
+    "n_draws": 20000,
+    "split_half_pairwise_variance": {
+      "var_pair_half1": 13.37438238,
+      "var_pair_half2": 15.11814236,
+      "rel_difference": 0.12240123
+    },
+    "note": "the pairwise term is a sum of ~598k covariances estimated from the same draws; the split-half difference bounds its Monte Carlo noise"
+  },
+  "determination": {
+    "areas_with_P_above_095": 32,
+    "areas_with_P_below_005": 509,
+    "areas_with_P_between_040_and_060": 40,
+    "areas_with_no_cluster": 120,
+    "areas_using_parent_state_covariate_profile": 120
+  },
+  "iid_lga_comparison": {
+    "purpose": "attribution only: with f(lga) IID the pairwise term can only come from shared beta uncertainty, so the difference from the BYM2 pairwise term is the spatial contribution",
+    "waic": 38010.07979227,
+    "E_C": 114.6306,
+    "sd_C": 7.46311118,
+    "variance_independent_term": 46.92784097,
+    "variance_pairwise_term": 8.76740267,
+    "ratio_pairwise_to_independent": 0.18682732,
+    "sd_if_independent": 6.85038984,
+    "variance_from_the_two_terms": 55.69524364,
+    "variance_from_the_draws": 55.69802854
+  }
+}

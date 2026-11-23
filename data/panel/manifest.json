@@ -1,0 +1,4731 @@
+{
+  "study": "NGA-NBS-CPI",
+  "catalog": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154",
+  "generated": "2026-11-22T02:32:47",
+  "http_requests": 31,
+  "counts": {
+    "downloaded": 31,
+    "cached": 0,
+    "failed": 0
+  },
+  "files": {
+    "CPI_2020-01_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1058",
+      "catalog_resource_id": "1058",
+      "source": "elibrary",
+      "month": "2020-01",
+      "listing_title": "CPI and Inflation Report January 2020",
+      "id_evidence": "title",
+      "sha256": "409dba9999e0d8f1ffebd0e9ba374053152fc1917087cea714c195aa125da5ea",
+      "bytes": 6460169,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:52:52",
+      "months_present": [
+        "2020-01"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2020-02_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1072",
+      "catalog_resource_id": "1072",
+      "source": "elibrary",
+      "month": "2020-02",
+      "listing_title": "CPI and Inflation Report Febuary 2020",
+      "id_evidence": "title",
+      "sha256": "6d317033205371162e50b11deaedab0f3520fc172652db97bcf57ac9b1db17fd",
+      "bytes": 6804948,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:52:56",
+      "months_present": [
+        "2020-02"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2020-03_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1084",
+      "catalog_resource_id": "1084",
+      "source": "elibrary",
+      "month": "2020-03",
+      "listing_title": "CPI and Inflation Reports (2020-03)",
+      "id_evidence": "id sits between Feb-2020 (1072) and Apr-2020 (1098)",
+      "sha256": "4a3656b4a402a29677339cbfc4d2b2e68048acdc1aa66f10d937b270f13a71e3",
+      "bytes": 6854950,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:52:58",
+      "months_present": [
+        "2020-03"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2020-04_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1098",
+      "catalog_resource_id": "1098",
+      "source": "elibrary",
+      "month": "2020-04",
+      "listing_title": "CPI and Inflation Report April 2020",
+      "id_evidence": "title",
+      "sha256": "8d2ce48fc74fc9f380faaf40dacc9e0b5db2c82aa156b5c64e95251d415ec0f8",
+      "bytes": 6836786,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:00",
+      "months_present": [
+        "2020-04"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2020-05_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1113",
+      "catalog_resource_id": "1113",
+      "source": "elibrary",
+      "month": "2020-05",
+      "listing_title": "CPI and Inflation Report May 2020",
+      "id_evidence": "title",
+      "sha256": "4c176dae11ab77204e81cf9a03856e78fb3280f1cbaf98f4c4fc38c33fbc0bda",
+      "bytes": 6843487,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:02",
+      "months_present": [
+        "2020-05"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2020-06_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1126",
+      "catalog_resource_id": "1126",
+      "source": "elibrary",
+      "month": "2020-06",
+      "listing_title": "CPI and Inflation Report June 2020",
+      "id_evidence": "title",
+      "sha256": "f6f18c1043c54a437699e7c788a5cc7a10e40e5de1087395175b649953db200f",
+      "bytes": 6840113,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:09",
+      "months_present": [
+        "2020-06"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2020-07_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1136",
+      "catalog_resource_id": "1136",
+      "source": "elibrary",
+      "month": "2020-07",
+      "listing_title": "CPI and Inflation Report July 2020",
+      "id_evidence": "title",
+      "sha256": "4dafa820aa0dcd3d58c93c02167f44a3b936097ca0baa0894f3f341e58944199",
+      "bytes": 6819365,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:12",
+      "months_present": [
+        "2020-07"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2020-08_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1153",
+      "catalog_resource_id": "1153",
+      "source": "elibrary",
+      "month": "2020-08",
+      "listing_title": "CPI and Inflation Report August 2020",
+      "id_evidence": "title",
+      "sha256": "5384e9cacd74eefa48ec81eff2fc5c58284af84def3a4f6cec204794cd726d70",
+      "bytes": 6845666,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:14",
+      "months_present": [
+        "2020-08"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2020-09_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1169",
+      "catalog_resource_id": "1169",
+      "source": "elibrary",
+      "month": "2020-09",
+      "listing_title": "CPI and Inflation Report September 2020",
+      "id_evidence": "title",
+      "sha256": "ebde0662e3f41d871fbc1fbec30a03b43f7420aa7f37976c75863ad4d45cdb82",
+      "bytes": 6840027,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:16",
+      "months_present": [
+        "2020-09"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2020-10_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1184",
+      "catalog_resource_id": "1184",
+      "source": "elibrary",
+      "month": "2020-10",
+      "listing_title": "CPI and Inflation Report October 2020",
+      "id_evidence": "title",
+      "sha256": "0bb91dcc4d1b24cacc2da2abefd80bf451016bddc4f7c020899925b0cc61dd8e",
+      "bytes": 6823140,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:19",
+      "months_present": [
+        "2020-10"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2020-11_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1200",
+      "catalog_resource_id": "1200",
+      "source": "elibrary",
+      "month": "2020-11",
+      "listing_title": "CPI and Inflation Report November 2020",
+      "id_evidence": "title",
+      "sha256": "3f27b91ba91bd5af22ce58fd9a86eec15de0381345a95f9678f2c9aac0db56a8",
+      "bytes": 6821125,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:21",
+      "months_present": [
+        "2020-11"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2020-12_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1213",
+      "catalog_resource_id": "1213",
+      "source": "elibrary",
+      "month": "2020-12",
+      "listing_title": "CPI and Inflation Report December 2020",
+      "id_evidence": "title",
+      "sha256": "5f0de60f987235001fc6b255a44933b862a7abc960e40019ce4414d2f6005140",
+      "bytes": 6826083,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:23",
+      "months_present": [
+        "2020-12"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2021-01_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1228",
+      "catalog_resource_id": "1228",
+      "source": "elibrary",
+      "month": "2021-01",
+      "listing_title": "CPI and Inflation Report January 2021",
+      "id_evidence": "title",
+      "sha256": "95caf2d60717965301785ff75cf979c74431262876826cf2dbf4a1641f119dca",
+      "bytes": 6805348,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:27",
+      "months_present": [
+        "2021-01"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2021-02_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1239",
+      "catalog_resource_id": "1239",
+      "source": "elibrary",
+      "month": "2021-02",
+      "listing_title": "CPI and Inflation Report February 2021",
+      "id_evidence": "title",
+      "sha256": "fc0394c0651e0a596c3f209d618c0a6ab871918b9a4a11e5b495aa6a9aff1199",
+      "bytes": 6841348,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:29",
+      "months_present": [
+        "2021-02"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2021-03_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241014",
+      "catalog_resource_id": "1241014",
+      "source": "elibrary",
+      "month": "2021-03",
+      "listing_title": "CPI and Inflation Report March 2021",
+      "id_evidence": "title",
+      "sha256": "52c8a38753c438129f7c044c986e743529fd5e12a30bfceb58f79adf01cd9a79",
+      "bytes": 6828084,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:31",
+      "months_present": [
+        "2021-03"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2021-04_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241022",
+      "catalog_resource_id": "1241022",
+      "source": "elibrary",
+      "month": "2021-04",
+      "listing_title": "CPI and Inflation Report April 2021",
+      "id_evidence": "title",
+      "sha256": "34ade244315ba5cf943cad1dac9e69d81090110c39db7f1618e4843bbbb75b59",
+      "bytes": 1613618,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:32",
+      "months_present": [],
+      "parse_status": "failed: image-only: 30 pages, 0 characters of text, no text layer"
+    },
+    "CPI_2021-05_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241035",
+      "catalog_resource_id": "1241035",
+      "source": "elibrary",
+      "month": "2021-05",
+      "listing_title": "CPI and Inflation Report May 2021",
+      "id_evidence": "title",
+      "sha256": "8fd4ab75b045d791bd3b4095a22a8d90b0bfae1b90ed02ba96ac5e0a964e3c21",
+      "bytes": 6826707,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:34",
+      "months_present": [
+        "2021-05"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2021-06_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241045",
+      "catalog_resource_id": "1241045",
+      "source": "elibrary",
+      "month": "2021-06",
+      "listing_title": "CPI and Inflation Report June 2021",
+      "id_evidence": "title",
+      "sha256": "7c001aef8ff1f0c9047d47c1b31dadf63214eab668edb3e8158c38aaa3443de4",
+      "bytes": 6803853,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:36",
+      "months_present": [
+        "2021-06"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2021-07_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241055",
+      "catalog_resource_id": "1241055",
+      "source": "elibrary",
+      "month": "2021-07",
+      "listing_title": "CPI and Inflation Report July 2021",
+      "id_evidence": "title",
+      "sha256": "ee46a154cf617568c8ba7a8e5ce565ce2257e53e16d18eb18e7c99afca8c6849",
+      "bytes": 6773719,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:37",
+      "months_present": [
+        "2021-07"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2021-08_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241068",
+      "catalog_resource_id": "1241068",
+      "source": "elibrary",
+      "month": "2021-08",
+      "listing_title": "CPI and Inflation Reports (2021-08)",
+      "id_evidence": "id sits between Jul-2021 (1241055) and Oct-2021 (1241090), lower",
+      "sha256": "356c1efe3acc6ffb4f4d11493532fe65593b81644b33bc6607fefd7d375528f6",
+      "bytes": 6788941,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:40",
+      "months_present": [
+        "2021-08"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2021-09_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241081",
+      "catalog_resource_id": "1241081",
+      "source": "elibrary",
+      "month": "2021-09",
+      "listing_title": "CPI and Inflation Reports (2021-09)",
+      "id_evidence": "id sits between Jul-2021 (1241055) and Oct-2021 (1241090), higher",
+      "sha256": "15d352996e0184c9b19b9c1a7a76f986827422547bf1c0ce4e8abdaeb629751b",
+      "bytes": 1366341,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:42",
+      "months_present": [],
+      "parse_status": "failed: no page carries a state table with a readable t-12/t-1/t triple - recoverable from a neighbouring file's lookback column"
+    },
+    "CPI_2021-10_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241090",
+      "catalog_resource_id": "1241090",
+      "source": "elibrary",
+      "month": "2021-10",
+      "listing_title": "CPI and Inflation Report October 2021",
+      "id_evidence": "title",
+      "sha256": "4897d8579ae25ddd46a7f59c788d7e105d79a17aa59da9c664424ac36b9384a2",
+      "bytes": 3024834,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:43",
+      "months_present": [
+        "2021-10"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2021-11_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241102",
+      "catalog_resource_id": "1241102",
+      "source": "elibrary",
+      "month": "2021-11",
+      "listing_title": "CPI and Inflation Report November 2021",
+      "id_evidence": "title",
+      "sha256": "24c716ea1e4380f59196f6cd4c8fac449866b57fd95477f8f96b41be032923c7",
+      "bytes": 2861164,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:44",
+      "months_present": [
+        "2021-11"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2021-12_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241113",
+      "catalog_resource_id": "1241113",
+      "source": "elibrary",
+      "month": "2021-12",
+      "listing_title": "CPI and Inflation Report December 2021",
+      "id_evidence": "title",
+      "sha256": "b85d177275527b9ac48b54d55bbecebdf4f9aa9e7f3cdaa18ab2d01309a206b1",
+      "bytes": 2748578,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:45",
+      "months_present": [
+        "2021-12"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2022-01_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241134",
+      "catalog_resource_id": "1241134",
+      "source": "elibrary",
+      "month": "2022-01",
+      "listing_title": "CPI and Inflation Report January 2022",
+      "id_evidence": "title",
+      "sha256": "fba4a59e464f54b53d4a93708515781fe52e346cc2f5453411014a6556c6032f",
+      "bytes": 2364725,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:46",
+      "months_present": [
+        "2022-01"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2022-02_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241146",
+      "catalog_resource_id": "1241146",
+      "source": "elibrary",
+      "month": "2022-02",
+      "listing_title": "CPI and Inflation Report February 2022",
+      "id_evidence": "title",
+      "sha256": "f81218e9f013dd44ff8a82b2486158bb323b9bf5a31493749ca08a324ba8ce10",
+      "bytes": 2384594,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:47",
+      "months_present": [
+        "2022-02"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2022-03_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241157",
+      "catalog_resource_id": "1241157",
+      "source": "elibrary",
+      "month": "2022-03",
+      "listing_title": "CPI and Inflation Report March 2022",
+      "id_evidence": "title",
+      "sha256": "cbda0d09017fafcab8e588432fbcce3bb1d5277bef7bdb3892e2bc34b6880648",
+      "bytes": 2354379,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:48",
+      "months_present": [
+        "2022-03"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2022-04_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241170",
+      "catalog_resource_id": "1241170",
+      "source": "elibrary",
+      "month": "2022-04",
+      "listing_title": "CPI and Inflation Report April 2022",
+      "id_evidence": "title",
+      "sha256": "3f8b9aa39722212daec49c2c2671ac461571a08a515ff4867007a6d4c5f1b938",
+      "bytes": 2360319,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:49",
+      "months_present": [
+        "2022-04"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2022-05_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241183",
+      "catalog_resource_id": "1241183",
+      "source": "elibrary",
+      "month": "2022-05",
+      "listing_title": "CPI and Inflation Report May 2022",
+      "id_evidence": "title",
+      "sha256": "70343084f1e9a00c99ac40d207910eb7c57589c022915a2af568d2eb7d259fc3",
+      "bytes": 2374428,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:49",
+      "months_present": [
+        "2022-05"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2022-06_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241197",
+      "catalog_resource_id": "1241197",
+      "source": "elibrary",
+      "month": "2022-06",
+      "listing_title": "CPI and Inflation Report June 2022",
+      "id_evidence": "title",
+      "sha256": "a19979b2c62e9af5847da4d3209df3902e2cdfeec52e9b140f610bf9f9f61264",
+      "bytes": 2361785,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:52",
+      "months_present": [],
+      "parse_status": "failed: the four change columns could not each be labelled MoM/YoY x Food/All Items from the header"
+    },
+    "CPI_2022-07_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241208",
+      "catalog_resource_id": "1241208",
+      "source": "elibrary",
+      "month": "2022-07",
+      "listing_title": "CPI and Inflation Report July 2022",
+      "id_evidence": "title",
+      "sha256": "55587f89464d8cc94377a980901c847ee6a34e28516b933cf548fee7cab8d729",
+      "bytes": 2341489,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:52",
+      "months_present": [
+        "2022-07"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2022-08_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241228",
+      "catalog_resource_id": "1241228",
+      "source": "elibrary",
+      "month": "2022-08",
+      "listing_title": "CPI and Inflation Report August 2022",
+      "id_evidence": "title",
+      "sha256": "20697ce4099d17f5a0602518649c9dcab54388e62ca681ea95b0ddca0654ec3e",
+      "bytes": 2317789,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:53",
+      "months_present": [
+        "2022-08"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2022-09_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241241",
+      "catalog_resource_id": "1241241",
+      "source": "elibrary",
+      "month": "2022-09",
+      "listing_title": "CPI and Inflation Report September 2022",
+      "id_evidence": "title",
+      "sha256": "d95fe26a3fc7c4f027f357c167c8d243786bfd19572ce39c0d711df6f2337bb8",
+      "bytes": 2320567,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:54",
+      "months_present": [
+        "2022-09"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2022-10_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241253",
+      "catalog_resource_id": "1241253",
+      "source": "elibrary",
+      "month": "2022-10",
+      "listing_title": "CPI and Inflation Report October 2022",
+      "id_evidence": "title",
+      "sha256": "0d03d770f2a679b5e0d253d1758a15c52fd3db32e2612c7fa364479387302dc9",
+      "bytes": 2310619,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:56",
+      "months_present": [
+        "2022-10"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2022-11_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241263",
+      "catalog_resource_id": "1241263",
+      "source": "elibrary",
+      "month": "2022-11",
+      "listing_title": "CPI and Inflation Report November 2022",
+      "id_evidence": "title",
+      "sha256": "724fa708d82b66a5aa96ff3fad28b4d2e95e0abf282879e061b8d0835cd393f0",
+      "bytes": 2276396,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:57",
+      "months_present": [
+        "2022-09"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2022-12_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241274",
+      "catalog_resource_id": "1241274",
+      "source": "elibrary",
+      "month": "2022-12",
+      "listing_title": "CPI and Inflation Report December 2022",
+      "id_evidence": "title",
+      "sha256": "5e40c8a4c52e96174a4584264bb919c1cf8396b5aab9700cab6f4885ffa6e240",
+      "bytes": 2095999,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:58",
+      "months_present": [
+        "2022-12"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2023-01_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241285",
+      "catalog_resource_id": "1241285",
+      "source": "elibrary",
+      "month": "2023-01",
+      "listing_title": "CPI and Inflation Report January 2023",
+      "id_evidence": "title",
+      "sha256": "d5f504cc0df91e7f190caba57603c6fc60bc3ad422310409a97c46d90bf7e75e",
+      "bytes": 2130899,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:58",
+      "months_present": [
+        "2023-01"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2023-02_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241298",
+      "catalog_resource_id": "1241298",
+      "source": "elibrary",
+      "month": "2023-02",
+      "listing_title": "CPI and Inflation Report February 2023",
+      "id_evidence": "title",
+      "sha256": "6df29ae534ca678840bff0dae920341cca67fd7dea7cf3bd5c670ccdd33d90bb",
+      "bytes": 2132787,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:53:59",
+      "months_present": [
+        "2023-02"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2023-03_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241309",
+      "catalog_resource_id": "1241309",
+      "source": "elibrary",
+      "month": "2023-03",
+      "listing_title": "CPI and Inflation Report March 2023",
+      "id_evidence": "title",
+      "sha256": "874403e22349c95ba8f57c0e115558ced59aa16a956f3a3c1945f59d34aa32b8",
+      "bytes": 2157406,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:54:00",
+      "months_present": [
+        "2023-03"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2023-04_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241321",
+      "catalog_resource_id": "1241321",
+      "source": "elibrary",
+      "month": "2023-04",
+      "listing_title": "CPI and Inflation Report April 2023",
+      "id_evidence": "title",
+      "sha256": "9057e8d158b52eeeeb48b41329d985f68297d7608862a9122838b8d9775e3f0a",
+      "bytes": 2144668,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:54:01",
+      "months_present": [
+        "2023-04"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2023-05_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241339",
+      "catalog_resource_id": "1241339",
+      "source": "elibrary",
+      "month": "2023-05",
+      "listing_title": "CPI and Inflation Report May 2023",
+      "id_evidence": "title",
+      "sha256": "d28d8b1b16b318650aca9ae839b630f22569764c69720a710e0ab9aa9525f7d6",
+      "bytes": 2190663,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:54:02",
+      "months_present": [
+        "2023-05"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2023-06_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241350",
+      "catalog_resource_id": "1241350",
+      "source": "elibrary",
+      "month": "2023-06",
+      "listing_title": "CPI and Inflation Report June 2023",
+      "id_evidence": "title",
+      "sha256": "7b43dedf0f885ca806c1cea44e9438979af2b40241eb1878c4fd8c887ebde552",
+      "bytes": 2186622,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:54:02",
+      "months_present": [
+        "2023-06"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2023-07_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241362",
+      "catalog_resource_id": "1241362",
+      "source": "elibrary",
+      "month": "2023-07",
+      "listing_title": "CPI and Inflation Report July 2023",
+      "id_evidence": "title",
+      "sha256": "db741e7b2292565e9f98ccf7624c631e8ad3f89969e0911601cb0fe3a8613e54",
+      "bytes": 2195821,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:54:03",
+      "months_present": [
+        "2023-07"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2023-08_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241382",
+      "catalog_resource_id": "1241382",
+      "source": "elibrary",
+      "month": "2023-08",
+      "listing_title": "CPI and Inflation Report August 2023",
+      "id_evidence": "title",
+      "sha256": "6896a714b2419c1f946136b9a116036571704293222632a8f20820951569b58b",
+      "bytes": 2213075,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:54:04",
+      "months_present": [
+        "2023-08"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2023-09_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241397",
+      "catalog_resource_id": "1241397",
+      "source": "elibrary",
+      "month": "2023-09",
+      "listing_title": "CPI and Inflation Report September 2023",
+      "id_evidence": "title",
+      "sha256": "550f3e380375104f0dd1f4b8b081fe301dfc46aa2b27eada116086d5d9b7db9d",
+      "bytes": 2166443,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:54:05",
+      "months_present": [
+        "2023-09"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2023-10_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241407",
+      "catalog_resource_id": "1241407",
+      "source": "elibrary",
+      "month": "2023-10",
+      "listing_title": "CPI and Inflation Report October 2023",
+      "id_evidence": "title",
+      "sha256": "1c7008768377e880928314f690b0dae71e1ed6eeb21a29514f4b0ab2bdb55718",
+      "bytes": 2163987,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:54:05",
+      "months_present": [
+        "2023-10"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2023-11_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241423",
+      "catalog_resource_id": "1241423",
+      "source": "elibrary",
+      "month": "2023-11",
+      "listing_title": "CPI and Inflation Report November 2023",
+      "id_evidence": "title",
+      "sha256": "b4e0cefacd535dd9707ddc9a08c612cb1b7dd851731fd5c9d2ac663f93b1574f",
+      "bytes": 2182532,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:54:06",
+      "months_present": [
+        "2023-11"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2023-12_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241439",
+      "catalog_resource_id": "1241439",
+      "source": "elibrary",
+      "month": "2023-12",
+      "listing_title": "CPI and Inflation Report December 2023",
+      "id_evidence": "title",
+      "sha256": "a355957d40d6e4265022f8237bf168e768c05d998d59b2443f38c0019486b128",
+      "bytes": 2178336,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:54:07",
+      "months_present": [
+        "2023-12"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2024-01_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241453",
+      "catalog_resource_id": "1241453",
+      "source": "elibrary",
+      "month": "2024-01",
+      "listing_title": "CPI and Inflation Report January 2024",
+      "id_evidence": "title",
+      "sha256": "172cefc231b4cb5f56a0c4fa726303f5751a6d14914f0ab4567b5e9b34bed66c",
+      "bytes": 2107566,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:54:08",
+      "months_present": [
+        "2024-01"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2024-02_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241470",
+      "catalog_resource_id": "1241470",
+      "source": "elibrary",
+      "month": "2024-02",
+      "listing_title": "CPI and Inflation Report February 2024",
+      "id_evidence": "title",
+      "sha256": "fe119b470e1b41071cd9aa066fc230f32a60dab95c235a37ccc0e92f0da1e711",
+      "bytes": 2104678,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:54:09",
+      "months_present": [
+        "2024-02"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2024-03_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241484",
+      "catalog_resource_id": "1241484",
+      "source": "elibrary",
+      "month": "2024-03",
+      "listing_title": "CPI and Inflation Report March 2024",
+      "id_evidence": "title",
+      "sha256": "263e25d8ccec1c22c53fe0378d0a8f63ca3ae4659922c2a2a2074ef25903acd9",
+      "bytes": 2143437,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:54:10",
+      "months_present": [
+        "2024-03"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2024-04_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241497",
+      "catalog_resource_id": "1241497",
+      "source": "elibrary",
+      "month": "2024-04",
+      "listing_title": "CPI and Inflation Report April 2024",
+      "id_evidence": "title",
+      "sha256": "e5fdcdc22942cc167d4350ad82c5ebbadaeb6c6f4fba73d4be964a3ef09d9cc6",
+      "bytes": 2683880,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:54:11",
+      "months_present": [
+        "2024-04"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2024-05_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241515",
+      "catalog_resource_id": "1241515",
+      "source": "elibrary",
+      "month": "2024-05",
+      "listing_title": "CPI and Inflation Report May 2024",
+      "id_evidence": "title",
+      "sha256": "c4ace4e6f0f09587c0843a40e9cb2620e81949a259fdd9cf630d9cf9971e2e87",
+      "bytes": 2178222,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:54:11",
+      "months_present": [
+        "2024-05"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2024-06_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241533",
+      "catalog_resource_id": "1241533",
+      "source": "elibrary",
+      "month": "2024-06",
+      "listing_title": "CPI and Inflation Report June 2024",
+      "id_evidence": "title",
+      "sha256": "3529646b1143a77a66f505e510f1790a8e037b7455fda27f518c0d351671e374",
+      "bytes": 2181657,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:54:12",
+      "months_present": [
+        "2024-06"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2024-07_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241542",
+      "catalog_resource_id": "1241542",
+      "source": "elibrary",
+      "month": "2024-07",
+      "listing_title": "CPI and Inflation Report July 2024",
+      "id_evidence": "title",
+      "sha256": "7a679ba6755f398126ce8bc2541ee8b001e7931ad36179812e24238c418a07f4",
+      "bytes": 1094448,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:54:13",
+      "months_present": [
+        "2024-07"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2024-08_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241554",
+      "catalog_resource_id": "1241554",
+      "source": "elibrary",
+      "month": "2024-08",
+      "listing_title": "CPI and Inflation Report August 2024",
+      "id_evidence": "title",
+      "sha256": "df4f2d10f1a0886ccdb07ca32279adb1dee3ccc467ef6dcd341d402b10a9e090",
+      "bytes": 1094030,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:54:13",
+      "months_present": [
+        "2024-08"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2024-09_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241570",
+      "catalog_resource_id": "1241570",
+      "source": "elibrary",
+      "month": "2024-09",
+      "listing_title": "CPI and Inflation Report September 2024",
+      "id_evidence": "title",
+      "sha256": "d5e209b7c97a01e83bd3c060e7bfd700a62c8f48a9c1c9ce39a2a666690a1028",
+      "bytes": 1095654,
+      "cache": "miss",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:54:14",
+      "months_present": [
+        "2024-09"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_2024-10_Report.pdf": {
+      "url": "https://nigerianstat.gov.ng/download/1241583",
+      "catalog_resource_id": "1241583",
+      "source": "elibrary",
+      "month": "2024-10",
+      "listing_title": "CPI and Inflation Report October 2024",
+      "id_evidence": "title",
+      "sha256": "f878bc3b31b36fdd1a955faedac04b4b9b1c3b1f78ec31ea5cf45115846815db",
+      "bytes": 1083840,
+      "cache": "hit",
+      "content_type": "application/pdf",
+      "fetched": "2026-11-22T02:52:43",
+      "months_present": [
+        "2024-10"
+      ],
+      "parse_status": "ok"
+    },
+    "CPI_APRIL_2025.pdf": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1212/CPI_APRIL_2025.pdf",
+      "catalog_resource_id": "1212",
+      "sha256": "ca8ee494cb4eb1a5d57c6c1aa758224a8a996bf8b24fea63520ee5cec979b83a",
+      "bytes": 1112275,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:40",
+      "months_present": [],
+      "parse_status": "failed: the four change columns could not each be labelled MoM/YoY x Food/All Items from the header",
+      "parsed_as": "raw download"
+    },
+    "CPI_APRIL_2026.zip": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1406/CPI_APRIL_2026.zip",
+      "catalog_resource_id": "1406",
+      "sha256": "442b768de291eba2fea1e7eb84f3fac2fdc6fcb3aad71f307bd1765633d0aa2e",
+      "bytes": 2340775,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:30",
+      "members": [
+        "CPI_APRIL_2026.pdf",
+        "cpi_1New_April2026.xlsx"
+      ],
+      "months_present": [
+        "2026-04"
+      ],
+      "parse_status": "ok (via unzipped member)"
+    },
+    "CPI_AUGUST_2025.zip": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1286/CPI_AUGUST_2025.zip",
+      "catalog_resource_id": "1286",
+      "sha256": "d0247e0adf771cc3b3a280630a9645e942e2d9953b38ee8f7b704b230caa8d32",
+      "bytes": 1205297,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:35",
+      "members": [
+        "CPI_AUGUST_2025.pdf",
+        "CPI_August25.xlsx"
+      ],
+      "months_present": [
+        "2025-08"
+      ],
+      "parse_status": "ok (via unzipped member)"
+    },
+    "CPI_AUGUST_2026_final.zip": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1435/CPI_AUGUST_2026_final.zip",
+      "catalog_resource_id": "1435",
+      "sha256": "47660b25fb99d4b614e6dd01b879db55fecbdb131bad8fbeaee68bccdff968fa",
+      "bytes": 2501737,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:27",
+      "members": [
+        "CPI_AUGUST_2026_final_.pdf",
+        "cpi_1New_August2026_.xlsx"
+      ],
+      "months_present": [
+        "2026-08"
+      ],
+      "parse_status": "ok (via unzipped member)"
+    },
+    "CPI_DEC_2024.pdf": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1126/CPI_DEC_2024.pdf",
+      "catalog_resource_id": "1126",
+      "sha256": "1b551353d9925409b77dd312255d8db32d15229eaec641ec28d3917252c8d0d5",
+      "bytes": 2190885,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:44",
+      "months_present": [
+        "2024-12"
+      ],
+      "parse_status": "ok",
+      "parsed_as": "raw download"
+    },
+    "CPI_December_2025_Report.zip": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1334/CPI_December_2025_Report.zip",
+      "catalog_resource_id": "1334",
+      "sha256": "152a3431d4b0ee8275e9ea2413bae2b9a9f86b09c343265e7713239efdb1bcc5",
+      "bytes": 2245552,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:33",
+      "members": [
+        "CPI_December_2025_Report.pdf",
+        "cpi_1New_December2025.xlsx"
+      ],
+      "months_present": [
+        "2025-12"
+      ],
+      "parse_status": "ok (via unzipped member)"
+    },
+    "CPI_JULY_2026.zip": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1432/CPI_JULY_2026.zip",
+      "catalog_resource_id": "1432",
+      "sha256": "a1e8c555dd456af92c91662d9545198367244e4b446440c322b76a62bc83290f",
+      "bytes": 2491457,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:28",
+      "members": [
+        "CPI_JULY_2026.pdf",
+        "cpi_1New_July2026.xlsx"
+      ],
+      "months_present": [
+        "2026-07"
+      ],
+      "parse_status": "ok (via unzipped member)"
+    },
+    "CPI_JUNE_2026.zip": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1431/CPI_JUNE_2026.zip",
+      "catalog_resource_id": "1431",
+      "sha256": "97b2123c268211bca77bd01f910728dbc59a939dd1c29c366383b9e6b463da40",
+      "bytes": 2488680,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:28",
+      "members": [
+        "CPI_JUNE_2026.pdf",
+        "cpi_1New_June2026.xlsx"
+      ],
+      "months_present": [
+        "2026-06"
+      ],
+      "parse_status": "ok (via unzipped member)"
+    },
+    "CPI_June_2025_Report.pdf": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1254/CPI_June_2025_Report.pdf",
+      "catalog_resource_id": "1254",
+      "sha256": "3e6860321f3f3434a941ba8d7947e981d8f729e2ff6927ffae9549a91879c3f1",
+      "bytes": 1269316,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:37",
+      "months_present": [],
+      "parse_status": "failed: the four change columns could not each be labelled MoM/YoY x Food/All Items from the header",
+      "parsed_as": "raw download"
+    },
+    "CPI_MARCH_2025.pdf": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1198/CPI_MARCH_2025.pdf",
+      "catalog_resource_id": "1198",
+      "sha256": "10f86f2ddc9f0677bbefafe057d57a1013c5f8aaf330a96b8b205eb8f7451533",
+      "bytes": 1113133,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:41",
+      "months_present": [],
+      "parse_status": "failed: the four change columns could not each be labelled MoM/YoY x Food/All Items from the header",
+      "parsed_as": "raw download"
+    },
+    "CPI_MAY_2026.zip": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1422/CPI_MAY_2026.zip",
+      "catalog_resource_id": "1422",
+      "sha256": "e5490c7cf7d5e72d15449962fea1950645344bee8e535dd78de01d1236e42f7a",
+      "bytes": 2445866,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:29",
+      "members": [
+        "CPI_MAY_2026.pdf",
+        "cpi_1New_May2026.xlsx"
+      ],
+      "months_present": [
+        "2026-05"
+      ],
+      "parse_status": "ok (via unzipped member)"
+    },
+    "CPI_May_2025_Report.pdf": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1232/CPI_May_2025_Report.pdf",
+      "catalog_resource_id": "1232",
+      "sha256": "3a5b4ad51656e0a1364da55d731305806f9961825e9d37990526dd489a754c8f",
+      "bytes": 1200805,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:38",
+      "months_present": [],
+      "parse_status": "failed: the four change columns could not each be labelled MoM/YoY x Food/All Items from the header",
+      "parsed_as": "raw download"
+    },
+    "CPI_NOVEMBER_2024.pdf": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1116/CPI_NOVEMBER_2024.pdf",
+      "catalog_resource_id": "1116",
+      "sha256": "cc0dba951b275f86730f23b3e439e7242d7f25d81a2e6f8056edb9dd9b3d21eb",
+      "bytes": 2162798,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:46",
+      "months_present": [],
+      "parse_status": "failed: expected 6 or 10 numeric columns, found 8 at [(131, 37), (173, 37), (260, 36), (357, 36), (401, 37), (445, 37), (489, 37), (533, 37)]",
+      "parsed_as": "raw download"
+    },
+    "CPI_November_2025.zip": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1325/CPI_November_2025.zip",
+      "catalog_resource_id": "1325",
+      "sha256": "5a16e38bf1b872ed55db29a6407ed381c5c7a09c9de846bbe3aa7af15cafa86d",
+      "bytes": 1399679,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:33",
+      "members": [
+        "CPI_November_2025.pdf",
+        "cpi_1New_November25.xlsx"
+      ],
+      "months_present": [
+        "2025-11"
+      ],
+      "parse_status": "ok (via unzipped member)"
+    },
+    "CPI_OCTOBER_2026.zip": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1441/CPI_OCTOBER_2026.zip",
+      "catalog_resource_id": "1441",
+      "sha256": "7f0386edaf151d17785895f0f582e1b2fd8992fb03f8b7d2383afa587f375ec7",
+      "bytes": 2580344,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:25",
+      "members": [
+        "CPI_OCTOBER_2026.pdf",
+        "cpi_1New_October2026.xlsx"
+      ],
+      "months_present": [
+        "2026-10"
+      ],
+      "parse_status": "ok (via unzipped member)"
+    },
+    "CPI_October2025.zip": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1309/CPI_October2025.zip",
+      "catalog_resource_id": "1309",
+      "sha256": "19b6073902befce2ef58420399bf829957ce24356bc93ccf201525cca8c60278",
+      "bytes": 1420086,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:34",
+      "members": [
+        "CPI_October2025.pdf",
+        "cpi_1New_October25.xlsx"
+      ],
+      "months_present": [
+        "2025-10"
+      ],
+      "parse_status": "ok (via unzipped member)"
+    },
+    "CPI_Report_FEBRUARY_2026.zip": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1372/CPI_Report_FEBRUARY_2026.zip",
+      "catalog_resource_id": "1372",
+      "sha256": "5c0077d52c9d6da86bd5ed474111e68d07b601ed052dd54b9f4136574a857195",
+      "bytes": 2326610,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:31",
+      "members": [
+        "CPI_Report_FEBRUARY_2026.pdf",
+        "cpi_1New_February2026.xlsx"
+      ],
+      "months_present": [
+        "2026-02"
+      ],
+      "parse_status": "ok (via unzipped member)"
+    },
+    "CPI_Report_January_2026.zip": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1353/CPI_Report_January_2026.zip",
+      "catalog_resource_id": "1353",
+      "sha256": "870ff7a5cbeddd32d84e6cb23630df715b92ec560dccff0d8a0914ea9e34d7b2",
+      "bytes": 2254091,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:32",
+      "members": [
+        "CPI_Report_January_2026.pdf",
+        "cpi_January2026.xlsx"
+      ],
+      "months_present": [
+        "2026-01"
+      ],
+      "parse_status": "ok (via unzipped member)"
+    },
+    "CPI_Report_March_2026.zip": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1394/CPI_Report_March_2026.zip",
+      "catalog_resource_id": "1394",
+      "sha256": "b4ea85b0866fe1ed8d3792fee34a412dcfaa74ba8a600ef505972ffaa9aaa281",
+      "bytes": 2091112,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:31",
+      "members": [
+        "CPI_MARCH_2026.pdf",
+        "cpi_1New_March2026.xls"
+      ],
+      "months_present": [
+        "2026-03"
+      ],
+      "parse_status": "ok (via unzipped member)"
+    },
+    "CPI_SEPTEMBER_2026.zip": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1440/CPI_SEPTEMBER_2026.zip",
+      "catalog_resource_id": "1440",
+      "sha256": "6951a9d0b87f723fb995328414bcf340907e70556441577776ac24694288eeba",
+      "bytes": 3080829,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:26",
+      "members": [
+        "CPI_SEPTEMBER_2026.pdf",
+        "cpi_1New_September2026.xlsx"
+      ],
+      "months_present": [
+        "2026-09"
+      ],
+      "parse_status": "ok (via unzipped member)"
+    },
+    "CPI_September_2025.zip": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1297/CPI_September_2025.zip",
+      "catalog_resource_id": "1297",
+      "sha256": "167b9052d682d6ccbaeb5c28bcb665a40f742299f3ae3d4faaea5641089b27a4",
+      "bytes": 1274070,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:35",
+      "members": [
+        "CPI_September_2025.pdf",
+        "cpi_1New_September25.xlsx"
+      ],
+      "months_present": [
+        "2025-09"
+      ],
+      "parse_status": "ok (via unzipped member)"
+    },
+    "CPI_february_2025.pdf": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1161/CPI_february_2025.pdf",
+      "catalog_resource_id": "1161",
+      "sha256": "7dda597cdb5062bc3552687a260b385af1853b6e2fd61529ce5adb23b73f1b84",
+      "bytes": 1133866,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:42",
+      "months_present": [],
+      "parse_status": "failed: the four change columns could not each be labelled MoM/YoY x Food/All Items from the header",
+      "parsed_as": "raw download"
+    },
+    "Highlights of CPI Rebasing Result.pdf": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1156/Highlights%20of%20CPI%20Rebasing%20Result.pdf",
+      "catalog_resource_id": "1156",
+      "sha256": "ca8c5968a08fb04527a76bdcf91a60e295f1b25701a27f94f59492016d477083",
+      "bytes": 297144,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:42",
+      "months_present": [],
+      "parse_status": "failed: no page carries a state table with a readable t-12/t-1/t triple - recoverable from a neighbouring file's lookback column",
+      "parsed_as": "raw download"
+    },
+    "July_2025_CPI_Report.zip": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1276/July_2025_CPI_Report.zip",
+      "catalog_resource_id": "1276",
+      "sha256": "aa0874cb9704cc1b4eb0c45ea89e2820ca5291cf868a4e5d6bf9f0367d1cd0ac",
+      "bytes": 1280677,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:36",
+      "members": [
+        "July 2025 CPI report.pdf",
+        "cpi_1New_JuLY25.xlsx"
+      ],
+      "months_present": [
+        "2025-07"
+      ],
+      "parse_status": "ok (via unzipped member)"
+    },
+    "cpi_1NewDec2024.xlsx": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1127/cpi_1NewDec2024.xlsx",
+      "catalog_resource_id": "1127",
+      "sha256": "800a5af98121ba3b4732773bf42879cd744f7e14203ec7f4beaab49997bb6406",
+      "bytes": 633607,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:43",
+      "months_present": [
+        "2024-12"
+      ],
+      "parse_status": "ok",
+      "parsed_as": "raw download"
+    },
+    "cpi_1NewNov_2024.xlsx": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1117/cpi_1NewNov_2024.xlsx",
+      "catalog_resource_id": "1117",
+      "sha256": "3c7970f1995eec2529e1acb9cd2a4bf5994f7af42b9106122f60e8ed2ac47930",
+      "bytes": 632230,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:44",
+      "months_present": [
+        "2024-11"
+      ],
+      "parse_status": "ok",
+      "parsed_as": "raw download"
+    },
+    "cpi_1New_Apr25.xlsx": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1213/cpi_1New_Apr25.xlsx",
+      "catalog_resource_id": "1213",
+      "sha256": "69ad29ef5d9b19d483fd8c5883c72e2a71545e7641a054eabfe18a98e1fc0bcf",
+      "bytes": 226810,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:39",
+      "months_present": [
+        "2025-04"
+      ],
+      "parse_status": "ok",
+      "parsed_as": "raw download"
+    },
+    "cpi_1New_Feb_2025.xlsx": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1162/cpi_1New_Feb_2025.xlsx",
+      "catalog_resource_id": "1162",
+      "sha256": "c8c544a119c5a4b91de870c4c01bd92fc5e78c96a10304b136580640623c2c0b",
+      "bytes": 181738,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:41",
+      "months_present": [
+        "2025-02"
+      ],
+      "parse_status": "ok",
+      "parsed_as": "raw download"
+    },
+    "cpi_1New_June25.xlsx": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1255/cpi_1New_June25.xlsx",
+      "catalog_resource_id": "1255",
+      "sha256": "ad272f2979b973183db23d6bb8a3bf026814f760598cc98ca607cfe22020620b",
+      "bytes": 231862,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:36",
+      "months_present": [
+        "2025-06"
+      ],
+      "parse_status": "ok",
+      "parsed_as": "raw download"
+    },
+    "cpi_1New_Mar25.xlsx": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1199/cpi_1New_Mar25.xlsx",
+      "catalog_resource_id": "1199",
+      "sha256": "64dafb651efaadb242ad82ea5a92001fc494ad3559f668156e1bd06e1aea73fb",
+      "bytes": 162400,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:40",
+      "months_present": [
+        "2025-03"
+      ],
+      "parse_status": "ok",
+      "parsed_as": "raw download"
+    },
+    "cpi_1New_May25.xlsx": {
+      "url": "https://microdata.nigerianstat.gov.ng/index.php/catalog/154/download/1233/cpi_1New_May25.xlsx",
+      "catalog_resource_id": "1233",
+      "sha256": "9fb4eab5713bfbe7dcf4268e4a709d42848d19b23f14ff14b2cfb518329a4fa9",
+      "bytes": 227913,
+      "cache": "miss",
+      "fetched": "2026-11-22T02:32:38",
+      "months_present": [
+        "2025-05"
+      ],
+      "parse_status": "ok",
+      "parsed_as": "raw download"
+    }
+  },
+  "panel": {
+    "generated": "2026-11-22T03:08:09",
+    "gate": {
+      "agree_floor": 0.9,
+      "agree_tolerance": 0.05,
+      "min_pairs": 10
+    },
+    "rows": 5992,
+    "quarantined_rows": 74,
+    "lookback_rows": 11688,
+    "months": [
+      "2020-01",
+      "2020-02",
+      "2020-03",
+      "2020-04",
+      "2020-05",
+      "2020-06",
+      "2020-07",
+      "2020-08",
+      "2020-09",
+      "2020-10",
+      "2020-11",
+      "2020-12",
+      "2021-01",
+      "2021-02",
+      "2021-03",
+      "2021-04",
+      "2021-05",
+      "2021-06",
+      "2021-07",
+      "2021-08",
+      "2021-09",
+      "2021-10",
+      "2021-11",
+      "2021-12",
+      "2022-01",
+      "2022-02",
+      "2022-03",
+      "2022-04",
+      "2022-05",
+      "2022-06",
+      "2022-07",
+      "2022-08",
+      "2022-09",
+      "2022-10",
+      "2022-11",
+      "2022-12",
+      "2023-01",
+      "2023-02",
+      "2023-03",
+      "2023-04",
+      "2023-05",
+      "2023-06",
+      "2023-07",
+      "2023-08",
+      "2023-09",
+      "2023-10",
+      "2023-11",
+      "2023-12",
+      "2024-01",
+      "2024-02",
+      "2024-03",
+      "2024-04",
+      "2024-05",
+      "2024-06",
+      "2024-07",
+      "2024-08",
+      "2024-09",
+      "2024-10",
+      "2024-11",
+      "2024-12",
+      "2025-01",
+      "2025-02",
+      "2025-03",
+      "2025-04",
+      "2025-05",
+      "2025-06",
+      "2025-07",
+      "2025-08",
+      "2025-09",
+      "2025-10",
+      "2025-11",
+      "2025-12",
+      "2026-01",
+      "2026-02",
+      "2026-03",
+      "2026-04",
+      "2026-05",
+      "2026-06",
+      "2026-07",
+      "2026-08",
+      "2026-09",
+      "2026-10"
+    ],
+    "months_in_panel": [
+      "2020-01",
+      "2020-02",
+      "2020-03",
+      "2020-04",
+      "2020-05",
+      "2020-06",
+      "2020-07",
+      "2020-08",
+      "2020-09",
+      "2020-10",
+      "2020-11",
+      "2020-12",
+      "2021-01",
+      "2021-02",
+      "2021-03",
+      "2021-04",
+      "2021-05",
+      "2021-06",
+      "2021-07",
+      "2021-08",
+      "2021-09",
+      "2021-10",
+      "2021-11",
+      "2021-12",
+      "2022-01",
+      "2022-02",
+      "2022-03",
+      "2022-04",
+      "2022-05",
+      "2022-06",
+      "2022-07",
+      "2022-08",
+      "2022-09",
+      "2022-10",
+      "2022-11",
+      "2022-12",
+      "2023-01",
+      "2023-02",
+      "2023-03",
+      "2023-04",
+      "2023-05",
+      "2023-06",
+      "2023-07",
+      "2023-08",
+      "2023-09",
+      "2023-10",
+      "2023-11",
+      "2023-12",
+      "2024-01",
+      "2024-02",
+      "2024-03",
+      "2024-04",
+      "2024-05",
+      "2024-06",
+      "2024-07",
+      "2024-08",
+      "2024-09",
+      "2024-10",
+      "2024-11",
+      "2024-12",
+      "2025-01",
+      "2025-02",
+      "2025-03",
+      "2025-05",
+      "2025-06",
+      "2025-07",
+      "2025-08",
+      "2025-09",
+      "2025-10",
+      "2025-11",
+      "2025-12",
+      "2026-01",
+      "2026-02",
+      "2026-03",
+      "2026-04",
+      "2026-05",
+      "2026-06",
+      "2026-07",
+      "2026-08",
+      "2026-09",
+      "2026-10"
+    ],
+    "quarantined_months": [
+      "2025-04"
+    ],
+    "recovered_months": {
+      "2021-04": {
+        "from": "CPI_2021-05_Report.pdf",
+        "via": [
+          "previous_month_column",
+          "year_ago_column"
+        ]
+      },
+      "2021-09": {
+        "from": "CPI_2021-10_Report.pdf",
+        "via": [
+          "previous_month_column",
+          "year_ago_column"
+        ]
+      },
+      "2022-06": {
+        "from": "CPI_2022-07_Report.pdf",
+        "via": [
+          "previous_month_column",
+          "year_ago_column"
+        ]
+      },
+      "2022-11": {
+        "from": "CPI_2022-12_Report.pdf",
+        "via": [
+          "previous_month_column",
+          "year_ago_column"
+        ]
+      },
+      "2025-01": {
+        "from": "cpi_1New_Feb_2025.xlsx",
+        "via": [
+          "previous_month_column",
+          "year_ago_column"
+        ]
+      }
+    },
+    "months_with_multiple_files": [
+      "2022-09",
+      "2024-12"
+    ],
+    "chain": [
+      {
+        "pair": "2020-01->2020-02",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2020-01",
+        "from_file": "2020-02",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2020-02->2020-03",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2020-02",
+        "from_file": "2020-03",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2020-03->2020-04",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2020-03",
+        "from_file": "2020-04",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2020-04->2020-05",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2020-04",
+        "from_file": "2020-05",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2020-05->2020-06",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2020-05",
+        "from_file": "2020-06",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2020-06->2020-07",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2020-06",
+        "from_file": "2020-07",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2020-07->2020-08",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2020-07",
+        "from_file": "2020-08",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2020-08->2020-09",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2020-08",
+        "from_file": "2020-09",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2020-09->2020-10",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2020-09",
+        "from_file": "2020-10",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2020-10->2020-11",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2020-10",
+        "from_file": "2020-11",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2020-11->2020-12",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2020-11",
+        "from_file": "2020-12",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2020-12->2021-01",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2020-12",
+        "from_file": "2021-01",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2021-01->2021-02",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2021-01",
+        "from_file": "2021-02",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2021-02->2021-03",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2021-02",
+        "from_file": "2021-03",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2021-05->2021-06",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2021-05",
+        "from_file": "2021-06",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2021-06->2021-07",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2021-06",
+        "from_file": "2021-07",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2021-07->2021-08",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2021-07",
+        "from_file": "2021-08",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2021-10->2021-11",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 68,
+        "reference": "2021-10",
+        "from_file": "2021-11",
+        "share": 0.9189,
+        "verdict": "pass",
+        "bad_count": 6
+      },
+      {
+        "pair": "2021-11->2021-12",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2021-11",
+        "from_file": "2021-12",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2021-12->2022-01",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2021-12",
+        "from_file": "2022-01",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2022-01->2022-02",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2022-01",
+        "from_file": "2022-02",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2022-02->2022-03",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2022-02",
+        "from_file": "2022-03",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2022-03->2022-04",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2022-03",
+        "from_file": "2022-04",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2022-04->2022-05",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2022-04",
+        "from_file": "2022-05",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2022-07->2022-08",
+        "status": "tested",
+        "pairs": 72,
+        "agree": 72,
+        "reference": "2022-07",
+        "from_file": "2022-08",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2022-08->2022-09",
+        "status": "tested",
+        "pairs": 72,
+        "agree": 72,
+        "reference": "2022-08",
+        "from_file": "2022-09",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2022-09->2022-10",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2022-09",
+        "from_file": "2022-10",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2022-12->2023-01",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2022-12",
+        "from_file": "2023-01",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2023-01->2023-02",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2023-01",
+        "from_file": "2023-02",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2023-02->2023-03",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2023-02",
+        "from_file": "2023-03",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2023-03->2023-04",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2023-03",
+        "from_file": "2023-04",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2023-04->2023-05",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2023-04",
+        "from_file": "2023-05",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2023-05->2023-06",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2023-05",
+        "from_file": "2023-06",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2023-06->2023-07",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2023-06",
+        "from_file": "2023-07",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2023-07->2023-08",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2023-07",
+        "from_file": "2023-08",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2023-08->2023-09",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2023-08",
+        "from_file": "2023-09",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2023-09->2023-10",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2023-09",
+        "from_file": "2023-10",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2023-10->2023-11",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2023-10",
+        "from_file": "2023-11",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2023-11->2023-12",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2023-11",
+        "from_file": "2023-12",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2023-12->2024-01",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2023-12",
+        "from_file": "2024-01",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2024-01->2024-02",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2024-01",
+        "from_file": "2024-02",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2024-02->2024-03",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2024-02",
+        "from_file": "2024-03",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2024-03->2024-04",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2024-03",
+        "from_file": "2024-04",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2024-04->2024-05",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2024-04",
+        "from_file": "2024-05",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2024-05->2024-06",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2024-05",
+        "from_file": "2024-06",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2024-06->2024-07",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2024-06",
+        "from_file": "2024-07",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2024-07->2024-08",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2024-07",
+        "from_file": "2024-08",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2024-08->2024-09",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2024-08",
+        "from_file": "2024-09",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2024-09->2024-10",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2024-09",
+        "from_file": "2024-10",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2024-10->2024-11",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 72,
+        "reference": "2024-10",
+        "from_file": "2024-11",
+        "share": 0.973,
+        "verdict": "pass",
+        "bad_count": 2
+      },
+      {
+        "pair": "2024-11->2024-12",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2024-11",
+        "from_file": "2024-12",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2025-02->2025-03",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2025-02",
+        "from_file": "2025-03",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2025-03->2025-04",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2025-03",
+        "from_file": "2025-04",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2025-04->2025-05",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 13,
+        "reference": "2025-04",
+        "from_file": "2025-05",
+        "share": 0.1757,
+        "verdict": "FAIL",
+        "bad_count": 61
+      },
+      {
+        "pair": "2025-05->2025-06",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2025-05",
+        "from_file": "2025-06",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2025-06->2025-07",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2025-06",
+        "from_file": "2025-07",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2025-07->2025-08",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2025-07",
+        "from_file": "2025-08",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2025-08->2025-09",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2025-08",
+        "from_file": "2025-09",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2025-09->2025-10",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2025-09",
+        "from_file": "2025-10",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2025-10->2025-11",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2025-10",
+        "from_file": "2025-11",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2025-11->2025-12",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2025-11",
+        "from_file": "2025-12",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2025-12->2026-01",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2025-12",
+        "from_file": "2026-01",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2026-01->2026-02",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2026-01",
+        "from_file": "2026-02",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2026-02->2026-03",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2026-02",
+        "from_file": "2026-03",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2026-03->2026-04",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2026-03",
+        "from_file": "2026-04",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2026-04->2026-05",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2026-04",
+        "from_file": "2026-05",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2026-05->2026-06",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2026-05",
+        "from_file": "2026-06",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2026-06->2026-07",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2026-06",
+        "from_file": "2026-07",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2026-07->2026-08",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2026-07",
+        "from_file": "2026-08",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2026-08->2026-09",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2026-08",
+        "from_file": "2026-09",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      },
+      {
+        "pair": "2026-09->2026-10",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "reference": "2026-09",
+        "from_file": "2026-10",
+        "share": 1.0,
+        "verdict": "pass",
+        "bad_count": 0
+      }
+    ],
+    "annual": [
+      {
+        "month": "2020-01",
+        "status": "skipped_absent",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2019-01"
+      },
+      {
+        "month": "2020-02",
+        "status": "skipped_absent",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2019-02"
+      },
+      {
+        "month": "2020-03",
+        "status": "skipped_absent",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2019-03"
+      },
+      {
+        "month": "2020-04",
+        "status": "skipped_absent",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2019-04"
+      },
+      {
+        "month": "2020-05",
+        "status": "skipped_absent",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2019-05"
+      },
+      {
+        "month": "2020-06",
+        "status": "skipped_absent",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2019-06"
+      },
+      {
+        "month": "2020-07",
+        "status": "skipped_absent",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2019-07"
+      },
+      {
+        "month": "2020-08",
+        "status": "skipped_absent",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2019-08"
+      },
+      {
+        "month": "2020-09",
+        "status": "skipped_absent",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2019-09"
+      },
+      {
+        "month": "2020-10",
+        "status": "skipped_absent",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2019-10"
+      },
+      {
+        "month": "2020-11",
+        "status": "skipped_absent",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2019-11"
+      },
+      {
+        "month": "2020-12",
+        "status": "skipped_absent",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2019-12"
+      },
+      {
+        "month": "2021-01",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2020-01",
+        "from_file": "2021-01"
+      },
+      {
+        "month": "2021-02",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2020-02",
+        "from_file": "2021-02"
+      },
+      {
+        "month": "2021-03",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2020-03",
+        "from_file": "2021-03"
+      },
+      {
+        "month": "2021-04",
+        "status": "tested",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2020-04",
+        "from_file": "2021-04"
+      },
+      {
+        "month": "2021-05",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2020-05",
+        "from_file": "2021-05"
+      },
+      {
+        "month": "2021-06",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2020-06",
+        "from_file": "2021-06"
+      },
+      {
+        "month": "2021-07",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2020-07",
+        "from_file": "2021-07"
+      },
+      {
+        "month": "2021-08",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2020-08",
+        "from_file": "2021-08"
+      },
+      {
+        "month": "2021-09",
+        "status": "tested",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2020-09",
+        "from_file": "2021-09"
+      },
+      {
+        "month": "2021-10",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 66,
+        "bad": [
+          [
+            [
+              "Adamawa",
+              "food"
+            ],
+            388.25,
+            388.3,
+            0.05000000000001137
+          ],
+          [
+            [
+              "Ebonyi",
+              "all_items"
+            ],
+            350.25,
+            350.3,
+            0.05000000000001137
+          ],
+          [
+            [
+              "Ekiti",
+              "all_items"
+            ],
+            322.95,
+            323.0,
+            0.05000000000001137
+          ],
+          [
+            [
+              "FCT",
+              "food"
+            ],
+            389.95,
+            390.0,
+            0.05000000000001137
+          ],
+          [
+            [
+              "Jigawa",
+              "all_items"
+            ],
+            343.55,
+            343.6,
+            0.05000000000001137
+          ],
+          [
+            [
+              "Kwara",
+              "all_items"
+            ],
+            416.25,
+            416.3,
+            0.05000000000001137
+          ],
+          [
+            [
+              "Sokoto",
+              "all_items"
+            ],
+            352.95,
+            353.0,
+            0.05000000000001137
+          ],
+          [
+            [
+              "Yobe",
+              "food"
+            ],
+            396.05,
+            396.1,
+            0.05000000000001137
+          ]
+        ],
+        "year_ago": "2020-10",
+        "from_file": "2021-10"
+      },
+      {
+        "month": "2021-11",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2020-11",
+        "from_file": "2021-11"
+      },
+      {
+        "month": "2021-12",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2020-12",
+        "from_file": "2021-12"
+      },
+      {
+        "month": "2022-01",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2021-01",
+        "from_file": "2022-01"
+      },
+      {
+        "month": "2022-02",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2021-02",
+        "from_file": "2022-02"
+      },
+      {
+        "month": "2022-03",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2021-03",
+        "from_file": "2022-03"
+      },
+      {
+        "month": "2022-04",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2021-04",
+        "from_file": "2022-04"
+      },
+      {
+        "month": "2022-05",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2021-05",
+        "from_file": "2022-05"
+      },
+      {
+        "month": "2022-06",
+        "status": "tested",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2021-06",
+        "from_file": "2022-06"
+      },
+      {
+        "month": "2022-07",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2021-07",
+        "from_file": "2022-07"
+      },
+      {
+        "month": "2022-08",
+        "status": "tested",
+        "pairs": 72,
+        "agree": 72,
+        "bad": [],
+        "year_ago": "2021-08",
+        "from_file": "2022-08"
+      },
+      {
+        "month": "2022-09",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 71,
+        "bad": [
+          [
+            [
+              "Enugu",
+              "all_items"
+            ],
+            376.1,
+            376.05,
+            0.05000000000001137
+          ],
+          [
+            [
+              "Kebbi",
+              "all_items"
+            ],
+            421.0,
+            420.95,
+            0.05000000000001137
+          ],
+          [
+            [
+              "Taraba",
+              "all_items"
+            ],
+            390.1,
+            390.05,
+            0.05000000000001137
+          ]
+        ],
+        "year_ago": "2021-09",
+        "from_file": "2022-09"
+      },
+      {
+        "month": "2022-10",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 68,
+        "bad": [
+          [
+            [
+              "Anambra",
+              "all_items"
+            ],
+            409.5,
+            409.45,
+            0.05000000000001137
+          ],
+          [
+            [
+              "Bauchi",
+              "food"
+            ],
+            409.5,
+            409.45,
+            0.05000000000001137
+          ],
+          [
+            [
+              "Jigawa",
+              "all_items"
+            ],
+            409.1,
+            409.05,
+            0.05000000000001137
+          ],
+          [
+            [
+              "Kaduna",
+              "food"
+            ],
+            473.0,
+            472.95,
+            0.05000000000001137
+          ],
+          [
+            [
+              "Kano",
+              "all_items"
+            ],
+            412.0,
+            411.95,
+            0.05000000000001137
+          ],
+          [
+            [
+              "Oyo",
+              "all_items"
+            ],
+            426.0,
+            425.95,
+            0.05000000000001137
+          ]
+        ],
+        "year_ago": "2021-10",
+        "from_file": "2022-10"
+      },
+      {
+        "month": "2022-11",
+        "status": "tested",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2021-11",
+        "from_file": "2022-11"
+      },
+      {
+        "month": "2022-12",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2021-12",
+        "from_file": "2022-12"
+      },
+      {
+        "month": "2023-01",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2022-01",
+        "from_file": "2023-01"
+      },
+      {
+        "month": "2023-02",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2022-02",
+        "from_file": "2023-02"
+      },
+      {
+        "month": "2023-03",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2022-03",
+        "from_file": "2023-03"
+      },
+      {
+        "month": "2023-04",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2022-04",
+        "from_file": "2023-04"
+      },
+      {
+        "month": "2023-05",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2022-05",
+        "from_file": "2023-05"
+      },
+      {
+        "month": "2023-06",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2022-06",
+        "from_file": "2023-06"
+      },
+      {
+        "month": "2023-07",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2022-07",
+        "from_file": "2023-07"
+      },
+      {
+        "month": "2023-08",
+        "status": "tested",
+        "pairs": 72,
+        "agree": 72,
+        "bad": [],
+        "year_ago": "2022-08",
+        "from_file": "2023-08"
+      },
+      {
+        "month": "2023-09",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2022-09",
+        "from_file": "2023-09"
+      },
+      {
+        "month": "2023-10",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2022-10",
+        "from_file": "2023-10"
+      },
+      {
+        "month": "2023-11",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2022-11",
+        "from_file": "2023-11"
+      },
+      {
+        "month": "2023-12",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2022-12",
+        "from_file": "2023-12"
+      },
+      {
+        "month": "2024-01",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2023-01",
+        "from_file": "2024-01"
+      },
+      {
+        "month": "2024-02",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2023-02",
+        "from_file": "2024-02"
+      },
+      {
+        "month": "2024-03",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2023-03",
+        "from_file": "2024-03"
+      },
+      {
+        "month": "2024-04",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2023-04",
+        "from_file": "2024-04"
+      },
+      {
+        "month": "2024-05",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2023-05",
+        "from_file": "2024-05"
+      },
+      {
+        "month": "2024-06",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2023-06",
+        "from_file": "2024-06"
+      },
+      {
+        "month": "2024-07",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2023-07",
+        "from_file": "2024-07"
+      },
+      {
+        "month": "2024-08",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2023-08",
+        "from_file": "2024-08"
+      },
+      {
+        "month": "2024-09",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2023-09",
+        "from_file": "2024-09"
+      },
+      {
+        "month": "2024-10",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2023-10",
+        "from_file": "2024-10"
+      },
+      {
+        "month": "2024-11",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 72,
+        "bad": [
+          [
+            [
+              "Abia",
+              "all_items"
+            ],
+            637.55,
+            637.6,
+            0.05000000000006821
+          ],
+          [
+            [
+              "Oyo",
+              "all_items"
+            ],
+            680.55,
+            680.6,
+            0.05000000000006821
+          ]
+        ],
+        "year_ago": "2023-11",
+        "from_file": "2024-11"
+      },
+      {
+        "month": "2024-12",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2023-12",
+        "from_file": "2024-12"
+      },
+      {
+        "month": "2025-01",
+        "status": "skipped_cross_base",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2024-01",
+        "note": "base 2009 -> 2024"
+      },
+      {
+        "month": "2025-02",
+        "status": "skipped_cross_base",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2024-02",
+        "note": "base 2009 -> 2024"
+      },
+      {
+        "month": "2025-03",
+        "status": "skipped_cross_base",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2024-03",
+        "note": "base 2009 -> 2024"
+      },
+      {
+        "month": "2025-04",
+        "status": "skipped_cross_base",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2024-04",
+        "note": "base 2009 -> 2024"
+      },
+      {
+        "month": "2025-05",
+        "status": "skipped_cross_base",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2024-05",
+        "note": "base 2009 -> 2024"
+      },
+      {
+        "month": "2025-06",
+        "status": "skipped_cross_base",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2024-06",
+        "note": "base 2009 -> 2024"
+      },
+      {
+        "month": "2025-07",
+        "status": "skipped_cross_base",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2024-07",
+        "note": "base 2009 -> 2024"
+      },
+      {
+        "month": "2025-08",
+        "status": "skipped_cross_base",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2024-08",
+        "note": "base 2009 -> 2024"
+      },
+      {
+        "month": "2025-09",
+        "status": "skipped_cross_base",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2024-09",
+        "note": "base 2009 -> 2024"
+      },
+      {
+        "month": "2025-10",
+        "status": "skipped_cross_base",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2024-10",
+        "note": "base 2009 -> 2024"
+      },
+      {
+        "month": "2025-11",
+        "status": "skipped_cross_base",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2024-11",
+        "note": "base 2009 -> 2024"
+      },
+      {
+        "month": "2025-12",
+        "status": "skipped_cross_base",
+        "pairs": 0,
+        "agree": 0,
+        "bad": [],
+        "year_ago": "2024-12",
+        "note": "base 2009 -> 2024"
+      },
+      {
+        "month": "2026-01",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2025-01",
+        "from_file": "2026-01"
+      },
+      {
+        "month": "2026-02",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 1,
+        "bad": [
+          [
+            [
+              "Sokoto",
+              "food"
+            ],
+            102.99,
+            122.381794,
+            19.391794000000004
+          ],
+          [
+            [
+              "Nasarawa",
+              "food"
+            ],
+            105.47,
+            121.624405,
+            16.154404999999997
+          ],
+          [
+            [
+              "Sokoto",
+              "all_items"
+            ],
+            105.77,
+            118.44,
+            12.670000000000002
+          ],
+          [
+            [
+              "Kogi",
+              "all_items"
+            ],
+            102.33,
+            113.98,
+            11.650000000000006
+          ],
+          [
+            [
+              "Kogi",
+              "food"
+            ],
+            99.92,
+            111.563603,
+            11.643602999999999
+          ],
+          [
+            [
+              "Ondo",
+              "food"
+            ],
+            115.2,
+            103.893864,
+            11.30613600000001
+          ],
+          [
+            [
+              "Edo",
+              "food"
+            ],
+            109.02,
+            120.258797,
+            11.238797000000005
+          ],
+          [
+            [
+              "Kaduna",
+              "food"
+            ],
+            113.83,
+            103.682992,
+            10.147008
+          ],
+          [
+            [
+              "Kaduna",
+              "all_items"
+            ],
+            114.82,
+            104.68,
+            10.139999999999986
+          ],
+          [
+            [
+              "Edo",
+              "all_items"
+            ],
+            111.29,
+            121.16,
+            9.86999999999999
+          ],
+          [
+            [
+              "Benue",
+              "food"
+            ],
+            102.5,
+            111.480547,
+            8.980547000000001
+          ],
+          [
+            [
+              "Benue",
+              "all_items"
+            ],
+            104.91,
+            113.69,
+            8.780000000000001
+          ],
+          [
+            [
+              "Kwara",
+              "food"
+            ],
+            108.95,
+            117.031549,
+            8.081548999999995
+          ],
+          [
+            [
+              "Nasarawa",
+              "all_items"
+            ],
+            107.73,
+            115.15,
+            7.420000000000002
+          ],
+          [
+            [
+              "Oyo",
+              "food"
+            ],
+            112.07,
+            104.876971,
+            7.193028999999996
+          ],
+          [
+            [
+              "Gombe",
+              "all_items"
+            ],
+            108.95,
+            114.82,
+            5.86999999999999
+          ],
+          [
+            [
+              "Kwara",
+              "all_items"
+            ],
+            109.28,
+            115.09,
+            5.810000000000002
+          ],
+          [
+            [
+              "Ekiti",
+              "food"
+            ],
+            108.92,
+            114.31683,
+            5.396829999999994
+          ],
+          [
+            [
+              "Ondo",
+              "all_items"
+            ],
+            111.73,
+            106.39,
+            5.340000000000003
+          ],
+          [
+            [
+              "Enugu",
+              "all_items"
+            ],
+            114.69,
+            120.01,
+            5.320000000000007
+          ],
+          [
+            [
+              "Rivers",
+              "food"
+            ],
+            112.27,
+            107.208959,
+            5.061041000000003
+          ],
+          [
+            [
+              "Bayelsa",
+              "food"
+            ],
+            109.46,
+            104.553885,
+            4.906115
+          ],
+          [
+            [
+              "Ekiti",
+              "all_items"
+            ],
+            109.95,
+            114.65,
+            4.700000000000003
+          ],
+          [
+            [
+              "Gombe",
+              "food"
+            ],
+            109.97,
+            114.617746,
+            4.647745999999998
+          ],
+          [
+            [
+              "Enugu",
+              "food"
+            ],
+            114.4,
+            118.953886,
+            4.553885999999991
+          ],
+          [
+            [
+              "Ogun",
+              "all_items"
+            ],
+            111.26,
+            115.47,
+            4.209999999999994
+          ],
+          [
+            [
+              "FCT",
+              "food"
+            ],
+            106.69,
+            110.80478,
+            4.114779999999996
+          ],
+          [
+            [
+              "Kano",
+              "all_items"
+            ],
+            112.51,
+            108.4,
+            4.109999999999999
+          ],
+          [
+            [
+              "Plateau",
+              "all_items"
+            ],
+            109.5,
+            105.42,
+            4.079999999999998
+          ],
+          [
+            [
+              "Zamfara",
+              "all_items"
+            ],
+            113.82,
+            117.54,
+            3.720000000000013
+          ],
+          [
+            [
+              "Zamfara",
+              "food"
+            ],
+            111.81,
+            115.300446,
+            3.4904459999999915
+          ],
+          [
+            [
+              "Rivers",
+              "all_items"
+            ],
+            113.84,
+            110.87,
+            2.969999999999999
+          ],
+          [
+            [
+              "FCT",
+              "all_items"
+            ],
+            107.04,
+            109.94,
+            2.8999999999999915
+          ],
+          [
+            [
+              "Jigawa",
+              "food"
+            ],
+            110.76,
+            113.427886,
+            2.6678859999999958
+          ],
+          [
+            [
+              "Abia",
+              "food"
+            ],
+            115.21,
+            117.850536,
+            2.6405360000000115
+          ],
+          [
+            [
+              "Oyo",
+              "all_items"
+            ],
+            109.5,
+            106.99,
+            2.510000000000005
+          ],
+          [
+            [
+              "Imo",
+              "all_items"
+            ],
+            117.77,
+            120.21,
+            2.4399999999999977
+          ],
+          [
+            [
+              "Bauchi",
+              "food"
+            ],
+            112.79,
+            110.444787,
+            2.345213000000001
+          ],
+          [
+            [
+              "Delta",
+              "all_items"
+            ],
+            110.97,
+            113.21,
+            2.239999999999995
+          ],
+          [
+            [
+              "Delta",
+              "food"
+            ],
+            112.19,
+            110.028481,
+            2.1615189999999984
+          ],
+          [
+            [
+              "Adamawa",
+              "all_items"
+            ],
+            106.19,
+            108.34,
+            2.1500000000000057
+          ],
+          [
+            [
+              "Kano",
+              "food"
+            ],
+            112.34,
+            110.26492,
+            2.07508
+          ],
+          [
+            [
+              "Taraba",
+              "all_items"
+            ],
+            109.44,
+            111.4,
+            1.960000000000008
+          ],
+          [
+            [
+              "Bauchi",
+              "all_items"
+            ],
+            110.06,
+            108.14,
+            1.9200000000000017
+          ],
+          [
+            [
+              "Abia",
+              "all_items"
+            ],
+            115.38,
+            117.18,
+            1.8000000000000114
+          ],
+          [
+            [
+              "Cross River",
+              "all_items"
+            ],
+            110.03,
+            111.78,
+            1.75
+          ],
+          [
+            [
+              "Anambra",
+              "all_items"
+            ],
+            110.0,
+            111.63,
+            1.6299999999999955
+          ],
+          [
+            [
+              "Plateau",
+              "food"
+            ],
+            108.17,
+            106.729574,
+            1.4404260000000022
+          ],
+          [
+            [
+              "Imo",
+              "food"
+            ],
+            116.8,
+            118.08838,
+            1.2883800000000036
+          ],
+          [
+            [
+              "Borno",
+              "all_items"
+            ],
+            112.52,
+            111.24,
+            1.2800000000000011
+          ],
+          [
+            [
+              "Lagos",
+              "food"
+            ],
+            111.22,
+            109.958854,
+            1.2611459999999965
+          ],
+          [
+            [
+              "Niger",
+              "food"
+            ],
+            106.24,
+            107.48933,
+            1.2493300000000005
+          ],
+          [
+            [
+              "Yobe",
+              "all_items"
+            ],
+            106.4,
+            107.64,
+            1.2399999999999949
+          ],
+          [
+            [
+              "Kebbi",
+              "all_items"
+            ],
+            108.04,
+            109.2,
+            1.1599999999999966
+          ],
+          [
+            [
+              "Cross River",
+              "food"
+            ],
+            110.4,
+            111.526275,
+            1.1262749999999926
+          ],
+          [
+            [
+              "Jigawa",
+              "all_items"
+            ],
+            111.2,
+            112.25,
+            1.0499999999999972
+          ],
+          [
+            [
+              "Katsina",
+              "all_items"
+            ],
+            115.99,
+            115.0,
+            0.9899999999999949
+          ],
+          [
+            [
+              "Borno",
+              "food"
+            ],
+            110.49,
+            111.473408,
+            0.9834080000000114
+          ],
+          [
+            [
+              "Bayelsa",
+              "all_items"
+            ],
+            106.99,
+            107.96,
+            0.9699999999999989
+          ],
+          [
+            [
+              "Anambra",
+              "food"
+            ],
+            110.72,
+            111.663399,
+            0.9433989999999994
+          ],
+          [
+            [
+              "Kebbi",
+              "food"
+            ],
+            107.86,
+            107.112259,
+            0.7477410000000049
+          ],
+          [
+            [
+              "Ebonyi",
+              "food"
+            ],
+            116.88,
+            117.511205,
+            0.6312050000000085
+          ],
+          [
+            [
+              "Taraba",
+              "food"
+            ],
+            111.89,
+            111.302935,
+            0.5870649999999955
+          ],
+          [
+            [
+              "Akwa Ibom",
+              "food"
+            ],
+            106.94,
+            107.427291,
+            0.48729099999999903
+          ],
+          [
+            [
+              "Akwa Ibom",
+              "all_items"
+            ],
+            107.11,
+            106.63,
+            0.480000000000004
+          ],
+          [
+            [
+              "Katsina",
+              "food"
+            ],
+            113.61,
+            114.012128,
+            0.4021280000000047
+          ],
+          [
+            [
+              "Ebonyi",
+              "all_items"
+            ],
+            116.13,
+            115.74,
+            0.39000000000000057
+          ],
+          [
+            [
+              "Niger",
+              "all_items"
+            ],
+            108.08,
+            108.45,
+            0.37000000000000455
+          ],
+          [
+            [
+              "Ogun",
+              "food"
+            ],
+            111.84,
+            112.107901,
+            0.26790099999999484
+          ],
+          [
+            [
+              "Osun",
+              "food"
+            ],
+            108.71,
+            108.975629,
+            0.2656290000000041
+          ],
+          [
+            [
+              "Lagos",
+              "all_items"
+            ],
+            111.16,
+            111.41,
+            0.25
+          ],
+          [
+            [
+              "Adamawa",
+              "food"
+            ],
+            103.52,
+            103.709686,
+            0.1896860000000089
+          ],
+          [
+            [
+              "Osun",
+              "all_items"
+            ],
+            107.7,
+            107.56,
+            0.14000000000000057
+          ]
+        ],
+        "year_ago": "2025-02",
+        "from_file": "2026-02"
+      },
+      {
+        "month": "2026-03",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2025-03",
+        "from_file": "2026-03"
+      },
+      {
+        "month": "2026-04",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 13,
+        "bad": [
+          [
+            [
+              "Benue",
+              "food"
+            ],
+            115.819464,
+            146.650854,
+            30.831390000000013
+          ],
+          [
+            [
+              "Borno",
+              "food"
+            ],
+            136.650854,
+            114.69492,
+            21.955934000000013
+          ],
+          [
+            [
+              "Plateau",
+              "all_items"
+            ],
+            129.725303,
+            113.99008983227648,
+            15.735213167723515
+          ],
+          [
+            [
+              "Ebonyi",
+              "food"
+            ],
+            118.939773,
+            103.48884,
+            15.450933000000006
+          ],
+          [
+            [
+              "Enugu",
+              "food"
+            ],
+            103.48884,
+            118.757362,
+            15.268522000000004
+          ],
+          [
+            [
+              "Delta",
+              "all_items"
+            ],
+            113.455404,
+            128.70935659612812,
+            15.253952596128116
+          ],
+          [
+            [
+              "Sokoto",
+              "all_items"
+            ],
+            111.710093,
+            125.77314866578004,
+            14.063055665780041
+          ],
+          [
+            [
+              "Taraba",
+              "food"
+            ],
+            128.658325,
+            115.011152,
+            13.647172999999995
+          ],
+          [
+            [
+              "Ekiti",
+              "food"
+            ],
+            116.130976,
+            129.6635,
+            13.532523999999995
+          ],
+          [
+            [
+              "Oyo",
+              "all_items"
+            ],
+            127.743416,
+            114.54592642846548,
+            13.197489571534518
+          ],
+          [
+            [
+              "Ekiti",
+              "all_items"
+            ],
+            116.935437,
+            129.9845242186622,
+            13.049087218662194
+          ],
+          [
+            [
+              "Ogun",
+              "food"
+            ],
+            119.654142,
+            107.230401,
+            12.423740999999993
+          ],
+          [
+            [
+              "Osun",
+              "food"
+            ],
+            116.945862,
+            128.658325,
+            11.712462999999985
+          ],
+          [
+            [
+              "Enugu",
+              "all_items"
+            ],
+            119.486125,
+            130.80396693683224,
+            11.317841936832238
+          ],
+          [
+            [
+              "Kano",
+              "food"
+            ],
+            119.291051,
+            108.496527,
+            10.794523999999996
+          ],
+          [
+            [
+              "Jigawa",
+              "food"
+            ],
+            129.6635,
+            118.919615,
+            10.743885000000006
+          ],
+          [
+            [
+              "Borno",
+              "all_items"
+            ],
+            130.081717,
+            119.38505693139952,
+            10.69666006860048
+          ],
+          [
+            [
+              "Edo",
+              "all_items"
+            ],
+            128.709357,
+            118.53859294725665,
+            10.170764052743365
+          ],
+          [
+            [
+              "Benue",
+              "all_items"
+            ],
+            120.637777,
+            130.081716897686,
+            9.443939897685993
+          ],
+          [
+            [
+              "Kaduna",
+              "all_items"
+            ],
+            130.803967,
+            121.38301415457467,
+            9.420952845425333
+          ],
+          [
+            [
+              "Gombe",
+              "all_items"
+            ],
+            115.513565,
+            124.50045108033218,
+            8.986886080332184
+          ],
+          [
+            [
+              "Rivers",
+              "food"
+            ],
+            107.230401,
+            116.130976,
+            8.900575000000003
+          ],
+          [
+            [
+              "Bayelsa",
+              "food"
+            ],
+            124.468596,
+            115.819464,
+            8.649132000000009
+          ],
+          [
+            [
+              "Kebbi",
+              "food"
+            ],
+            118.919615,
+            127.440625,
+            8.521010000000004
+          ],
+          [
+            [
+              "Niger",
+              "food"
+            ],
+            127.440625,
+            119.008592,
+            8.432033000000004
+          ],
+          [
+            [
+              "Kaduna",
+              "food"
+            ],
+            118.757362,
+            126.845908,
+            8.088545999999994
+          ],
+          [
+            [
+              "Yobe",
+              "all_items"
+            ],
+            114.545926,
+            122.37478965000578,
+            7.828863650005786
+          ],
+          [
+            [
+              "Zamfara",
+              "all_items"
+            ],
+            120.037849,
+            127.73595207306006,
+            7.698103073060068
+          ],
+          [
+            [
+              "Jigawa",
+              "all_items"
+            ],
+            129.984524,
+            122.39000326115908,
+            7.594520738840913
+          ],
+          [
+            [
+              "Katsina",
+              "food"
+            ],
+            110.802498,
+            118.240613,
+            7.438114999999996
+          ],
+          [
+            [
+              "Kogi",
+              "food"
+            ],
+            126.845908,
+            119.654142,
+            7.191766000000001
+          ],
+          [
+            [
+              "Yobe",
+              "food"
+            ],
+            116.749326,
+            123.575602,
+            6.826276000000007
+          ],
+          [
+            [
+              "Kebbi",
+              "all_items"
+            ],
+            122.390003,
+            129.05536184193542,
+            6.665358841935429
+          ],
+          [
+            [
+              "Bayelsa",
+              "all_items"
+            ],
+            113.99009,
+            120.63777713448862,
+            6.647687134488621
+          ],
+          [
+            [
+              "Ebonyi",
+              "all_items"
+            ],
+            125.773149,
+            119.48612472452123,
+            6.287024275478771
+          ],
+          [
+            [
+              "Kwara",
+              "food"
+            ],
+            108.496527,
+            114.482202,
+            5.9856750000000005
+          ],
+          [
+            [
+              "Cross River",
+              "all_items"
+            ],
+            119.385057,
+            113.45540437852446,
+            5.92965262147554
+          ],
+          [
+            [
+              "Nasarawa",
+              "food"
+            ],
+            123.575602,
+            117.649806,
+            5.925796000000005
+          ],
+          [
+            [
+              "Plateau",
+              "food"
+            ],
+            119.008592,
+            124.468596,
+            5.460004000000012
+          ],
+          [
+            [
+              "Nasarawa",
+              "all_items"
+            ],
+            122.37479,
+            127.74341593840056,
+            5.368625938400555
+          ],
+          [
+            [
+              "Kwara",
+              "all_items"
+            ],
+            119.938789,
+            114.60706093239655,
+            5.33172806760345
+          ],
+          [
+            [
+              "Lagos",
+              "all_items"
+            ],
+            114.419442,
+            119.368910413379,
+            4.949468413378995
+          ],
+          [
+            [
+              "Ondo",
+              "food"
+            ],
+            114.482202,
+            119.160791,
+            4.678589000000002
+          ],
+          [
+            [
+              "Kano",
+              "all_items"
+            ],
+            124.500451,
+            119.93878911626607,
+            4.561661883733933
+          ],
+          [
+            [
+              "Gombe",
+              "food"
+            ],
+            115.011152,
+            119.291051,
+            4.279899
+          ],
+          [
+            [
+              "Taraba",
+              "all_items"
+            ],
+            119.608059,
+            115.51356525166327,
+            4.094493748336731
+          ],
+          [
+            [
+              "Cross River",
+              "food"
+            ],
+            114.69492,
+            111.016192,
+            3.6787279999999924
+          ],
+          [
+            [
+              "Imo",
+              "food"
+            ],
+            114.210621,
+            110.802498,
+            3.4081230000000033
+          ],
+          [
+            [
+              "Katsina",
+              "all_items"
+            ],
+            117.685695,
+            114.4194415356785,
+            3.266253464321494
+          ],
+          [
+            [
+              "Ondo",
+              "all_items"
+            ],
+            114.607061,
+            111.71009335886335,
+            2.896967641136655
+          ],
+          [
+            [
+              "Ogun",
+              "all_items"
+            ],
+            119.938806,
+            117.55739129137329,
+            2.381414708626707
+          ],
+          [
+            [
+              "Delta",
+              "food"
+            ],
+            111.016192,
+            112.871114,
+            1.854922000000002
+          ],
+          [
+            [
+              "Kogi",
+              "all_items"
+            ],
+            121.383014,
+            119.93880598988164,
+            1.4442080101183592
+          ],
+          [
+            [
+              "Edo",
+              "food"
+            ],
+            112.871114,
+            114.210621,
+            1.3395069999999976
+          ],
+          [
+            [
+              "Lagos",
+              "food"
+            ],
+            118.240613,
+            116.945862,
+            1.2947509999999909
+          ],
+          [
+            [
+              "Oyo",
+              "food"
+            ],
+            117.649806,
+            116.749326,
+            0.9004800000000017
+          ],
+          [
+            [
+              "Imo",
+              "all_items"
+            ],
+            118.538593,
+            117.68569479839101,
+            0.8528982016089941
+          ],
+          [
+            [
+              "Niger",
+              "all_items"
+            ],
+            129.055362,
+            129.72530346461906,
+            0.6699414646190576
+          ],
+          [
+            [
+              "Rivers",
+              "all_items"
+            ],
+            117.557391,
+            116.93543684961914,
+            0.6219541503808586
+          ],
+          [
+            [
+              "Osun",
+              "all_items"
+            ],
+            119.36891,
+            119.60805913440763,
+            0.23914913440762575
+          ],
+          [
+            [
+              "Sokoto",
+              "food"
+            ],
+            119.160791,
+            118.939773,
+            0.22101800000000082
+          ]
+        ],
+        "year_ago": "2025-04",
+        "from_file": "2026-04"
+      },
+      {
+        "month": "2026-05",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2025-05",
+        "from_file": "2026-05"
+      },
+      {
+        "month": "2026-06",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2025-06",
+        "from_file": "2026-06"
+      },
+      {
+        "month": "2026-07",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2025-07",
+        "from_file": "2026-07"
+      },
+      {
+        "month": "2026-08",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2025-08",
+        "from_file": "2026-08"
+      },
+      {
+        "month": "2026-09",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2025-09",
+        "from_file": "2026-09"
+      },
+      {
+        "month": "2026-10",
+        "status": "tested",
+        "pairs": 74,
+        "agree": 74,
+        "bad": [],
+        "year_ago": "2025-10",
+        "from_file": "2026-10"
+      }
+    ],
+    "warnings": [
+      "CPI_2020-01_Report.pdf: 2 base-period headings ['BASE PERIOD DECEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2020-02_Report.pdf: 2 base-period headings ['BASE PERIOD DECEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2020-03_Report.pdf: 2 base-period headings ['BASE PERIOD DECEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2020-04_Report.pdf: 2 base-period headings ['BASE PERIOD DECEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2020-05_Report.pdf: 2 base-period headings ['BASE PERIOD DECEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2020-06_Report.pdf: 2 base-period headings ['BASE PERIOD DECEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2020-07_Report.pdf: 2 base-period headings ['BASE PERIOD DECEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2020-08_Report.pdf: 2 base-period headings ['BASE PERIOD DECEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2020-09_Report.pdf: 2 base-period headings ['BASE PERIOD DECEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2020-10_Report.pdf: 2 base-period headings ['BASE PERIOD DECEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2020-11_Report.pdf: 2 base-period headings ['BASE PERIOD DECEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2020-12_Report.pdf: 2 base-period headings ['BASE PERIOD DECEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2021-01_Report.pdf: 2 base-period headings ['BASE PERIOD DECEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2021-02_Report.pdf: 2 base-period headings ['BASE PERIOD DECEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2021-03_Report.pdf: 3 base-period headings ['BASE PERIOD DECEMBER 2009 = 100', 'Base Period:  November  2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2021-05_Report.pdf: 3 base-period headings ['BASE PERIOD DECEMBER 2009 = 100', 'Base Period:  November  2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2021-06_Report.pdf: 3 base-period headings ['BASE PERIOD DECEMBER 2009 = 100', 'Base Period:  November  2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2021-07_Report.pdf: 3 base-period headings ['BASE PERIOD DECEMBER 2009 = 100', 'Base Period:  November  2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2021-08_Report.pdf: 3 base-period headings ['BASE PERIOD DECEMBER 2009 = 100', 'Base Period:  November  2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2021-10_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2021-11_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2022-01_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2022-03_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2022-04_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2022-05_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2022-07_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2022-08_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2022-09_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2022-10_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2022-11_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2022-12_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2023-01_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2023-02_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2023-03_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2023-04_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2023-05_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2023-06_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2023-07_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2023-08_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2023-09_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2023-10_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2023-11_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2023-12_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2024-01_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2024-02_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2024-03_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2024-04_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2024-05_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2024-06_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2024-08_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2024-09_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_2024-10_Report.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']",
+      "CPI_DEC_2024.pdf: 2 base-period headings ['BASE PERIOD NOVEMBER 2009 = 100', 'Base Period:  November  2009 = 100']"
+    ]
+  },
+  "pdf_sweep": {
+    "generated": "2026-11-22T02:54:14",
+    "first": "2020-01",
+    "last": "2024-10",
+    "months_requested": [
+      "2020-01",
+      "2020-02",
+      "2020-03",
+      "2020-04",
+      "2020-05",
+      "2020-06",
+      "2020-07",
+      "2020-08",
+      "2020-09",
+      "2020-10",
+      "2020-11",
+      "2020-12",
+      "2021-01",
+      "2021-02",
+      "2021-03",
+      "2021-04",
+      "2021-05",
+      "2021-06",
+      "2021-07",
+      "2021-08",
+      "2021-09",
+      "2021-10",
+      "2021-11",
+      "2021-12",
+      "2022-01",
+      "2022-02",
+      "2022-03",
+      "2022-04",
+      "2022-05",
+      "2022-06",
+      "2022-07",
+      "2022-08",
+      "2022-09",
+      "2022-10",
+      "2022-11",
+      "2022-12",
+      "2023-01",
+      "2023-02",
+      "2023-03",
+      "2023-04",
+      "2023-05",
+      "2023-06",
+      "2023-07",
+      "2023-08",
+      "2023-09",
+      "2023-10",
+      "2023-11",
+      "2023-12",
+      "2024-01",
+      "2024-02",
+      "2024-03",
+      "2024-04",
+      "2024-05",
+      "2024-06",
+      "2024-07",
+      "2024-08",
+      "2024-09",
+      "2024-10"
+    ],
+    "months_with_id": [
+      "2020-01",
+      "2020-02",
+      "2020-03",
+      "2020-04",
+      "2020-05",
+      "2020-06",
+      "2020-07",
+      "2020-08",
+      "2020-09",
+      "2020-10",
+      "2020-11",
+      "2020-12",
+      "2021-01",
+      "2021-02",
+      "2021-03",
+      "2021-04",
+      "2021-05",
+      "2021-06",
+      "2021-07",
+      "2021-08",
+      "2021-09",
+      "2021-10",
+      "2021-11",
+      "2021-12",
+      "2022-01",
+      "2022-02",
+      "2022-03",
+      "2022-04",
+      "2022-05",
+      "2022-06",
+      "2022-07",
+      "2022-08",
+      "2022-09",
+      "2022-10",
+      "2022-11",
+      "2022-12",
+      "2023-01",
+      "2023-02",
+      "2023-03",
+      "2023-04",
+      "2023-05",
+      "2023-06",
+      "2023-07",
+      "2023-08",
+      "2023-09",
+      "2023-10",
+      "2023-11",
+      "2023-12",
+      "2024-01",
+      "2024-02",
+      "2024-03",
+      "2024-04",
+      "2024-05",
+      "2024-06",
+      "2024-07",
+      "2024-08",
+      "2024-09",
+      "2024-10"
+    ],
+    "months_without_id": [],
+    "downloaded": 57,
+    "cached": 1,
+    "failed": 0,
+    "http_requests": 57
+  }
+}

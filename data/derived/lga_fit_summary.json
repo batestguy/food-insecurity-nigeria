@@ -1,0 +1,141 @@
+{
+  "generated_by": "scripts/lga_model.R",
+  "command": "Rscript scripts/lga_model.R",
+  "ticket": "T10",
+  "generated_on": "2026-11-23",
+  "seed": 20261122,
+  "r_version": "R version 4.5.2 (2025-10-31 ucrt)",
+  "inla_version": [],
+  "inputs": {
+    "households": {
+      "path": "data/derived/analysis_households_lga.csv",
+      "n": 39877,
+      "md5": "4CC75BD3BAE7784AD544C48E2A1366E7"
+    },
+    "boundaries": {
+      "path": "data/public/boundaries/geoBoundaries-NGA-ADM2_simplified.geojson",
+      "n": 774,
+      "md5": "64F49558015E8C9905EF0220AC377101"
+    },
+    "population": {
+      "path": "data/derived/lga_population.csv",
+      "n": 774,
+      "md5": "D252146ADF2223C7D04DE69611954BDF",
+      "note": "773 of 774 LGAs carry a population; Bakassi is absent from the source. Not used in the fit."
+    },
+    "clusters": {
+      "path": "data/derived/cluster_lga_fixed.csv",
+      "md5": "2FB36FC5FD8895DED646FD107A7ECB35"
+    }
+  },
+  "model": {
+    "outcome": "severe_fi = 1{hfs_sev >= 0.5}, all eight FIES items affirmed",
+    "formula": "y ~ wealth_z + hh_size + urban + head_male + head_age_c + head_age_c2 +      head_edu_secondary + head_edu_higher + improved_water + improved_sanitation +      f(lga, model = \"bym2\", graph = gr) + f(clu, model = \"iid\")",
+    "family": "binomial, single trial per household",
+    "covariates": ["wealth_z", "hh_size", "urban", "head_male", "head_age_c", "head_age_c2", "head_edu_secondary", "head_edu_higher", "improved_water", "improved_sanitation"],
+    "n_covariates_as_variables": 8,
+    "note_covariate_count": "eight variables per data/derived/covariate_spec.md, ten design columns: head_edu enters as two dummies and head_age as a quadratic",
+    "geospatial_covariates_used": 0,
+    "weights_in_likelihood": false,
+    "cluster_effect": "IID, nuisance, marginalised out of the reported target",
+    "spatial_effect": "BYM2, queen contiguity over 774 LGA polygons"
+  },
+  "graph": {
+    "method": "spdep::poly2nb(queen = TRUE) on geoBoundaries ADM2 simplified, st_make_valid first",
+    "nodes": 774,
+    "links": 4460,
+    "edges": 2230,
+    "degree_min": 1,
+    "degree_median": 6,
+    "degree_max": 12,
+    "components": 1,
+    "isolates": 0,
+    "constraint_needed": false
+  },
+  "priors": {
+    "source": "INLA 25.10.19 defaults, read from inla.models()$latent$bym2 in this session",
+    "bym2_precision": "pc.prec(1, 0.01) on log precision: P(sd > 1) = 0.01",
+    "bym2_phi": "pc(0.5, 0.5) on logit(phi): P(phi < 0.5) = 0.5",
+    "cluster_precision": "INLA default for model = iid: pc.prec(1, 0.01)",
+    "fixed_effects": "INLA default: Gaussian, mean 0, precision 0 (flat)"
+  },
+  "hyperparameters": {
+    "table": [
+      {
+        "name": "Precision for lga",
+        "mean": 0.90405207,
+        "sd": 0.08240356,
+        "q025": 0.75102235,
+        "q500": 0.90089414,
+        "q975": 1.07517594
+      },
+      {
+        "name": "Phi for lga",
+        "mean": 0.97058415,
+        "sd": 0.02575325,
+        "q025": 0.90243416,
+        "q500": 0.97816546,
+        "q975": 0.99729913
+      },
+      {
+        "name": "Precision for clu",
+        "mean": 4.78414678,
+        "sd": 0.55040222,
+        "q025": 3.80114732,
+        "q500": 4.74980257,
+        "q975": 5.96540938
+      }
+    ],
+    "sd_implied_by_precision": 1.05172761,
+    "empirical_sd_of_lga_effect": 1.14152773,
+    "scaling_note": "BYM2 assumes the marginal sd equals 1/sqrt(prec) whatever phi is. The empirical sd of the lga draws is the check on that; a large disagreement would mean the ICAR component is not scaled as assumed."
+  },
+  "fit": {
+    "waic": 37942.16907037,
+    "waic_p_eff": 808.47509364,
+    "dic": 37967.863004,
+    "dic_p_eff": 853.52712109,
+    "mode_status": 0,
+    "n_observations": 39877,
+    "n_clusters": 1380,
+    "n_lgas": 774
+  },
+  "timing_seconds": {
+    "bym2_fit": 57.42,
+    "posterior_draws": 816.72,
+    "theta_draws": 27.19,
+    "count_functional": 52.16,
+    "iid_fit": 20.77,
+    "total": 1920.49
+  },
+  "national_rates": {
+    "unweighted": 0.27742809,
+    "weighted": 0.2909904,
+    "gap_unweighted_minus_weighted": -0.01356231,
+    "weights_used_in_likelihood": false,
+    "note": "hv005 is carried for reporting only. Every model estimate is unweighted, so the model and the weighted national rate are not on the same footing; the gap is disclosed rather than corrected."
+  },
+  "checks": {
+    "identity_residual_threshold_050": -0.00272544,
+    "diagonal_residual_pst_equals_ps": 0,
+    "split_half_pairwise": {
+      "var_pair_half1": 13.37438238,
+      "var_pair_half2": 15.11814236,
+      "rel_difference": 0.12240123
+    },
+    "bym2_scaling": {
+      "precision_mean": 0.90405207,
+      "sd_implied": 1.05172761,
+      "empirical_sd_of_lga_linear_predictor": 1.14152773,
+      "ratio": 1.08538343
+    },
+    "area_classification": {
+      "above_095": 32,
+      "below_005": 509,
+      "between_040_and_060": 40,
+      "n_areas": 774
+    },
+    "correlation_posterior_median_vs_direct": 0.96656516,
+    "covariate_matrix_rank": 10
+  }
+}

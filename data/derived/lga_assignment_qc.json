@@ -1,0 +1,375 @@
+{
+  "generated_by": "scripts/lga_assign.R",
+  "generated_on": "2026-11-22",
+  "inputs": {
+    "clusters": {
+      "path": "data/restricted/dhs-2024/ge/NGGE8AFL.shp",
+      "n": 1380,
+      "crs": "WGS 84",
+      "displacement_readme": "data/restricted/dhs-2024/ge/GPS_Displacement_README.txt"
+    },
+    "adm1": {
+      "path": "data/public/boundaries/geoBoundaries-NGA-ADM1_simplified.geojson",
+      "n": 37,
+      "crs": "WGS 84",
+      "licence": "CC BY 4.0 (geoBoundaries)"
+    },
+    "adm2": {
+      "path": "data/public/boundaries/geoBoundaries-NGA-ADM2_simplified.geojson",
+      "n": 774,
+      "crs": "WGS 84",
+      "licence": "CC BY 4.0 (geoBoundaries)"
+    },
+    "households": {
+      "path": "data/derived/analysis_households.csv",
+      "n": 39877
+    }
+  },
+  "working_crs": "EPSG:32632 (UTM 32N)",
+  "assignment_rule": {
+    "lga_to_state": "representative point (st_point_on_surface) tested against state polygons; not a name join, because Nigerian LGA names repeat across states",
+    "cluster_to_lga": "points-in-polygon against the 774 ADM2 polygons in EPSG:32632",
+    "near_border": "distance from cluster to the boundary of its assigned LGA <= the DHS displacement radius for that urban/rural class",
+    "second_choice": "nearest LGA other than the assigned one, by planar distance in EPSG:32632",
+    "sensitivity": "all near-border clusters moved to their second-nearest LGA; both assignments shipped"
+  },
+  "displacement": {
+    "radius_urban_m": 2000,
+    "radius_rural_m": 5000,
+    "radius_rural_tail_m": 10000,
+    "source": "data/restricted/dhs-2024/ge/GPS_Displacement_README.txt line 42-43: \"up to 5km for rural points (with 1% of rural cluster being randomly displaced up to 10km) and up to 2km for urban\"",
+    "also_stated": "the displacement is restricted so the displaced point stays inside the same admin0, admin1 and admin2 (LGA) as the true point (same README, lines 5-7); therefore a near-border cluster here is ambiguous because the geoBoundaries LGA edges are not DHS's LGA edges, not because DHS moved the point out of its own LGA"
+  },
+  "counts": {
+    "states": 37,
+    "lgas": 774,
+    "clusters": 1380,
+    "households": 39877,
+    "clusters_in_exactly_one_lga": 1380,
+    "clusters_on_shared_border_tiebroken": 0,
+    "clusters_outside_all_lgas": 0,
+    "clusters_near_border": 807,
+    "clusters_near_border_pct": 58.48,
+    "clusters_near_border_urban": 340,
+    "clusters_near_border_rural": 467,
+    "rural_clusters_within_10km_of_border": 617,
+    "clusters_reassigned_in_sensitivity": 807,
+    "lgas_with_zero_clusters": 123,
+    "lgas_with_zero_clusters_sensitivity": 145,
+    "share_lgas_with_data": 0.8411,
+    "share_lgas_with_data_sensitivity": 0.8127,
+    "lgas_count_changed_under_sensitivity": 517,
+    "lgas_to_zero_under_sensitivity": 84,
+    "lgas_from_zero_under_sensitivity": 62
+  },
+  "clusters_per_lga": {
+    "primary": {
+      "0": 123,
+      "1": 260,
+      "2-4": 357,
+      "5+": 34
+    },
+    "sensitivity": {
+      "0": 145,
+      "1": 262,
+      "2-4": 328,
+      "5+": 39
+    }
+  },
+  "assignment_rule_usage": {
+    "representative_point": 774
+  },
+  "per_state_lga_counts": {
+    "Abia": 17,
+    "Abuja Federal Capital Territory": 6,
+    "Adamawa": 21,
+    "Akwa Ibom": 31,
+    "Anambra": 21,
+    "Bauchi": 20,
+    "Bayelsa": 8,
+    "Benue": 23,
+    "Borno": 27,
+    "Cross River": 18,
+    "Delta": 25,
+    "Ebonyi": 13,
+    "Edo": 18,
+    "Ekiti": 16,
+    "Enugu": 17,
+    "Gombe": 11,
+    "Imo": 27,
+    "Jigawa": 27,
+    "Kaduna": 23,
+    "Kano": 44,
+    "Katsina": 34,
+    "Kebbi": 21,
+    "Kogi": 21,
+    "Kwara": 16,
+    "Lagos": 20,
+    "Nasarawa": 13,
+    "Niger": 25,
+    "Ogun": 20,
+    "Ondo": 18,
+    "Osun": 30,
+    "Oyo": 33,
+    "Plateau": 17,
+    "Rivers": 23,
+    "Sokoto": 23,
+    "Taraba": 16,
+    "Yobe": 17,
+    "Zamfara": 14
+  },
+  "border_distance_m": {
+    "min": 1.2,
+    "q1": 1126.5,
+    "median": 2589.3,
+    "q3": 5110.4,
+    "max": 33443.6
+  },
+  "projection_check": {
+    "method": "EPSG:32632 distance vs geodesic (s2) distance to the same boundary, random sample",
+    "n": 200,
+    "seed": 20261122,
+    "median_abs_diff_m": 4.5,
+    "max_abs_diff_m": 77.62,
+    "near_border_flags_differing": 0
+  },
+  "containment_check": {
+    "method": "st_intersects on lon/lat with s2 vs on EPSG:32632",
+    "disagreements": 0
+  },
+  "cluster_state_vs_dhs_adm1name": {
+    "agree": 1365,
+    "disagree": 15,
+    "mismatches": [
+      {
+        "DHSCLUST": 119,
+        "dhs_adm1": "Jigawa",
+        "assigned_state": "Katsina",
+        "assigned_lga": "Baure"
+      },
+      {
+        "DHSCLUST": 130,
+        "dhs_adm1": "Jigawa",
+        "assigned_state": "Bauchi",
+        "assigned_lga": "Zaki"
+      },
+      {
+        "DHSCLUST": 155,
+        "dhs_adm1": "Yobe",
+        "assigned_state": "Gombe",
+        "assigned_lga": "Nafada"
+      },
+      {
+        "DHSCLUST": 273,
+        "dhs_adm1": "Gombe",
+        "assigned_state": "Bauchi",
+        "assigned_lga": "Alkaleri"
+      },
+      {
+        "DHSCLUST": 347,
+        "dhs_adm1": "Kano",
+        "assigned_state": "Jigawa",
+        "assigned_lga": "Babura"
+      },
+      {
+        "DHSCLUST": 490,
+        "dhs_adm1": "Niger",
+        "assigned_state": "Kaduna",
+        "assigned_lga": "Kagarko"
+      },
+      {
+        "DHSCLUST": 649,
+        "dhs_adm1": "Benue",
+        "assigned_state": "Kogi",
+        "assigned_lga": "Ankpa"
+      },
+      {
+        "DHSCLUST": 655,
+        "dhs_adm1": "Benue",
+        "assigned_state": "Taraba",
+        "assigned_lga": "Wukari"
+      },
+      {
+        "DHSCLUST": 697,
+        "dhs_adm1": "Kogi",
+        "assigned_state": "Edo",
+        "assigned_lga": "Etsako East"
+      },
+      {
+        "DHSCLUST": 899,
+        "dhs_adm1": "Ondo",
+        "assigned_state": "Delta",
+        "assigned_lga": "Warri North"
+      },
+      {
+        "DHSCLUST": 1025,
+        "dhs_adm1": "Ebonyi",
+        "assigned_state": "Benue",
+        "assigned_lga": "Ado"
+      },
+      {
+        "DHSCLUST": 1043,
+        "dhs_adm1": "Ebonyi",
+        "assigned_state": "Cross River",
+        "assigned_lga": "Abi"
+      },
+      {
+        "DHSCLUST": 1121,
+        "dhs_adm1": "Abia",
+        "assigned_state": "Akwa Ibom",
+        "assigned_lga": "Ini"
+      },
+      {
+        "DHSCLUST": 1143,
+        "dhs_adm1": "Abia",
+        "assigned_state": "Imo",
+        "assigned_lga": "Ihitte/Uboma"
+      },
+      {
+        "DHSCLUST": 1195,
+        "dhs_adm1": "Rivers",
+        "assigned_state": "Bayelsa",
+        "assigned_lga": "Yenegoa"
+      }
+    ]
+  },
+  "state_rollup_conflict": {
+    "note": "A cluster's LGA parent state (geoBoundaries) disagrees with DHS's own ADM1NAME for the clusters listed above. LGA counts therefore roll up to slightly different state counts than the microdata's `geography` column. State-level aggregates must use the microdata state variable, not the LGA rollup.",
+    "max_abs_difference": 2,
+    "n_states_differing": 19,
+    "table": [
+      {
+        "state_name": "Abia",
+        "n_clusters_polygon": 33,
+        "n_clusters_dhs": 35,
+        "delta": -2
+      },
+      {
+        "state_name": "Akwa Ibom",
+        "n_clusters_polygon": 40,
+        "n_clusters_dhs": 39,
+        "delta": 1
+      },
+      {
+        "state_name": "Bauchi",
+        "n_clusters_polygon": 43,
+        "n_clusters_dhs": 41,
+        "delta": 2
+      },
+      {
+        "state_name": "Bayelsa",
+        "n_clusters_polygon": 30,
+        "n_clusters_dhs": 29,
+        "delta": 1
+      },
+      {
+        "state_name": "Benue",
+        "n_clusters_polygon": 38,
+        "n_clusters_dhs": 39,
+        "delta": -1
+      },
+      {
+        "state_name": "Cross River",
+        "n_clusters_polygon": 36,
+        "n_clusters_dhs": 35,
+        "delta": 1
+      },
+      {
+        "state_name": "Delta",
+        "n_clusters_polygon": 41,
+        "n_clusters_dhs": 40,
+        "delta": 1
+      },
+      {
+        "state_name": "Ebonyi",
+        "n_clusters_polygon": 32,
+        "n_clusters_dhs": 34,
+        "delta": -2
+      },
+      {
+        "state_name": "Edo",
+        "n_clusters_polygon": 37,
+        "n_clusters_dhs": 36,
+        "delta": 1
+      },
+      {
+        "state_name": "Imo",
+        "n_clusters_polygon": 38,
+        "n_clusters_dhs": 37,
+        "delta": 1
+      },
+      {
+        "state_name": "Jigawa",
+        "n_clusters_polygon": 35,
+        "n_clusters_dhs": 36,
+        "delta": -1
+      },
+      {
+        "state_name": "Kaduna",
+        "n_clusters_polygon": 43,
+        "n_clusters_dhs": 42,
+        "delta": 1
+      },
+      {
+        "state_name": "Kano",
+        "n_clusters_polygon": 44,
+        "n_clusters_dhs": 45,
+        "delta": -1
+      },
+      {
+        "state_name": "Katsina",
+        "n_clusters_polygon": 39,
+        "n_clusters_dhs": 38,
+        "delta": 1
+      },
+      {
+        "state_name": "Niger",
+        "n_clusters_polygon": 38,
+        "n_clusters_dhs": 39,
+        "delta": -1
+      },
+      {
+        "state_name": "Ondo",
+        "n_clusters_polygon": 36,
+        "n_clusters_dhs": 37,
+        "delta": -1
+      },
+      {
+        "state_name": "Rivers",
+        "n_clusters_polygon": 41,
+        "n_clusters_dhs": 42,
+        "delta": -1
+      },
+      {
+        "state_name": "Taraba",
+        "n_clusters_polygon": 36,
+        "n_clusters_dhs": 35,
+        "delta": 1
+      },
+      {
+        "state_name": "Yobe",
+        "n_clusters_polygon": 32,
+        "n_clusters_dhs": 33,
+        "delta": -1
+      }
+    ]
+  },
+  "assertions": {
+    "lga_count_is_774": true,
+    "state_count_is_37": true,
+    "cluster_count_is_1380": true,
+    "every_lga_has_one_state": true,
+    "lga_ids_unique": true,
+    "per_state_lga_counts_sum_774": true,
+    "state_lga_counts_sum_table": true,
+    "all_37_states_receive_lgas": true,
+    "clusters_outside_all_lgas_ok": true,
+    "containment_agrees": true,
+    "cluster_ids_unique": true,
+    "cluster_ids_join_microdata": true,
+    "hv001_equals_dhsclust": true,
+    "sensitivity_rows_unchanged": true,
+    "no_na_border_distance": true
+  },
+  "limitations": ["LGA boundaries are geoBoundaries simplified (NGA-ADM2, GRID3 source). They are not DHS's own LGA polygons, so a cluster within the displacement radius of an edge may be in a different LGA than the geoBoundaries edge implies.", "DHS displaces every cluster, and restricts displacement to the same LGA. The assignment below therefore uses displaced coordinates; that is unavoidable and is the reason for the sensitivity column.", "LGA boundaries are working boundaries for reporting, not a legal or electoral record.", "n_households counts households in data/derived/analysis_households.csv, not population. Household weights in the DHS extract are normalised, so absolute population is not recoverable."]
+}

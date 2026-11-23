@@ -1,0 +1,6 @@
+month,scope,issue,rows_affected,evidence,action
+2024-12,panel,duplicate_observation,74,same (jurisdiction and series) parsed twice — once from CPI_DEC_2024.pdf and once from cpi_1NewDec2024.xlsx; the two agree to <=0.05 (PDF prints one decimal),all downstream use must dedupe to the xlsx row
+2025-04,panel,row_block_contamination,59,chain test file(2025-05).t-1 vs cpi_1New_Apr25.t agrees on only 13 of 72 values; Benue and Borno rows carry each other's figures,quarantine the whole month — do not use April 2025 until checked against the published report
+2025-02,panel,unresolved_restatement,2,Feb-2026 workbook year-ago column gives Delta food 112.19 against Feb-2025 focus 110.03; Feb-2025 is corroborated by the Mar-2025 file's lookback,keep the first-published value and disclose the discrepancy in Methods
+2024-11,lookback,cross_base_comparison,74,year-ago column of the Nov-2025 file is on base 2024 while this month is base 2009,not a revision — exclude cross-base pairs from any revision count
+all,panel,duplicate_cell_bauchi_anambra,26,Bauchi Food(t-12) equals Anambra All-Items(t-12) to every decimal in 13 of 23 workbooks,one of the two cells is wrong; prefer the value from a file where the collision is absent
