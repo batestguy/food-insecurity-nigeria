@@ -31,8 +31,8 @@ The model fit took 40--55 seconds, and its WAIC was 37,942.17 across runs. The p
 
 \begin{figure}[htbp]
   \centering
-  \fbox{\parbox{0.88\linewidth}{\centering Figure output pending.}}
-  \caption{Posterior mean prevalence for each of the 774 LGAs, ordered from lowest to highest, with the corresponding interval for each area. Output file: \todo{figure output filename}.}
+  \includegraphics[width=\linewidth]{figures/fig_estimates.pdf}
+  \caption{Posterior mean prevalence for each of the 774 LGAs, ordered from lowest to highest, with the corresponding interval for each area. Areas with no sampled cluster are drawn separately from those with at least one. Drawn from \texttt{lga\_estimates.csv}.}
   \label{fig:estimates}
 \end{figure}
 
@@ -79,8 +79,8 @@ The reported 95\% count interval of 101 to 130 is therefore a property of the fi
 
 \begin{figure}[htbp]
   \centering
-  \fbox{\parbox{0.88\linewidth}{\centering Figure output pending.}}
-  \caption{The feasible range of \(\operatorname{Var}(C)\) given the area-specific marginal exceedance probabilities, with the fitted model's variance marked. Output file: \todo{figure output filename}.}
+  \includegraphics[width=\linewidth]{figures/fig_feasible.pdf}
+  \caption{The feasible range of \(\operatorname{Var}(C)\) given the area-specific marginal exceedance probabilities, with the fitted model's variance marked. The axis is logarithmic so that the fitted value is not visually flattered by the much larger upper bound. Drawn from \texttt{theory\_counts.R}.}
   \label{fig:feasible}
 \end{figure}
 
@@ -96,8 +96,8 @@ Under the monotonicity variant, the population-share interval was 0.1372 to 0.23
 
 \begin{figure}[htbp]
   \centering
-  \fbox{\parbox{0.88\linewidth}{\centering Figure output pending.}}
-  \caption{The identified interval for the count compared with the model-based count interval. The model interval is conditional on the fitted joint dependence structure and is not identified by the marginal probabilities alone. Output file: \todo{figure output filename}.}
+  \includegraphics[width=\linewidth]{figures/fig_identified.pdf}
+  \caption{The identified interval for the count compared with the model-based count interval. The model interval is conditional on the fitted joint dependence structure and is not identified by the marginal probabilities alone. Drawn from \texttt{identif\_bounds.json}.}
   \label{fig:identified}
 \end{figure}
 
@@ -135,8 +135,8 @@ The correlation with direct estimates was 0.974 in sample, 0.768 out of sample u
 
 \begin{figure}[htbp]
   \centering
-  \fbox{\parbox{0.88\linewidth}{\centering Figure output pending.}}
-  \caption{Observed coverage plotted against nominal coverage for the four spatial holdout designs. Output file: \todo{figure output filename}.}
+  \includegraphics[width=\linewidth]{figures/fig_calibration.pdf}
+  \caption{Coverage against the nominal 0.95 level for the four spatial holdout designs, with the pre-declared acceptable band shaded. Points are not joined: the text does not claim a coverage curve. Drawn from the four calibration result files.}
   \label{fig:calibration}
 \end{figure}
 
