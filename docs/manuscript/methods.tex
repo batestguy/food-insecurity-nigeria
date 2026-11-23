@@ -1,0 +1,160 @@
+% Methods section.  The TODO command keeps unresolved specifications visible
+% while allowing this fragment to compile under a bare article wrapper.
+\providecommand{\todo}[1]{\textbf{[TODO: #1]}}
+
+\section{Methods}
+
+\subsection{Data and setting}
+
+We used the Nigeria Demographic and Health Survey 2024 to estimate severe household food insecurity at local government area (LGA) level. The analysis unit was the household, while the target areas were the country's 774 LGAs. The analysis retained all 39,877 households in the extract, with no missing covariates in the analysed set. These households came from 1,380 sampled clusters in 37 jurisdictions, comprising the 36 states and the Federal Capital Territory. The survey is clustered and stratified, and the household records carry sampling weights. Those design features matter because the fitted likelihood is unweighted; we therefore distinguish the sample quantity estimated by the model from the design-weighted national prevalence.
+
+State summaries are not the target of the spatial model. The direct severe-food-insecurity estimates range from 4.6\% in Niger to 85.0\% in Yobe, with a median of 23.5\%. A state average cannot show how risk is distributed among the LGAs within that state. The design work for this study found that direct state estimates were already sufficiently precise for state-level summaries, leaving the within-state distribution as the unresolved problem. A Fay--Herriot calculation on the 37 states gives a median shrinkage weight of 0.987, so the model moves the direct estimate by 0.0026 on average and by at most 0.020: at state level there is almost nothing left to borrow. The LGA analysis is intended to describe this finer geography, not to replace the state estimates with a more elaborate estimate of the same state average.
+
+The cluster coordinates were assigned to LGA polygons by spatial overlay. We checked each polygon's state against the survey's jurisdiction label. Where they disagreed, the survey jurisdiction was treated as authoritative; 15 clusters, or 1.1\% of the total, had this mismatch. The LGA graph was built using queen contiguity: two areas are neighbours when their polygons share a boundary point, whether along an edge or at a vertex. The resulting graph has 774 nodes, 2,230 edges, and one connected component. This graph defines the structured part of the area effect and also supplies the neighbourhoods used to design the calibration tests.
+
+The unweighted prevalence in the analysis extract was 27.74\%, compared with a design-weighted national prevalence of 29.10\%. We did not use weights in the likelihood and do not interpret the fitted national mean as the design-weighted population estimate. The difference is reported here because the spatial model estimates the unweighted household probability. The random cluster effect described below represents residual dependence among sampled households in a cluster; it does not correct selection probabilities or reproduce the survey's stratification and weighting.
+
+\subsection{Outcome}
+
+For household \(h\), let \(r_h\) denote the survey office's Rasch probability for severe food insecurity. We defined the binary response as
+\[
+  Y_h = \mathbf{1}\{r_h \geq 0.50\}.
+\]
+Thus, the modelled response is the survey office's severity construct thresholded at 0.50. We did not define severe food insecurity by summing affirmed items and applying a raw-count cut-off. A raw count gives each item the same contribution, whereas the Rasch probability represents the survey office's calibrated severity measure. The choice of outcome is therefore a choice of construct, not just a convenient recoding of the same measure.
+
+We kept the household outcome definition fixed and examined threshold sensitivity at the area level. For a crisis threshold \(c=0.50\), the area count is the number of LGAs whose latent prevalence exceeds \(c\). Repeating the calculation at \(c=0.40\) and \(c=0.60\) gives posterior expected counts of 196.28 and 61.28, respectively. These alternatives change the area-level crisis line; they do not reclassify households or substitute a raw item count for the survey office's outcome.
+
+\subsection{Household and area model}
+
+We fitted a household-level binomial model. Conditional on its probability \(\pi_h\), each response follows
+\[
+  Y_h \mid \pi_h \sim \operatorname{Bernoulli}(\pi_h),
+  \qquad
+  \operatorname{logit}(\pi_h)
+  = \beta_0 + \mathbf{x}_h^\mathsf{T}\boldsymbol{\beta}
+  + \mathbf{w}_{s(h)}^\mathsf{T}\boldsymbol{\gamma}
+  + u_{s(h)} + b_{g(h)} ,
+\]
+where \(s(h)\) is the LGA containing household \(h\), \(g(h)\) is its sampled cluster, \(\mathbf{x}_h\) is its household-covariate vector, and \(\mathbf{w}_{s(h)}\) is the vector of area covariates. The household covariates were wealth (a standardised asset index), household size, an urban indicator, whether the head is male, the head's age centred and its square, two education indicators for the head (secondary; higher), an improved-water indicator, and an improved-sanitation indicator: ten design columns for eight covariates. Improved sanitation is coded zero, not missing, for a household with no toilet facility; treating those blanks as missing would have deleted the poorest quarter of the sample.
+
+The area effect \(u_s\) follows the BYM2 construction on the queen-contiguity graph. In this parameterisation,
+\[
+  u_s = \sigma_u\!\left(
+    \sqrt{\phi}\,u_s^{(S)}
+    + \sqrt{1-\phi}\,u_s^{(I)}
+  \right),
+\]
+where \(u^{(S)}\) is the graph-structured component, scaled to the graph, and \(u^{(I)}_s\) is an independent standard normal component. The mixing parameter \(\phi\) controls the relative contribution of the structured component, and \(\sigma_u\) sets the overall scale. We centre the structured component to distinguish it from the intercept. The cluster effect is an independent Gaussian random intercept,
+\[
+  b_g \stackrel{\mathrm{iid}}{\sim} N(0,\sigma_b^2),
+\]
+shared by households sampled in cluster \(g\). This effect represents residual within-cluster similarity after conditioning on the covariates and LGA effect.
+
+Eight candidate area covariates were interpolated by inverse-distance weighting, using the three nearest of the 1,380 sampled clusters; population density was computed from the 2020 population projections and polygon area rather than interpolated. Their cross-validated interpolation correlations were 0.999 for aridity, 0.999 for precipitation, 0.977 for elevation, 0.923 for malaria, 0.920 for vegetation, 0.614 for travel time, 0.535 for livestock, and 0.522 for nightlights. Selection was mechanical and fixed before any fit: drop a candidate whose cross-validated interpolation correlation is below 0.85; then drop any candidate correlated above 0.8 with one already kept, the earlier in a stated order winning; then keep at most six. Five survived: population density, aridity, vegetation, elevation and malaria.
+
+\textbf{No area covariate enters the primary model.} Every result reported in this paper comes from a fit with household covariates only. The five area covariates were added in a separate specification and estimated effects indistinguishable from zero, in nineteen of twenty coefficient intervals; the primary results therefore exclude them, and that exercise is reported as a negative finding rather than as a specification. Three of the eight candidates could not be recovered at this spatial resolution at all, and that is also reported.
+
+The area-specific prevalence \(\theta_s\) is the model-implied probability at the LGA covariate profile, averaged over the cluster-effect distribution rather than evaluated at a zero cluster effect. In posterior draw \(m\), we calculate it as
+\[
+  \theta_s^{(m)}
+  = \int \operatorname{logit}^{-1}\!\left(
+       \beta_0^{(m)}
+       + \bar{\mathbf{x}}_s^\mathsf{T}\boldsymbol{\beta}^{(m)}
+       + \mathbf{w}_s^\mathsf{T}\boldsymbol{\gamma}^{(m)}
+       + u_s^{(m)} + b
+    \right)\,dF_b^{(m)}(b),
+\]
+where \(\bar{\mathbf{x}}_s\) is the household-covariate profile used for the LGA prediction and \(F_b^{(m)}\) is the draw-specific Gaussian distribution for the cluster effect. We integrated over that distribution numerically. The profile \(\bar{\mathbf{x}}_s\) is the LGA's mean household covariate profile, computed from the full household file, and the cluster effect was marginalised by Gauss--Hermite quadrature.
+
+The likelihood deliberately omits the survey weights. Consequently, its estimand is the unweighted probability in the analysed sample, not a design-weighted population prevalence. The LGA random effect and cluster random effect do not make the likelihood design-weighted. Nor were the held-out covariates re-estimated using only the training folds. They were supplied as known at prediction time. This choice gives the model information that may not be available for a genuinely unsampled LGA, especially for household covariates, and the validation results should be read as conditional on that information being available. They do not measure uncertainty from estimating or transporting those covariates.
+
+The BYM2 precision used a penalised-complexity prior on the log precision, set so that the prior probability of a standard deviation above 1 is 0.01; the cluster precision used INLA's default penalised-complexity prior for an IID effect; the fixed effects used INLA's default Gaussian prior. We do not infer these settings from posterior summaries.
+
+\subsection{Count of areas above a threshold}
+
+For an area-level crisis threshold \(c\), let \(I_s=\mathbf{1}\{\theta_s>c\}\) and define
+\[
+  C(c)=\sum_{s=1}^{774} I_s .
+\]
+The target is the posterior distribution of this count, not only a list of separate LGA estimates. For each joint posterior draw, we calculate every \(\theta_s\), apply the threshold, and sum the resulting indicators. We use those same draws to obtain the posterior mean, interval, and variance of \(C(c)\); these functionals require no additional likelihood evaluations.
+
+Write \(p_s=\Pr(\theta_s>c)\) and \(P_{st}=\Pr(\theta_s>c,\theta_t>c)\). Proposition 1 in the theory section gives
+\[
+  \operatorname{E}[C(c)] = \sum_s p_s,\qquad
+  \operatorname{Var}\{C(c)\}
+  = \sum_s p_s(1-p_s)
+    + 2\sum_{s<t}\left(P_{st}-p_sp_t\right).
+\]
+The mean is marginal because expectation is additive, so the area-specific exceedance probabilities determine it. The variance also depends on pairwise joint exceedance probabilities, so it is not determined by the marginals alone. We report the posterior interval as a model-based summary of the joint draws. Proposition 1 and the accompanying theory section provide the formal results; we do not repeat their proofs here.
+
+\subsection{Partial identification for areas without clusters}
+
+The sample does not contain a cluster in every LGA. We let \(\mathcal{O}\) be the set of LGAs with at least one sampled cluster and \(\mathcal{U}\) the set with none. The observed set contains 654 LGAs, while 120 LGAs are unobserved. The population share in \(\mathcal{O}\) is \(p=0.88963\), leaving 11.04\% of the population in \(\mathcal{U}\). These population shares, rather than the fraction of geographic units, define the bounds for the share of people living in a crisis area.
+
+For each posterior draw, the observed-area count is
+\[
+  C_{\mathcal{O}}^{(m)}(c)
+  = \sum_{s\in\mathcal{O}}
+      \mathbf{1}\{\theta_s^{(m)}>c\}.
+\]
+We place no restriction on the prevalence in an LGA without a cluster. Its contribution to the full count may therefore be zero or one, giving the draw-specific identified set
+\[
+  \left[
+    C_{\mathcal{O}}^{(m)}(c),\;
+    C_{\mathcal{O}}^{(m)}(c)+|\mathcal{U}|
+  \right].
+\]
+Taking posterior quantiles of the lower and upper endpoints gives a 95\% posterior interval for the sample-analogue identified set. At the stated threshold, the interval is 87 to 231 LGAs, with width 144; 120 of that width reflects the assumption-free contribution of the unobserved LGAs. This interval is not an Imbens--Manski confidence set. It is a posterior interval for a sample-analogue identified set, conditional on the model for observed LGAs and on the population denominators used to calculate \(p\).
+
+For the population share, let \(\pi_{\mathcal{O}}^{(m)}\) be the posterior share of people in observed LGAs who live in an area above the crisis threshold. Without assumptions about the unobserved areas, the corresponding national share lies in
+\[
+  \left[
+    p\,\pi_{\mathcal{O}}^{(m)},\;
+    p\,\pi_{\mathcal{O}}^{(m)}+(1-p)
+  \right].
+\]
+The observed-only share is 13.72\%, and the identified interval is 10.63\% to 24.90\%. The lower endpoint is not a direct-data bound: it uses model-smoothed prevalences for observed LGAs. The upper endpoint allows every unobserved LGA to be above the threshold. We impose no monotonicity or other outcome restriction on \(\mathcal{U}\). The interval therefore displays both the model dependence at the observed end and the uncertainty that remains because no cluster was sampled in the unobserved areas.
+
+\subsection{Spatial calibration protocol}
+
+We evaluated area-level prediction with four spatial holdout designs. All four designs, their scoring rule, and the pass criteria were fixed before the runs; none of the criteria was revised after seeing the results. They address different prediction settings, from predicting one area among observed neighbours to predicting an entire region with its neighbouring areas removed. The exposure measure makes their results comparable: for each held-out LGA, count the neighbouring LGAs unavailable to the fit that predicts it, then average that count over held-out LGAs. Exposure is therefore the mean number of a held-out LGA's neighbours that no fit ever sees.
+
+The whole-region design withheld all households and LGAs in one geopolitical region, refit the model without them, and predicted the withheld region. This design tests regional extrapolation because the held-out LGAs lose their local observations and much of their neighbouring information. The single-area design withheld an LGA while retaining its neighbours in the training data. The three area-level designs used 200 held-out LGAs. For the matched and exact-exposure designs, the same held-out areas were arranged into different prediction groups so that the mean exposure could be compared at different levels. The exact-exposure design targeted the exposure of the 120 LGAs without sampled clusters. The withheld-area lists and group assignments should be retained with the analysis scripts so that another analyst can reproduce the same folds.
+
+For held-out LGA \(s\), let \(\widehat{\theta}^{\,M}_s\) and \(V^{M}_s\) be the model prediction and its posterior predictive variance. Let \(\widehat{\theta}^{\,D}_s\) be the direct unweighted proportion among held-out households, with design variance \(V^{D}_s\) estimated by cluster-robust linearisation using the sampled cluster as the primary sampling unit and the survey stratum in the variance calculation. The standardized error is
+\[
+  z_s =
+  \frac{\widehat{\theta}^{\,M}_s-\widehat{\theta}^{\,D}_s}
+       {\sqrt{V^{M}_s+V^{D}_s}}.
+\]
+Using the direct estimate's design variance avoids treating the held-out proportion as error-free. For each design we report the mean and standard deviation of \(z_s\), and coverage, defined as the share of held-out areas with \(\lvert z_s\rvert \le 1.96\). Coverage is deliberately \emph{not} the share of direct estimates falling inside the model interval: the direct estimate carries its own sampling error, so that weaker check under-covers by construction and would understate the calibration. The direct estimate and the model prediction target the same unweighted quantity.
+
+The four designs and their outcomes are summarised in Table~\ref{tab:calibration}. The whole-region design removed 774 LGAs in one pass. The other three designs held out 200 LGAs each. The single-area design kept neighbours and had exposure 0.88. The matched over-exposed design had exposure 1.67, while the exact-exposure design had exposure 0.95. The whole-region design had exposure 5.4.
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{p{0.30\textwidth}rrrr}
+\hline
+Design & Exposure & Mean \(z\) & SD \(z\) & Coverage \\
+\hline
+Whole region removed & 5.4 & \(-0.654\) & 1.648 & 0.775 \\
+Single areas removed, neighbours kept & 0.88 & \(-0.052\) & 1.111 & 0.940 \\
+Matched over-exposed areas & 1.67 & \(-0.068\) & 1.181 & 0.900 \\
+Exact exposure of unsampled LGAs & 0.95 & \(-0.058\) & 1.178 & 0.890 \\
+\hline
+\end{tabular}
+\caption{Spatial validation results. Exposure is the mean number of a held-out LGA's neighbours not seen by the fit used to predict it.}
+\label{tab:calibration}
+\end{table}
+
+The pass rule required the mean \(z\) to lie between \(-0.15\) and \(0.15\), its standard deviation to lie between 0.85 and 1.15, and coverage to lie between 0.90 and 0.98. Under this fixed rule, the single-area design met all three criteria. The whole-region design did not meet any of them. The matched over-exposed design met the mean and coverage criteria but its standard deviation was above the pass band. At the exposure corresponding to the unsampled LGAs, coverage was 0.890 and the standard deviation of \(z\) was 1.178, so the exact-exposure design did not meet the coverage or spread criterion. Its group-level coverage ranged from 0.878 to 0.900.
+
+The exact-exposure verdict is sensitive to one prediction group: omitting that group changes the pass/fail classification. Each prediction group contained 40 LGAs. The group-level range and this sensitivity preclude treating the pooled coverage as a precise estimate of a stable rate. The three designs with exposure between 0.88 and 1.67 do not show a monotone exposure pattern, so we do not fit or describe a coverage curve. The contrast supported by these designs is between single-area interpolation among sampled neighbours and whole-region extrapolation.
+
+For intervals at unsampled LGAs, we used an inflation factor \(k=1.178\) and widened the model intervals by that factor. Coverage after widening was 0.940. We also assessed the factor out of fold, estimating it from all but one prediction group and checking coverage in the omitted group in turn; the resulting coverages were 0.875, 1.000, 0.925, 0.975, and 0.950. This check does not make the held-out covariates uncertain: covariate values were supplied as known in every fold. Nor does area-level validation establish calibration for the joint count \(C(c)\); the count interval depends on cross-area dependence and was not validated by these four designs.
+
+\subsection{Computation and reproducibility}
+
+We fitted the model in R 4.5.2 with INLA 25.10.19. The posterior functionals were calculated from 20,000 joint posterior draws using seed 2026-11-22. The same draws were used for the LGA exceedance probabilities, count functionals, and partial-identification endpoints; no additional likelihood evaluation was required for those summaries.
+
+The repository scripts record the stages of the analysis. Cluster-to-LGA assignment is in \texttt{scripts/lga\_assign.R}; the main model fit is in \texttt{scripts/lga\_model.R}; the spatial calibration code includes \texttt{scripts/calibration\_spatial.R}; the identification calculations are in \texttt{scripts/identif\_bounds.R}; and the count identities are checked in \texttt{scripts/theory\_counts.R}. the matched- and exact-exposure folds are in \texttt{scripts/calibration\_matched\_exposure.R} and \texttt{scripts/calibration\_exact\_exposure.R}; the covariate surface is built by \texttt{scripts/lga\_covariates.R} and the covariate refit is \texttt{scripts/calibration\_covariates.R}. Every numerical result reported in the paper should be linked to the script and saved output that produced it. No analysis or model fit was run while drafting this section.
