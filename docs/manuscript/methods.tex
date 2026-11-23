@@ -129,23 +129,7 @@ For held-out LGA \(s\), let \(\widehat{\theta}^{\,M}_s\) and \(V^{M}_s\) be the 
 \]
 Using the direct estimate's design variance avoids treating the held-out proportion as error-free. For each design we report the mean and standard deviation of \(z_s\), and coverage, defined as the share of held-out areas with \(\lvert z_s\rvert \le 1.96\). Coverage is deliberately \emph{not} the share of direct estimates falling inside the model interval: the direct estimate carries its own sampling error, so that weaker check under-covers by construction and would understate the calibration. The direct estimate and the model prediction target the same unweighted quantity.
 
-The four designs and their outcomes are summarised in Table~\ref{tab:calibration}. The whole-region design removed 774 LGAs in one pass. The other three designs held out 200 LGAs each. The single-area design kept neighbours and had exposure 0.88. The matched over-exposed design had exposure 1.67, while the exact-exposure design had exposure 0.95. The whole-region design had exposure 5.4.
-
-\begin{table}[htbp]
-\centering
-\begin{tabular}{p{0.30\textwidth}rrrr}
-\hline
-Design & Exposure & Mean \(z\) & SD \(z\) & Coverage \\
-\hline
-Whole region removed & 5.4 & \(-0.654\) & 1.648 & 0.775 \\
-Single areas removed, neighbours kept & 0.88 & \(-0.052\) & 1.111 & 0.940 \\
-Matched over-exposed areas & 1.67 & \(-0.068\) & 1.181 & 0.900 \\
-Exact exposure of unsampled LGAs & 0.95 & \(-0.058\) & 1.178 & 0.890 \\
-\hline
-\end{tabular}
-\caption{Spatial validation results. Exposure is the mean number of a held-out LGA's neighbours not seen by the fit used to predict it.}
-\label{tab:calibration}
-\end{table}
+The four designs and their outcomes are summarised in Table~\ref{tab:calibration} of the Results. The whole-region design removed 774 LGAs in one pass. The other three designs held out 200 LGAs each. The single-area design kept neighbours and had exposure 0.88. The matched over-exposed design had exposure 1.67, while the exact-exposure design had exposure 0.95. The whole-region design had exposure 5.4.
 
 The pass rule required the mean \(z\) to lie between \(-0.15\) and \(0.15\), its standard deviation to lie between 0.85 and 1.15, and coverage to lie between 0.90 and 0.98. Under this fixed rule, the single-area design met all three criteria. The whole-region design did not meet any of them. The matched over-exposed design met the mean and coverage criteria but its standard deviation was above the pass band. At the exposure corresponding to the unsampled LGAs, coverage was 0.890 and the standard deviation of \(z\) was 1.178, so the exact-exposure design did not meet the coverage or spread criterion. Its group-level coverage ranged from 0.878 to 0.900.
 

@@ -134,9 +134,19 @@ Do not reopen these without a recorded reason.
    single-spaced; body order fixed as Introduction, Methods, Results, Discussion, Conclusions, Declaration,
    References (APA 7th); tables and figures numbered `Table 1`, `Figure 1` and cited in that form.
    Skeleton: `docs/manuscript/main.tex`, which compiles with sections appearing as they are written.
-   **Open question, to raise once the draft exists:** whether the paper is a full paper or a *technical note*.
-   If the empirical claims stay as narrow as the calibration evidence makes them, the honest vehicle may be
-   the technical note. Do not decide before the Results section exists.
+   **Decided 2026-11-23: a FULL PAPER, not a technical note.** Reasoning for citations, which is what the
+   author asked for: the citation pool for this work is dominated by the *application* — LGA-level estimates
+   for 774 Nigerian areas that development economists, nutrition researchers and Nigerian policy analysts can
+   reuse. A technical note's length cap would force cutting exactly that, which is the part most likely to be
+   cited. The note route also cannot carry the sharp bounds *and* the calibration protocol without becoming a
+   sequence of results with no application. Full paper it is. Reopen only if an editor asks for a shorter
+   submission, which is a decision to make on their letter, not now.
+   **Title fixed** (for discoverability, since titles drive search hits): *Sharp bounds for the number of
+   areas above a threshold, with a spatial cross-validation protocol: severe household food insecurity in
+   Nigerian local government areas*. It carries four searchable terms — bounds, threshold, cross-validation,
+   Nigeria — and names the outcome. Do not shorten it for elegance; the searches are what bring readers.
+   **Author block fixed:** Jerry Bannister Zachary, Abubakar Tafawa Balewa University,
+   `jzbannister@atbu.edu.ng`, listed first as the corresponding author.
 
 1. **Outcome.** Severe food insecurity = `hfs_sev >= 0.5`, which in this file is exactly the households
    affirming all eight FIES items. National 29.1%; states 4.6% (Niger) to 85.0% (Yobe).
