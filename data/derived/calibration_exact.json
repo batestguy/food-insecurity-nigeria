@@ -1,0 +1,432 @@
+{
+  "generated_by": "scripts/calibration_exact_exposure.R",
+  "command": "Rscript scripts/calibration_exact_exposure.R",
+  "ticket": "T17",
+  "generated_on": "2026-11-23",
+  "seed": 20261124,
+  "r_version": "R version 4.5.2 (2025-10-31 ucrt)",
+  "inla_version": "25.10.19",
+  "construction": "Calibration at exactly the neighbour exposure the 120 permanently-unsampled LGAs face. The 200 held-out LGAs are T16's, read from data/derived/calibration_matched.csv and not redrawn; only the partition is new.  For a group of 40, unobserved neighbour-ends are sum of a_i (queen neighbours among the permanent 120) plus twice the edges of the 200 whose both ends fall inside that group.  The first term sums to A = 146 over the 200 and is fixed; the second sums to 2*S_E, which the partition chooses: an edge between two held-out LGAs in different groups is observed by both fits.  Five groups at 0.95 require A + 2*S_E = 190, so S_E = 22: about 178 of the 200 edges among the 200 must be cut across groups, i.e. 4-5 inside each group of 40 against T16's 94.  The partition was found by a greedy conflict-minimising start plus a deterministic swap search on sum_g (total_g - 38)^2 with exactly 40 per group, seed 20261124.  Each group is one fit: that group's households are dropped and the identical household-level binomial model refitted (ten design columns of eight covariates, BYM2 on the 774-node queen graph built from the ADM2 polygons, IID cluster effect, INLA 25.10.19 defaults, no area-level covariates), then all 774 LGAs predicted from prediction rows at each LGA's mean covariate profile taken from the FULL household file (covariates held known), cluster effect marginalised by the same 7-point Gauss-Hermite rule as scripts/lga_model.R.  The truth is the direct unweighted proportion from each held-out LGA's own households, cluster-robust ratio linearisation (strata = state, PSU = cluster) with median-design-effect imputation for single-cluster LGAs. z = (model_mean - direct)/sqrt(model_var + design_var).  Pass rule fixed before any fit and identical to T12, T13 and T16: mean(z) in [-0.15,0.15], sd(z) in [0.85,1.15], share |z| <= 1.96 in [0.90,0.98].  Cluster counts and the observed/unobserved split come from data/derived/cluster_lga_fixed.csv and are cross-checked against the household file. Count-functional calibration is NOT tested: it needs joint draws per fold.",
+  "design": {
+    "scheme": "leave-40-LGAs-out in five groups, total unobserved-neighbour count matched to the 120",
+    "n_held_out": 200,
+    "n_groups": 5,
+    "group_size": 40,
+    "sampling_frame": "T16's fixed 200 LGAs, drawn from the 654 that hold at least one cluster",
+    "held_out_source": "data/derived/calibration_matched.csv (read, not redrawn)",
+    "group_method": "greedy conflict-minimising start plus deterministic swap search on sum_g (total_g - 38)^2, exactly 40 per group, seed set inside the search",
+    "target_exposure": 0.95,
+    "tolerance": 0.1,
+    "band": [0.855, 1.045],
+    "held_out_lga_ids": ["59680162B29721937623471", "59680162B59329233871626", "59680162B44643250914735", "59680162B27901935497545", "59680162B64829234996535", "59680162B61092998371306", "59680162B85175001165051", "59680162B33139882700556", "59680162B83800309048446", "59680162B53228015633193", "59680162B53174064204838", "59680162B83052310642670", "59680162B46612932493253", "59680162B59256397716169", "59680162B14396821090751", "59680162B5704166644463", "59680162B67610911656226", "59680162B69944768623609", "59680162B60046857326615", "59680162B23991224305955", "59680162B27261417712833", "59680162B11436342937739", "59680162B28239494939120", "59680162B82944797684000", "59680162B56887411771488", "59680162B31350853830247", "59680162B28903777440270", "59680162B95139171035149", "59680162B20372712773645", "59680162B73952515985037", "59680162B26648923761656", "59680162B99837769325291", "59680162B1443452948914", "59680162B74099392913903", "59680162B87731060313783", "59680162B11018926765325", "59680162B23843497952419", "59680162B79825109156569", "59680162B74248263036628", "59680162B19485775159758", "59680162B58958286313368", "59680162B24147659958725", "59680162B21053239387442", "59680162B25032665557199", "59680162B71074793306885", "59680162B83662033692716", "59680162B78681214723365", "59680162B7272699675434", "59680162B89970230221745", "59680162B61567493958965", "59680162B89766877463651", "59680162B76130047047659", "59680162B53803782710688", "59680162B28367664307560", "59680162B76882427234764", "59680162B43366957039329", "59680162B33775428128459", "59680162B69752440983216", "59680162B82946706311025", "59680162B43637132059207", "59680162B20432910054227", "59680162B85522063023223", "59680162B15998169506024", "59680162B62394297156991", "59680162B79526209894783", "59680162B45761287530482", "59680162B17555212909244", "59680162B7635361694273", "59680162B92640548002056", "59680162B99262810585367", "59680162B66631777088899", "59680162B7938799528038", "59680162B21498960785654", "59680162B14302921886514", "59680162B98234428566305", "59680162B91711719497512", "59680162B38335311272259", "59680162B18578493945657", "59680162B38204256572023", "59680162B2266540401620", "59680162B78634023582239", "59680162B49050440888294", "59680162B27926848768432", "59680162B20002653395444", "59680162B51512347513243", "59680162B23952502219543", "59680162B24167581171767", "59680162B1470225488806", "59680162B46130456424051", "59680162B2846194934808", "59680162B13073760931893", "59680162B14133510851755", "59680162B90037113183568", "59680162B90533313280833", "59680162B84828583281462", "59680162B79884468001879", "59680162B18997887117478", "59680162B10627743467335", "59680162B24430291126178", "59680162B65662189989638", "59680162B28106531466158", "59680162B11400589438827", "59680162B71065109904105", "59680162B96971531554224", "59680162B97377368460903", "59680162B8258215962885", "59680162B99856631560735", "59680162B83284995722346", "59680162B93345317219884", "59680162B30817931145163", "59680162B37931278966472", "59680162B50771081897552", "59680162B23671729796425", "59680162B43215766185997", "59680162B19549725656045", "59680162B96890005302109", "59680162B99910214526625", "59680162B85189896765318", "59680162B93423525469915", "59680162B18672795330723", "59680162B22633527707210", "59680162B15532351721986", "59680162B36658267128816", "59680162B93375949891062", "59680162B11164722545286", "59680162B60568566930973", "59680162B15311652495769", "59680162B83966420631158", "59680162B31817043180897", "59680162B98903295811344", "59680162B18977545928744", "59680162B35628626888177", "59680162B25890229119009", "59680162B74094197759690", "59680162B34726688570577", "59680162B75104511306168", "59680162B66692684641238", "59680162B24203265637376", "59680162B12426298681132", "59680162B61774592523326", "59680162B9357675593038", "59680162B10831398447622", "59680162B89404589930000", "59680162B27389948970996", "59680162B83386112613514", "59680162B73411137510562", "59680162B98306169506823", "59680162B18488232241930", "59680162B13670821264537", "59680162B19467626863877", "59680162B85303802109421", "59680162B49614598703533", "59680162B93998087230069", "59680162B6318880418470", "59680162B29308605862653", "59680162B23949108035203", "59680162B4656907626813", "59680162B90915593246984", "59680162B89342314449475", "59680162B7305913438202", "59680162B48458945930175", "59680162B38485988708032", "59680162B89701706643364", "59680162B797578221173", "59680162B64636531363939", "59680162B47068494760958", "59680162B5540117047510", "59680162B31457176745984", "59680162B98184498564097", "59680162B56562801938729", "59680162B20086286793745", "59680162B86291828303656", "59680162B97880726687240", "59680162B8390528040617", "59680162B60875368726655", "59680162B74859155842016", "59680162B18982121994254", "59680162B92155854422456", "59680162B33769534671223", "59680162B84100135495566", "59680162B67680561366569", "59680162B83099166959131", "59680162B49213136576829", "59680162B15951041920960", "59680162B73824932270854", "59680162B66353567053476", "59680162B82734256395858", "59680162B30816727026324", "59680162B39513276000218", "59680162B83394095212312", "59680162B7029176012538", "59680162B16609728895319", "59680162B54301811333050", "59680162B54275853767873", "59680162B48603200461333", "59680162B66079212084305", "59680162B89640587380951", "59680162B6096372749080", "59680162B28887917480980", "59680162B16701148271715"],
+    "group_of_lga": [5, 1, 5, 4, 2, 5, 3, 2, 1, 3, 1, 5, 3, 5, 5, 3, 5, 2, 2, 5, 1, 5, 4, 4, 5, 1, 5, 1, 1, 2, 4, 3, 5, 1, 4, 1, 2, 3, 3, 3, 5, 3, 1, 1, 5, 1, 5, 1, 5, 3, 5, 4, 2, 4, 4, 4, 3, 4, 3, 2, 3, 1, 4, 3, 1, 2, 2, 1, 1, 2, 1, 2, 5, 5, 3, 4, 2, 4, 3, 4, 3, 2, 5, 3, 3, 2, 1, 4, 3, 4, 4, 4, 3, 3, 4, 1, 1, 2, 1, 2, 5, 5, 2, 3, 2, 1, 4, 5, 4, 5, 4, 4, 4, 4, 5, 3, 2, 2, 3, 3, 5, 2, 5, 4, 4, 3, 2, 5, 2, 1, 3, 5, 3, 2, 5, 5, 1, 5, 2, 2, 1, 1, 4, 3, 2, 1, 3, 4, 1, 5, 2, 3, 3, 1, 4, 1, 4, 5, 5, 4, 3, 2, 3, 2, 2, 4, 3, 2, 3, 2, 4, 4, 2, 1, 5, 3, 1, 2, 4, 1, 2, 2, 5, 2, 4, 1, 3, 1, 5, 1, 1, 4, 5, 4, 1, 1, 2, 5, 3, 4],
+    "graph_source": "data/public/boundaries/geoBoundaries-NGA-ADM2_simplified.geojson (queen contiguity)",
+    "graph_nodes": 774,
+    "graph_edges": 2230,
+    "graph_components": 1,
+    "adjacency_file_note": "data/derived/neighbours.csv is the 37-node STATE graph and was not read; the 774-node graph was built and asserted to have 2,230 edges",
+    "covariates_held_known": true,
+    "geospatial_covariates_used": 0,
+    "weights_in_likelihood": false,
+    "outcome_in_likelihood": "severe_fi = 1{hfs_sev >= 0.5}",
+    "cluster_counts_source": "data/derived/cluster_lga_fixed.csv",
+    "cluster_count_cross_check": "per-LGA counts identical to the household file; 654/120 split identical"
+  },
+  "exposure": {
+    "definition": "a neighbour is unobserved if it is held out in the same group or is one of the permanent 120; total_g = sum_{i in g} a_i + 2*(edges of the 200 inside g)",
+    "edges_among_the_120": 57,
+    "e120": 0.475,
+    "exposure_of_the_120": 0.95,
+    "A_edges_200_to_120": 146,
+    "E_200_edges_inside_the_200": 200,
+    "S_E_required": 22,
+    "S_E_achieved": 22,
+    "S_E_T16_partition": 94,
+    "edges_cut_across_groups": 178,
+    "achieved": [
+      {
+        "group": 1,
+        "n_lgas": 40,
+        "edges_to_the_120": 32,
+        "internal_edges": 3,
+        "total_unobserved_neighbour_ends": 38,
+        "exposure": 0.95,
+        "ratio_to_target": 1,
+        "in_band": true,
+        "states_spanned": 25
+      },
+      {
+        "group": 2,
+        "n_lgas": 40,
+        "edges_to_the_120": 26,
+        "internal_edges": 6,
+        "total_unobserved_neighbour_ends": 38,
+        "exposure": 0.95,
+        "ratio_to_target": 1,
+        "in_band": true,
+        "states_spanned": 27
+      },
+      {
+        "group": 3,
+        "n_lgas": 40,
+        "edges_to_the_120": 26,
+        "internal_edges": 6,
+        "total_unobserved_neighbour_ends": 38,
+        "exposure": 0.95,
+        "ratio_to_target": 1,
+        "in_band": true,
+        "states_spanned": 21
+      },
+      {
+        "group": 4,
+        "n_lgas": 40,
+        "edges_to_the_120": 34,
+        "internal_edges": 2,
+        "total_unobserved_neighbour_ends": 38,
+        "exposure": 0.95,
+        "ratio_to_target": 1,
+        "in_band": true,
+        "states_spanned": 28
+      },
+      {
+        "group": 5,
+        "n_lgas": 40,
+        "edges_to_the_120": 28,
+        "internal_edges": 5,
+        "total_unobserved_neighbour_ends": 38,
+        "exposure": 0.95,
+        "ratio_to_target": 1,
+        "in_band": true,
+        "states_spanned": 24
+      }
+    ],
+    "t16_partition_same_measure": {
+      "totals": [72, 69, 63, 57, 73],
+      "exposures": [1.8, 1.725, 1.575, 1.425, 1.825],
+      "mean": 1.67
+    },
+    "uniform_repartition": {
+      "totals": [41, 49, 36, 52, 48],
+      "exposures": [1.025, 1.225, 0.9, 1.3, 1.2],
+      "mean": 1.13
+    },
+    "all_groups_in_band": true,
+    "mean_exposure_achieved": 0.95,
+    "tolerance_check": "achieved 0.9500 0.9500 0.9500 0.9500 0.9500 against target 0.95, band 0.855-1.045"
+  },
+  "pass_rule_declared_before_fitting": {
+    "mean_z": {
+      "pass_range": [-0.15, 0.15],
+      "value": -0.05824719,
+      "pass": true
+    },
+    "sd_z": {
+      "pass_range": [0.85, 1.15],
+      "value": 1.17761957,
+      "pass": false
+    },
+    "coverage_abs_z_le_1_96": {
+      "pass_range": [0.9, 0.98],
+      "value": 0.89,
+      "pass": false
+    },
+    "all_three_pass": false,
+    "n_z": 200,
+    "rule_changed_after_seeing_values": false,
+    "identical_to_T12_T13_T16_rule": true
+  },
+  "primary": {
+    "n": 200,
+    "mean_z": -0.05824719,
+    "median_z": -0.03324893,
+    "sd_z": 1.17761957,
+    "min_z": -3.69064451,
+    "max_z": 2.77561884,
+    "coverage_abs_z_le_1_96": 0.89,
+    "n_abs_z_gt_1_96": 22,
+    "n_abs_z_gt_2_58": 4,
+    "rms_z": 1.17611507
+  },
+  "monte_carlo_uncertainty": {
+    "n_boot": 2000,
+    "seed": 20261125,
+    "mean_z_ci": [-0.21862313, 0.11136133],
+    "sd_z_ci": [1.06735635, 1.28578384],
+    "coverage_ci": [0.845, 0.93],
+    "coverage_wilson": [0.83907202, 0.9262281],
+    "note": "the checks are estimated on 200 LGAs; these say how much of a gap between two experiments is sampling noise"
+  },
+  "sensitivity": {
+    "multi_cluster_lgas_only": {
+      "n": 123,
+      "mean_z": -0.1121867,
+      "sd_z": 1.16792405,
+      "coverage": 0.90243902
+    },
+    "by_group": [
+      {
+        "group": 1,
+        "n": 40,
+        "mean_z": -0.14982199,
+        "sd_z": 1.3412996,
+        "coverage": 0.85,
+        "n_single_cluster": 15,
+        "internal_edges": 3,
+        "exposure": 0.95,
+        "exposure_ratio": 1,
+        "in_band": true,
+        "fit_seconds": 42.93,
+        "waic": 35013.40942151,
+        "mode_status": 0,
+        "sd_cluster_effect": 0.45812949,
+        "deff_median": 1.41779886,
+        "n_training_households": 37057,
+        "n_training_clusters": 1283,
+        "states_spanned": 25
+      },
+      {
+        "group": 2,
+        "n": 40,
+        "mean_z": 0.08767436,
+        "sd_z": 1.044729,
+        "coverage": 0.925,
+        "n_single_cluster": 13,
+        "internal_edges": 6,
+        "exposure": 0.95,
+        "exposure_ratio": 1,
+        "in_band": true,
+        "fit_seconds": 41.45,
+        "waic": 35111.36567064,
+        "mode_status": 0,
+        "sd_cluster_effect": 0.45250527,
+        "deff_median": 1,
+        "n_training_households": 36975,
+        "n_training_clusters": 1280,
+        "states_spanned": 27
+      },
+      {
+        "group": 3,
+        "n": 40,
+        "mean_z": -0.06732697,
+        "sd_z": 1.03794968,
+        "coverage": 0.9,
+        "n_single_cluster": 19,
+        "internal_edges": 6,
+        "exposure": 0.95,
+        "exposure_ratio": 1,
+        "in_band": true,
+        "fit_seconds": 37.33,
+        "waic": 35558.11851852,
+        "mode_status": 0,
+        "sd_cluster_effect": 0.45818082,
+        "deff_median": 1.36659365,
+        "n_training_households": 37435,
+        "n_training_clusters": 1295,
+        "states_spanned": 21
+      },
+      {
+        "group": 4,
+        "n": 40,
+        "mean_z": 0.17566684,
+        "sd_z": 1.2291349,
+        "coverage": 0.925,
+        "n_single_cluster": 17,
+        "internal_edges": 2,
+        "exposure": 0.95,
+        "exposure_ratio": 1,
+        "in_band": true,
+        "fit_seconds": 34.45,
+        "waic": 35963.17358401,
+        "mode_status": 0,
+        "sd_cluster_effect": 0.46264089,
+        "deff_median": 1.25804743,
+        "n_training_households": 37527,
+        "n_training_clusters": 1299,
+        "states_spanned": 28
+      },
+      {
+        "group": 5,
+        "n": 40,
+        "mean_z": -0.33742818,
+        "sd_z": 1.19621679,
+        "coverage": 0.85,
+        "n_single_cluster": 13,
+        "internal_edges": 5,
+        "exposure": 0.95,
+        "exposure_ratio": 1,
+        "in_band": true,
+        "fit_seconds": 36.26,
+        "waic": 35779.80063409,
+        "mode_status": 0,
+        "sd_cluster_effect": 0.46036584,
+        "deff_median": 1.18778281,
+        "n_training_households": 37611,
+        "n_training_clusters": 1301,
+        "states_spanned": 24
+      }
+    ],
+    "note": "the multi-cluster subset uses only LGAs whose design variance is directly estimable; a sensitivity, not a substitute for the pre-declared primary rule"
+  },
+  "leave_one_group_out_descriptive": {
+    "per_group_removed": [
+      {
+        "group_removed": 1,
+        "n": 160,
+        "mean_z": -0.03535349,
+        "sd_z": 1.13654886,
+        "coverage": 0.9,
+        "passes_all_three": true
+      },
+      {
+        "group_removed": 2,
+        "n": 160,
+        "mean_z": -0.09472758,
+        "sd_z": 1.20882301,
+        "coverage": 0.88125,
+        "passes_all_three": false
+      },
+      {
+        "group_removed": 3,
+        "n": 160,
+        "mean_z": -0.05597725,
+        "sd_z": 1.21300712,
+        "coverage": 0.8875,
+        "passes_all_three": false
+      },
+      {
+        "group_removed": 4,
+        "n": 160,
+        "mean_z": -0.1167257,
+        "sd_z": 1.1609876,
+        "coverage": 0.88125,
+        "passes_all_three": false
+      },
+      {
+        "group_removed": 5,
+        "n": 160,
+        "mean_z": 0.01154806,
+        "sd_z": 1.16626381,
+        "coverage": 0.9,
+        "passes_all_three": false
+      }
+    ],
+    "note": "post hoc and descriptive only: the pre-declared rule is pooled over all 200 rows. Dropping a group after seeing the result is not a permitted specification"
+  },
+  "four_design_curve": {
+    "table": [
+      {
+        "design": "T13 single LGA removed",
+        "exposure": 0.82262997,
+        "exposure_note": "adjacency to the 120 only; no other LGA removed",
+        "n": 200,
+        "mean_z": -0.05147852,
+        "sd_z": 1.11109609,
+        "coverage": 0.94
+      },
+      {
+        "design": "T17 exact exposure (this)",
+        "exposure": 0.95,
+        "exposure_note": "matched: within-group plus adjacency to the 120",
+        "n": 200,
+        "mean_z": -0.05824719,
+        "sd_z": 1.17761957,
+        "coverage": 0.89
+      },
+      {
+        "design": "T16 matched within-group",
+        "exposure": 1.67,
+        "exposure_note": "measured post hoc in T16 (within-group 0.94 + 0.73)",
+        "n": 200,
+        "mean_z": -0.06807356,
+        "sd_z": 1.18065108,
+        "coverage": 0.9
+      },
+      {
+        "design": "T12 whole zone removed",
+        "exposure": 5.4,
+        "exposure_note": "mean neighbours removed with the area (not the same estimator)",
+        "n": 654,
+        "mean_z": -0.653879,
+        "sd_z": 1.6481424,
+        "coverage": 0.77522936
+      }
+    ],
+    "T12": {
+      "mean_z": -0.653879,
+      "sd_z": 1.6481424,
+      "coverage": 0.77522936,
+      "n": 654,
+      "source": "data/derived/calibration_summary.json",
+      "exposure": 5.4
+    },
+    "T13": {
+      "mean_z": -0.05147852,
+      "sd_z": 1.11109609,
+      "coverage": 0.94,
+      "n": 200,
+      "source": "data/derived/calibration_lga_cv.json",
+      "exposure": 0.82262997
+    },
+    "T16": {
+      "mean_z": -0.06807356,
+      "sd_z": 1.18065108,
+      "coverage": 0.9,
+      "n": 200,
+      "source": "data/derived/calibration_matched.json",
+      "exposure": 1.67
+    },
+    "T17": {
+      "mean_z": -0.05824719,
+      "sd_z": 1.17761957,
+      "coverage": 0.89,
+      "n": 200,
+      "exposure": 0.95
+    },
+    "the_120": {
+      "exposure": 0.95,
+      "coverage": null,
+      "note": "never fitted; the estimand, not a design"
+    },
+    "reading": "coverage plotted against total unobserved neighbours per held-out LGA, all four designs on one measure; the three earlier points are read from their artefacts"
+  },
+  "inflation_factor": {
+    "k": 1.17761957,
+    "coverage_after_widening_by_k": 0.94,
+    "out_of_fold_coverage": [0.875, 1, 0.925, 0.975, 0.95],
+    "out_of_fold_mean": 0.945,
+    "out_of_fold_note": "k fitted on four groups, coverage measured in the fifth, so the correction is not judged on the data it was fitted to"
+  },
+  "descriptive_not_a_criterion": {
+    "naive_interval_coverage": {
+      "share": 0.815,
+      "note": "descriptive only; the direct estimate carries its own sampling error, so this under-covers by construction and is NOT the criterion"
+    },
+    "bias": {
+      "mean_model_minus_direct": -0.0098458,
+      "median_model_minus_direct": -0.00373918,
+      "share_of_lgas_model_below_direct": 0.515
+    },
+    "correlation_with_direct": 0.76421848,
+    "spread_ratio_model_over_direct": 0.81632208,
+    "variance_shares": {
+      "median_model_se": 0.11132848,
+      "median_design_se": 0.05852754,
+      "mean_share_of_z_variance_from_design": 0.27201303
+    }
+  },
+  "fit_times_seconds": [42.93, 41.45, 37.33, 34.45, 36.26],
+  "total_fit_seconds": 192.42,
+  "limitations": {
+    "count_functional_not_tested": true,
+    "never_clustered_lgas_not_tested": true,
+    "n_never_clustered_excluded": 120,
+    "covariates_held_known": true,
+    "linear_predictor_marginal_assumed_gaussian": true,
+    "survey_design_not_in_likelihood": true,
+    "matched_on_the_edge_count_not_the_full_exposure_distribution": true,
+    "single_cluster_lgas_deff_imputed": 77,
+    "n_degenerate_direct_zero_or_one": 6,
+    "the_partition_was_chosen_on_the_graph": "the grouping minimises exposure and therefore deliberately places adjacent LGAs in different groups; no outcome entered the choice",
+    "note": "matching the mean unobserved-neighbour count does not force the DISTRIBUTION to match the 120's, which ranges from 0 to 3 unobserved neighbours"
+  }
+}

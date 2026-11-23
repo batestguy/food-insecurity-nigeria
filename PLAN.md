@@ -431,6 +431,33 @@ available offline that exists everywhere.
    lying. **Do not — under any framing — add a zone-level random effect and re-run the zone test.** A
    held-out zone's level is unidentified; fitting one would be fitting the answer, and it would produce a
    pass that means nothing.
+4. **T16 and T17 — put the calibration on an exposure axis.** The three tests differ in one thing that can be
+   measured: **the mean number of a held-out LGA's neighbours that no fit ever sees.** T13 = 0.00,
+   the 120 unsampled LGAs = **0.950**, T12 ≈ 5.4. T16 matched only edges *inside* the held-out set and so
+   ran at **1.670** — over-exposed by 1.76×, and it failed narrowly (sd z 1.181 against a 1.15 ceiling,
+   coverage exactly 0.900), with one group of 40 carrying 8 of the 20 misses. Verified by the secretary,
+   including the 0.730 of that exposure that comes from sitting next to the permanent 120. **T17 (running)**
+   reuses T16's exact 200 LGAs and regroups them to the 0.950 exposure, so exposure is the only difference.
+   Then the paper reports one curve, all four points, and no fifth experiment. If T17 also lands near 0.90,
+   that is the answer and the k is ~1.18; the bracket [0.900, 0.940] is not needed and the monotonicity
+   assumption disappears.
+
+**Calibration is CLOSED (T17, 2026-11-23).** Measured at the exposure the 120 actually face (0.95 unobserved
+neighbours, achieved exactly in all five groups): **coverage 0.890** (178/200), sd z 1.178, mean z −0.058 —
+**fails the rule**, by two areas on coverage. T16 and T17 are indistinguishable on spread (1.181 vs 1.178)
+at exposures 1.67 and 0.95, so **the failure is already present at 0.95** and T16's bracket [0.900, 0.940]
+was too optimistic.
+
+**What the four designs actually say — and it is not a curve.** Recomputed by the secretary on one
+definition: T13 at 0.88 exposure gives 0.940, T17 at 0.95 gives 0.890, T16 at 1.67 gives 0.900, T12 at 5.4
+gives 0.775. The middle three span 0.89–0.94, which is within binomial noise at n = 200 plus group effects.
+**So: coverage for a single unsampled area among sampled neighbours is about 0.89–0.94; remove a whole region
+and it collapses to 0.775.** Do not write "coverage declines with exposure" — the evidence does not support
+it. Both T16 and T17 have one group of 40 carrying the verdict; that fragility must be in the paper.
+
+**Practical consequences for the manuscript:** quote ≈0.89 (range 0.878–0.900) for the 120; widen unsampled
+intervals by **k ≈ 1.18**, validated out of fold (0.875, 1.000, 0.925, 0.975, 0.950); never quote a nominal
+95%. The count interval 101–130 remains untested and must be labelled so.
 
 **The paper this becomes, if the covariates help.** Not "a map of 774 LGAs" but: an area-level surface
 whose precision is demonstrated by spatial cross-validation, an identification bound on what the design
