@@ -1,0 +1,480 @@
+{
+  "generated_by": "scripts/lga_covariates.R",
+  "generated_on": "2026-11-23",
+  "purpose": "LGA-level covariates that exist in places with no sampled household; no model fitted",
+  "environment": {
+    "r": "R version 4.5.2 (2025-10-31 ucrt)",
+    "sf": "1.1.3",
+    "jsonlite": "2.0.0",
+    "s2": true,
+    "seed": 20261124
+  },
+  "inputs": {
+    "adm2": {
+      "path": "data/public/boundaries/geoBoundaries-NGA-ADM2_simplified.geojson",
+      "n_polygons": 774,
+      "note": "the brief said 1,299 polygons; the simplified ADM2 file actually holds 774 (one per LGA), same file scripts/lga_assign.R uses"
+    },
+    "clusters": {
+      "path": "data/derived/cluster_lga.csv",
+      "n": 1380,
+      "note": "LGA ids and coordinates from scripts/lga_assign.R; shapeID of the ADM2 file, not re-derived here"
+    },
+    "covariates": {
+      "path": "data/restricted/dhs-2024/ge/NGGC8AFL.csv",
+      "n": 1380,
+      "n_columns": 135,
+      "cluster_level_missing": {
+        "Aridity_2020": 0,
+        "Nightlights_Composite": 0,
+        "Travel_Times": 0,
+        "Enhanced_Vegetation_Index_2020": 0,
+        "Precipitation_2020": 0,
+        "Elevation": 0,
+        "Livestock_Cattle": 0,
+        "Malaria_Incidence_2020": 0
+      },
+      "units": {
+        "Aridity_2020": "aridity index, low = arid (DHS Geospatial Covariate Manual: ratio of annual precipitation to annual potential evapotranspiration)",
+        "Nightlights_Composite": "nighttime luminosity, VIIRS composite (radiance; right-skewed, min 0)",
+        "Travel_Times": "minutes to reach a high-density urban centre",
+        "Enhanced_Vegetation_Index_2020": "EVI, low = least vegetation",
+        "Precipitation_2020": "average precipitation per month (mm)",
+        "Elevation": "metres above sea level (SRTM)",
+        "Livestock_Cattle": "cattle density (GLW v2 modelled heads per km2)",
+        "Malaria_Incidence_2020": "clinical Plasmodium falciparum cases per person"
+      }
+    },
+    "population": {
+      "path": "data/derived/lga_population.csv",
+      "year": 2020,
+      "source": "COD-PS (NBS/UNFPA), projected from the 2006 census",
+      "n_missing_population": 1,
+      "missing_population_lga": "Bakassi"
+    }
+  },
+  "geometry": {
+    "area_projection": "EPSG:6933 (WGS 84 / NSIDC EASE-Grid 2.0 Global, equal-area)",
+    "centroid_method": "planar centroid in EPSG:6933, transformed back to EPSG:4326",
+    "total_area_km2": 912516,
+    "reference_area_km2": 923000,
+    "total_area_pct_of_reference": 98.86,
+    "centroids_outside_own_polygon": 0,
+    "polygons_not_duplicated": "geometry for each lga_id stays in the ADM2 geojson; this table carries area and centroid only"
+  },
+  "interpolation": {
+    "method": "inverse-distance weighting over the k nearest clusters",
+    "distance": "great-circle (s2 on EPSG:4326 coordinates)",
+    "k": 3,
+    "idw_floor_km": 0.001,
+    "nearest_cluster_distance_km": {
+      "min": 0.159,
+      "q1": 4.684,
+      "median": 9.1,
+      "q3": 14.557,
+      "p95": 27.366,
+      "p99": 41.965,
+      "max": 67.625
+    },
+    "mean_k_distance_km": {
+      "min": 1.417,
+      "median": 14.758,
+      "max": 85.599
+    },
+    "lgas_nearest_over_25km": 51,
+    "lgas_nearest_over_50km": 6,
+    "lgas_with_no_cluster_of_own": 123,
+    "nearest_distance_km_unsampled_lgas": {
+      "n": 123,
+      "median": 15.251,
+      "p95": 43.367,
+      "max": 67.625
+    },
+    "nearest_distance_km_sampled_lgas": {
+      "n": 651,
+      "median": 8.092,
+      "p95": 23.923,
+      "max": 52.553
+    },
+    "most_remote": [
+      {
+        "lga_name": "Mobbar",
+        "state_iso": "NG-BO",
+        "nearest_dist_km": 67.624847,
+        "n_clusters_in_lga": 0
+      },
+      {
+        "lga_name": "Abadam",
+        "state_iso": "NG-BO",
+        "nearest_dist_km": 63.968646,
+        "n_clusters_in_lga": 0
+      },
+      {
+        "lga_name": "Maru",
+        "state_iso": "NG-ZA",
+        "nearest_dist_km": 62.127833,
+        "n_clusters_in_lga": 0
+      },
+      {
+        "lga_name": "Kala Balge",
+        "state_iso": "NG-BO",
+        "nearest_dist_km": 61.512506,
+        "n_clusters_in_lga": 0
+      },
+      {
+        "lga_name": "Toungo",
+        "state_iso": "NG-AD",
+        "nearest_dist_km": 56.605022,
+        "n_clusters_in_lga": 0
+      },
+      {
+        "lga_name": "Birnin Gwari",
+        "state_iso": "NG-KD",
+        "nearest_dist_km": 52.5533,
+        "n_clusters_in_lga": 1
+      },
+      {
+        "lga_name": "Doguwa",
+        "state_iso": "NG-KN",
+        "nearest_dist_km": 45.179183,
+        "n_clusters_in_lga": 0
+      },
+      {
+        "lga_name": "Guzamala",
+        "state_iso": "NG-BO",
+        "nearest_dist_km": 43.58919,
+        "n_clusters_in_lga": 0
+      },
+      {
+        "lga_name": "Iwajowa",
+        "state_iso": "NG-OY",
+        "nearest_dist_km": 41.364922,
+        "n_clusters_in_lga": 0
+      },
+      {
+        "lga_name": "Borgu",
+        "state_iso": "NG-NI",
+        "nearest_dist_km": 40.959436,
+        "n_clusters_in_lga": 1
+      }
+    ]
+  },
+  "cross_validation": {
+    "scheme": "5-fold over the 1380 clusters; interpolation rebuilt from the 4/5 held in, prediction made at each held-out cluster's own coordinates",
+    "seed": 20261124,
+    "folds": 5,
+    "k": 3,
+    "table": [
+      {
+        "covariate": "Aridity_2020",
+        "cv_r": 0.999275,
+        "cv_rmse": 0.680812,
+        "observed_sd": 17.867856,
+        "n_clusters": 1380,
+        "rmse_over_sd": 0.038103
+      },
+      {
+        "covariate": "Nightlights_Composite",
+        "cv_r": 0.521828,
+        "cv_rmse": 4.143859,
+        "observed_sd": 4.493749,
+        "n_clusters": 1380,
+        "rmse_over_sd": 0.922138
+      },
+      {
+        "covariate": "Travel_Times",
+        "cv_r": 0.61368,
+        "cv_rmse": 32.326472,
+        "observed_sd": 40.498719,
+        "n_clusters": 1380,
+        "rmse_over_sd": 0.79821
+      },
+      {
+        "covariate": "Enhanced_Vegetation_Index_2020",
+        "cv_r": 0.919808,
+        "cv_rmse": 0.034479,
+        "observed_sd": 0.085708,
+        "n_clusters": 1380,
+        "rmse_over_sd": 0.402282
+      },
+      {
+        "covariate": "Precipitation_2020",
+        "cv_r": 0.999081,
+        "cv_rmse": 1.784565,
+        "observed_sd": 41.583612,
+        "n_clusters": 1380,
+        "rmse_over_sd": 0.042915
+      },
+      {
+        "covariate": "Elevation",
+        "cv_r": 0.977053,
+        "cv_rmse": 48.851429,
+        "observed_sd": 229.267047,
+        "n_clusters": 1380,
+        "rmse_over_sd": 0.213077
+      },
+      {
+        "covariate": "Livestock_Cattle",
+        "cv_r": 0.535313,
+        "cv_rmse": 23.412134,
+        "observed_sd": 27.523289,
+        "n_clusters": 1380,
+        "rmse_over_sd": 0.85063
+      },
+      {
+        "covariate": "Malaria_Incidence_2020",
+        "cv_r": 0.923407,
+        "cv_rmse": 0.034142,
+        "observed_sd": 0.087357,
+        "n_clusters": 1380,
+        "rmse_over_sd": 0.390833
+      }
+    ],
+    "nearest_training_cluster_distance_km": {
+      "min": 0.092,
+      "median": 8.749,
+      "p95": 31.215,
+      "max": 72.1
+    },
+    "share_heldout_farther_than_median_unsampled_lga_pct": 30.14,
+    "external_validity_note": "The CV predicts at a held-out cluster, whose own LGA is sampled by construction. 123 LGAs have no cluster at all and their nearest cluster is typically farther away than a held-out cluster's nearest training cluster, so the CV understates the error at the places the table exists to serve.",
+    "interpretation": "rmse_over_sd near 1 means the interpolation carries no spatial information; near 0 means it is nearly exact"
+  },
+  "selection_rule": {
+    "fixed_before_any_fit": true,
+    "step1": "drop if 5-fold interpolation correlation < 0.85",
+    "step2": "then drop if |r| > 0.80 on the 774 LGA values with a covariate already kept, earlier in the fixed order wins",
+    "step3": "then keep at most 6, population density first if it survives",
+    "order": ["Aridity_2020", "Nightlights_Composite", "Travel_Times", "Enhanced_Vegetation_Index_2020", "Precipitation_2020", "Elevation", "Livestock_Cattle", "Malaria_Incidence_2020", "pop_density"],
+    "decisions": [
+      {
+        "candidate": "Aridity_2020",
+        "order": 1,
+        "cv_r": 0.999275,
+        "step1": "pass",
+        "step2_r": null,
+        "with": null,
+        "kept_after_filters": true,
+        "selected": true,
+        "decision": "kept",
+        "reason": "passes both filters and the six-slot cut"
+      },
+      {
+        "candidate": "Nightlights_Composite",
+        "order": 2,
+        "cv_r": 0.521828,
+        "step1": "fail",
+        "step2_r": null,
+        "with": null,
+        "kept_after_filters": false,
+        "selected": false,
+        "decision": "dropped",
+        "reason": "5-fold interpolation correlation 0.522 < 0.85"
+      },
+      {
+        "candidate": "Travel_Times",
+        "order": 3,
+        "cv_r": 0.61368,
+        "step1": "fail",
+        "step2_r": null,
+        "with": null,
+        "kept_after_filters": false,
+        "selected": false,
+        "decision": "dropped",
+        "reason": "5-fold interpolation correlation 0.614 < 0.85"
+      },
+      {
+        "candidate": "Enhanced_Vegetation_Index_2020",
+        "order": 4,
+        "cv_r": 0.919808,
+        "step1": "pass",
+        "step2_r": null,
+        "with": null,
+        "kept_after_filters": true,
+        "selected": true,
+        "decision": "kept",
+        "reason": "passes both filters and the six-slot cut"
+      },
+      {
+        "candidate": "Precipitation_2020",
+        "order": 5,
+        "cv_r": 0.999081,
+        "step1": "pass",
+        "step2_r": 0.985294,
+        "with": "Aridity_2020",
+        "kept_after_filters": false,
+        "selected": false,
+        "decision": "dropped",
+        "reason": "|r| = 0.985 with Aridity_2020, which is earlier in the fixed order"
+      },
+      {
+        "candidate": "Elevation",
+        "order": 6,
+        "cv_r": 0.977053,
+        "step1": "pass",
+        "step2_r": null,
+        "with": null,
+        "kept_after_filters": true,
+        "selected": true,
+        "decision": "kept",
+        "reason": "passes both filters and the six-slot cut"
+      },
+      {
+        "candidate": "Livestock_Cattle",
+        "order": 7,
+        "cv_r": 0.535313,
+        "step1": "fail",
+        "step2_r": null,
+        "with": null,
+        "kept_after_filters": false,
+        "selected": false,
+        "decision": "dropped",
+        "reason": "5-fold interpolation correlation 0.535 < 0.85"
+      },
+      {
+        "candidate": "Malaria_Incidence_2020",
+        "order": 8,
+        "cv_r": 0.923407,
+        "step1": "pass",
+        "step2_r": null,
+        "with": null,
+        "kept_after_filters": true,
+        "selected": true,
+        "decision": "kept",
+        "reason": "passes both filters and the six-slot cut"
+      },
+      {
+        "candidate": "pop_density",
+        "order": 9,
+        "cv_r": null,
+        "step1": "exempt (computed from COD-PS, not interpolated)",
+        "step2_r": null,
+        "with": null,
+        "kept_after_filters": true,
+        "selected": true,
+        "decision": "kept",
+        "reason": "passes both filters and the six-slot cut"
+      }
+    ],
+    "final_set": ["pop_density", "Aridity_2020", "Enhanced_Vegetation_Index_2020", "Elevation", "Malaria_Incidence_2020"],
+    "dropped": ["Nightlights_Composite", "Travel_Times", "Precipitation_2020", "Livestock_Cattle"],
+    "density_exempt_from_step1": "population density is computed from COD-PS, not interpolated, so it has no interpolation correlation to test",
+    "lga_level_correlation_matrix": [
+      [1, 0.076819, -0.111425, 0.626551, 0.985294, -0.623326, -0.375746, 0.430085, 0.012881],
+      [0.076819, 1, -0.148203, -0.218198, 0.057213, -0.149203, -0.109738, -0.23546, 0.50984],
+      [-0.111425, -0.148203, 1, -0.090467, -0.098032, -0.002467, 0.094514, 0.023706, -0.15219],
+      [0.626551, -0.218198, -0.090467, 1, 0.575307, -0.308379, -0.342742, 0.559192, -0.232267],
+      [0.985294, 0.057213, -0.098032, 0.575307, 1, -0.571561, -0.3494, 0.381478, -0.014204],
+      [-0.623326, -0.149203, -0.002467, -0.308379, -0.571561, 1, 0.301289, -0.38146, -0.127131],
+      [-0.375746, -0.109738, 0.094514, -0.342742, -0.3494, 0.301289, 1, -0.314315, -0.084947],
+      [0.430085, -0.23546, 0.023706, 0.559192, 0.381478, -0.38146, -0.314315, 1, -0.135988],
+      [0.012881, 0.50984, -0.15219, -0.232267, -0.014204, -0.127131, -0.084947, -0.135988, 1]
+    ]
+  },
+  "descriptive_outcome_correlation": {
+    "label": "DESCRIPTIVE ONLY. Not an input to the selection rule. Computed after the table was frozen.",
+    "why_it_must_not_select": "choosing covariates by their correlation with the outcome leaks the outcome into the design and invalidates the out-of-sample test in the next ticket",
+    "table": [
+      {
+        "covariate": "Aridity_2020",
+        "r_with_direct_prevalence": -0.458439,
+        "n_lga": 654,
+        "selected": true,
+        "label": "DESCRIPTIVE ONLY - not an input to the selection rule",
+        "source": "data/derived/lga_estimates.csv column direct_proportion, read after the table was written"
+      },
+      {
+        "covariate": "Nightlights_Composite",
+        "r_with_direct_prevalence": -0.08688,
+        "n_lga": 654,
+        "selected": false,
+        "label": "DESCRIPTIVE ONLY - not an input to the selection rule",
+        "source": "data/derived/lga_estimates.csv column direct_proportion, read after the table was written"
+      },
+      {
+        "covariate": "Travel_Times",
+        "r_with_direct_prevalence": 0.20167,
+        "n_lga": 654,
+        "selected": false,
+        "label": "DESCRIPTIVE ONLY - not an input to the selection rule",
+        "source": "data/derived/lga_estimates.csv column direct_proportion, read after the table was written"
+      },
+      {
+        "covariate": "Enhanced_Vegetation_Index_2020",
+        "r_with_direct_prevalence": -0.416297,
+        "n_lga": 654,
+        "selected": true,
+        "label": "DESCRIPTIVE ONLY - not an input to the selection rule",
+        "source": "data/derived/lga_estimates.csv column direct_proportion, read after the table was written"
+      },
+      {
+        "covariate": "Precipitation_2020",
+        "r_with_direct_prevalence": -0.428008,
+        "n_lga": 654,
+        "selected": false,
+        "label": "DESCRIPTIVE ONLY - not an input to the selection rule",
+        "source": "data/derived/lga_estimates.csv column direct_proportion, read after the table was written"
+      },
+      {
+        "covariate": "Elevation",
+        "r_with_direct_prevalence": 0.28961,
+        "n_lga": 654,
+        "selected": true,
+        "label": "DESCRIPTIVE ONLY - not an input to the selection rule",
+        "source": "data/derived/lga_estimates.csv column direct_proportion, read after the table was written"
+      },
+      {
+        "covariate": "Livestock_Cattle",
+        "r_with_direct_prevalence": 0.301356,
+        "n_lga": 654,
+        "selected": false,
+        "label": "DESCRIPTIVE ONLY - not an input to the selection rule",
+        "source": "data/derived/lga_estimates.csv column direct_proportion, read after the table was written"
+      },
+      {
+        "covariate": "Malaria_Incidence_2020",
+        "r_with_direct_prevalence": -0.234034,
+        "n_lga": 654,
+        "selected": true,
+        "label": "DESCRIPTIVE ONLY - not an input to the selection rule",
+        "source": "data/derived/lga_estimates.csv column direct_proportion, read after the table was written"
+      },
+      {
+        "covariate": "pop_density",
+        "r_with_direct_prevalence": -0.057562,
+        "n_lga": 654,
+        "selected": true,
+        "label": "DESCRIPTIVE ONLY - not an input to the selection rule",
+        "source": "data/derived/lga_estimates.csv column direct_proportion, read after the table was written"
+      }
+    ]
+  },
+  "holdout_zone_test": {
+    "zone": "North East",
+    "states": ["NG-AD", "NG-BA", "NG-BO", "NG-GO", "NG-TA", "NG-YO"],
+    "clusters_excluded": 213,
+    "clusters_remaining": 1167,
+    "lgas_values_changed": 118,
+    "lgas_values_unchanged": 656,
+    "lgas_nearest_set_changed": 118,
+    "set_unchanged_but_values_differ": 0,
+    "set_changed_but_values_identical": 0,
+    "interpretation": "An LGA is unaffected exactly when its three nearest clusters all lie outside the excluded zone; with squared-exponential-free IDW that is deterministic, so any exception is a numerical tie and is counted above."
+  },
+  "assertions": {
+    "n_lga_is_774": true,
+    "lga_ids_unique": true,
+    "lga_ids_match_adm2": true,
+    "cluster_count_is_1380": true,
+    "total_area_near_923k": true,
+    "every_lga_has_3_clusters": true,
+    "no_missing_covariate_values": true,
+    "density_na_only_where_pop_na": true,
+    "zone_assignment_complete": true,
+    "cv_covers_all_clusters": true,
+    "holdout_consistency": true,
+    "selected_between_1_and_6": true,
+    "selection_is_flag_in_csv": true
+  },
+  "limitations": ["Covariates are interpolated from the DHS cluster coordinates, which are displaced (up to 2 km urban, 5 km rural, 1% of rural up to 10 km). The surfaces are coarse relative to that displacement for some variables, so the interpolation error measured here includes displacement error.", "The interpolation is only as good as the surface's spatial smoothness. Where rmse_over_sd is high the number exists for every LGA but carries little information, and entering it in a model adds a column, not knowledge.", "Cluster sampling is itself spatially clustered inside states; the CV folds hold out clusters at random, so the measured error is an optimistic bound for a place far from any cluster (the unsampled LGAs).", "Area and density use geoBoundaries simplified polygons, not the official LGA cadastre; coastal and riverine LGAs include water in their polygon, so density is population per polygon km2, not per habitable km2.", "Travel_Times and Nightlights_Composite are heavy-tailed and enter as raw values; no transform is applied here because transforming is a modelling choice, not a data-collection one.", "Population comes from COD-PS 2020 projections of the 2006 census, not from the DHS. Bakassi has no COD-PS denominator and its density is NA, never zero."]
+}

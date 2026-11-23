@@ -1,0 +1,320 @@
+{
+  "generated_by": "scripts/calibration_lga_cv.R",
+  "command": "Rscript scripts/calibration_lga_cv.R",
+  "ticket": "T13",
+  "generated_on": "2026-11-23",
+  "seed": 20261124,
+  "r_version": "R version 4.5.2 (2025-10-31 ucrt)",
+  "inla_version": "25.10.19",
+  "construction": "Leave-one-LGA-out cross-validation of the LGA model, with each held-out LGA's neighbours left in the fit. 200 of the 654 LGAs that hold at least one cluster are drawn at random without replacement (seed 20261124) and split into 5 groups of 40 by a capacity-constrained greedy rule that places each drawn LGA in the group where it has the fewest already-assigned edge-sharing members, so that one held-out LGA does not remove another's neighbourhood; the number of adjacent pairs remaining inside each group is reported. Each group is one fit: that group's 40 LGAs' households are dropped and the identical household-level binomial model is refitted (ten design columns of eight covariates, BYM2 on the queen-contiguity graph over all 774 LGAs built once from the full boundary file, IID cluster effect, INLA 25.10.19 defaults), then the 40 LGAs are predicted from prediction rows at each LGA's mean covariate profile taken from the FULL household file (covariates held known) with cluster index NA. theta_s is the LGA prevalence with the cluster effect marginalised by the same 7-point Gauss-Hermite rule as scripts/lga_model.R; 95% intervals come from the marginal posterior of the linear predictor (mean and sd from summary.linear.predictor, Gaussian on the logit scale) mapped through that integral on a 2001-point standard-normal probability grid, so no Monte Carlo draws are used. The truth is the direct unweighted proportion from the held-out households of each LGA; its variance is a cluster-robust ratio linearisation with strata = state and PSU = cluster (hv001). LGAs with a single cluster have no estimable design variance and are imputed the group's median design effect on the binomial variance. z = (model_mean - direct) / sqrt(model_var + design_var) with model_var = ((ci_high - ci_low)/(2*1.96))^2. Pass rule fixed before any fit, identical to T12: mean(z) in [-0.15, 0.15], sd(z) in [0.85, 1.15], share |z| <= 1.96 in [0.90, 0.98], pooled over the 200 held-out LGAs. The adjacency file named in the brief is the 37-node state graph; the 774-node, 2230-edge LGA graph was built from the boundary file and its edge count asserted. Count-functional calibration is NOT tested: it needs joint draws per fold.",
+  "design": {
+    "scheme": "leave-one-LGA-out, neighbours retained within the fit",
+    "n_held_out": 200,
+    "n_groups": 5,
+    "group_size": 40,
+    "sampling_frame": "654 LGAs holding at least one cluster",
+    "draw_seed": 20261124,
+    "held_out_lga_ids": ["59680162B70966513794539", "59680162B67606782034303", "59680162B59329233871626", "59680162B73078519517404", "59680162B27261417712833", "59680162B61092998371306", "59680162B14133510851755", "59680162B51570410917379", "59680162B89638160160445", "59680162B35305934518280", "59680162B48603200461333", "59680162B41031546236215", "59680162B26282391091652", "59680162B66631777088899", "59680162B20002653395444", "59680162B51512347513243", "59680162B99778789604362", "59680162B54275853767873", "59680162B99535636657731", "59680162B2298430697284", "59680162B14396821090751", "59680162B19433829654146", "59680162B48786148420785", "59680162B50201894093674", "59680162B93100308813933", "59680162B21108805782195", "59680162B89766877463651", "59680162B67238968218645", "59680162B46179290363212", "59680162B87284296025200", "59680162B39308677673484", "59680162B43215766185997", "59680162B22484757822523", "59680162B54666922464494", "59680162B85522063023223", "59680162B42207826884677", "59680162B91304502238334", "59680162B55504856664882", "59680162B73411137510562", "59680162B65118596491840", "59680162B91433810506609", "59680162B86155479852967", "59680162B97490121732821", "59680162B47841916602322", "59680162B44112457363104", "59680162B61170702756328", "59680162B7272699675434", "59680162B36804655757784", "59680162B46976557303871", "59680162B32979491305099", "59680162B13073760931893", "59680162B21053239387442", "59680162B63804955714699", "59680162B14261849329471", "59680162B50827827535662", "59680162B49362321791702", "59680162B22633527707210", "59680162B46130456424051", "59680162B24430291126178", "59680162B89640587380951", "59680162B41297071563530", "59680162B7635361694273", "59680162B10083289652159", "59680162B36423706884187", "59680162B13498430232382", "59680162B69095881694103", "59680162B8390528040617", "59680162B61116944198945", "59680162B96484505623852", "59680162B98234428566305", "59680162B63010488329613", "59680162B6783963116345", "59680162B75172896497028", "59680162B18578493945657", "59680162B47339407576735", "59680162B18997887117478", "59680162B91755424681987", "59680162B48615386953659", "59680162B69796164397605", "59680162B85303802109421", "59680162B75733324884372", "59680162B4050907661224", "59680162B37513478805829", "59680162B50724647943907", "59680162B13393519160177", "59680162B16574916896740", "59680162B87049040782715", "59680162B20780696540875", "59680162B83099166959131", "59680162B53174064204838", "59680162B96995039930644", "59680162B6932812925911", "59680162B7192144408722", "59680162B5974853059370", "59680162B86291828303656", "59680162B44242102017414", "59680162B99910214526625", "59680162B99351931357354", "59680162B51019344443676", "59680162B46612932493253", "59680162B25728635468586", "59680162B43637132059207", "59680162B29680565367836", "59680162B62360966111253", "59680162B49393703134220", "59680162B27639129809368", "59680162B46296414727789", "59680162B93998087230069", "59680162B49050440888294", "59680162B36976404849364", "59680162B23965546094498", "59680162B72042998542035", "59680162B35636298384814", "59680162B35701990596564", "59680162B27926848768432", "59680162B99262810585367", "59680162B65190975434062", "59680162B20086286793745", "59680162B18982121994254", "59680162B24550873512487", "59680162B3302114520233", "59680162B25890229119009", "59680162B63088628372837", "59680162B25032665557199", "59680162B29589714384573", "59680162B61451583552190", "59680162B36558878931890", "59680162B12574760496394", "59680162B64727590098747", "59680162B47259322211203", "59680162B94726154492089", "59680162B50777093344409", "59680162B85175001165051", "59680162B52281011363885", "59680162B76884691739548", "59680162B2266540401620", "59680162B7261312330016", "59680162B6009908161486", "59680162B42687104490462", "59680162B53652676960042", "59680162B64610537243626", "59680162B78681214723365", "59680162B85361781814064", "59680162B17778966736574", "59680162B6425058524044", "59680162B74099392913903", "59680162B85415328791745", "59680162B70265669805684", "59680162B41420170912929", "59680162B90037113183568", "59680162B60219664923389", "59680162B3936014826761", "59680162B21074533395167", "59680162B18196869714953", "59680162B41357004175190", "59680162B72061925749770", "59680162B4745386112936", "59680162B70509973828236", "59680162B73824932270854", "59680162B6205124943279", "59680162B24636018787341", "59680162B11400589438827", "59680162B49809531314946", "59680162B9128777704300", "59680162B40988548898234", "59680162B79502957035648", "59680162B70631413452384", "59680162B26576505992161", "59680162B31090464189446", "59680162B91981903970684", "59680162B22561739962750", "59680162B89324456878264", "59680162B25131261753844", "59680162B97377368460903", "59680162B84327981884458", "59680162B73114171000075", "59680162B87534880716336", "59680162B64183111122385", "59680162B61760155439631", "59680162B96890005302109", "59680162B36658267128816", "59680162B34366982763718", "59680162B24167581171767", "59680162B87154562016330", "59680162B53080807091718", "59680162B93423525469915", "59680162B93651715341205", "59680162B537197556674", "59680162B57364751970918", "59680162B51390103580898", "59680162B30816727026324", "59680162B58679994750141", "59680162B92640548002056", "59680162B30032590265448", "59680162B81796058650879", "59680162B69944768623609", "59680162B30773939854921", "59680162B28903777440270", "59680162B44141715713069", "59680162B86061563506110"],
+    "group_of_lga": [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 1, 2, 5, 3, 4, 5, 1, 2, 3, 4, 1, 5, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 2, 1, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 5, 4, 1, 2, 3, 4, 5, 1, 3, 2, 4, 5, 2, 1, 5, 3, 4, 1, 2, 3, 4, 5, 1, 2, 3, 5, 4, 1, 2, 3, 4, 2, 5, 1, 3, 4, 1, 5, 3, 2, 4, 5, 1, 3, 2, 4, 5, 1, 2, 3, 5, 4, 1, 2, 3, 5, 1, 4, 2, 4, 3, 5, 1, 2, 5, 3, 4, 1, 3, 2, 4, 5, 2, 1, 5, 3, 4, 1, 2, 3, 5, 1, 4, 2, 3, 2, 5, 4, 1, 3, 4, 5, 1, 2, 4, 3, 5, 2, 1, 3, 4, 1, 2, 5, 3, 4, 5, 1, 2, 3, 4, 5],
+    "graph_source": "data/public/boundaries/geoBoundaries-NGA-ADM2_simplified.geojson (queen contiguity)",
+    "graph_nodes": 774,
+    "graph_edges": 2230,
+    "graph_components": 1,
+    "adjacency_file_note": "the brief names data/derived/neighbours.csv as the 774-node LGA graph; that file is the 37-node STATE graph (172 directed rows, 86 undirected edges). The LGA graph was built from the boundary file instead and its 2230 edges asserted against the brief's own numbers.",
+    "adjacency_report": [
+      {
+        "group": 1,
+        "n_lgas": 40,
+        "adjacent_pairs_within_group": 0,
+        "edges_among_all_200_drawn": 136,
+        "contaminated": false
+      },
+      {
+        "group": 2,
+        "n_lgas": 40,
+        "adjacent_pairs_within_group": 0,
+        "edges_among_all_200_drawn": 136,
+        "contaminated": false
+      },
+      {
+        "group": 3,
+        "n_lgas": 40,
+        "adjacent_pairs_within_group": 0,
+        "edges_among_all_200_drawn": 136,
+        "contaminated": false
+      },
+      {
+        "group": 4,
+        "n_lgas": 40,
+        "adjacent_pairs_within_group": 0,
+        "edges_among_all_200_drawn": 136,
+        "contaminated": false
+      },
+      {
+        "group": 5,
+        "n_lgas": 40,
+        "adjacent_pairs_within_group": 0,
+        "edges_among_all_200_drawn": 136,
+        "contaminated": false
+      }
+    ],
+    "covariates_held_known": true,
+    "geospatial_covariates_used": 0,
+    "weights_in_likelihood": false,
+    "outcome_in_likelihood": "severe_fi = 1{hfs_sev >= 0.5}"
+  },
+  "pass_rule_declared_before_fitting": {
+    "mean_z": {
+      "pass_range": [-0.15, 0.15],
+      "value": -0.05147852,
+      "pass": true
+    },
+    "sd_z": {
+      "pass_range": [0.85, 1.15],
+      "value": 1.11109609,
+      "pass": true
+    },
+    "coverage_abs_z_le_1_96": {
+      "pass_range": [0.9, 0.98],
+      "value": 0.94,
+      "pass": true
+    },
+    "all_three_pass": true,
+    "n_z": 200,
+    "rule_changed_after_seeing_values": false,
+    "identical_to_T12_rule": true
+  },
+  "primary": {
+    "n": 200,
+    "mean_z": -0.05147852,
+    "median_z": -0.04268309,
+    "sd_z": 1.11109609,
+    "min_z": -3.52095554,
+    "max_z": 2.65075341,
+    "coverage_abs_z_le_1_96": 0.94,
+    "n_abs_z_gt_1_96": 12,
+    "n_abs_z_gt_2_58": 7,
+    "rms_z": 1.10950975
+  },
+  "sensitivity": {
+    "multi_cluster_lgas_only": {
+      "n": 123,
+      "mean_z": -0.06914833,
+      "sd_z": 1.1308104,
+      "coverage": 0.93495935
+    },
+    "by_group": [
+      {
+        "group": 1,
+        "n": 40,
+        "mean_z": 0.20872463,
+        "sd_z": 0.95736138,
+        "coverage": 1,
+        "n_single_cluster": 16,
+        "intra_group_adjacent_pairs": 0,
+        "fit_seconds": 49.23,
+        "waic": 35685.32389065,
+        "mode_status": 0,
+        "sd_cluster_effect": 0.43333006,
+        "deff_median": 1.23635661,
+        "n_training_households": 37413,
+        "n_training_clusters": 1294
+      },
+      {
+        "group": 2,
+        "n": 40,
+        "mean_z": 0.03718063,
+        "sd_z": 0.99245603,
+        "coverage": 1,
+        "n_single_cluster": 18,
+        "intra_group_adjacent_pairs": 0,
+        "fit_seconds": 47.81,
+        "waic": 35707.48320841,
+        "mode_status": 0,
+        "sd_cluster_effect": 0.46461454,
+        "deff_median": 1.64753894,
+        "n_training_households": 37532,
+        "n_training_clusters": 1299
+      },
+      {
+        "group": 3,
+        "n": 40,
+        "mean_z": -0.3297417,
+        "sd_z": 1.13850906,
+        "coverage": 0.9,
+        "n_single_cluster": 14,
+        "intra_group_adjacent_pairs": 0,
+        "fit_seconds": 60.58,
+        "waic": 35449.69829636,
+        "mode_status": 0,
+        "sd_cluster_effect": 0.45552545,
+        "deff_median": 1,
+        "n_training_households": 37449,
+        "n_training_clusters": 1295
+      },
+      {
+        "group": 4,
+        "n": 40,
+        "mean_z": -0.06235225,
+        "sd_z": 1.24282896,
+        "coverage": 0.9,
+        "n_single_cluster": 14,
+        "intra_group_adjacent_pairs": 0,
+        "fit_seconds": 53.45,
+        "waic": 35418.00969065,
+        "mode_status": 0,
+        "sd_cluster_effect": 0.45835685,
+        "deff_median": 1.00671141,
+        "n_training_households": 37354,
+        "n_training_clusters": 1292
+      },
+      {
+        "group": 5,
+        "n": 40,
+        "mean_z": -0.11120389,
+        "sd_z": 1.18163263,
+        "coverage": 0.9,
+        "n_single_cluster": 15,
+        "intra_group_adjacent_pairs": 0,
+        "fit_seconds": 61.29,
+        "waic": 35435.51327088,
+        "mode_status": 0,
+        "sd_cluster_effect": 0.44015073,
+        "deff_median": 1.15384615,
+        "n_training_households": 37301,
+        "n_training_clusters": 1292
+      }
+    ],
+    "note": "the multi-cluster subset uses only LGAs whose design variance is directly estimable; it is a sensitivity, not a substitute for the pre-declared primary rule"
+  },
+  "inflation_factor": {
+    "k": 1.11109609,
+    "definition": "k = sd(z) over all 200 held-out LGAs; widening every interval by k multiplies the half-width by k",
+    "coverage_after_widening_by_k": 0.96,
+    "k_alternative_rms": 1.10950975,
+    "coverage_after_widening_by_rms": 0.96,
+    "note": "k is estimated on the same 200 residuals it is applied to; the out-of-fold block below is the honest validation of it"
+  },
+  "out_of_fold_k": {
+    "per_test_group": [
+      {
+        "test_group": 1,
+        "n_test": 40,
+        "k_from_other_groups": 1.13973955,
+        "coverage_in_test_group": 1
+      },
+      {
+        "test_group": 2,
+        "n_test": 40,
+        "k_from_other_groups": 1.14063195,
+        "coverage_in_test_group": 1
+      },
+      {
+        "test_group": 3,
+        "n_test": 40,
+        "k_from_other_groups": 1.09673311,
+        "coverage_in_test_group": 0.95
+      },
+      {
+        "test_group": 4,
+        "n_test": 40,
+        "k_from_other_groups": 1.07990836,
+        "coverage_in_test_group": 0.9
+      },
+      {
+        "test_group": 5,
+        "n_test": 40,
+        "k_from_other_groups": 1.09613398,
+        "coverage_in_test_group": 0.925
+      }
+    ],
+    "coverages": [1, 1, 0.95, 0.9, 0.925],
+    "mean_coverage": 0.955,
+    "min_coverage": 0.9,
+    "max_coverage": 1,
+    "n_per_test_group": 40,
+    "note": "k estimated on four groups and applied to the fifth, five times. Each coverage is a mean over 40 LGAs, so its binomial standard error at 0.95 is about 0.034; read the spread of the five, not one of them alone"
+  },
+  "three_way_comparison": {
+    "in_sample_full_fit": {
+      "n": 200,
+      "mean": 0.29610363,
+      "median": 0.26069725,
+      "sd": 0.19113853,
+      "min": 0.0171364,
+      "max": 0.91579528,
+      "correlation_with_direct": 0.97475692,
+      "mean_minus_direct": -0.00578581,
+      "compression_ratio_vs_direct": 0.87470924
+    },
+    "out_of_sample_fold": {
+      "n": 200,
+      "mean": 0.29329893,
+      "median": 0.25927499,
+      "sd": 0.16846969,
+      "min": 0.03097197,
+      "max": 0.74975837,
+      "correlation_with_direct": 0.76790932,
+      "mean_minus_direct": -0.0085905,
+      "compression_ratio_vs_direct": 0.77096961
+    },
+    "direct_unweighted": {
+      "n": 200,
+      "mean": 0.30188943,
+      "median": 0.25489642,
+      "sd": 0.21851665,
+      "min": 0,
+      "max": 1
+    },
+    "note": "in-sample is posterior_mean from data/derived/lga_estimates.csv (the full fit that sees every household); out-of-sample is this ticket's fold estimate for the same LGA; direct is the held-out unweighted proportion. Compression below 1 is the shrinkage signature -- the fold field is pulled toward its neighbours."
+  },
+  "comparison_against_T12": {
+    "available": true,
+    "source": "data/derived/calibration_summary.json (T12, leave-one-zone-out)",
+    "t12_scheme": "leave-one-geopolitical-zone-out, 654 LGAs, neighbours removed with the zone",
+    "t12_n": 654,
+    "t12_mean_z": -0.653879,
+    "t12_sd_z": 1.6481424,
+    "t12_coverage": 0.77522936,
+    "t12_k": 1.6481424,
+    "t13_n": 200,
+    "t13_mean_z": -0.05147852,
+    "t13_sd_z": 1.11109609,
+    "t13_coverage": 0.94,
+    "t13_k": 1.11109609,
+    "delta_mean_z": 0.60240048,
+    "delta_sd_z": -0.53704631,
+    "delta_coverage": 0.16477064,
+    "reading": "same pass rule, same estimator, same scoring; the only change is what is removed. If T13 passes where T12 failed, the failure is extrapolation to a region with no neighbours, not interpolation among observed neighbours."
+  },
+  "descriptive_not_a_criterion": {
+    "naive_interval_coverage": {
+      "n_interval_contains_direct": 167,
+      "share": 0.835,
+      "note": "descriptive only; the direct estimate carries its own sampling error, so this under-covers by construction and is NOT the criterion"
+    },
+    "bias": {
+      "mean_model_minus_direct": -0.0085905,
+      "median_model_minus_direct": -0.00549098,
+      "share_of_lgas_model_below_direct": 0.51
+    },
+    "variance_shares": {
+      "median_model_se": 0.11936013,
+      "median_design_se": 0.0604724,
+      "mean_share_of_z_variance_from_design": 0.26806105
+    }
+  },
+  "fit_times_seconds": [49.23, 47.81, 60.58, 53.45, 61.29],
+  "total_fit_seconds": 272.36,
+  "limitations": {
+    "count_functional_not_tested": true,
+    "never_clustered_lgas_not_tested": true,
+    "n_never_clustered_excluded": 120,
+    "covariates_held_known": true,
+    "linear_predictor_marginal_assumed_gaussian": true,
+    "survey_design_not_in_likelihood": true,
+    "single_cluster_lgas_deff_imputed": 77,
+    "n_degenerate_direct_zero_or_one": 6,
+    "note": "the held-out LGAs are the 654 that hold a cluster; the 120 LGAs with no cluster still have no direct estimate and are not tested here"
+  }
+}

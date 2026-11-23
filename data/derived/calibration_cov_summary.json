@@ -1,0 +1,1189 @@
+{
+  "generated_by": "scripts/calibration_covariates.R",
+  "command": "Rscript scripts/calibration_covariates.R",
+  "ticket": "T15",
+  "generated_on": "2026-11-23",
+  "seed": 20261123,
+  "r_version": "R version 4.5.2 (2025-10-31 ucrt)",
+  "inla_version": "25.10.19",
+  "construction": "Leave-one-geopolitical-zone-out cross-validation of the LGA model, T12's design with five area-level fixed effects added. Each fold drops every household in one of the six zones and refits the identical household-level binomial model: ten household design columns plus pop_density, Aridity_2020, Enhanced_Vegetation_Index_2020, Elevation and Malaria_Incidence_2020 as fixed effects (raw scale, no transform, no interaction), BYM2 on the queen-contiguity graph over all 774 LGAs built once from the full boundary file, IID cluster effect, INLA 25.10.19 defaults. The five area-level covariates are REBUILT INSIDE EVERY FOLD by T14's build_lga_covariates() with that fold's zone clusters excluded (inverse-distance weighting over the 3 nearest remaining clusters, great-circle distance, floor 0.001 km), so a held-out region's own clusters contribute nothing to its covariates; the script asserts that no rebuilt nearest-3 set contains an excluded cluster and that the builder reproduces T14's shipped table to 1e-9. Prediction rows sit at each LGA's mean household covariate profile (taken from the FULL file, as in T12, so household covariates are held known) with cluster index NA, and cluster counts and the observed/unobserved split come from cluster_lga_fixed.csv (654 LGAs with at least one cluster, 120 with none, 1,380 clusters). theta_s is the LGA prevalence with the cluster effect marginalised by the same 7-point Gauss-Hermite rule as scripts/lga_model.R; 95% intervals come from the marginal posterior of the linear predictor mapped through that integral on a 2001-point standard-normal probability grid, no Monte Carlo draws. The truth is the direct unweighted proportion from the held-out households of each LGA with a cluster-robust ratio linearisation (strata = state, PSU = cluster), single-cluster LGAs imputed the fold's median design effect. z = (model_mean - direct) / sqrt(model_var + design_var). Pass rule fixed before any fold was fitted and identical to T12: mean(z) in [-0.15, 0.15], sd(z) in [0.85, 1.15], share |z| <= 1.96 in [0.90, 0.98], pooled over the 654 LGAs that hold at least one cluster. State and zone coverage treat LGAs as independent, which understates the aggregate interval. Count-functional calibration is NOT tested: it needs joint draws per fold.",
+  "design": {
+    "scheme": "leave-one-geopolitical-zone-out",
+    "n_folds": 6,
+    "zones": ["North West", "North East", "North Central", "South West", "South East", "South South"],
+    "zones_skipped_from_disk": ["North West", "North East", "North Central", "South West", "South East", "South South"],
+    "graph_nodes": 774,
+    "graph_edges": 2230,
+    "graph_components": 1,
+    "geospatial_covariates_used": 5,
+    "area_covariates": ["pop_density", "Aridity_2020", "Enhanced_Vegetation_Index_2020", "Elevation", "Malaria_Incidence_2020"],
+    "area_covariate_surface_built_per_fold": true,
+    "household_covariates_held_known": true,
+    "cluster_counts_source": "data/derived/cluster_lga_fixed.csv",
+    "n_clusters": 1380,
+    "n_lga_with_cluster": 654,
+    "n_lga_without_cluster": 120,
+    "n_singleton_lgas": 266,
+    "weights_in_likelihood": false,
+    "outcome_in_likelihood": "severe_fi = 1{hfs_sev >= 0.5}",
+    "differ_from_T12": "five area-level fixed effects added; area-level surface rebuilt inside each fold; nothing else"
+  },
+  "covariate_surface": {
+    "builder": "copy of build_lga_covariates() from scripts/lga_covariates.R, constants unchanged",
+    "reproduction_of_shipped_table": {
+      "max_abs_diff_candidates": 4.77484718e-12,
+      "max_abs_diff_pop_density": 4.72937245e-11,
+      "tolerance": 1e-09,
+      "reproduced": true
+    },
+    "k": 3,
+    "idw_floor_km": 0.001,
+    "per_fold": [
+      {
+        "zone": "North West",
+        "clusters_excluded": 259,
+        "clusters_available": 1121,
+        "lgas_values_changed": 198,
+        "excluded_set_absent_from_every_nearest3": true
+      },
+      {
+        "zone": "North East",
+        "clusters_excluded": 211,
+        "clusters_available": 1169,
+        "lgas_values_changed": 115,
+        "excluded_set_absent_from_every_nearest3": true
+      },
+      {
+        "zone": "North Central",
+        "clusters_excluded": 262,
+        "clusters_available": 1118,
+        "lgas_values_changed": 136,
+        "excluded_set_absent_from_every_nearest3": true
+      },
+      {
+        "zone": "South West",
+        "clusters_excluded": 246,
+        "clusters_available": 1134,
+        "lgas_values_changed": 141,
+        "excluded_set_absent_from_every_nearest3": true
+      },
+      {
+        "zone": "South East",
+        "clusters_excluded": 181,
+        "clusters_available": 1199,
+        "lgas_values_changed": 105,
+        "excluded_set_absent_from_every_nearest3": true
+      },
+      {
+        "zone": "South South",
+        "clusters_excluded": 221,
+        "clusters_available": 1159,
+        "lgas_values_changed": 129,
+        "excluded_set_absent_from_every_nearest3": true
+      }
+    ],
+    "pop_density_imputation": {
+      "n_imputed": 1,
+      "lga": "Bakassi",
+      "state": "NG-CR",
+      "rule": "parent-state median",
+      "why": "Bakassi has no COD-PS population. It has no cluster and no household, so the value enters no likelihood term and affects only its own prediction row."
+    }
+  },
+  "aridity_definition": {
+    "direction": "higher = wetter",
+    "sentence": "\"Units: Index between 0 (most arid) and 300 (most wet).\" and \"The dataset represents the average monthly precipitation divided by average monthly potential evapotranspiration, an aridity index defined by the United Nations Environmental Programme (UNEP).\" -- page 10 of 42 (printed page 9) of 'DHS Covariates Extract Data Description_3.pdf', entry 'Column Name: Aridity YEAR', derived from CRU TS v4.05 at 0.5 degrees.",
+    "source": "data/restricted/dhs-2024/ge/DHS Covariates Extract Data Description_3.pdf, page 10 of 42",
+    "note": "Read from the shipped PDF, not from a variable name: a HIGHER Aridity_2020 means WETTER. The same page also says 'If the aridity index becomes higher than normal in a region, the climate tends to suffer from drought', which refers to a deviation above normal, not to the level, and is contradicted by the units line and by the P/PET definition; the units line governs. Independent empirical check on the 774 LGA values: r(Aridity_2020, Precipitation_2020) = +0.985 and r(Aridity_2020, Elevation) = -0.623 in T14's correlation matrix, both only possible if a higher index is wetter. So the reported r = -0.458 with severe food insecurity is 'wetter LGA, less severe food insecurity', the expected direction, not a misread sign."
+  },
+  "pass_rule_declared_before_fitting": {
+    "same_as_T12": true,
+    "mean_z": {
+      "pass_range": [-0.15, 0.15],
+      "value": -0.4854372,
+      "pass": false
+    },
+    "sd_z": {
+      "pass_range": [0.85, 1.15],
+      "value": 1.56486491,
+      "pass": false
+    },
+    "coverage_abs_z_le_1_96": {
+      "pass_range": [0.9, 0.98],
+      "value": 0.79663609,
+      "pass": false
+    },
+    "all_three_pass": false,
+    "n_z": 654,
+    "rule_changed_after_seeing_values": false
+  },
+  "primary": {
+    "n": 654,
+    "mean_z": -0.4854372,
+    "median_z": -0.35280822,
+    "sd_z": 1.56486491,
+    "min_z": -5.92221686,
+    "max_z": 3.78125703,
+    "coverage_abs_z_le_1_96": 0.79663609,
+    "n_abs_z_gt_1_96": 133,
+    "n_abs_z_gt_2_58": 72
+  },
+  "comparison_vs_T12": {
+    "mean_z": {
+      "T12": -0.653879,
+      "T15": -0.4854372,
+      "delta": 0.1684418,
+      "pass_T12": false,
+      "pass_T15": false
+    },
+    "sd_z": {
+      "T12": 1.6481424,
+      "T15": 1.56486491,
+      "delta": -0.08327749,
+      "pass_T12": false,
+      "pass_T15": false
+    },
+    "coverage": {
+      "T12": 0.77522936,
+      "T15": 0.79663609,
+      "delta": 0.02140673,
+      "pass_T12": false,
+      "pass_T15": false
+    },
+    "out_of_sample_fit": {
+      "T12": {
+        "correlation": 0.19487106,
+        "compression_ratio": 0.51964528,
+        "slope_on_direct": 0.10126383,
+        "mean_model": 0.20014608,
+        "sd_model": 0.11038418
+      },
+      "T15": {
+        "correlation": 0.21491054,
+        "compression_ratio": 0.54327945,
+        "slope_on_direct": 0.11675648,
+        "mean_model": 0.21951093,
+        "sd_model": 0.1154046
+      },
+      "mean_direct": 0.29088553,
+      "sd_direct": 0.21242217
+    },
+    "by_zone": [
+      {
+        "zone": "North West",
+        "n": 154,
+        "direct_mean_unweighted": 0.41602287,
+        "direct_mean_hhweighted": 0.40729002,
+        "model_t12": 0.21223184,
+        "model_t15": 0.22887007,
+        "model_t12_hhweighted": 0.20167999,
+        "model_t15_hhweighted": 0.21806661,
+        "mean_z_t12": -1.46953702,
+        "mean_z_t15": -1.2834101,
+        "coverage_t12": 0.62987013,
+        "coverage_t15": 0.69480519
+      },
+      {
+        "zone": "North East",
+        "n": 98,
+        "direct_mean_unweighted": 0.54793128,
+        "direct_mean_hhweighted": 0.53310868,
+        "model_t12": 0.24687817,
+        "model_t15": 0.27875057,
+        "model_t12_hhweighted": 0.23923266,
+        "model_t15_hhweighted": 0.26980912,
+        "mean_z_t12": -1.94245721,
+        "mean_z_t15": -1.67248541,
+        "coverage_t12": 0.57142857,
+        "coverage_t15": 0.62244898
+      },
+      {
+        "zone": "North Central",
+        "n": 108,
+        "direct_mean_unweighted": 0.16927043,
+        "direct_mean_hhweighted": 0.17071561,
+        "model_t12": 0.27954963,
+        "model_t15": 0.29640944,
+        "model_t12_hhweighted": 0.2452331,
+        "model_t15_hhweighted": 0.26084674,
+        "mean_z_t12": 0.71708234,
+        "mean_z_t15": 0.82181204,
+        "coverage_t12": 0.80555556,
+        "coverage_t15": 0.76851852
+      },
+      {
+        "zone": "South West",
+        "n": 112,
+        "direct_mean_unweighted": 0.18539207,
+        "direct_mean_hhweighted": 0.18161466,
+        "model_t12": 0.16698288,
+        "model_t15": 0.18622946,
+        "model_t12_hhweighted": 0.14971712,
+        "model_t15_hhweighted": 0.16698667,
+        "mean_z_t12": -0.1273967,
+        "mean_z_t15": 0.00589753,
+        "coverage_t12": 0.9375,
+        "coverage_t15": 0.94642857
+      },
+      {
+        "zone": "South East",
+        "n": 83,
+        "direct_mean_unweighted": 0.19303412,
+        "direct_mean_hhweighted": 0.2013626,
+        "model_t12": 0.12955967,
+        "model_t15": 0.14966122,
+        "model_t12_hhweighted": 0.12945323,
+        "model_t15_hhweighted": 0.14899601,
+        "mean_z_t12": -0.57971208,
+        "mean_z_t15": -0.36384714,
+        "coverage_t12": 0.81927711,
+        "coverage_t15": 0.8313253
+      },
+      {
+        "zone": "South South",
+        "n": 99,
+        "direct_mean_unweighted": 0.17583232,
+        "direct_mean_hhweighted": 0.18224666,
+        "model_t12": 0.14516039,
+        "model_t15": 0.15863434,
+        "model_t12_hhweighted": 0.13408295,
+        "model_t15_hhweighted": 0.14643362,
+        "mean_z_t12": -0.26290624,
+        "mean_z_t15": -0.15297083,
+        "coverage_t12": 0.94949495,
+        "coverage_t15": 0.95959596
+      }
+    ],
+    "integrity_checks": {
+      "max_abs_diff_direct_unweighted": 6.9388939e-17,
+      "max_abs_diff_design_se": 7.60025723e-17,
+      "max_abs_diff_n_households": 0,
+      "max_abs_diff_n_clusters": 0,
+      "note": "the truth and its variance are recomputed, not copied, and must equal T12's to 1e-10; agreement is the proof that the folds and the scoring are the same"
+    },
+    "improvement_but_still_fails": true,
+    "wording": "improved relative to T12 on the reported checks where stated, and still fails the pre-declared rule"
+  },
+  "hyperparameters": {
+    "per_fold": [
+      {
+        "zone": "North West",
+        "bym2_phi": 0.96991642,
+        "bym2_precision": 0.8444772,
+        "sd_spatial_marginal": 1.08819327,
+        "sd_cluster": 0.4441489,
+        "fit_seconds": 60.93,
+        "waic": 28731.12629579,
+        "mode_status": 0,
+        "cov_clusters_available": 1121,
+        "cov_lgas_changed": 198,
+        "t12_sd_cluster": 0.4439,
+        "t12_fit_seconds": 55,
+        "t12_waic": 28726.49
+      },
+      {
+        "zone": "North East",
+        "bym2_phi": 0.96178834,
+        "bym2_precision": 1.03161213,
+        "sd_spatial_marginal": 0.98455907,
+        "sd_cluster": 0.47616437,
+        "fit_seconds": 67.73,
+        "waic": 30947.22373683,
+        "mode_status": 0,
+        "cov_clusters_available": 1169,
+        "cov_lgas_changed": 115,
+        "t12_sd_cluster": 0.4751,
+        "t12_fit_seconds": 52.4,
+        "t12_waic": 30943.81
+      },
+      {
+        "zone": "North Central",
+        "bym2_phi": 0.97216874,
+        "bym2_precision": 0.99887947,
+        "sd_spatial_marginal": 1.00056074,
+        "sd_cluster": 0.41532275,
+        "fit_seconds": 58.03,
+        "waic": 31688.2414682,
+        "mode_status": 0,
+        "cov_clusters_available": 1118,
+        "cov_lgas_changed": 136,
+        "t12_sd_cluster": 0.4157,
+        "t12_fit_seconds": 48.8,
+        "t12_waic": 31685.02
+      },
+      {
+        "zone": "South West",
+        "bym2_phi": 0.96960948,
+        "bym2_precision": 0.88077684,
+        "sd_spatial_marginal": 1.06553337,
+        "sd_cluster": 0.45881806,
+        "fit_seconds": 61.54,
+        "waic": 31955.3612158,
+        "mode_status": 0,
+        "cov_clusters_available": 1134,
+        "cov_lgas_changed": 141,
+        "t12_sd_cluster": 0.4583,
+        "t12_fit_seconds": 50.9,
+        "t12_waic": 31953.43
+      },
+      {
+        "zone": "South East",
+        "bym2_phi": 0.96363449,
+        "bym2_precision": 0.95362323,
+        "sd_spatial_marginal": 1.02402743,
+        "sd_cluster": 0.47275967,
+        "fit_seconds": 73.88,
+        "waic": 33523.9623192,
+        "mode_status": 0,
+        "cov_clusters_available": 1199,
+        "cov_lgas_changed": 105,
+        "t12_sd_cluster": 0.4727,
+        "t12_fit_seconds": 57.5,
+        "t12_waic": 33520.01
+      },
+      {
+        "zone": "South South",
+        "bym2_phi": 0.96994205,
+        "bym2_precision": 0.88992355,
+        "sd_spatial_marginal": 1.06004341,
+        "sd_cluster": 0.45506179,
+        "fit_seconds": 60.91,
+        "waic": 32870.95668837,
+        "mode_status": 0,
+        "cov_clusters_available": 1159,
+        "cov_lgas_changed": 129,
+        "t12_sd_cluster": 0.4546,
+        "t12_fit_seconds": 52.1,
+        "t12_waic": 32867.46
+      }
+    ],
+    "bym2_phi_range": [0.96178834, 0.97216874],
+    "bym2_precision_range": [0.8444772, 1.03161213],
+    "T12_bym2_not_on_disk": "T12 wrote no BYM2 phi or precision to disk; calibration_folds.csv carries only fold_sd_cluster, and calibration_summary.json records no hyperparameter block. The before/after comparison of the BYM2 mixing parameter therefore cannot be made from artefacts and T12 was not refitted (the ticket forbids a second fit)."
+  },
+  "coefficients": {
+    "area_level_terms": ["pop_density", "Aridity_2020", "Enhanced_Vegetation_Index_2020", "Elevation", "Malaria_Incidence_2020"],
+    "table": {
+      "Aridity_2020": [
+        {
+          "fold_zone": "North Central",
+          "term": "Aridity_2020",
+          "mean": -0.0131606,
+          "q025": -0.0442123,
+          "q975": 0.01787003
+        },
+        {
+          "fold_zone": "South West",
+          "term": "Aridity_2020",
+          "mean": -0.00157382,
+          "q025": -0.03405054,
+          "q975": 0.03089434
+        },
+        {
+          "fold_zone": "South East",
+          "term": "Aridity_2020",
+          "mean": 0.00102585,
+          "q025": -0.02992592,
+          "q975": 0.03194979
+        },
+        {
+          "fold_zone": "South South",
+          "term": "Aridity_2020",
+          "mean": -0.01372967,
+          "q025": -0.05080017,
+          "q975": 0.02335734
+        }
+      ],
+      "Elevation": [
+        {
+          "fold_zone": "North Central",
+          "term": "Elevation",
+          "mean": -0.00063626,
+          "q025": -0.00156523,
+          "q975": 0.00028861
+        },
+        {
+          "fold_zone": "South West",
+          "term": "Elevation",
+          "mean": 0.00024073,
+          "q025": -0.00051771,
+          "q975": 0.00099824
+        },
+        {
+          "fold_zone": "South East",
+          "term": "Elevation",
+          "mean": -0.00004232,
+          "q025": -0.00077369,
+          "q975": 0.0006882
+        },
+        {
+          "fold_zone": "South South",
+          "term": "Elevation",
+          "mean": 0.00020298,
+          "q025": -0.00054076,
+          "q975": 0.00094597
+        }
+      ],
+      "Enhanced_Vegetation_Index_2020": [
+        {
+          "fold_zone": "North Central",
+          "term": "Enhanced_Vegetation_Index_2020",
+          "mean": -0.39360851,
+          "q025": -2.50742141,
+          "q975": 1.71970305
+        },
+        {
+          "fold_zone": "South West",
+          "term": "Enhanced_Vegetation_Index_2020",
+          "mean": -3.25465279,
+          "q025": -6.11009246,
+          "q975": -0.40205767
+        },
+        {
+          "fold_zone": "South East",
+          "term": "Enhanced_Vegetation_Index_2020",
+          "mean": -2.02363477,
+          "q025": -4.18823316,
+          "q975": 0.13874381
+        },
+        {
+          "fold_zone": "South South",
+          "term": "Enhanced_Vegetation_Index_2020",
+          "mean": -0.63912803,
+          "q025": -2.99624027,
+          "q975": 1.71772307
+        }
+      ],
+      "Malaria_Incidence_2020": [
+        {
+          "fold_zone": "North Central",
+          "term": "Malaria_Incidence_2020",
+          "mean": -0.7490817,
+          "q025": -2.91765118,
+          "q975": 1.41720876
+        },
+        {
+          "fold_zone": "South West",
+          "term": "Malaria_Incidence_2020",
+          "mean": 1.224703,
+          "q025": -0.98448485,
+          "q975": 3.43484145
+        },
+        {
+          "fold_zone": "South East",
+          "term": "Malaria_Incidence_2020",
+          "mean": 0.8992919,
+          "q025": -1.34857298,
+          "q975": 3.14705997
+        },
+        {
+          "fold_zone": "South South",
+          "term": "Malaria_Incidence_2020",
+          "mean": 0.86151882,
+          "q025": -1.43246457,
+          "q975": 3.15624159
+        }
+      ],
+      "pop_density": [
+        {
+          "fold_zone": "North Central",
+          "term": "pop_density",
+          "mean": 5.48498672e-06,
+          "q025": -9.41734324e-06,
+          "q975": 0.00002038
+        },
+        {
+          "fold_zone": "South West",
+          "term": "pop_density",
+          "mean": 6.76084986e-06,
+          "q025": -0.00003063,
+          "q975": 0.00004405
+        },
+        {
+          "fold_zone": "South East",
+          "term": "pop_density",
+          "mean": 7.35642367e-06,
+          "q025": -8.23135192e-06,
+          "q975": 0.00002295
+        },
+        {
+          "fold_zone": "South South",
+          "term": "pop_density",
+          "mean": 5.86279821e-06,
+          "q025": -9.91294681e-06,
+          "q975": 0.00002164
+        }
+      ]
+    },
+    "folds_without_coefficient_row": ["North West", "North East"],
+    "why_a_fold_can_be_missing": "the block(s) for North West, North East were written by an earlier version of this script that did not yet persist the coefficient table. A fold already on disk is not refitted, so those zones have no coefficient row; their predictions, their z values and their contribution to every calibration number are unaffected.",
+    "note": "raw scale, so the size of a coefficient is per unit of the covariate as shipped: per person per km2 of density, per aridity index point (0 arid to 300 wet), per EVI unit, per metre of elevation, per case per person of malaria incidence"
+  },
+  "sensitivity": {
+    "multi_cluster_lgas_only": {
+      "n": 388,
+      "mean_z": -0.62481147,
+      "sd_z": 1.61227055,
+      "coverage": 0.77835052
+    },
+    "by_zone": [
+      {
+        "zone": "North West",
+        "n": 154,
+        "mean_z": -1.2834101,
+        "sd_z": 1.45138046,
+        "coverage": 0.69480519
+      },
+      {
+        "zone": "North East",
+        "n": 98,
+        "mean_z": -1.67248541,
+        "sd_z": 1.39368295,
+        "coverage": 0.62244898
+      },
+      {
+        "zone": "North Central",
+        "n": 108,
+        "mean_z": 0.82181204,
+        "sd_z": 1.36927336,
+        "coverage": 0.76851852
+      },
+      {
+        "zone": "South West",
+        "n": 112,
+        "mean_z": 0.00589753,
+        "sd_z": 0.95436321,
+        "coverage": 0.94642857
+      },
+      {
+        "zone": "South East",
+        "n": 83,
+        "mean_z": -0.36384714,
+        "sd_z": 1.54565369,
+        "coverage": 0.8313253
+      },
+      {
+        "zone": "South South",
+        "n": 99,
+        "mean_z": -0.15297083,
+        "sd_z": 1.15540911,
+        "coverage": 0.95959596
+      }
+    ]
+  },
+  "secondary_state_coverage": {
+    "level": "state",
+    "n": 37,
+    "n_inside": 11,
+    "expected_under_perfect_calibration": 35.15,
+    "n_inside_if_lgas_perfectly_correlated": 29,
+    "outside": ["NG-AD", "NG-AN", "NG-BA", "NG-BE", "NG-BO", "NG-BY", "NG-CR", "NG-EN", "NG-GO", "NG-JI", "NG-KD", "NG-KE", "NG-KN", "NG-KO", "NG-KT", "NG-KW", "NG-LA", "NG-NA", "NG-NI", "NG-OY", "NG-PL", "NG-RI", "NG-SO", "NG-TA", "NG-YO", "NG-ZA"],
+    "detail": [
+      {
+        "key": "NG-AB",
+        "n_lga": 15,
+        "model_mean": 0.14188781,
+        "lo": 0.08453833,
+        "hi": 0.1992373,
+        "direct": 0.19159836,
+        "inside": true,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.02925994,
+        "sd_if_perfectly_correlated": 0.09342694
+      },
+      {
+        "key": "NG-AD",
+        "n_lga": 20,
+        "model_mean": 0.24791413,
+        "lo": 0.17133115,
+        "hi": 0.3244971,
+        "direct": 0.37853659,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03907295,
+        "sd_if_perfectly_correlated": 0.15162811
+      },
+      {
+        "key": "NG-AK",
+        "n_lga": 24,
+        "model_mean": 0.24267238,
+        "lo": 0.17483231,
+        "hi": 0.31051246,
+        "direct": 0.23714037,
+        "inside": true,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03461228,
+        "sd_if_perfectly_correlated": 0.14599206
+      },
+      {
+        "key": "NG-AN",
+        "n_lga": 20,
+        "model_mean": 0.11710972,
+        "lo": 0.07771603,
+        "hi": 0.15650342,
+        "direct": 0.04929577,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.02009882,
+        "sd_if_perfectly_correlated": 0.07959746
+      },
+      {
+        "key": "NG-BA",
+        "n_lga": 17,
+        "model_mean": 0.28224484,
+        "lo": 0.21814876,
+        "hi": 0.34634093,
+        "direct": 0.45825771,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03270208,
+        "sd_if_perfectly_correlated": 0.1195468
+      },
+      {
+        "key": "NG-BE",
+        "n_lga": 19,
+        "model_mean": 0.30171106,
+        "lo": 0.23064041,
+        "hi": 0.37278171,
+        "direct": 0.1884721,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03626053,
+        "sd_if_perfectly_correlated": 0.13184422
+      },
+      {
+        "key": "NG-BO",
+        "n_lga": 18,
+        "model_mean": 0.31944561,
+        "lo": 0.21830917,
+        "hi": 0.42058205,
+        "direct": 0.42418236,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.05160022,
+        "sd_if_perfectly_correlated": 0.17406948
+      },
+      {
+        "key": "NG-BY",
+        "n_lga": 8,
+        "model_mean": 0.11404736,
+        "lo": 0.04455066,
+        "hi": 0.18354406,
+        "direct": 0.3617284,
+        "inside": false,
+        "inside_if_perfectly_correlated": false,
+        "sd_if_independent": 0.0354575,
+        "sd_if_perfectly_correlated": 0.0898855
+      },
+      {
+        "key": "NG-CR",
+        "n_lga": 16,
+        "model_mean": 0.2122239,
+        "lo": 0.14854243,
+        "hi": 0.27590537,
+        "direct": 0.10268714,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03249055,
+        "sd_if_perfectly_correlated": 0.12067085
+      },
+      {
+        "key": "NG-DE",
+        "n_lga": 21,
+        "model_mean": 0.08783125,
+        "lo": 0.05390107,
+        "hi": 0.12176143,
+        "direct": 0.11764706,
+        "inside": true,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.01731132,
+        "sd_if_perfectly_correlated": 0.06849084
+      },
+      {
+        "key": "NG-EB",
+        "n_lga": 12,
+        "model_mean": 0.21376503,
+        "lo": 0.14427057,
+        "hi": 0.28325948,
+        "direct": 0.21400394,
+        "inside": true,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03545635,
+        "sd_if_perfectly_correlated": 0.11161432
+      },
+      {
+        "key": "NG-ED",
+        "n_lga": 14,
+        "model_mean": 0.08044374,
+        "lo": 0.04379216,
+        "hi": 0.11709533,
+        "direct": 0.11165524,
+        "inside": true,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.01869979,
+        "sd_if_perfectly_correlated": 0.0575166
+      },
+      {
+        "key": "NG-EK",
+        "n_lga": 15,
+        "model_mean": 0.17172075,
+        "lo": 0.10798705,
+        "hi": 0.23545445,
+        "direct": 0.22306855,
+        "inside": true,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03251719,
+        "sd_if_perfectly_correlated": 0.10556376
+      },
+      {
+        "key": "NG-EN",
+        "n_lga": 16,
+        "model_mean": 0.13852253,
+        "lo": 0.09024196,
+        "hi": 0.1868031,
+        "direct": 0.43703008,
+        "inside": false,
+        "inside_if_perfectly_correlated": false,
+        "sd_if_independent": 0.02463294,
+        "sd_if_perfectly_correlated": 0.08985895
+      },
+      {
+        "key": "NG-FC",
+        "n_lga": 5,
+        "model_mean": 0.12030591,
+        "lo": 0.02841385,
+        "hi": 0.21219798,
+        "direct": 0.13479924,
+        "inside": true,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.04688371,
+        "sd_if_perfectly_correlated": 0.07962355
+      },
+      {
+        "key": "NG-GO",
+        "n_lga": 11,
+        "model_mean": 0.24032089,
+        "lo": 0.15827801,
+        "hi": 0.32236377,
+        "direct": 0.52637244,
+        "inside": false,
+        "inside_if_perfectly_correlated": false,
+        "sd_if_independent": 0.04185861,
+        "sd_if_perfectly_correlated": 0.12813482
+      },
+      {
+        "key": "NG-IM",
+        "n_lga": 20,
+        "model_mean": 0.1386015,
+        "lo": 0.09060095,
+        "hi": 0.18660205,
+        "direct": 0.12705667,
+        "inside": true,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.02449008,
+        "sd_if_perfectly_correlated": 0.09542805
+      },
+      {
+        "key": "NG-JI",
+        "n_lga": 22,
+        "model_mean": 0.47921346,
+        "lo": 0.40530793,
+        "hi": 0.55311899,
+        "direct": 0.29041353,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.0377069,
+        "sd_if_perfectly_correlated": 0.16155737
+      },
+      {
+        "key": "NG-KD",
+        "n_lga": 23,
+        "model_mean": 0.16510698,
+        "lo": 0.11838668,
+        "hi": 0.21182729,
+        "direct": 0.35383387,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.02383689,
+        "sd_if_perfectly_correlated": 0.09949617
+      },
+      {
+        "key": "NG-KE",
+        "n_lga": 18,
+        "model_mean": 0.13528734,
+        "lo": 0.0821379,
+        "hi": 0.18843679,
+        "direct": 0.42095416,
+        "inside": false,
+        "inside_if_perfectly_correlated": false,
+        "sd_if_independent": 0.02711706,
+        "sd_if_perfectly_correlated": 0.10942084
+      },
+      {
+        "key": "NG-KN",
+        "n_lga": 30,
+        "model_mean": 0.23700412,
+        "lo": 0.17777666,
+        "hi": 0.29623159,
+        "direct": 0.50965251,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03021809,
+        "sd_if_perfectly_correlated": 0.14778116
+      },
+      {
+        "key": "NG-KO",
+        "n_lga": 18,
+        "model_mean": 0.26257181,
+        "lo": 0.19873126,
+        "hi": 0.32641235,
+        "direct": 0.12810707,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03257171,
+        "sd_if_perfectly_correlated": 0.11590298
+      },
+      {
+        "key": "NG-KT",
+        "n_lga": 27,
+        "model_mean": 0.20902017,
+        "lo": 0.14417844,
+        "hi": 0.27386191,
+        "direct": 0.3074108,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03308252,
+        "sd_if_perfectly_correlated": 0.14418011
+      },
+      {
+        "key": "NG-KW",
+        "n_lga": 14,
+        "model_mean": 0.13945871,
+        "lo": 0.08401333,
+        "hi": 0.19490408,
+        "direct": 0.29771689,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.02828846,
+        "sd_if_perfectly_correlated": 0.08643255
+      },
+      {
+        "key": "NG-LA",
+        "n_lga": 18,
+        "model_mean": 0.12655654,
+        "lo": 0.04729209,
+        "hi": 0.20582099,
+        "direct": 0.22711143,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.04044105,
+        "sd_if_perfectly_correlated": 0.13312438
+      },
+      {
+        "key": "NG-NA",
+        "n_lga": 13,
+        "model_mean": 0.25415964,
+        "lo": 0.17827912,
+        "hi": 0.33004016,
+        "direct": 0.13984674,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03871455,
+        "sd_if_perfectly_correlated": 0.11597267
+      },
+      {
+        "key": "NG-NI",
+        "n_lga": 22,
+        "model_mean": 0.27220093,
+        "lo": 0.21021541,
+        "hi": 0.33418645,
+        "direct": 0.05734767,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03162527,
+        "sd_if_perfectly_correlated": 0.12921436
+      },
+      {
+        "key": "NG-OG",
+        "n_lga": 17,
+        "model_mean": 0.17930527,
+        "lo": 0.08793315,
+        "hi": 0.27067739,
+        "direct": 0.25293255,
+        "inside": true,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.04661843,
+        "sd_if_perfectly_correlated": 0.13692963
+      },
+      {
+        "key": "NG-ON",
+        "n_lga": 15,
+        "model_mean": 0.10878917,
+        "lo": 0.06293227,
+        "hi": 0.15464608,
+        "direct": 0.09644195,
+        "inside": true,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.02339638,
+        "sd_if_perfectly_correlated": 0.08052791
+      },
+      {
+        "key": "NG-OS",
+        "n_lga": 22,
+        "model_mean": 0.20081049,
+        "lo": 0.14379338,
+        "hi": 0.2578276,
+        "direct": 0.15882875,
+        "inside": true,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.02909036,
+        "sd_if_perfectly_correlated": 0.12811725
+      },
+      {
+        "key": "NG-OY",
+        "n_lga": 25,
+        "model_mean": 0.21448537,
+        "lo": 0.15645155,
+        "hi": 0.27251918,
+        "direct": 0.11587302,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.02960909,
+        "sd_if_perfectly_correlated": 0.13544324
+      },
+      {
+        "key": "NG-PL",
+        "n_lga": 17,
+        "model_mean": 0.46169908,
+        "lo": 0.38576291,
+        "hi": 0.53763525,
+        "direct": 0.24338624,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03874294,
+        "sd_if_perfectly_correlated": 0.14143362
+      },
+      {
+        "key": "NG-RI",
+        "n_lga": 16,
+        "model_mean": 0.13042469,
+        "lo": 0.07736632,
+        "hi": 0.18348305,
+        "direct": 0.19787408,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.0270706,
+        "sd_if_perfectly_correlated": 0.09548792
+      },
+      {
+        "key": "NG-SO",
+        "n_lga": 23,
+        "model_mean": 0.14097247,
+        "lo": 0.08568642,
+        "hi": 0.19625852,
+        "direct": 0.43458371,
+        "inside": false,
+        "inside_if_perfectly_correlated": false,
+        "sd_if_independent": 0.02820717,
+        "sd_if_perfectly_correlated": 0.12160775
+      },
+      {
+        "key": "NG-TA",
+        "n_lga": 16,
+        "model_mean": 0.21725606,
+        "lo": 0.15267035,
+        "hi": 0.28184177,
+        "direct": 0.59465479,
+        "inside": false,
+        "inside_if_perfectly_correlated": false,
+        "sd_if_independent": 0.03295189,
+        "sd_if_perfectly_correlated": 0.12116502
+      },
+      {
+        "key": "NG-YO",
+        "n_lga": 16,
+        "model_mean": 0.30400892,
+        "lo": 0.22909985,
+        "hi": 0.37891798,
+        "direct": 0.8436214,
+        "inside": false,
+        "inside_if_perfectly_correlated": false,
+        "sd_if_independent": 0.03821891,
+        "sd_if_perfectly_correlated": 0.14591662
+      },
+      {
+        "key": "NG-ZA",
+        "n_lga": 11,
+        "model_mean": 0.14237792,
+        "lo": 0.06613171,
+        "hi": 0.21862413,
+        "direct": 0.58215297,
+        "inside": false,
+        "inside_if_perfectly_correlated": false,
+        "sd_if_independent": 0.03890113,
+        "sd_if_perfectly_correlated": 0.11331083
+      }
+    ]
+  },
+  "secondary_zone_coverage": {
+    "level": "zone",
+    "n": 6,
+    "n_inside": 1,
+    "expected_under_perfect_calibration": 5.7,
+    "n_inside_if_lgas_perfectly_correlated": 6,
+    "outside": ["North Central", "North East", "North West", "South East", "South South"],
+    "detail": [
+      {
+        "key": "North Central",
+        "n_lga": 108,
+        "model_mean": 0.26084674,
+        "lo": 0.23382251,
+        "hi": 0.28787097,
+        "direct": 0.17071561,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.01378787,
+        "sd_if_perfectly_correlated": 0.11472598
+      },
+      {
+        "key": "North East",
+        "n_lga": 98,
+        "model_mean": 0.26980912,
+        "lo": 0.23782271,
+        "hi": 0.30179554,
+        "direct": 0.53310868,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.0163196,
+        "sd_if_perfectly_correlated": 0.14026451
+      },
+      {
+        "key": "North West",
+        "n_lga": 154,
+        "model_mean": 0.21806661,
+        "lo": 0.19508265,
+        "hi": 0.24105057,
+        "direct": 0.40729002,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.01172651,
+        "sd_if_perfectly_correlated": 0.12880577
+      },
+      {
+        "key": "South East",
+        "n_lga": 83,
+        "model_mean": 0.14899601,
+        "lo": 0.12543616,
+        "hi": 0.17255585,
+        "direct": 0.2013626,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.01202033,
+        "sd_if_perfectly_correlated": 0.09363977
+      },
+      {
+        "key": "South South",
+        "n_lga": 99,
+        "model_mean": 0.14643362,
+        "lo": 0.12383655,
+        "hi": 0.16903069,
+        "direct": 0.18224666,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.01152912,
+        "sd_if_perfectly_correlated": 0.09714879
+      },
+      {
+        "key": "South West",
+        "n_lga": 112,
+        "model_mean": 0.16698667,
+        "lo": 0.13786759,
+        "hi": 0.19610575,
+        "direct": 0.18161466,
+        "inside": true,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.01485667,
+        "sd_if_perfectly_correlated": 0.12206629
+      }
+    ]
+  },
+  "post_hoc_diagnostics_on_the_result": {
+    "declared_after_seeing_the_result": true,
+    "purpose": "characterise HOW the rule passed or failed; none of these is a check",
+    "bias": {
+      "mean_model_minus_direct": -0.0713746,
+      "median_model_minus_direct": -0.04732391,
+      "share_of_lgas_model_below_direct": 0.58715596
+    },
+    "spread": {
+      "rms_z": 1.63728651,
+      "actual_error_over_claimed_sd": 1.63728651
+    },
+    "variance_shares": {
+      "median_model_sd": 0.12484599,
+      "median_design_se": 0.06025174,
+      "mean_share_of_z_variance_from_design": 0.23477346
+    },
+    "bias_by_direct_prevalence_band": [
+      {
+        "band": "[0,0.1)",
+        "n": 126,
+        "mean_direct": 0.04599842,
+        "mean_model": 0.18359943,
+        "mean_model_minus_direct": 0.13760102
+      },
+      {
+        "band": "[0.1,0.2)",
+        "n": 131,
+        "mean_direct": 0.14098055,
+        "mean_model": 0.20751096,
+        "mean_model_minus_direct": 0.06653041
+      },
+      {
+        "band": "[0.2,0.3)",
+        "n": 119,
+        "mean_direct": 0.24217245,
+        "mean_model": 0.2196123,
+        "mean_model_minus_direct": -0.02256015
+      },
+      {
+        "band": "[0.3,0.5)",
+        "n": 166,
+        "mean_direct": 0.39210037,
+        "mean_model": 0.23565117,
+        "mean_model_minus_direct": -0.1564492
+      },
+      {
+        "band": "[0.5,1)",
+        "n": 111,
+        "mean_direct": 0.64024957,
+        "mean_model": 0.24954719,
+        "mean_model_minus_direct": -0.39070238
+      }
+    ],
+    "naive_interval_coverage_not_a_criterion": {
+      "n_lgas": 654,
+      "n_interval_contains_direct": 496,
+      "share": 0.75840979,
+      "note": "descriptive only; this under-covers by construction"
+    },
+    "fold_integrity": {
+      "pooled_unweighted_prevalence": 0.27742809,
+      "expected_national_unweighted": 0.2774
+    }
+  },
+  "fold_fit_times_seconds": [60.93, 67.73, 58.03, 61.54, 73.88, 60.91],
+  "total_fit_seconds": 383.02,
+  "limitations": {
+    "count_functional_not_tested": true,
+    "unclustered_lgas_not_tested": true,
+    "n_unclustered_excluded": 120,
+    "household_covariates_held_known": true,
+    "area_covariates_are_interpolated": true,
+    "area_covariate_values_of_training_lgas_also_rebuilt": true,
+    "state_zone_intervals_assume_independent_lgas": true,
+    "linear_predictor_marginal_assumed_gaussian": true,
+    "survey_design_not_in_likelihood": true,
+    "single_cluster_lgas_deff_imputed": 266
+  }
+}

@@ -1,0 +1,856 @@
+{
+  "generated_by": "scripts/calibration_spatial.R",
+  "command": "Rscript scripts/calibration_spatial.R",
+  "ticket": "T12",
+  "generated_on": "2026-11-23",
+  "seed": 20261123,
+  "r_version": "R version 4.5.2 (2025-10-31 ucrt)",
+  "inla_version": [],
+  "construction": "Leave-one-geopolitical-zone-out cross-validation of the LGA model. Each fold drops every household in one of the six zones, refits the identical household-level binomial model (ten design columns of eight covariates, BYM2 on the queen-contiguity graph over all 774 LGAs built once from the full boundary file, IID cluster effect, INLA 25.10.19 defaults), then predicts the held-out zone's LGAs from prediction rows placed at each LGA's mean covariate profile taken from the FULL household file (covariates held known) with cluster index NA. theta_s is the LGA prevalence with the cluster effect marginalised by the same 7-point Gauss-Hermite rule as scripts/lga_model.R. 95% intervals come from the marginal posterior of the linear predictor (mean and sd from summary.linear.predictor, Gaussian on the logit scale) mapped through that integral on a 2001-point standard-normal probability grid; no Monte Carlo draws are used, so the intervals carry no simulation noise. The truth is the direct unweighted proportion from the held-out households of each LGA; its variance is a cluster-robust ratio linearisation with strata = state and PSU = cluster (hv001). LGAs with a single cluster have no estimable design variance and are imputed the fold's median design effect on the binomial variance. z = (model_mean - direct) / sqrt(model_var + design_var). Pass rule fixed before any fold was fitted: mean(z) in [-0.15, 0.15], sd(z) in [0.85, 1.15], share |z| <= 1.96 in [0.90, 0.98], pooled over the 654 LGAs that hold at least one cluster. The 120 unclustered LGAs have no direct estimate and are excluded. State and zone coverage aggregate LGA posteriors with household weights and treat the LGAs as independent, which understates the aggregate interval width; that secondary count is therefore biased against the model, not for it. Count-functional calibration is NOT tested: it needs joint draws per fold.",
+  "design": {
+    "scheme": "leave-one-geopolitical-zone-out",
+    "n_folds": 6,
+    "zones": ["North West", "North East", "North Central", "South West", "South East", "South South"],
+    "zones_skipped_from_disk": ["North West", "North East", "North Central", "South West", "South East", "South South"],
+    "graph_nodes": 774,
+    "graph_edges": 2230,
+    "graph_components": 1,
+    "graph_note": "the graph is built once from the full boundary file and keeps all 774 nodes in every fold, so removing a zone cannot disconnect it; held-out LGAs have no observations but retain their ICAR neighbours",
+    "covariates_held_known": true,
+    "geospatial_covariates_used": 0,
+    "weights_in_likelihood": false,
+    "outcome_in_likelihood": "severe_fi = 1{hfs_sev >= 0.5}"
+  },
+  "pass_rule_declared_before_fitting": {
+    "mean_z": {
+      "pass_range": [-0.15, 0.15],
+      "value": -0.653879,
+      "pass": false
+    },
+    "sd_z": {
+      "pass_range": [0.85, 1.15],
+      "value": 1.6481424,
+      "pass": false
+    },
+    "coverage_abs_z_le_1_96": {
+      "pass_range": [0.9, 0.98],
+      "value": 0.77522936,
+      "pass": false
+    },
+    "all_three_pass": false,
+    "n_z": 654,
+    "rule_changed_after_seeing_values": false
+  },
+  "primary": {
+    "n": 654,
+    "mean_z": -0.653879,
+    "median_z": -0.5314675,
+    "sd_z": 1.6481424,
+    "min_z": -7.104114,
+    "max_z": 3.62329967,
+    "coverage_abs_z_le_1_96": 0.77522936,
+    "n_abs_z_gt_1_96": 147,
+    "n_abs_z_gt_2_58": 90
+  },
+  "sensitivity": {
+    "multi_cluster_lgas_only": {
+      "n": 388,
+      "mean_z": -0.81297091,
+      "sd_z": 1.71839874,
+      "coverage": 0.76804124
+    },
+    "by_zone": [
+      {
+        "zone": "North West",
+        "n": 154,
+        "mean_z": -1.46953702,
+        "sd_z": 1.53768134,
+        "coverage": 0.62987013
+      },
+      {
+        "zone": "North East",
+        "n": 98,
+        "mean_z": -1.94245721,
+        "sd_z": 1.45954463,
+        "coverage": 0.57142857
+      },
+      {
+        "zone": "North Central",
+        "n": 108,
+        "mean_z": 0.71708234,
+        "sd_z": 1.39655307,
+        "coverage": 0.80555556
+      },
+      {
+        "zone": "South West",
+        "n": 112,
+        "mean_z": -0.1273967,
+        "sd_z": 0.99555016,
+        "coverage": 0.9375
+      },
+      {
+        "zone": "South East",
+        "n": 83,
+        "mean_z": -0.57971208,
+        "sd_z": 1.67854442,
+        "coverage": 0.81927711
+      },
+      {
+        "zone": "South South",
+        "n": 99,
+        "mean_z": -0.26290624,
+        "sd_z": 1.19885715,
+        "coverage": 0.94949495
+      }
+    ],
+    "note": "the multi-cluster subset uses only LGAs whose design variance is directly estimable; it is a sensitivity, not a substitute for the pre-declared primary rule"
+  },
+  "secondary_state_coverage": {
+    "level": "state",
+    "n": 37,
+    "n_inside": 8,
+    "expected_under_perfect_calibration": 35.15,
+    "n_inside_if_lgas_perfectly_correlated": 26,
+    "outside": ["NG-AB", "NG-AD", "NG-AN", "NG-BA", "NG-BE", "NG-BO", "NG-BY", "NG-CR", "NG-DE", "NG-EN", "NG-GO", "NG-JI", "NG-KD", "NG-KE", "NG-KN", "NG-KO", "NG-KT", "NG-KW", "NG-LA", "NG-NA", "NG-NI", "NG-OG", "NG-OY", "NG-PL", "NG-RI", "NG-SO", "NG-TA", "NG-YO", "NG-ZA"],
+    "detail": [
+      {
+        "key": "NG-AB",
+        "n_lga": 15,
+        "model_mean": 0.12035455,
+        "lo": 0.07013616,
+        "hi": 0.17057293,
+        "direct": 0.19159836,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.02562162,
+        "sd_if_perfectly_correlated": 0.08226059
+      },
+      {
+        "key": "NG-AD",
+        "n_lga": 20,
+        "model_mean": 0.22532592,
+        "lo": 0.15193756,
+        "hi": 0.29871428,
+        "direct": 0.37853659,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03744304,
+        "sd_if_perfectly_correlated": 0.14404453
+      },
+      {
+        "key": "NG-AK",
+        "n_lga": 24,
+        "model_mean": 0.21301386,
+        "lo": 0.1506971,
+        "hi": 0.27533063,
+        "direct": 0.23714037,
+        "inside": true,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03179427,
+        "sd_if_perfectly_correlated": 0.13479717
+      },
+      {
+        "key": "NG-AN",
+        "n_lga": 20,
+        "model_mean": 0.09251208,
+        "lo": 0.0600809,
+        "hi": 0.12494327,
+        "direct": 0.04929577,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.01654652,
+        "sd_if_perfectly_correlated": 0.06541174
+      },
+      {
+        "key": "NG-BA",
+        "n_lga": 17,
+        "model_mean": 0.26429302,
+        "lo": 0.20276161,
+        "hi": 0.32582443,
+        "direct": 0.45825771,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03139358,
+        "sd_if_perfectly_correlated": 0.11475249
+      },
+      {
+        "key": "NG-BE",
+        "n_lga": 19,
+        "model_mean": 0.28221577,
+        "lo": 0.21441537,
+        "hi": 0.35001616,
+        "direct": 0.1884721,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03459204,
+        "sd_if_perfectly_correlated": 0.12645996
+      },
+      {
+        "key": "NG-BO",
+        "n_lga": 18,
+        "model_mean": 0.25717227,
+        "lo": 0.16591737,
+        "hi": 0.34842717,
+        "direct": 0.42418236,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.04655862,
+        "sd_if_perfectly_correlated": 0.15853559
+      },
+      {
+        "key": "NG-BY",
+        "n_lga": 8,
+        "model_mean": 0.10727299,
+        "lo": 0.042153,
+        "hi": 0.17239297,
+        "direct": 0.3617284,
+        "inside": false,
+        "inside_if_perfectly_correlated": false,
+        "sd_if_independent": 0.03322448,
+        "sd_if_perfectly_correlated": 0.08438644
+      },
+      {
+        "key": "NG-CR",
+        "n_lga": 16,
+        "model_mean": 0.20271941,
+        "lo": 0.14147312,
+        "hi": 0.26396571,
+        "direct": 0.10268714,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03124811,
+        "sd_if_perfectly_correlated": 0.11613459
+      },
+      {
+        "key": "NG-DE",
+        "n_lga": 21,
+        "model_mean": 0.08244836,
+        "lo": 0.05064087,
+        "hi": 0.11425585,
+        "direct": 0.11764706,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.01622831,
+        "sd_if_perfectly_correlated": 0.06384852
+      },
+      {
+        "key": "NG-EB",
+        "n_lga": 12,
+        "model_mean": 0.19494076,
+        "lo": 0.12950701,
+        "hi": 0.26037451,
+        "direct": 0.21400394,
+        "inside": true,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03338457,
+        "sd_if_perfectly_correlated": 0.10510442
+      },
+      {
+        "key": "NG-ED",
+        "n_lga": 14,
+        "model_mean": 0.07680334,
+        "lo": 0.04189694,
+        "hi": 0.11170973,
+        "direct": 0.11165524,
+        "inside": true,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.01780939,
+        "sd_if_perfectly_correlated": 0.05474581
+      },
+      {
+        "key": "NG-EK",
+        "n_lga": 15,
+        "model_mean": 0.16469494,
+        "lo": 0.10463496,
+        "hi": 0.22475492,
+        "direct": 0.22306855,
+        "inside": true,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03064285,
+        "sd_if_perfectly_correlated": 0.10173591
+      },
+      {
+        "key": "NG-EN",
+        "n_lga": 16,
+        "model_mean": 0.12246936,
+        "lo": 0.07879537,
+        "hi": 0.16614336,
+        "direct": 0.43703008,
+        "inside": false,
+        "inside_if_perfectly_correlated": false,
+        "sd_if_independent": 0.02228265,
+        "sd_if_perfectly_correlated": 0.08076294
+      },
+      {
+        "key": "NG-FC",
+        "n_lga": 5,
+        "model_mean": 0.10901664,
+        "lo": 0.02552033,
+        "hi": 0.19251295,
+        "direct": 0.13479924,
+        "inside": true,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.04260016,
+        "sd_if_perfectly_correlated": 0.07299452
+      },
+      {
+        "key": "NG-GO",
+        "n_lga": 11,
+        "model_mean": 0.2076503,
+        "lo": 0.13288593,
+        "hi": 0.28241466,
+        "direct": 0.52637244,
+        "inside": false,
+        "inside_if_perfectly_correlated": false,
+        "sd_if_independent": 0.03814509,
+        "sd_if_perfectly_correlated": 0.11734209
+      },
+      {
+        "key": "NG-IM",
+        "n_lga": 20,
+        "model_mean": 0.12202355,
+        "lo": 0.07872836,
+        "hi": 0.16531874,
+        "direct": 0.12705667,
+        "inside": true,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.02208939,
+        "sd_if_perfectly_correlated": 0.0859459
+      },
+      {
+        "key": "NG-JI",
+        "n_lga": 22,
+        "model_mean": 0.46462476,
+        "lo": 0.3915366,
+        "hi": 0.53771292,
+        "direct": 0.29041353,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03728988,
+        "sd_if_perfectly_correlated": 0.15975665
+      },
+      {
+        "key": "NG-KD",
+        "n_lga": 23,
+        "model_mean": 0.15319672,
+        "lo": 0.10962588,
+        "hi": 0.19676757,
+        "direct": 0.35383387,
+        "inside": false,
+        "inside_if_perfectly_correlated": false,
+        "sd_if_independent": 0.02223002,
+        "sd_if_perfectly_correlated": 0.09302169
+      },
+      {
+        "key": "NG-KE",
+        "n_lga": 18,
+        "model_mean": 0.12066726,
+        "lo": 0.07199857,
+        "hi": 0.16933595,
+        "direct": 0.42095416,
+        "inside": false,
+        "inside_if_perfectly_correlated": false,
+        "sd_if_independent": 0.02483096,
+        "sd_if_perfectly_correlated": 0.10024318
+      },
+      {
+        "key": "NG-KN",
+        "n_lga": 30,
+        "model_mean": 0.21983253,
+        "lo": 0.16395306,
+        "hi": 0.27571199,
+        "direct": 0.50965251,
+        "inside": false,
+        "inside_if_perfectly_correlated": false,
+        "sd_if_independent": 0.02850993,
+        "sd_if_perfectly_correlated": 0.14015609
+      },
+      {
+        "key": "NG-KO",
+        "n_lga": 18,
+        "model_mean": 0.24513471,
+        "lo": 0.18381001,
+        "hi": 0.30645941,
+        "direct": 0.12810707,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03128811,
+        "sd_if_perfectly_correlated": 0.11103747
+      },
+      {
+        "key": "NG-KT",
+        "n_lga": 27,
+        "model_mean": 0.18500331,
+        "lo": 0.12528142,
+        "hi": 0.24472519,
+        "direct": 0.3074108,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03047035,
+        "sd_if_perfectly_correlated": 0.13329292
+      },
+      {
+        "key": "NG-KW",
+        "n_lga": 14,
+        "model_mean": 0.13162091,
+        "lo": 0.08051023,
+        "hi": 0.18273158,
+        "direct": 0.29771689,
+        "inside": false,
+        "inside_if_perfectly_correlated": false,
+        "sd_if_independent": 0.02607688,
+        "sd_if_perfectly_correlated": 0.08135275
+      },
+      {
+        "key": "NG-LA",
+        "n_lga": 18,
+        "model_mean": 0.09797696,
+        "lo": 0.03226406,
+        "hi": 0.16368985,
+        "direct": 0.22711143,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03352699,
+        "sd_if_perfectly_correlated": 0.10979672
+      },
+      {
+        "key": "NG-NA",
+        "n_lga": 13,
+        "model_mean": 0.2319392,
+        "lo": 0.16026141,
+        "hi": 0.30361699,
+        "direct": 0.13984674,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.0365703,
+        "sd_if_perfectly_correlated": 0.10969175
+      },
+      {
+        "key": "NG-NI",
+        "n_lga": 22,
+        "model_mean": 0.25315115,
+        "lo": 0.19383059,
+        "hi": 0.31247171,
+        "direct": 0.05734767,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03026559,
+        "sd_if_perfectly_correlated": 0.12373953
+      },
+      {
+        "key": "NG-OG",
+        "n_lga": 17,
+        "model_mean": 0.14932933,
+        "lo": 0.06877637,
+        "hi": 0.22988229,
+        "direct": 0.25293255,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.04109845,
+        "sd_if_perfectly_correlated": 0.12246019
+      },
+      {
+        "key": "NG-ON",
+        "n_lga": 15,
+        "model_mean": 0.12967444,
+        "lo": 0.07744548,
+        "hi": 0.1819034,
+        "direct": 0.09644195,
+        "inside": true,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.02664743,
+        "sd_if_perfectly_correlated": 0.09065094
+      },
+      {
+        "key": "NG-OS",
+        "n_lga": 22,
+        "model_mean": 0.1804163,
+        "lo": 0.12733322,
+        "hi": 0.23349937,
+        "direct": 0.15882875,
+        "inside": true,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.0270832,
+        "sd_if_perfectly_correlated": 0.11943987
+      },
+      {
+        "key": "NG-OY",
+        "n_lga": 25,
+        "model_mean": 0.1866011,
+        "lo": 0.13341551,
+        "hi": 0.23978669,
+        "direct": 0.11587302,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.02713551,
+        "sd_if_perfectly_correlated": 0.12429197
+      },
+      {
+        "key": "NG-PL",
+        "n_lga": 17,
+        "model_mean": 0.44947556,
+        "lo": 0.37359766,
+        "hi": 0.52535346,
+        "direct": 0.24338624,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.03871321,
+        "sd_if_perfectly_correlated": 0.14123072
+      },
+      {
+        "key": "NG-RI",
+        "n_lga": 16,
+        "model_mean": 0.11452417,
+        "lo": 0.06742835,
+        "hi": 0.16161999,
+        "direct": 0.19787408,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.02402848,
+        "sd_if_perfectly_correlated": 0.08590156
+      },
+      {
+        "key": "NG-SO",
+        "n_lga": 23,
+        "model_mean": 0.12454646,
+        "lo": 0.0737831,
+        "hi": 0.17530982,
+        "direct": 0.43458371,
+        "inside": false,
+        "inside_if_perfectly_correlated": false,
+        "sd_if_independent": 0.02589967,
+        "sd_if_perfectly_correlated": 0.11089667
+      },
+      {
+        "key": "NG-TA",
+        "n_lga": 16,
+        "model_mean": 0.20834165,
+        "lo": 0.14561448,
+        "hi": 0.27106882,
+        "direct": 0.59465479,
+        "inside": false,
+        "inside_if_perfectly_correlated": false,
+        "sd_if_independent": 0.03200366,
+        "sd_if_perfectly_correlated": 0.11752761
+      },
+      {
+        "key": "NG-YO",
+        "n_lga": 16,
+        "model_mean": 0.26558755,
+        "lo": 0.19569503,
+        "hi": 0.33548006,
+        "direct": 0.8436214,
+        "inside": false,
+        "inside_if_perfectly_correlated": false,
+        "sd_if_independent": 0.03565945,
+        "sd_if_perfectly_correlated": 0.13594558
+      },
+      {
+        "key": "NG-ZA",
+        "n_lga": 11,
+        "model_mean": 0.12598234,
+        "lo": 0.05658269,
+        "hi": 0.19538199,
+        "direct": 0.58215297,
+        "inside": false,
+        "inside_if_perfectly_correlated": false,
+        "sd_if_independent": 0.03540799,
+        "sd_if_perfectly_correlated": 0.10310089
+      }
+    ]
+  },
+  "secondary_zone_coverage": {
+    "level": "zone",
+    "n": 6,
+    "n_inside": 0,
+    "expected_under_perfect_calibration": 5.7,
+    "n_inside_if_lgas_perfectly_correlated": 5,
+    "outside": ["North Central", "North East", "North West", "South East", "South South", "South West"],
+    "detail": [
+      {
+        "key": "North Central",
+        "n_lga": 108,
+        "model_mean": 0.2452331,
+        "lo": 0.21957951,
+        "hi": 0.27088669,
+        "direct": 0.17071561,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.01308857,
+        "sd_if_perfectly_correlated": 0.10992429
+      },
+      {
+        "key": "North East",
+        "n_lga": 98,
+        "model_mean": 0.23923266,
+        "lo": 0.20940113,
+        "hi": 0.26906419,
+        "direct": 0.53310868,
+        "inside": false,
+        "inside_if_perfectly_correlated": false,
+        "sd_if_independent": 0.01522017,
+        "sd_if_perfectly_correlated": 0.13155097
+      },
+      {
+        "key": "North West",
+        "n_lga": 154,
+        "model_mean": 0.20167999,
+        "lo": 0.18009759,
+        "hi": 0.22326239,
+        "direct": 0.40729002,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.01101143,
+        "sd_if_perfectly_correlated": 0.12081283
+      },
+      {
+        "key": "South East",
+        "n_lga": 83,
+        "model_mean": 0.12945323,
+        "lo": 0.10823966,
+        "hi": 0.1506668,
+        "direct": 0.2013626,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.01082325,
+        "sd_if_perfectly_correlated": 0.08348345
+      },
+      {
+        "key": "South South",
+        "n_lga": 99,
+        "model_mean": 0.13408295,
+        "lo": 0.11310699,
+        "hi": 0.15505891,
+        "direct": 0.18224666,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.01070202,
+        "sd_if_perfectly_correlated": 0.09058425
+      },
+      {
+        "key": "South West",
+        "n_lga": 112,
+        "model_mean": 0.14971712,
+        "lo": 0.12358825,
+        "hi": 0.17584599,
+        "direct": 0.18161466,
+        "inside": false,
+        "inside_if_perfectly_correlated": true,
+        "sd_if_independent": 0.01333106,
+        "sd_if_perfectly_correlated": 0.11239211
+      }
+    ]
+  },
+  "post_hoc_diagnostics_on_the_failure": {
+    "declared_after_seeing_the_failure": true,
+    "purpose": "characterise HOW the pre-declared rule failed; none of these numbers is a check and none of them can turn the FAIL into a PASS",
+    "bias": {
+      "mean_model_minus_direct": -0.09073945,
+      "median_model_minus_direct": -0.06977665,
+      "share_of_lgas_model_below_direct": 0.62538226,
+      "by_zone": [
+        {
+          "zone": "North West",
+          "mean_model_minus_direct": -0.20379103,
+          "share_model_below_direct": 0.7987013
+        },
+        {
+          "zone": "North East",
+          "mean_model_minus_direct": -0.30105311,
+          "share_model_below_direct": 0.95918367
+        },
+        {
+          "zone": "North Central",
+          "mean_model_minus_direct": 0.1102792,
+          "share_model_below_direct": 0.24074074
+        },
+        {
+          "zone": "South West",
+          "mean_model_minus_direct": -0.01840919,
+          "share_model_below_direct": 0.55357143
+        },
+        {
+          "zone": "South East",
+          "mean_model_minus_direct": -0.06347446,
+          "share_model_below_direct": 0.55421687
+        },
+        {
+          "zone": "South South",
+          "mean_model_minus_direct": -0.03067194,
+          "share_model_below_direct": 0.58585859
+        }
+      ]
+    },
+    "spread": {
+      "sd_z": 1.6481424,
+      "rms_z": 1.77194177,
+      "actual_error_over_claimed_sd": 1.77194177,
+      "note": "z already divides by the model's own sd, so rms_z is the factor by which the real out-of-sample error exceeds the uncertainty the model claims"
+    },
+    "variance_shares": {
+      "median_model_sd": 0.11626615,
+      "median_design_se": 0.06025174,
+      "mean_share_of_z_variance_from_design": 0.25449167
+    },
+    "out_of_sample_fit": {
+      "correlation": 0.19487106,
+      "slope_model_on_direct": 0.10126383,
+      "intercept": 0.1706899,
+      "sd_direct": 0.21242217,
+      "sd_model": 0.11038418,
+      "compression_ratio": 0.51964528,
+      "note": "slope well below 1 and compression below 1 are the shrinkage signature: the field reproduces the level of the region it saw, not the level of the region it did not"
+    },
+    "bias_by_direct_prevalence_band": [
+      {
+        "band": "[0,0.1)",
+        "n": 126,
+        "mean_direct": 0.04599842,
+        "mean_model": 0.16747429,
+        "mean_model_minus_direct": 0.12147588
+      },
+      {
+        "band": "[0.1,0.2)",
+        "n": 131,
+        "mean_direct": 0.14098055,
+        "mean_model": 0.19208653,
+        "mean_model_minus_direct": 0.05110598
+      },
+      {
+        "band": "[0.2,0.3)",
+        "n": 119,
+        "mean_direct": 0.24217245,
+        "mean_model": 0.20097247,
+        "mean_model_minus_direct": -0.04119998
+      },
+      {
+        "band": "[0.3,0.5)",
+        "n": 166,
+        "mean_direct": 0.39210037,
+        "mean_model": 0.21355218,
+        "mean_model_minus_direct": -0.17854819
+      },
+      {
+        "band": "[0.5,1)",
+        "n": 111,
+        "mean_direct": 0.64024957,
+        "mean_model": 0.22543379,
+        "mean_model_minus_direct": -0.41481578
+      }
+    ],
+    "naive_interval_coverage_not_a_criterion": {
+      "n_lgas": 654,
+      "n_interval_contains_direct": 480,
+      "share": 0.73394495,
+      "note": "descriptive only. The brief forbids this as the criterion because the direct estimate carries its own sampling error, so this share under-covers by construction; the z check above is the pre-declared one"
+    },
+    "fold_integrity": {
+      "pooled_unweighted_prevalence": 0.27742809,
+      "expected_national_unweighted": 0.2774,
+      "note": "every household sits in exactly one predicted LGA, so the household-weighted pool of the direct estimates must reproduce the national unweighted rate; agreement is the check that the fold split lost nobody and double-counted nobody"
+    },
+    "state_coverage_bound": {
+      "n_inside_lower_bound_independent_lgas": 8,
+      "n_inside_upper_bound_perfectly_correlated_lgas": 26,
+      "note": "the pre-declared state check used the independence aggregation, which understates the interval; BYM2 with phi near 0.97 puts the truth near the upper bound. The bound is reported so 8 of 37 is not over-read"
+    }
+  },
+  "fold_fit_times_seconds": [55, 52.4, 48.8, 50.9, 57.5, 52.1],
+  "total_fit_seconds": 316.7,
+  "folds": [
+    {
+      "zone": "North West",
+      "fold": 1,
+      "n_training_households": 32305,
+      "n_clusters": 1121,
+      "fit_seconds": 55,
+      "mode_status": 0,
+      "waic": 28726.49,
+      "sd_cluster_effect": 0.4439,
+      "median_deff_used": 1.361,
+      "n_lgas": 186,
+      "n_with_direct": 154,
+      "n_single_cluster_imputed": 82
+    },
+    {
+      "zone": "North East",
+      "fold": 2,
+      "n_training_households": 33942,
+      "n_clusters": 1169,
+      "fit_seconds": 52.4,
+      "mode_status": 0,
+      "waic": 30943.81,
+      "sd_cluster_effect": 0.4751,
+      "median_deff_used": 1.68,
+      "n_lgas": 112,
+      "n_with_direct": 98,
+      "n_single_cluster_imputed": 34
+    },
+    {
+      "zone": "North Central",
+      "fold": 3,
+      "n_training_households": 32303,
+      "n_clusters": 1118,
+      "fit_seconds": 48.8,
+      "mode_status": 0,
+      "waic": 31685.02,
+      "sd_cluster_effect": 0.4157,
+      "median_deff_used": 1.173,
+      "n_lgas": 121,
+      "n_with_direct": 108,
+      "n_single_cluster_imputed": 45
+    },
+    {
+      "zone": "South West",
+      "fold": 4,
+      "n_training_households": 32730,
+      "n_clusters": 1134,
+      "fit_seconds": 50.9,
+      "mode_status": 0,
+      "waic": 31953.43,
+      "sd_cluster_effect": 0.4583,
+      "median_deff_used": 1.079,
+      "n_lgas": 137,
+      "n_with_direct": 112,
+      "n_single_cluster_imputed": 46
+    },
+    {
+      "zone": "South East",
+      "fold": 5,
+      "n_training_households": 34593,
+      "n_clusters": 1199,
+      "fit_seconds": 57.5,
+      "mode_status": 0,
+      "waic": 33520.01,
+      "sd_cluster_effect": 0.4727,
+      "median_deff_used": 1,
+      "n_lgas": 95,
+      "n_with_direct": 83,
+      "n_single_cluster_imputed": 27
+    },
+    {
+      "zone": "South South",
+      "fold": 6,
+      "n_training_households": 33512,
+      "n_clusters": 1159,
+      "fit_seconds": 52.1,
+      "mode_status": 0,
+      "waic": 32867.46,
+      "sd_cluster_effect": 0.4546,
+      "median_deff_used": 1.224,
+      "n_lgas": 123,
+      "n_with_direct": 99,
+      "n_single_cluster_imputed": 32
+    }
+  ],
+  "limitations": {
+    "count_functional_not_tested": true,
+    "unclustered_lgas_not_tested": true,
+    "n_unclustered_excluded": 120,
+    "covariates_held_known": true,
+    "state_zone_intervals_assume_independent_lgas": true,
+    "linear_predictor_marginal_assumed_gaussian": true,
+    "survey_design_not_in_likelihood": true,
+    "single_cluster_lgas_deff_imputed": 266
+  }
+}

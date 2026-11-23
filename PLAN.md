@@ -36,9 +36,10 @@ running; nothing is queued.
 
 1. ~~**P6 — the identification bounds.**~~ **Done 2026-11-23**, `.agent/T11-report.md`,
    `data/derived/identif_bounds.json`. Result below. Re-checked independently by the secretary.
-2. **P7b — calibration.** Spatial cross-validation, holding out whole states, refitting, and checking that
-   the credible intervals cover. Without it the intervals are a claim, not a demonstrated property, and
-   it is the first thing a statistical referee will ask.
+2. **P7b — calibration.** ~~Run.~~ **The first test failed, badly** (see P7b below): leave-a-zone-out
+   gives 77.5% coverage against a nominal 95%, and the model cannot place a removed region at all. The
+   fair test — one LGA removed, neighbours kept — is the one that matches the paper's claim and is
+   running now. **The paper cannot claim a calibrated map until it lands.**
 3. **P8 — benchmarks.** Gradient boosting under the same spatial folds with conformal intervals
    (`scikit-learn` 1.9 is installed — `HistGradientBoostingClassifier`; LightGBM, XGBoost, PyTorch and
    `mapie` are **not**), plus the published spatial random forest as the external anchor.
@@ -106,7 +107,7 @@ projections from the 2006 census.
 | P5 | Clusters → LGAs, population denominators, LGA model | **done** | `lga_estimates.csv`, `lga_fit_summary.json` |
 | P6 | Identification bounds at LGA level (Imbens–Manski) | **done 2026-11-23** — count ∈ [87, 231] | `data/derived/identif_bounds.json` |
 | P7 | Count functional | **done** — E[C] = 115, ratio 0.354 | `count_functional.json` |
-| P7b | Calibration by spatial cross-validation | pending | — |
+| P7b | Calibration by spatial cross-validation | **failed 2026-11-23** — see P7b; fair test running | `data/derived/calibration_summary.json` |
 | P8 | Benchmarks: gradient boosting, spatial random forest | pending | — |
 | P9 | Manuscript | pending | — |
 | P10 | Submission compliance: DHS amendment, PDF to DHS | pending — **waiting on user** | — |
@@ -326,6 +327,119 @@ band**.
 
 **Caveat to state in the paper:** the pairwise term is 14.2 ± ~1.7. Split-half gave 13.37 vs 15.12, a 12%
 relative difference at 20,000 draws. Report the interval, never the point estimate alone.
+
+### P7b — calibration (first test FAILED, 2026-11-23)
+
+`.agent/T12-report.md`, `scripts/calibration_spatial.R`, `data/derived/calibration_summary.json`,
+`data/derived/calibration_folds.csv`. Pass rule fixed before any fold was fitted; not revised.
+
+**Leave-one-geopolitical-zone-out, six folds, every LGA predicted once by a model that never saw its zone.**
+
+| check | pass band | value |
+|---|---|---|
+| mean of z | −0.15 to +0.15 | **−0.654** FAIL |
+| sd of z | 0.85 to 1.15 | **1.648** FAIL |
+| coverage of \|z\| ≤ 1.96 | 0.90 to 0.98 | **0.775** FAIL |
+
+8 of 37 states inside their interval (expected 35); 0 of 6 zones. Re-checked by the secretary from the
+fold file (identical), and the script re-runs and reproduces itself. Not an artefact of the imputed
+design variance: the 388 multi-cluster LGAs alone fail worse. The fold split is sound — pooling the direct
+estimates reproduces the national unweighted 0.2774.
+
+**The diagnosis matters more than the verdict.** Against the same model fitted on everything, over the 654
+LGAs with data: **in sample the correlation with the direct estimates is 0.974** (spread 0.188 vs 0.212);
+**out of sample it is 0.195** (spread compressed to 0.110). Every zone is predicted near 0.13–0.28 whatever
+the truth: North East direct 0.548 → predicted 0.247; Yobe 0.844 → 0.266. The model smooths the data it
+saw; it does not carry an area-level surface into a region it did not.
+
+**What this scopes and what it does not.** The zone test also removes each held-out area's neighbours, which
+is not the paper's problem — the 120 unclustered LGAs sit among observed LGAs. The test that matches the
+claim (one LGA removed, neighbours retained) had not been run when this was written. Until it is: the paper
+may not present 774 LGA estimates as a calibrated map, and the count interval (101–130) is unvalidated.
+
+**Consequence for the manuscript, if the fair test also fails.** The contribution moves decisively to what
+is identified (P6) and what the count is worth (P7), with the LGA surface presented as a smoothing whose
+per-area precision is demonstrated only where data exist. That is a narrower paper than planned and a
+defensible one.
+
+**The fair test PASSED (T13, 2026-11-23).** One LGA removed, neighbours kept, 200 LGAs in five groups of
+40, zero within-group adjacency verified by the secretary against a queen graph he rebuilt himself
+(2,230 edges; 136 edges among the drawn set; 0 contaminated). Mean z **−0.052**, sd **1.111**, coverage
+**0.940** — all three inside the pre-declared bands. Widening every interval by `k = 1.111` gives 0.95, and
+the out-of-fold check (k fitted on four groups, coverage measured on the fifth) gives 1.000, 1.000, 0.950,
+0.900, 0.925 — mean 0.955, so the correction is not fitted to the data it is judged on.
+
+**The pair is the paper's position:**
+
+| design | asks | mean z | sd z | coverage |
+|---|---|---|---|---|
+| T12, whole zone removed | map a region never sampled? | −0.654 | 1.648 | 0.775 |
+| T13, one LGA removed | place one area among observed neighbours? | −0.052 | 1.111 | 0.940 |
+
+In sample the model correlates 0.975 with the direct estimates; out of sample here 0.768; when a whole zone
+was removed 0.195. **Interpolation is calibrated. Extrapolation is not.** Neither number may be quoted
+without the other, and the count interval is still unvalidated by either test.
+
+**A brief error of mine, for the record.** T13's brief asserted that `data/derived/neighbours.csv` was the
+774-node LGA graph; it is the 37-node **state** graph. The agent noticed and built the LGA graph from the
+polygons, which is why the design is clean. A file called `neighbours.csv` is not evidence of which graph
+it holds.
+
+### P7c — give the model information that exists where nobody was interviewed
+
+**Diagnosis, stated plainly.** Every predictor in the present fit is measured only in households. An LGA
+with no households therefore has *no predictors at all*, and the model falls back to the national average.
+That is not a tuning defect; it is the reason the zone-out test collapsed. The DHS geographic file carries
+~130 environmental covariates sampled at the 1,380 cluster coordinates — aridity, nightlights, travel time,
+rainfall, vegetation, elevation, livestock, malaria. Those are surfaces, not survey responses, so they can
+be interpolated to a place with no survey. **None has ever entered a fit.** It is the only information
+available offline that exists everywhere.
+
+**Three tickets, in this order, nothing fitted twice.**
+
+1. **T14 (done 2026-11-23) — the covariate surface.** LGA centroids and areas from the ADM2 polygons
+   (774, not 1,299 — my brief was wrong); inverse-distance interpolation (k = 3) of eight
+   mechanism-chosen covariates plus population density; **5-fold cross-validation over the 1,380
+   clusters**. Pre-declared rule applied mechanically. **Result: only the environmental covariates
+   survive.** Aridity 0.999, precipitation 0.999 (dropped to aridity at |r| = 0.985), elevation 0.977,
+   malaria 0.923, vegetation 0.920. **Nightlights 0.522, travel time 0.614, livestock 0.535 — all dropped
+   as un-interpolatable.** Final five: density, aridity, vegetation, elevation, malaria.
+   **That is a finding, not a footnote:** the covariates that most plausibly drive food insecurity —
+   economic activity, market access, pastoral livelihoods — cannot be recovered at this scale from 1,380
+   sample points. What survives is agro-ecology and terrain. The paper says which four dimensions it has
+   and which it lacks. The surface is a function with `exclude_cluster_ids`, proved by excluding the North
+   East (213 clusters, 118 of 774 LGAs changed, zero inconsistencies), so the next ticket can hold a zone
+   out honestly. `n_clusters_in_lga` in that table is stale (123 zeros, pre-correction) and must not be
+   used — **third** file with a bad cluster count.
+2. **T15 (done 2026-11-23) — refit with the covariates. Improved; does not pass; not a fix.** Same six
+   folds, same scoring, same pass rule. Coverage **0.775 → 0.797**, mean z **−0.654 → −0.485**, sd z
+   **1.648 → 1.565**. All three still fail. The south is now calibrated (South West mean z +0.006,
+   coverage 0.946); the north stays 1.3–1.7 sd low, with North Central over-predicted and North East
+   0.27 below truth. The model lands every zone between 0.15 and 0.30 whatever the truth.
+   **The deeper finding: 19 of 20 coefficient intervals contain zero.** Once household composition is
+   accounted for, aridity, elevation, vegetation, malaria and density carry no measurable signal about
+   severe food insecurity at LGA level. The covariates do not fail for being mis-signed — they fail for
+   being inert. The north-east's 0.548 is not an agro-ecological phenomenon. That is a result for the
+   paper, not a footnote.
+   Verified by the secretary: mean z −0.4854, sd 1.5649, coverage 0.7966 recomputed; direct estimates
+   identical to T12's, so the comparison is controlled (`Aridity_2020` confirmed from the DHS description,
+   p10: index 0 = most arid, 300 = most wet, so higher is wetter and the −0.46 LGA correlation is the
+   expected direction).
+3. **T16 — calibrated intervals for what survives.** Apply the measured inflation factors and report
+   coverage again: `k = 1.111` for interpolation (already validated out of fold, T13) and `k ≈ 1.57` for
+   regional extrapolation (from T15's sd of z). The point estimates stay blurry; the intervals must stop
+   lying. **Do not — under any framing — add a zone-level random effect and re-run the zone test.** A
+   held-out zone's level is unidentified; fitting one would be fitting the answer, and it would produce a
+   pass that means nothing.
+
+**The paper this becomes, if the covariates help.** Not "a map of 774 LGAs" but: an area-level surface
+whose precision is demonstrated by spatial cross-validation, an identification bound on what the design
+cannot settle, and a count with intervals a decision can rest on. If the covariates do **not** help, that
+is publishable too — as the negative result plus the calibration protocol the field does not currently
+run — and the map is demoted, not defended.
+
+**Do not let this become scope creep.** The deadline is 30 December 2026. If T15 shows no improvement, the
+paper proceeds on the P6/P7 spine and drops the covariate chapter to a sentence in Limitations.
 
 ### P8 — benchmarks
 
