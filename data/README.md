@@ -13,8 +13,8 @@ SHA-256 verified against the original manifest after copying.
 | `pr/NGPR8BFL.dta` | 87072364 | 7e205df03b75a3b1e1ae30e87040c7afd240dfed903fc62898c76574be1c4190 |
 
 **Terms, from the DHS project registration:**
-- Registered project: "Curb Cut: disability prevalence and poverty in Nigeria"
-  (account batesthommie@gmail.com; survey and GPS approved 2026-10-16).
+- Registered project: "Curb Cut: disability prevalence and poverty in Nigeria" (survey and GPS access
+  approved 2026-10-16). The account holder and registration number are held privately, not here.
 - **No redistribution**, directly or inside any tool or dashboard. These files must never enter a
   repository, a site, a package, a container image, or an appendix.
 - No attempt at re-identification; the cluster coordinates are displaced by design.

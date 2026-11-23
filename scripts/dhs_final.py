@@ -1,12 +1,14 @@
 # Final attempt: the approved row links to the dataset page with ?flag=1, and the file list
 # sometimes errors server-side ("Error in custom script module"), so retry the render.
-import json, time
+import json, tempfile, time
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
+# Browser and session paths are resolved at run time so nothing machine-specific is hard-coded.
 BRAVE = r"C:\Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
-PROFILE = r"C:\Users\TOSHIBA\AppData\Local\Temp\opencode\brave-dhs-profile"
-COOKIES = Path(r"C:\Users\TOSHIBA\AppData\Local\Temp\opencode\dhs_cookies.json")
+TMP = Path(tempfile.gettempdir()) / "opencode"
+PROFILE = str(TMP / "brave-dhs-profile")
+COOKIES = TMP / "dhs_cookies.json"
 HOME = "https://dhsprogram.com/data/dataset_admin/index.cfm"
 URL = "https://dhsprogram.com/data/dataset/Nigeria_Standard-DHS_2024.cfm?flag=1"
 OUT = Path(r"data\raw\dhs")
