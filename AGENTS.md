@@ -223,11 +223,16 @@ Two results change how the paper must be framed:
    0.0026 on average, maximum 0.020. With ~1,000 households per state the direct estimates are already
    more precise than the between-state spread. **The value is at LGA level, where ψ is large.** A
    state-level-only paper invites exactly this objection, so do not write one.
-2. **Nothing about any LGA is identified yet.** The person file has no LGA, ward or enumeration-area
-   variable — geography stops at state, with `hv001` the cluster and `hv023` the 74 design strata. Every
-   state is sampled, so the Manski identified set for a state's tail has zero width; every LGA is
-   unobserved, so its set is the whole interval `[0,1]`. The bounds proposition becomes a theorem only
-   once the coordinates arrive and clusters can be mapped into LGAs.
+2. **What is identified at LGA level is now measured, and it is 89% of people.** The person file has no
+   LGA, ward or enumeration-area variable — geography stops at state, with `hv001` the cluster and `hv023`
+   the 74 design strata. Clusters were mapped to the 774 LGAs from the geocoded coordinates
+   (`scripts/lga_assign.R`, with the survey's state authoritative over the polygon's). Result: **120 LGAs
+   (15.5%) hold no cluster, but only 11.04% of the population lives in them**, so the identified-set width
+   is about a ninth of people, not a sixth of places — *unclustered LGAs are systematically smaller*. Quote
+   the population version; the width is a statement about people. `p_count = 0.8450`, `p_population = 0.8896`.
+   DHS's own readme settles the wording: displacement is *"restricted so that the points stay within …
+   the admin2 area"*, so a cluster is guaranteed inside its own LGA and the residual error is that our
+   geoBoundaries polygons are not DHS's. Never write "displaced coordinates may cross LGA borders".
 
 Also: the earlier `MSE = γψ + (1−γ)²σ²_u` was wrong — it equals `γψ(2−γ)` and overstates by up to 2×.
 The correct result is `γψ` (plus `g₂` when `β` is estimated). And the Kish design-effect formula brackets
@@ -236,10 +241,24 @@ as a benchmark, not an identity.
 
 ## Open
 
-- Needs the user: `NGGE8AFL.ZIP` (cluster coordinates, 134 KB) — behind a DHS login, so it cannot be
-  fetched from here. Blocks LGA-level work only; state-level modelling proceeds without it.
+- ~~Needs the user: `NGGE8AFL.ZIP`~~ **Done 2026-11-22.** Both geographic files were downloaded and
+  verified: `NGGE8AFL.ZIP` (137,509 bytes, `b02e1923…6741`) and `NGGC8AFL.ZIP` (1,337,762 bytes,
+  `f813b71b…7713`), unpacked to `data/restricted/dhs-2024/ge/`. Join verified: **1,380 geocoded clusters
+  against 1,380 microdata clusters, zero either side**, all 176,045 person records mapped.
+  The mechanism, which cost an hour to learn: sign in, then **select a project** (`proj_id`; Curb Cut is
+  246118) — until a project is selected the dataset page serves plain text with **no links at all**, which
+  reads exactly like a permission refusal and is not. Then open the dataset page **with `?flag=1`** or the
+  file-list module throws "Error in custom script module". Anchors are
+  `/customcf/legacy/data/download_dataset.cfm?Filename=…&surv_id=609`. Driver: `scripts/dhs_final.py`.
+  Delete `%LOCALAPPDATA%\Temp\opencode\dhs_cookies.json` and the `brave-dhs-profile` folder — both hold the
+  session.
 - **Data-use scope, decided 2026-11-22: the outcome is food insecurity.** The DHS registration is
   titled "Curb Cut: disability prevalence and poverty in Nigeria", so the project description must be
   amended on the DHS site (an edit to the existing project, not a new registration) before submission,
   and a PDF of the paper sent to references@dhsprogram.com. **No disability variable enters this paper
-  at all** — not as outcome, not as covariate, not in the discussion. Do not re-litigate this framing.
+  at all** - not as outcome, not as covariate, not in the discussion. Do not re-litigate this framing.
+- **Repository.** Public at https://github.com/batestguy/food-insecurity-nigeria (`main`). **Code is MIT,
+  results and documentation are CC BY 4.0** (`DATA_LICENSE.md`). Licensed microdata, household-level
+  tables, raw downloads, the journal's poster image and the AI critique are all excluded by `.gitignore`
+  and were audited against the pushed ref. The DHS account email survives in commit `9dce997` — redacted
+  from the tree in `103dd3a`, but removing it from history needs an authorised force-push.

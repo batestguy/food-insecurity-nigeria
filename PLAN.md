@@ -5,54 +5,86 @@ where the work actually stands, what each phase must produce, and what to do whe
 
 Update it whenever a ticket finishes. If a phase changes status, the change goes here first.
 
-Last updated: 2026-11-22, end of session.
+Last updated: 2026-11-23, after a context clear.
 
 ---
 
 ## Resume here — read this first next session
 
-**Where we stopped.** P2 (analysis dataset) was rebuilt and verified by the secretary. No agents are
-running; nothing is queued. The last agent delivered proofs but hit its step cap before writing them up,
-so `.agent/T5-theory.md` was transcribed by the secretary from saved outputs.
+**One paragraph of orientation.** The project is a Bayesian small-area study of **severe household food
+insecurity in Nigeria** from the 2024 DHS, fitted in R-INLA. Its contribution is not the estimator — that
+is published work — but a **functional of the joint posterior**: the number of LGAs above a crisis line,
+with the variance split into an independent and a pairwise term. That has now been computed. The repo is
+public at **https://github.com/batestguy/food-insecurity-nigeria** (`main`, clean tree). No agents are
+running; nothing is queued.
+
+**The headline numbers, all verified and reproducible from `scripts/lga_model.R`:**
+
+| | |
+|---|---|
+| National severe food insecurity (`hfs_sev ≥ 0.5`) | 29.10% weighted |
+| States | 4.6% (Niger) to 85.0% (Yobe) |
+| **LGAs above 50%** | **115 of 774** (14.9%), 95% interval 101–130, sd 7.38 |
+| Variance, independent term | 40.26 (sd 6.34) |
+| Variance, pairwise term | **14.25**, ratio 0.354 |
+| Same ratio with an exchangeable area effect | **0.187** — so about half the pairwise term is geography |
+| LGAs decided above / below / undecided | 32 / 509 / **40 in the 0.40–0.60 band** |
+| LGAs with no cluster | 120 (15.5%), holding **11.04% of the population** |
 
 **Do this first, in this order.**
 
-1. **Check for the downloads.** `data/restricted/dhs-2024/ge/` should hold `NGGE8AFL` (cluster
-   coordinates) and `NGGC8AFL` (geospatial covariates). If present: unpack, record SHA-256 in the
-   manifest, and confirm coordinates join to `hv001` for all 1,380 clusters. If absent, everything below
-   state level stays blocked.
-2. **Run P4, the design-aware state baseline.** It needs no downloads and produces the first real model
-   output, validating the chain (INLA → adjacency graph → new dataset) end to end. Write a ticket from
-   the P4 section below; expected verdict is "barely moves the estimates", and that is the result.
-3. **If the coordinates arrived, open P5.** Map clusters to LGAs, with the displacement sensitivity
-   check from the P5 section.
+1. **P6 — the identification bounds.** Cheapest and most distinctive. Now that LGAs are mapped and
+   population denominators exist, compute the Imbens–Manski confidence set for the tail prevalence: the
+   bounds are themselves estimated, so the honest object is an interval covering the identified set. The
+   answer — **how many LGAs the data cannot rule out being in crisis** — belongs in the Discussion.
+   Arithmetic on existing artefacts, about half an hour.
+2. **P7 — calibration.** Spatial cross-validation, holding out whole states, refitting, and checking that
+   the credible intervals cover. Without it the intervals are a claim, not a demonstrated property, and
+   it is the first thing a statistical referee will ask.
+3. **P8 — benchmarks.** Gradient boosting under the same spatial folds with conformal intervals
+   (`scikit-learn` 1.9 is installed — `HistGradientBoostingClassifier`; LightGBM, XGBoost, PyTorch and
+   `mapie` are **not**), plus the published spatial random forest as the external anchor.
+4. **Then draft.** Methods and Results are writable from artefacts. The Introduction is not, until the two
+   nearest competitor papers are read **in full** — the novelty claim still rests on abstracts.
 
-**Commands that build things** (all run from the repo root):
+**Commands that build things** (all run from the repo root; all paths are now relative):
 
 ```
-python scripts/build_analysis_households.py     # rebuilds the dataset; prints retention and prevalence
+python scripts/build_analysis_households.py     # analysis dataset, prints retention and prevalence
 python scripts/extract_fi_state.py              # direct state estimates, both estimands
+Rscript scripts/lga_assign.R                    # clusters to LGAs (sf; python has no shapely)
+Rscript scripts/lga_dataset.R                   # population denominators, household merge
+Rscript scripts/lga_model.R                     # THE RESULT: fit + count functional (~35 min)
 Rscript scripts/moran_fi.R                      # Moran's I on the state estimates
-Rscript scripts/probe_inla.R                    # toolchain smoke test, BYM2 on the real graph
 python scripts/qa_panel.py                      # legacy: CPI panel checks
 ```
 
-**Environment.** R 4.5.2 at `C:\Program Files\R\R-4.5.2\bin\Rscript.exe`; INLA 25.10.19 (Windows
-binary, installed from a local zip because the source build takes an hour); scikit-learn 1.9.
-LightGBM, XGBoost, PyTorch and mapie are **not** installed.
+`lga_model.R` takes about 35 minutes: a 60-second fit, then ~14 minutes of draws per model (two models).
+Run it detached (`Start-Process`), because a shell background job dies with the session — that happened once.
 
-**Do not repeat these.** Do not use `fies_score >= 6` as the outcome (uncitable, and it is what the first
-dataset build wrongly used). Do not treat `hv225` blanks as missing — they mean "no toilet". Do not
-re-run the old `scripts/build_analysis_households.R`. Do not claim a new estimator: all four propositions
-are classical. Do not use any disability variable.
+**Environment.** R 4.5.2 at `C:\Program Files\R\R-4.5.2\bin\Rscript.exe`; INLA 25.10.19 as a Windows
+binary (the source build is 26.08.07 and compiles for an hour); `sf`, `spdep`; Python 3.14 with
+`pyreadstat`, `pandas`, `numpy`, `sympy`, `pyproj`. Playwright is installed for Python but the MCP browser
+is `--headless --browser chrome`, so it cannot show anything to the user.
 
-**Unproven, stated plainly.** The literature review read abstracts only, so the "nothing exists for
-Nigeria" claim needs full texts. No Bayesian posterior has been fitted, so the decision layer has never
-been computed. LGA assignment of displaced coordinates is untested. The covariate reduction in
-between-area variance has not been measured on our data.
+**Do not repeat these.** Do not use `fies_score >= 6` as the outcome (uncitable). Do not treat `hv225`
+blanks as missing — they mean "no toilet", and reading them as missing deleted the poorest quarter of the
+sample. Do not reconstruct the BYM2 field from `inla.posterior.sample` — use prediction rows. Do not claim
+a new estimator: all four propositions are classical. **Do not use any disability variable anywhere.**
 
-**Waiting on the user.** The two downloads above, and the amendment to the DHS project description before
-any submission.
+**Waiting on the user.**
+- Amend the DHS project description to cover a food-insecurity outcome (an edit to the existing
+  registration), and send a PDF of the paper to references@dhsprogram.com.
+- Decide whether to rewrite history to remove the account email that survives in commit `9dce997`
+  (redacted from the working tree in `103dd3a`; force-push was gated, so it needs explicit authorisation).
+- The local folder is still `ConferenceMaths`; the repo is `food-insecurity-nigeria`. The scripts are
+  path-portable, so the rename is safe whenever.
+
+**Unproven, stated plainly.** The literature review read abstracts only. The survey design is not in the
+likelihood (unweighted national 0.2774 against weighted 0.2910). No geospatial covariate has entered a fit.
+Calibration has never been checked. The pairwise term is 14.2 ± ~1.7 (split-half 13.37 vs 15.12 at 20,000
+draws). LGA assignment relies on geoBoundaries polygons, not DHS's, and population denominators are 2020
+projections from the 2006 census.
 
 ---
 
@@ -62,14 +94,16 @@ any submission.
 |---|---|---|---|
 | P0 | Documentation, decisions, traps | **done** | `AGENTS.md`, this file, `data/derived/covariate_spec.md` |
 | P1 | Data access: cluster coordinates + geospatial covariates | **done** | `data/restricted/dhs-2024/ge/` |
-| P2 | Analysis dataset | **done — rebuilt 2026-11-22** | `data/derived/analysis_households.csv` |
+| P2 | Analysis dataset | **done — 39,877 households, 100% retention** | `data/derived/analysis_households.csv` |
 | P3 | Direct estimates and spatial diagnostics at state level | **done** | `data/derived/fi_state_direct.csv` |
-| P4 | Design-aware state-level model (baseline) | pending | — |
-| P5 | Clusters → LGAs, covariate-informed model | blocked by P1 | — |
-| P6 | Identification and missingness at LGA level | blocked by P5 | — |
-| P7 | Decision layer and calibration | blocked by P5 | — |
-| P8 | Benchmarks: spatial random forest, published surfaces | pending | — |
+| P4 | Design-aware state-level model (baseline) | **superseded** — measured analytically instead (γ 0.9866) | `AGENTS.md` |
+| P5 | Clusters → LGAs, population denominators, LGA model | **done** | `lga_estimates.csv`, `lga_fit_summary.json` |
+| P6 | Identification bounds at LGA level (Imbens–Manski) | **next** | — |
+| P7 | Count functional | **done** — E[C] = 115, ratio 0.354 | `count_functional.json` |
+| P7b | Calibration by spatial cross-validation | pending | — |
+| P8 | Benchmarks: gradient boosting, spatial random forest | pending | — |
 | P9 | Manuscript | pending | — |
+| P10 | Submission compliance: DHS amendment, PDF to DHS | pending — **waiting on user** | — |
 | P10 | Submission compliance | pending | — |
 
 ---
