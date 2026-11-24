@@ -45,7 +45,7 @@ $p_s = \Pr\{I_s(c)=1\}$ and pairwise probabilities $P_{st} = \Pr\{I_s(c)=1, I_t(
 $$
 \mathbb{E}[C] = \sum_{s=1}^{n} p_s,
 \qquad
-\\mathrm{Var}(C) = \sum_{s=1}^{n} p_s(1-p_s) + 2\sum_{s<t}(P_{st} - p_s p_t).
+\mathrm{Var}(C) = \sum_{s=1}^{n} p_s(1-p_s) + 2\sum_{s<t}(P_{st} - p_s p_t).
 $$
 
 The mean is fixed by the marginals alone, because expectation is additive. The variance is not: it needs
@@ -54,11 +54,11 @@ the pairwise terms, which no set of area-by-area estimates reports.
 The sharp bounds given the marginals only, with $S=\sum_s p_s$, $k=\lfloor S \rfloor$ and $f = S-k$:
 
 $$
-f(1-f) \\le  \\mathrm{Var}(C) \\le  \sum_{s,t}\min(p_s,p_t) - S^2 .
+f(1-f) \le  \mathrm{Var}(C) \le  \sum_{s,t}\min(p_s,p_t) - S^2 .
 $$
 
-For this application that is $\\mathrm{Var}(C) \in [0.0244,\ 5492.63]$, i.e.
-$\\mathrm{sd}(C) \in [0.156,\ 74.11]$. **The model's variance of 54.509 sits 0.99% of the way up its
+For this application that is $\mathrm{Var}(C) \in [0.0244,\ 5492.63]$, i.e.
+$\mathrm{sd}(C) \in [0.156,\ 74.11]$. **The model's variance of 54.509 sits 0.99% of the way up its
 own feasible range** — so the interval 101–130 is a property of the model's dependence structure, not
 something the data determine.
 
@@ -69,7 +69,7 @@ drawn separately from those with at least one, because that distinction is the p
 
 ![Feasible variance range against the fitted value](docs/figures/fig2_feasible_variance.png)
 
-*The feasible range of $\\mathrm{Var}(C)$ given the marginals, on a log axis so the fitted value is not
+*The feasible range of $\mathrm{Var}(C)$ given the marginals, on a log axis so the fitted value is not
 flattered by the much larger upper bound.*
 
 ## What the design cannot place
