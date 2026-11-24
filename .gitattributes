@@ -1,0 +1,15 @@
+# Keep material that must not be archived out of GitHub's source archives,
+# which is what Zenodo captures when it mints a DOI for a release.
+#
+# The walkthrough video carries a commercial recording (Styl-Plus, "Olufunmi").
+# Redistributing it as part of a permanent archive would be a rights problem, so
+# it is excluded from the tarballs while staying in the repository itself.
+ConferenceMaths-walkthrough-olufunmi.mp4 export-ignore
+CREDITS-walkthrough.md export-ignore
+
+# Large third-party boundaries: CC BY 4.0, but not ours to re-archive. The
+# scripts fetch and checksum them; the derived results are what matters.
+data/public/boundaries/ export-ignore
+
+# Local notes and intermediate artefacts.
+.agent/ export-ignore

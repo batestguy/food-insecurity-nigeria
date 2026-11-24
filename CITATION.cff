@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this code or these estimates, please cite the manuscript below. Add your ORCID iD to the author block before the first release."
+title: "food-insecurity-nigeria: LGA-level Bayesian small-area estimates of severe household food insecurity in Nigeria"
+abstract: >-
+  Code and derived area-level results for a Bayesian small-area analysis of severe household food
+  insecurity across Nigeria's 774 Local Government Areas, from the 2024 Nigeria Demographic and Health
+  Survey, fitted in R-INLA. The repository carries four propositions on the sharp bounds for the
+  variance of a count of areas above a threshold, an identification analysis for areas holding no
+  sampled cluster, and a spatial cross-validation protocol with pass rules fixed in advance.
+authors:
+  - family-names: "Zachary"
+    given-names: "Jerry Bannister"
+    affiliation: "Abubakar Tafawa Balewa University"
+    email: "jzbannister@atbu.edu.ng"
+version: "1.0.0"
+date-released: "2026-11-24"
+license: "MIT"
+repository-code: "https://github.com/batestguy/food-insecurity-nigeria"
+keywords:
+  - small-area estimation
+  - partial identification
+  - Frechet-Hoeffding bounds
+  - spatial cross-validation
+  - food insecurity
+  - Nigeria
+  - R-INLA
+preferred-citation:
+  type: article
+  title: >-
+    Sharp bounds for the number of areas above a threshold, with a spatial cross-validation protocol:
+    severe household food insecurity in Nigerian local government areas
+  authors:
+    - family-names: "Zachary"
+      given-names: "Jerry Bannister"
+      affiliation: "Abubakar Tafawa Balewa University"
+      email: "jzbannister@atbu.edu.ng"
+  year: 2026
+  notes: >-
+    Submitted to the Journal of Mathematical Sciences, National Mathematical Centre Abuja, Vol. 8
+    Issue 1. Results and documentation are licensed CC BY 4.0; see DATA_LICENSE.md.

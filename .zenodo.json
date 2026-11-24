@@ -1,0 +1,31 @@
+{
+  "title": "food-insecurity-nigeria: small-area estimation of severe household food insecurity across Nigeria's 774 LGAs",
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "creators": [
+    {
+      "name": "Zachary, Jerry Bannister",
+      "affiliation": "Abubakar Tafawa Balewa University"
+    }
+  ],
+  "description": "<p>Code and derived area-level results for a Bayesian small-area analysis of severe household food insecurity across Nigeria's 774 Local Government Areas, from the 2024 Nigeria Demographic and Health Survey, fitted in R-INLA.</p><p>The release carries the manuscript, the four propositions with proofs and their numerical checks, the identification bounds for the 120 areas holding no sampled cluster, and four spatial cross-validation designs with pass rules fixed before fitting. Headline results: 115 of 774 areas above a 50% prevalence threshold with a 95% interval of 101 to 130; a feasible standard deviation for that count anywhere from 0.156 to 74.11 given the marginals alone; an identified count of 87 to 231, of which 120 of the 144-wide interval is assumption; and coverage of 0.890 at the exposure the unsampled areas actually face, against a nominal 0.95.</p><p><strong>Not included, by licence:</strong> the DHS microdata, which cannot be redistributed and is available to registered users from the DHS Program. Household-level derived tables are excluded for the same reason. The walkthrough video is excluded from the archive because its soundtrack is a commercial recording.</p><p>Code is MIT; results and documentation are CC BY 4.0.</p>",
+  "keywords": [
+    "small-area estimation",
+    "partial identification",
+    "Frechet-Hoeffding bounds",
+    "spatial cross-validation",
+    "food insecurity",
+    "Nigeria",
+    "Bayesian hierarchical model",
+    "R-INLA"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/batestguy/food-insecurity-nigeria",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "notes": "Submitted to the Journal of Mathematical Sciences, National Mathematical Centre Abuja, Vol. 8 Issue 1. Add an ORCID iD to the creator record before publishing the DOI."
+}
