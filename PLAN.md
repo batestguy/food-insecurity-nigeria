@@ -294,7 +294,7 @@ position rests on one paper read in full, two abstracts, and one paper that coul
 | P7d | Theory: sharp bounds, proofs | **done 2026-11-23** | `docs/theory.tex`, `scripts/theory_counts.R` |
 | P8 | Benchmarks: gradient boosting, spatial random forest | **optional, not done** | — |
 | P9 | Manuscript | **part done** — Intro, Methods, theory, Results, Discussion written; Conclusions, Declaration, abstract, references outstanding | `docs/manuscript/` |
-| P10 | Submission compliance: DHS amendment, email to the editor | **pending — user action** | — |
+| P10 | Submission compliance: DHS amendment, email to the editor | **email SENT 2026-11-24 by the author** — no reply yet; DHS amendment still outstanding | — |
 
 ---
 
