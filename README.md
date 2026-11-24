@@ -10,6 +10,10 @@ per-area estimates cannot answer.
 📄 **Manuscript:** [`paper.pdf`](paper.pdf) · 🎬 **Two-minute walkthrough:**
 [`ConferenceMaths-walkthrough-olufunmi.mp4`](ConferenceMaths-walkthrough-olufunmi.mp4)
 
+<p align="center">
+  <img src="docs/figures/paper_page1.png" width="460" alt="First page of the manuscript: title, author, abstract, subject classification and keywords">
+</p>
+
 ---
 
 ## Findings
