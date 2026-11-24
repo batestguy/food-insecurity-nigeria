@@ -73,7 +73,7 @@ Posterior classification also leaves a group of areas close to the crisis line. 
 
 \subsection{What the marginals can and cannot pin down}
 
-The marginal exceedance probabilities do not identify the variance of the count. By Proposition~\ref{prop:sharp}, for the 774 supplied marginals, the feasible range of \(\operatorname{Var}(C)\) is 0.0244 to 5492.63, corresponding to a standard-deviation range of 0.156 to 74.11. The lower and upper endpoints are attained by the cyclic and comonotone couplings, respectively. The fitted model's variance of 54.509 lies 0.99\% of the way up this feasible range. Thus, the \(E[C]\) value is fixed by the marginals, but the uncertainty around that count depends on how the exceedances are joined across areas.
+The marginal exceedance probabilities do not identify the variance of the count. By Proposition~\ref{prop:sharp}, for the 774 supplied marginals, the feasible range of \(\operatorname{Var}(C)\) is 0.0244 to 5492.63, corresponding to a standard-deviation range of 0.156 to 74.11. The lower and upper endpoints are attained by the cyclic and comonotone couplings, respectively. The fitted model's variance of 54.509 lies 0.99\% of the way up this feasible range. Thus, the \(E[C]\) value is fixed by the marginals, but the uncertainty around that count depends on how the exceedances are joined across areas. The range and the fitted value are shown in Figure~\ref{fig:feasible}.
 
 The reported 95\% count interval of 101 to 130 is therefore a property of the fitted model's joint dependence structure, not a property of the data's marginal probabilities alone. The same marginals permit a count standard deviation anywhere from 0.156 to 74.11, so they cannot by themselves select the reported interval. The distinction is also visible in the tail probability: under the comonotone coupling, \(\Pr(C\geq 101)=0.476\); under the cyclic coupling it is 1.000; under the fitted model it is 0.984. These values use the same marginals but different joint couplings. The model interval must consequently be read as conditional on the dependence structure estimated by the model, not as an interval that the marginal data alone establish.
 
@@ -86,7 +86,7 @@ The reported 95\% count interval of 101 to 130 is therefore a property of the fi
 
 \subsection{Partial identification}
 
-Allowing the unclustered areas to contribute either zero or one to the threshold count gives an identified interval from 87 to 231 LGAs, with width 144. The observed-only count was 99.13, with an interval from 87 to 111. The full identified interval contains the model-based 101 to 130 interval, but the latter is conditional on the fitted joint dependence structure and is not determined by the marginals alone. Of the identified interval's width, 120 counts arise from the unrestricted contribution of the unclustered areas. The lower endpoint still uses model-smoothed prevalences for LGAs with sampled clusters, so the interval combines uncertainty about the unsampled areas with the fitted estimates for the observed areas.
+Allowing the unclustered areas to contribute either zero or one to the threshold count gives an identified interval from 87 to 231 LGAs, with width 144. The identified interval and the model interval are compared in Figure~\ref{fig:identified}. The observed-only count was 99.13, with an interval from 87 to 111. The full identified interval contains the model-based 101 to 130 interval, but the latter is conditional on the fitted joint dependence structure and is not determined by the marginals alone. Of the identified interval's width, 120 counts arise from the unrestricted contribution of the unclustered areas. The lower endpoint still uses model-smoothed prevalences for LGAs with sampled clusters, so the interval combines uncertainty about the unsampled areas with the fitted estimates for the observed areas.
 
 The population-share bounds tell a different story from the count of areas because the unclustered LGAs do not contain an equal share of the population. The observed-only share of people living in a crisis LGA was 13.72\%, and the identified interval for the national share was 10.63\% to 24.90\%. The width of the population-share bound was 0.11037, equal to \(1-p\). This width describes the share of people whose crisis-area status is not fixed by the observed areas; it is not the fraction of geographic units without a cluster.
 
@@ -109,12 +109,14 @@ The four calibration designs gave different results depending on whether predict
   \centering
   \caption{Spatial calibration results. Exposure is the mean number of a held-out LGA's neighbours that were not seen by the fit used to predict it. The pre-declared pass bands were mean \(z\) in \([-0.15,0.15]\), standard deviation of \(z\) in \([0.85,1.15]\), and coverage in \([0.90,0.98]\).}
   \label{tab:calibration}
+  \small
+  \setlength{\tabcolsep}{4pt}
   \begin{tabular}{lrrrrl}
     \toprule
-    Design & Exposure & Mean \(z\) & SD \(z\) & Coverage & Verdicts (mean/SD/coverage) \\
+    Design & Exposure & Mean \(z\) & SD \(z\) & Coverage & Verdict (mean/SD/cov.) \\
     \midrule
     Whole region removed & 5.4 & \(-0.654\) & 1.648 & 0.775 & Fail / Fail / Fail \\
-    Single areas, neighbours kept & 0.88 & \(-0.052\) & 1.111 & 0.940 & Pass / Pass / Pass \\
+    Single areas, neighbours kept & 0.82 & \(-0.052\) & 1.111 & 0.940 & Pass / Pass / Pass \\
     Matched over-exposed & 1.67 & \(-0.068\) & 1.181 & 0.900 & Pass / Fail / Pass \\
     Exact exposure of the 120 & 0.95 & \(-0.058\) & 1.178 & 0.890 & Pass / Fail / Fail \\
     \bottomrule
@@ -125,13 +127,13 @@ The whole-region design failed all three pre-declared criteria. Its mean \(z\) o
 
 The single-area design met all three criteria, with mean \(z=-0.052\), standard deviation 1.111, and coverage 0.940. The matched over-exposed design passed the mean and coverage checks but failed the standard-deviation check at 1.181. The exact-exposure design, which matches the exposure of the 120 unclustered LGAs, passed the mean check but failed both the standard-deviation and coverage checks: its standard deviation was 1.178 and its coverage was 0.890. The exact-exposure result is therefore not a full calibration pass, even though its mean standardized error was within the pre-declared range.
 
-The three area-level designs with exposure between 0.88 and 1.67 had coverages of 0.940, 0.890, and 0.900. These differences are within the noise of the held-out groups and do not support a monotone relationship between exposure and coverage. The supported contrast is between predicting a single area while its neighbours remain in the fit and predicting a whole region after its neighbours are removed. The whole-region coverage was 0.775, below the results for the three area-level designs, but the middle values should not be presented as a coverage curve.
+The three area-level designs with exposure between 0.82 and 1.67 had coverages of 0.940, 0.890, and 0.900. These differences are within the noise of the held-out groups and do not support a monotone relationship between exposure and coverage. The four designs against the nominal level are shown in Figure~\ref{fig:calibration}. The supported contrast is between predicting a single area while its neighbours remain in the fit and predicting a whole region after its neighbours are removed. The whole-region coverage was 0.775, below the results for the three area-level designs, but the middle values should not be presented as a coverage curve.
 
 At the exposure corresponding to the unclustered areas, group-level coverage ranged from 0.878 to 0.900. An interval inflation factor of \(k=1.178\) raised coverage to 0.940 after widening. The out-of-fold coverage values for the factor were 0.875, 1.000, 0.925, 0.975, and 0.950. These results report the behavior of intervals for areas under the stated prediction designs; they do not establish calibration for the joint count distribution.
 
 The pooled coverage after widening is within the pre-declared coverage band, but the out-of-fold values vary across prediction groups. The exact-exposure design before widening still failed its coverage criterion, so the unadjusted result remains a failure. The widening result is a separate summary for area intervals and does not turn the original exact-exposure check into a pass. Neither result supplies a calibration test for the count formed from jointly dependent area indicators.
 
-The correlation with direct estimates was 0.974 in sample, 0.768 out of sample under the single-area design, and 0.195 when a whole region was withheld. The in-sample and single-area results describe agreement when neighbouring areas remain represented in the fit, while the whole-region result describes a more demanding regional prediction. The gap between the latter two is consistent with the contrast in coverage, but neither area-level correlation validates the model-based count interval. That count interval remains conditional on the model's joint dependence structure, which the marginal probabilities alone do not identify.
+The correlation with direct estimates was 0.975 in sample, 0.768 out of sample under the single-area design, and 0.195 when a whole region was withheld. The in-sample and single-area results describe agreement when neighbouring areas remain represented in the fit, while the whole-region result describes a more demanding regional prediction. The gap between the latter two is consistent with the contrast in coverage, but neither area-level correlation validates the model-based count interval. That count interval remains conditional on the model's joint dependence structure, which the marginal probabilities alone do not identify.
 
 \begin{figure}[htbp]
   \centering
@@ -140,29 +142,6 @@ The correlation with direct estimates was 0.974 in sample, 0.768 out of sample u
   \label{fig:calibration}
 \end{figure}
 
-\subsection{Area covariates}
-
-Three of the eight candidate area covariates could not be interpolated adequately. Travel time had an interpolation correlation of 0.614, livestock 0.535, and nightlights 0.522; all three were dropped as un-interpolatable. Five were retained. Population density was not interpolated at all: it was computed from population projections and polygon area. The other four were aridity at 0.999, elevation at 0.977, malaria at 0.923 and vegetation at 0.920. Precipitation interpolated just as well, at 0.999, but was dropped because it correlates with aridity at 0.985 and the selection rule keeps one of any such pair. Table~\ref{tab:covariates} reports all candidate correlations and their disposition. The distinction is between variables that could be carried to the area level and variables that could not, not between covariates with and without an association with the outcome.
-
-\begin{table}[htbp]
-  \centering
-  \caption{Cross-validated interpolation correlations and disposition of the eight candidate area covariates.}
-  \label{tab:covariates}
-  \begin{tabular}{lrl}
-    \toprule
-    Candidate & Interpolation correlation & Disposition \\
-    \midrule
-    Population density & not interpolated & Kept \\
-    Aridity & 0.999 & Kept \\
-    Precipitation & 0.999 & Dropped: collinear with aridity, $r=0.985$ \\
-    Elevation & 0.977 & Kept \\
-    Malaria & 0.923 & Kept \\
-    Vegetation & 0.920 & Kept \\
-    Travel time & 0.614 & Dropped: un-interpolatable \\
-    Livestock & 0.535 & Dropped: un-interpolatable \\
-    Nightlights & 0.522 & Dropped: un-interpolatable \\
-    \bottomrule
-  \end{tabular}
-\end{table}
+Three of the eight candidate area covariates could not be interpolated adequately. Travel time had an interpolation correlation of 0.614, livestock 0.535, and nightlights 0.522; all three were dropped as un-interpolatable. Five were retained. Population density was not interpolated at all: it was computed from population projections and polygon area. The other four were aridity at 0.999, elevation at 0.977, malaria at 0.923 and vegetation at 0.920. Precipitation interpolated just as well, at 0.999, but was dropped because it correlates with aridity at 0.985 and the selection rule keeps one of any such pair. The distinction is between variables that could be carried to the area level and variables that could not, not between covariates with and without an association with the outcome.
 
 The five interpolatable covariates were largely inert in the area model. After they were added, 19 of 20 coefficient intervals contained zero. Regional-design coverage increased from 0.775 to 0.797, but remained below the pre-declared lower limit of 0.90. The covariate refit therefore increased regional coverage without resolving the regional calibration failure, and it did not yield clear nonzero coefficient estimates for most included terms.

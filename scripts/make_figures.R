@@ -135,7 +135,7 @@ x   <- seq_len(nrow(d))
 obs <- d$has_cluster
 
 open_pdf("fig_estimates.pdf", height = 3.5)
-par(mar = c(3.6, 4.6, 0.6, 0.6), mgp = c(2.4, 0.55, 0), las = 1,
+par(mar = c(3.6, 4.8, 0.6, 0.6), mgp = c(2.4, 0.55, 0), las = 1,
     cex.axis = 0.95, tcl = -0.25)
 
 plot(NA, xlim = c(0.5, nrow(d) + 0.5), ylim = c(0, 1),
@@ -158,10 +158,14 @@ axis(2, at = seq(0, 1, 0.2), cex.axis = 0.95)
 box(col = "grey30", lwd = 0.6)
 
 mtext("LGAs ordered by posterior mean", side = 1, line = 2.2, cex = 0.95)
-mtext("Posterior mean prevalence", side = 2, line = 2.3, cex = 0.95)
+# las = 0 here is not decoration: par(las = 1) above applies to mtext() as
+# well, which drew this axis title horizontally so that it ran off the page.
+mtext("Posterior mean prevalence", side = 2, line = 2.3, cex = 0.95, las = 0)
 
-text(nrow(d) * 0.995, 0.50 + 0.035, "crisis line, c = 0.50",
-     adj = c(1, 0), cex = 0.85, col = "grey25")
+# placed at the left, above the line: at the right it sat on top of the
+# intervals it is meant to be read against.
+text(nrow(d) * 0.015, 0.50 + 0.045, "crisis line, c = 0.50",
+     adj = c(0, 0), cex = 0.85, col = "grey25")
 
 legend("topleft",
        legend = c(sprintf("Sampled cluster present (n = %d)", n_obs),
@@ -179,20 +183,33 @@ cal <- data.frame(
   design   = vapply(cal, function(z) z$design,   ""),
   exposure = vapply(cal, function(z) z$exposure, 0),
   coverage = vapply(cal, function(z) z$coverage, 0),
+  mean_z   = vapply(cal, function(z) z$mean_z,   0),
+  sd_z     = vapply(cal, function(z) z$sd_z,     0),
   n        = vapply(cal, function(z) z$n,        0L),
   stringsAsFactors = FALSE)
 stopifnot(nrow(cal) == 4L)
 cal <- cal[order(cal$exposure), ]           # bottom row = least exposure
 stopifnot(max(cal$coverage) < 1.0, all(cal$coverage > 0.7))
 
+# Verdicts are computed from all three pre-declared criteria, not from coverage
+# alone.  An earlier version keyed the "fails all three" label off coverage and
+# so printed a false statement beside the exact-exposure design, which passes
+# the mean check.  Order after sorting is least to most exposure.
+fail_mean <- cal$mean_z < -0.15 | cal$mean_z > 0.15
+fail_sd   <- cal$sd_z   <  0.85 | cal$sd_z   > 1.15
+fail_cov  <- cal$coverage < 0.90 | cal$coverage > 0.98
+nfail     <- fail_mean + fail_sd + fail_cov
+# must agree with Table tab:calibration in results.tex
+stopifnot(identical(as.integer(nfail), c(0L, 2L, 1L, 3L)))
+
 row_lab <- c("Single area,\nneighbours kept",
              "Exact exposure\nof the 120",
              "Matched\nover-exposure",
              "Whole region\nremoved")
-fails   <- cal$coverage < 0.90 | cal$coverage > 0.98
+fails   <- fail_cov        # symbol shows the coverage verdict only
 
 open_pdf("fig_calibration.pdf", height = 2.6)
-par(mar = c(3.6, 6.0, 0.7, 0.7), mgp = c(2.3, 0.55, 0), las = 1,
+par(mar = c(3.6, 7.0, 0.7, 0.7), mgp = c(2.3, 0.55, 0), las = 1,
     cex.axis = 0.95, tcl = -0.25)
 
 plot(NA, xlim = c(0.74, 1.02), ylim = c(0.45, 4.55),
@@ -216,8 +233,11 @@ points(cal$coverage[fails],  y[fails],  pch = 15, cex = 1.05,
 # band, to the left where it sits inside or right of the band, so that no
 # label crosses the nominal line.
 lab <- sprintf("exp %.2f", cal$exposure)
-lab[fails] <- sprintf("exp %.2f — fails all three criteria", cal$exposure[fails])
-right <- cal$coverage < 0.90
+lab[nfail > 0] <- sprintf("exp %.2f - fails %d of 3 criteria",
+                          cal$exposure[nfail > 0], nfail[nfail > 0])
+# labels sit to the left of their point (the free part of the panel) except for
+# the whole-region design, which sits too close to the axis to have room there.
+right <- cal$coverage < 0.80
 text(cal$coverage[right] + 0.008, y[right], lab[right], adj = c(0, 0.5),
      cex = 0.85)
 text(cal$coverage[!right] - 0.008, y[!right], lab[!right], adj = c(1, 0.5),
@@ -247,7 +267,7 @@ stopifnot(id_lo == 87, id_hi == 231, ob_lo == 87, ob_hi == 111,
 gap <- ob_hi - id_lo + 120 - (ob_hi - id_lo)   # the 120 assumed counts
 
 open_pdf("fig_identified.pdf", height = 2.3)
-par(mar = c(3.6, 4.9, 0.6, 0.6), mgp = c(2.3, 0.55, 0), las = 1,
+par(mar = c(3.6, 5.9, 0.6, 0.6), mgp = c(2.3, 0.55, 0), las = 1,
     cex.axis = 0.95, tcl = -0.25)
 
 plot(NA, xlim = c(78, 240), ylim = c(0.05, 1.62),

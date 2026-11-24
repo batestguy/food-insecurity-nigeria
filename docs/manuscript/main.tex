@@ -16,6 +16,11 @@
 \usepackage{setspace}
 \usepackage{hyperref}
 
+% Long unbreakable strings (file paths in \texttt) cannot be hyphenated, so a
+% paragraph carrying one runs into the margin. This lets TeX stretch spaces
+% instead of overrunning the text block.
+\setlength{\emergencystretch}{3em}
+
 \newtheorem{proposition}{Proposition}
 \newtheorem{lemma}[proposition]{Lemma}
 \newtheorem{corollary}[proposition]{Corollary}
@@ -27,6 +32,16 @@
 
 % Missing-number marker. Every \todo must be empty before submission.
 \newcommand{\todo}[1]{\textbf{[TODO: #1]}}
+
+% The abstract must be 12 pt: the article class default sets it in \small, which
+% would be a formatting deviation from the poster's contract.
+\renewenvironment{abstract}{%
+  \par\vspace{0.8em}%
+  \begin{center}\textbf{Abstract}\end{center}%
+  \normalsize\noindent\ignorespaces
+}{%
+  \par\vspace{0.8em}%
+}
 
 \title{Sharp bounds for the number of areas above a threshold, with a
 spatial cross-validation protocol: severe household food insecurity in
@@ -44,12 +59,7 @@ Nigerian local government areas}
 \maketitle
 
 \begin{abstract}
-\noindent
-\todo{abstract, maximum 250 words, single-spaced. It must state: the count functional and why its
-variance is not identified by the marginals; the sharp bounds; the calibration result at the exposure
-the unsampled areas actually face (coverage about 0.89, not 0.95); and the identification bound for
-the national count. Do not claim a new estimator. Do not quote 101--130 without its caveat. Count the
-words before submitting.}
+\input{abstract}
 \end{abstract}
 
 \vspace{0.5em}
@@ -74,8 +84,112 @@ comonotonicity; spatial cross-validation; food insecurity; Nigeria.
 % inside Methods unless the journal prefers a standalone section; that decision
 % is recorded in PLAN.md.
 
+\begin{sloppypar}
+\raggedright
 \begin{thebibliography}{99}
-% APA 7th. Every entry must have been opened; see .agent/T19-citations.md.
+\bibitem{cafiero2024}
+Cafiero, C., Gheri, F., \& Viviani, S. (2024). Validating the food insecurity experience scale for
+use in analyses of recent food insecurity. \emph{Global Food Security, 42}, 100783.
+\url{https://doi.org/10.1016/j.gfs.2024.100783}
+
+\bibitem{chacon2025}
+Chacón-Montalván, E. A., Parry, L., Giorgi, E., Torres, P., Orellana, J. D. Y., Moraga, P., \&
+Taylor, B. M. (2025). Mapping food insecurity in the Brazilian Amazon using a spatial item factor
+analysis model. \emph{The Annals of Applied Statistics, 19}(4), 3438--3463.
+\url{https://doi.org/10.1214/25-aoas2072}
+
+\bibitem{chandra2022}
+Chandra, H., \& Verma, B. (2022). Small area estimation of food insecurity prevalence for the state
+of Uttar Pradesh in India. \emph{Model Assisted Statistics and Applications, 17}(2), 73--85.
+\url{https://doi.org/10.3233/mas-220011}
+
+\bibitem{jerumeh2024}
+Jerumeh, T. R. (2024). Mapping the spatial distribution of household food insecurity in Nigeria.
+\emph{GeoJournal, 89}(4), Article 154. \url{https://doi.org/10.1007/s10708-024-11035-4}
+
+\bibitem{kayode2025}
+Kayode, O. O., \& Alabi, Q. K. (2025). Prevalence and contributing factors of household food
+insecurity among women in Akinyele Local Government, Ibadan, Oyo State, Nigeria. \emph{Pan African
+Medical Journal, 52}, 50. \url{https://doi.org/10.11604/pamj.2025.52.50.36958}
+
+\bibitem{macbride2025}
+MacBride, C., Davies, V., \& Lee, D. (2025). A spatial autoregressive random forest algorithm for
+small-area spatial prediction. \emph{The Annals of Applied Statistics, 19}(1), 485--504.
+\url{https://doi.org/10.1214/24-aoas1969}
+
+\bibitem{mcgovern2026}
+McGovern, A., Wilson, K., \& Wakefield, J. (2026). Direct-assisted Bayesian unit-level modeling for
+small area estimation of rare event prevalence. \emph{Journal of Survey Statistics and Methodology,
+14}(1), 178--208. \url{https://doi.org/10.1093/jssam/smaf037}
+
+\bibitem{michal2024}
+Michal, V., Schmidt, A. M., Freitas, L. P., \& Cruz, O. G. (2024). A Bayesian hierarchical model for
+disease mapping that accounts for scaling and heavy-tailed latent effects. \emph{Statistical Methods
+in Medical Research, 34}(2), 307--321. \url{https://doi.org/10.1177/09622802241293776}
+
+\bibitem{moura2025}
+Moura, F. A. S., Pereira, S., \& Silva, G. L. (2025). A Beta--Beta Prime model for rates and their
+precision for small area estimation: An application to Brazilian food insecurity index.
+\emph{Journal of Survey Statistics and Methodology, 14}(2), 430--451.
+\url{https://doi.org/10.1093/jssam/smaf002}
+
+\bibitem{omuemu2012}
+Omuemu, V. O., Otasowie, E. M., \& Onyiriuka, U. (2012). Prevalence of food insecurity in Egor local
+government area of Edo State, Nigeria. \emph{Annals of African Medicine, 11}(3), 139.
+\url{https://doi.org/10.4103/1596-3519.96862}
+
+\bibitem{osung2026}
+Osung, P. O. (2026). Household-level food-insecurity prediction from experience-scale surveys and
+open geospatial data: A reproducible machine-learning pipeline for Nigeria. \emph{PLOS One, 21}(10),
+e0349978. \url{https://doi.org/10.1371/journal.pone.0349978}
+
+\bibitem{riebler2016}
+Riebler, A., Sørbye, S. H., Simpson, D., \& Rue, H. (2016). An intuitive Bayesian spatial model for
+disease mapping that accounts for scaling. \emph{Statistical Methods in Medical Research, 25}(4),
+1145--1165. \url{https://doi.org/10.1177/0962280216660421}
+
+\bibitem{rue2009}
+Rue, H., Martino, S., \& Chopin, N. (2009). Approximate Bayesian inference for latent Gaussian models
+by using integrated nested Laplace approximations. \emph{Journal of the Royal Statistical Society:
+Series B (Statistical Methodology), 71}(2), 319--392.
+\url{https://doi.org/10.1111/j.1467-9868.2008.00700.x}
+
+\bibitem{santillana2023}
+Santillana, M. A., Gallegos, J. A., García, A. I., Díaz, E., Gutiérrez, D., \& González, N. L.
+(2023). Perception of insecurity in municipalities in Mexico: A small area estimation approach.
+\emph{Statistical Journal of the IAOS, 39}(2), 491--500. \url{https://doi.org/10.3233/sji-220101}
+
+\bibitem{smalley2024}
+Smalley, H., \& Edwards, K. (2024). Chronic back pain prevalence at small area level in England: The
+design and validation of a 2-stage static spatial microsimulation model. \emph{Spatial and
+Spatio-temporal Epidemiology, 48}, 100633. \url{https://doi.org/10.1016/j.sste.2023.100633}
+
+\bibitem{villacis2022}
+Villacis, A. H., Mayorga, J., \& Mishra, A. K. (2022). Experience-based food insecurity and
+agricultural productivity in Nigeria. \emph{Food Policy, 113}, 102286.
+\url{https://doi.org/10.1016/j.foodpol.2022.102286}
+
+\bibitem{wulandari2025}
+Wulandari, I., Darmawan, E. S., \& Zamzanah, S. (2025). Spatial Bayesian small area estimation of
+stunting prevalence at the subdistrict level. \emph{InPrime: Indonesian Journal of Pure and Applied
+Mathematics, 7}(2), 128--143. \url{https://doi.org/10.15408/inprime.v7i2.46491}
+
+\bibitem{yilema2022}
+Yilema, S. A., Shiferaw, Y. A., Zewotir, T. T., \& Muluneh, E. K. (2022). Spatial small area
+estimates of undernutrition for under five children in Ethiopia via combining survey and census data.
+\emph{Spatial and Spatio-temporal Epidemiology, 42}, 100509.
+\url{https://doi.org/10.1016/j.sste.2022.100509}
+
+\bibitem{yoo2024}
+Yoo, M., \& Koo, H. (2024). Exploring the impact of spatial autocorrelation on optimistic bias in
+cross-validation and assessing the effectiveness of spatial cross-validation. \emph{Cartography and
+Geographic Information Science, 52}(5), 596--609. \url{https://doi.org/10.1080/15230406.2024.2422593}
+
+\bibitem{yu2025}
+Yu, H., Xu, X., \& Yu, L. (2025). Hierarchical Bayesian bivariate spatial modeling of small area
+proportions with application to health survey data. \emph{Statistical Methods in Medical Research,
+34}(5), 1018--1036. \url{https://doi.org/10.1177/09622802251316968}
 \end{thebibliography}
+\end{sloppypar}
 
 \end{document}

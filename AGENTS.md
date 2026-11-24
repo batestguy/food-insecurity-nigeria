@@ -72,7 +72,14 @@ number you found rather than the one you were handed.
 4. **Computational claims need evidence.** With 37 states over many months the latent scale
    parameters run into the thousands; mixing, convergence diagnostics and cost have to be shown,
    not assumed.
-5. **No citation that has not been opened**, and no number without the script that produced it.
+5. **Every citation opened to at least its abstract, and no number without the script that produced it.**
+   The original rule was full text or nothing; applied honestly it produced four references, and while it
+   was in force a claim about the Nigerian literature went into the Introduction that was simply false.
+   The rule since 2026-11-24: metadata resolved through an API and never from memory; the abstract read
+   verbatim; the citing sentence asserts no more than that abstract states; a title-only citation only
+   where the title itself states the estimand, or for a named method's existence. Anything unopened stays
+   out, and the list does not grow to hit a number. **The lesson worth keeping: a citation rule protects
+   nothing if the search is never run.**
 
 ## Data source — settled, do not re-search
 

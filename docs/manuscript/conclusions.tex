@@ -1,0 +1,9 @@
+\section{Conclusions}
+
+A count of local government areas (LGAs) above a prevalence threshold is a distinct posterior quantity, not a list of area estimates. Its variance depends on pairwise exceedance probabilities, which marginal-only reporting does not supply. At the 50\% threshold, the fitted expected count was 115 of 774 LGAs, with a 95\% posterior interval of 101--130. The pairwise term means that an independence calculation would understate the fitted count's standard deviation by 14\%. This interval depends on the fitted joint dependence structure and was not validated by the area-level cross-validation.
+
+The marginal probabilities allow the count's standard deviation to range from 0.156 to 74.11. The model's variance sits only 0.99\% of the way through the feasible variance range. The posterior interval for the sample-analogue identified count runs from 87 to 231. Of its 144-area width, 120 reflects unrestricted contributions from LGAs without sampled clusters. Those LGAs contain 11.04\% of the population, and the lower endpoint for sampled areas still uses model-smoothed prevalence estimates.
+
+Spatial cross-validation used pass rules fixed before fitting. At the exposure faced by unclustered LGAs, area-level coverage was 0.890 against the nominal 0.95; withholding a whole region yielded 0.775. An interval-widening factor \(k=1.178\) was checked out of fold for area-level intervals. The protocol is reusable because it replaces an assumed nominal level with measured performance in prediction settings that match intended use.
+
+The transferable parts are the sharp bounds and the pre-declared protocol, not a new estimator. The Nigerian map is a demonstration, and its area-level precision is supported only for prediction settings represented by sampled data.

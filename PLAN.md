@@ -5,7 +5,8 @@ where the work actually stands, what each phase must produce, and what to do whe
 
 Update it whenever a ticket finishes. If a phase changes status, the change goes here first.
 
-Last updated: 2026-11-23, after P6 (identification bounds) landed and was re-checked independently.
+Last updated: 2026-11-24, after the four figures were inspected and repaired, the Discussion was drafted
+(T29), and five layout faults found in the built PDF were fixed.
 
 ---
 
@@ -21,6 +22,37 @@ four designs**, and a **partial-identification statement** for the areas with no
 application is the demonstration, not the claim. The repository is public at
 **https://github.com/batestguy/food-insecurity-nigeria** (`main`). Nothing is running and nothing is queued
 at the end of this session.
+
+**What the session of 2026-11-24 did, in one place.** The manuscript is now complete and has been read
+on screen page by page. In order:
+
+1. **The four figures were inspected for the first time** and had four faults: the vertical axis title of
+   `fig_estimates` was drawn horizontally (because `par(las = 1)` also governs `mtext`), row labels in two
+   figures were clipped mid-word, a calibration label asserted "fails all three criteria" beside a design
+   that passes one of them, and the crisis-line label sat on top of the data. All repaired;
+   `make_figures.R` now carries a `stopifnot` that refuses to build if its verdicts disagree with
+   `tab:calibration`.
+2. **A number disagreement was found and settled**: the manuscript said the single-area calibration design
+   ran at exposure 0.88; the artefact and the calibration script's own header say 0.823. The text was
+   corrected in three places, not the figure.
+3. **Discussion, Conclusions, Declaration and the abstract were written** (1,178 / 244 / 143 / 235 words)
+   and verified. The abstract arrived with **five unescaped `%`**, which in LaTeX deletes the rest of the
+   line; one of them would have removed the entire results paragraph without an error message.
+4. **The novelty claim was found to be false and corrected.** A Nigerian literature search had never been
+   run. It found Jerumeh (2024) mapping food insecurity across 109 senatorial districts, Omuemu et al.
+   (2012) in Egor LGA, Kayode and Alabi (2025) in Akinyele LGA, and Osung (2026) predicting household food
+   insecurity **from the same 2024 NDHS module this paper uses**. The claim is now: no estimates for the
+   national set of 774 LGAs, and no published interval for the count.
+5. **References went from four to twenty**, the new ones dated 2022 or later except BYM2 (2016) and INLA
+   (2009), which the paper uses and previously did not cite. Standard in item 7 above.
+6. **Five layout faults were removed** (keywords overrun, a file-path sentence 5.4 cm off the page, two
+   tables too wide, a path in the theory section), and three of four figures were given the in-text
+   cross-references the journal requires.
+7. **Length was reviewed**: the poster sets no page limit; two redundant pieces were cut, 29 → 28 pages.
+
+**Still outstanding, and both are user actions:** confirm the Declaration's ethics sentence is true of the
+author's institution, and amend the DHS project description to cover a food-insecurity outcome before the
+paper is sent anywhere.
 
 **What the session of 2026-11-23 established, in one place.** Everything below was recomputed by the
 secretary from artefacts, not taken from an agent's summary. Where a number and its caveat are inseparable,
@@ -39,7 +71,11 @@ they are written together so no draft can separate them.
 | inflation factor for unsampled areas | **k = 1.178**, coverage after widening 0.940, out-of-fold 0.875/1.000/0.925/0.975/0.950 | same |
 | area covariates | 3 of 8 could not be interpolated; the 5 that could are **inert — 19 of 20 coefficient intervals contain zero** | `calibration_cov_summary.json` |
 
-**The manuscript as it stands.** Builds with `pdflatex`, twice, **23 pages**, exit 0, no undefined references.
+**The manuscript as it stands.** Builds with `pdflatex`, three passes, **28 pages**, exit 0, no undefined
+references, **no LaTeX warnings, zero overfull boxes**. Complete: all seven required sections, the abstract
+and the references. Length was reviewed on 2026-11-24 against the call-for-papers poster, which **states no
+page limit**; two redundant pieces were removed (one list, one table) and a third proposed cut was refused
+because the proposition it would have removed is what the threshold table rests on.
 
 | file | content | words |
 |---|---|---|
@@ -47,39 +83,79 @@ they are written together so no draft can separate them.
 | `docs/manuscript/introduction.tex` | done, verified | ~1,258 |
 | `docs/manuscript/methods.tex` | done; includes `docs/theory.tex` before Computation | ~2,112 |
 | `docs/theory.tex` | four propositions, lemmas, proofs, numerical table, attribution | ~2,428 |
-| `docs/manuscript/results.tex` | done; three tables, four figures | ~2,168 |
-| `docs/manuscript/figures/*.pdf` | four vector figures from `scripts/make_figures.R` | — |
+| `docs/manuscript/results.tex` | done; two tables, four figures | ~2,100 |
+| `docs/manuscript/discussion.tex` | **done 2026-11-24** (T29); ends on the unweighted likelihood | 1,178 |
+| `docs/manuscript/conclusions.tex` | **done 2026-11-24** (T30) | 244 |
+| `docs/manuscript/declaration.tex` | **done 2026-11-24** (T30) | 143 |
+| `docs/manuscript/abstract.tex` | **done 2026-11-24** (T31); input by `main.tex` inside the abstract environment | 235 |
+| `paper.pdf` | the built copy at the current state, committed so the submitted artefact is the one in the repo | 28 pp |
+| `docs/manuscript/figures/*.pdf` | four vector figures from `scripts/make_figures.R`, **inspected and repaired 2026-11-24** | — |
 
-**The claim, exactly as it may be written, and nothing stronger.**
-> We found no published estimates of household food insecurity at local-government level for Nigeria, and in
-> the closest paper we were able to read in full, no administrative-area estimates and no out-of-sample
-> validation.
+**The claim, exactly as it may be written, and nothing stronger — REVISED 2026-11-24.**
+> We found no estimates for the national set of 774 local government areas, and no published interval
+> for the count of areas above a threshold.
 
-"First", "novel", "unprecedented" and "no one has" are forbidden. The closest paper
-(`10.1214/25-aoas2072`) **does** publish exceedance probabilities, a 0.7 rule and hotspot counts of 4/1/4, and
-the Introduction says so before narrowing. The second Brazilian paper (`10.1093/jssam/smaf002`) is closed
-access, **unread, and stays that way** — one sentence of acknowledgement, no assertion about its contents. The
-author has declined to request a copy.
+**Why it changed, and this is the most important correction of the project.** The previous wording —
+"we found no published estimates of household food insecurity at local-government level for Nigeria" —
+was **false**, and it survived in the Introduction and Discussion for a day. A literature search had
+never been run on the Nigerian application; the novelty position was built from four international
+method papers. The search, run on 2026-11-24 while verifying citations, found:
+
+- **Omuemu, Otasowie and Onyiriuka (2012)**, Egor LGA, Edo State: 61.8% of 416 households.
+- **Kayode and Alabi (2025)**, Akinyele LGA, Oyo State: prevalence and correlates among women.
+- **Jerumeh (2024)**, *GeoJournal* 89(4), Article 154: maps household food insecurity across the **109
+  senatorial districts** from the 2018/19 Nigeria Living Standard Survey, 28 hotspots and 19 coldspots,
+  spatial dependence between neighbouring districts, spatial regression for determinants. Paywalled;
+  **only its abstract was read**, and the paper says so.
+
+So estimates at local-government level do exist, one area at a time, and one paper maps Nigeria
+nationally at a level above the LGA. What does not exist, so far as we can find: estimates for the
+**national set** of 774 LGAs, any interval for an area, and any uncertainty statement for a count of
+areas above a threshold. Senatorial districts are 109 units and nest above the 774 LGAs.
+
+"First", "novel", "unprecedented" and "no one has" remain forbidden. The closest paper for *method*
+(`10.1214/25-aoas2072`) still publishes exceedance probabilities, a 0.7 rule and hotspot counts of
+4/1/4, and the Introduction says so before narrowing. The second Brazilian paper
+(`10.1093/jssam/smaf002`) is closed access, **unread**, one sentence of acknowledgement, no assertion
+about its contents.
 
 **Do this first next session, in this order.**
 
-1. **Look at the four figures.** This is the largest unverified item in the paper. No image viewer was
-   available, so axis ranges, label collisions, and whether the 120 unclustered areas are actually
-   distinguishable have never been seen by anyone. Open `fig_estimates.pdf` first; if it is legible the other
-   three are quick glances. Everything else in the manuscript is checked against artefacts; these are not.
-2. **Discussion** — the interpretation, the limits, and the four things the paper does not claim: no
-   validated count interval, no regional extrapolation, no calibrated map for the 120, no design weights in the
-   likelihood.
-3. **Conclusions** — short; the count bounds, the protocol, the identification statement.
-4. **Declaration** — competing interests, funding (none), data availability (DHS terms: restricted files are
-   not redistributable; the code is MIT, the results CC BY 4.0), ethics, and the DHS project-description
-   amendment, which is still outstanding and is a user action.
-5. **Abstract last**, ≤ 250 words, single-spaced. It must carry the sharp bounds and the 0.89 coverage figure
-   without either implying more than is shown, and must not quote 101–130 without its caveat.
+1. **The four figures — DONE 2026-11-24, and they had four faults.** Recorded so nobody repeats them:
+   the vertical axis title of `fig_estimates` was drawn *horizontally* because `par(las = 1)` applies to
+   `mtext()` too, so it ran off the left edge and printed as "…nce" — widening the margin did nothing,
+   the `las = 0` on that one call is the fix. Row labels in `fig_calibration` and `fig_identified` were
+   clipped mid-word and needed wider left margins. **`fig_calibration` printed "fails all three criteria"
+   beside the exact-exposure design, which passes the mean check** — the label was keyed off coverage
+   alone; it now computes failures from all three criteria, and a `stopifnot` makes the script refuse to
+   build if its verdicts disagree with `tab:calibration`. The crisis-line label sat on top of the data and
+   was moved. All four were re-inspected as rendered images after repair.
+2. **Discussion** — done 2026-11-24 (T29). <s>the interpretation, the limits, and the four things the paper
+   does not claim.</s> See `.agent/T29-report.md`.
+3. **Conclusions** — **done 2026-11-24** (T30), 244 words: the count as a distinct posterior quantity,
+   the 14% independence shortfall, the feasible sd range, the identification statement, the calibration
+   result, and the transfer claim with no novelty.
+4. **Declaration** — **done 2026-11-24** (T30), 143 words: competing interests, funding (none), ethics,
+   data availability with the repository and both licences, acknowledgement. **The author must confirm
+   the ethics sentence is true of his own institution**; it is the standard statement for de-identified
+   DHS secondary data but the secretary cannot verify it. The DHS project-description amendment is
+   still outstanding and is a user action, deliberately not mentioned in the paper.
+5. **Abstract last**, ≤ 250 words, single-spaced. **Done 2026-11-24** (T31), 235 words. It carries the
+   count, the 101–130 interval with its dependence caveat beside it, the 0.156–74.11 feasible range, the
+   87–231 identified count, and the 0.890 coverage figure with the statement that the count interval is
+   not what those tests validate. **Trap paid for once:** the draft arrived with five unescaped `%`
+   signs, each of which silently comments out the rest of its line — the results paragraph of the abstract
+   would have vanished with no error message. Check every `%` and `&` in a new `.tex` file before building.
+   The `article` class also sets the abstract in smaller type; the environment is redefined in `main.tex`
+   so the abstract is 12 pt, as the poster requires.
 6. **References**, APA 7th. **Four entries only**, each verified: Chacón-Montalván et al. (2025);
    Moura, Pereira and Silva (2025); Michal, Schmidt, Freitas and Cruz (2024); MacBride, Davies and Lee (2025).
    The theory section carries no bibliography on purpose — six sources could not be opened, so their results
-   are proved in the text instead.
+   are proved in the text instead. **Typed in 2026-11-24 and each entry's metadata re-read from the
+   publisher's deposited record (Crossref), not from memory** — the Chacón-Montalván entry has seven
+   authors, so initials could not have been guessed safely. The list is set ragged-right: justified, one
+   DOI broke across lines as "https:" / "//doi.org". No `\cite` commands exist anywhere in the paper;
+   citations are by name in prose.
 7. **Formatting check against the poster**: 12 pt, A4, abstract ≤ 250 words, corresponding author first,
    Table/Figure numbering, section order Introduction → Methods → Results → Discussion → Conclusions →
    Declaration → References. Then send to the editor named on the poster.
@@ -93,7 +169,7 @@ author has declined to request a copy.
 - **Coverage is not "the direct estimate inside the model interval".** That check under-covers by construction.
   Coverage is the share with `|z| ≤ 1.96` on the combined variance. The Methods says so; do not let a draft
   soften it.
-- **Never write "coverage declines with exposure".** The three designs between 0.88 and 1.67 exposure give
+- **Never write "coverage declines with exposure".** The three designs between 0.82 and 1.67 exposure give
   0.940, 0.890 and 0.900 — within noise. The supported contrast is single-area interpolation against
   whole-region extrapolation.
 - **The count interval never appears without its caveat** in the same paragraph: the marginals permit sd from
@@ -102,6 +178,15 @@ author has declined to request a copy.
   covariates only. The five area covariates were a separate experiment that found nothing.
 - **No citation that has not been opened.** The reference list is four entries and should stay small. Naming a
   classical result in passing is not a citation; asserting a specific paper contains it is.
+
+**References: twenty, and two of them change the argument.** Osung (2026, *PLOS One*) predicts
+household-level food insecurity **from the same 2024 NDHS module this paper uses**, with cluster-grouped
+out-of-sample validation and open geospatial layers; it is the closest work on our data and the paper
+must keep the distinction — household prediction, not area-level prevalence. Villacis, Mayorga and Mishra
+(2022, *Food Policy*) tie experience-based food insecurity in Nigeria to agricultural productivity.
+Neither was found until 2026-11-24, because the search had never been run. See item 7 above for the
+citation standard, and note that Yilema et al. (2022) and Villacis et al. (2022) are cited **title-only**,
+no abstract being obtainable.
 
 **The descriptive numbers, all reproducible from `scripts/lga_model.R` and `scripts/extract_fi_state.py`:**
 
@@ -170,8 +255,8 @@ sample. Do not reconstruct the BYM2 field from `inla.posterior.sample` — use p
 a new estimator: all four propositions are classical. **Do not use any disability variable anywhere.**
 
 **Waiting on the user.**
-- **Look at the four figures.** The only part of the manuscript never inspected by anyone. Start with
-  `fig_estimates.pdf`.
+- ~~**Look at the four figures.**~~ **Done by the secretary 2026-11-24** — four faults found and repaired;
+  they are listed under "Do this first" above. The author may still want a glance at `fig_estimates.pdf`.
 - **Amend the DHS project description** to cover a food-insecurity outcome (an edit to the existing
   registration), and send a PDF of the paper to `references@dhsprogram.com` once it is accepted or submitted.
 - Decide whether to rewrite history to remove the account email that survives in commit `9dce997`
@@ -187,8 +272,8 @@ one replies. Paper 2 stays unread and the claim is written to survive that.
 120 unclustered LGAs cannot be scored against truth because none exists for them. LGA assignment relies on
 geoBoundaries polygons, not DHS's, and population denominators are 2020 projections from the 2006 census. The
 pairwise variance term is 14.2 ± ~1.7 (split-half 13.37 against 15.12 at 20,000 draws). The literature
-position rests on one paper read in full, two abstracts, and one paper that could not be obtained. **And the
-figures have never been looked at by a human.**
+position rests on one paper read in full, two abstracts, and one paper that could not be obtained.
+**The figures have now been inspected once, by the secretary, on screen at 220 dpi — not on paper.**
 
 ---
 
@@ -208,7 +293,7 @@ figures have never been looked at by a human.**
 | P7c | Area covariates | **done 2026-11-23 — inert**, 19 of 20 intervals cross zero | `calibration_cov_summary.json` |
 | P7d | Theory: sharp bounds, proofs | **done 2026-11-23** | `docs/theory.tex`, `scripts/theory_counts.R` |
 | P8 | Benchmarks: gradient boosting, spatial random forest | **optional, not done** | — |
-| P9 | Manuscript | **part done** — Intro, Methods, theory, Results written; Discussion, Conclusions, Declaration, abstract, references outstanding | `docs/manuscript/` |
+| P9 | Manuscript | **part done** — Intro, Methods, theory, Results, Discussion written; Conclusions, Declaration, abstract, references outstanding | `docs/manuscript/` |
 | P10 | Submission compliance: DHS amendment, email to the editor | **pending — user action** | — |
 
 ---
@@ -276,6 +361,21 @@ Do not reopen these without a recorded reason.
    - **the budget allocation index**: the Bayes-optimal choice of K areas is not the K highest posterior
      means, and the difference is a short results subsection.
    Claims about a "new estimator" are forbidden; all four propositions remain classical.
+7. **Citation standard, revised 2026-11-24 at the author's instruction.** The original rule was that
+   nothing enters the bibliography that has not been opened in full text. Applied honestly, it produced a
+   **four-entry list**, because most of what this paper rests on is paywalled or, for the classical bounds,
+   not digitised at all. The author judged four too thin and then asked for **at least twenty, with the new
+   entries dated 2022 or later**. The list is now **twenty**.
+   **The standard, and its limits:** a work may be cited when (a) its metadata is resolved through an
+   API, never from memory, and (b) its abstract has been read verbatim, and (c) the sentence citing it
+   asserts no more than that abstract states. A **title-only** citation is permitted for exactly two
+   things: the bare existence of a named method, and a paper whose title states its own estimand
+   (`Yilema et al. 2022` and `Villacis et al. 2022` are cited this way, and both are marked in the
+   ledger). Anything unresolved or uncharacterisable does not enter. The bibliography does not grow to
+   hit a number: if a candidate cannot support a sentence, it is dropped and the count falls.
+   **Two method attributions predate 2022 on purpose** — Riebler et al. (2016) for BYM2 and Rue et al.
+   (2009) for INLA, both of which the paper uses and previously cited not at all. A referee would ask
+   for them before asking for three more current papers.
 
 ## Drafting gate
 
@@ -582,7 +682,7 @@ at exposures 1.67 and 0.95, so **the failure is already present at 0.95** and T1
 was too optimistic.
 
 **What the four designs actually say — and it is not a curve.** Recomputed by the secretary on one
-definition: T13 at 0.88 exposure gives 0.940, T17 at 0.95 gives 0.890, T16 at 1.67 gives 0.900, T12 at 5.4
+definition: T13 at 0.82 exposure gives 0.940, T17 at 0.95 gives 0.890, T16 at 1.67 gives 0.900, T12 at 5.4
 gives 0.775. The middle three span 0.89–0.94, which is within binomial noise at n = 200 plus group effects.
 **So: coverage for a single unsampled area among sampled neighbours is about 0.89–0.94; remove a whole region
 and it collapses to 0.775.** Do not write "coverage declines with exposure" — the evidence does not support
