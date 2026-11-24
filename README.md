@@ -65,7 +65,7 @@ drawn separately from those with at least one, because that distinction is the p
 
 ![Feasible variance range against the fitted value](docs/figures/fig2_feasible_variance.png)
 
-*The feasible range of $\mathrm{Var}(C)$ given the marginals, on a log axis so the fitted value is not
+*The feasible range of the count's variance given the marginals, on a log axis so the fitted value is not
 flattered by the much larger upper bound.*
 
 ## What the design cannot place
