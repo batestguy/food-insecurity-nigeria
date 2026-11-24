@@ -43,7 +43,11 @@ Let $I_s(c) = \mathbf{1}\{\theta_s > c\}$ and $C(c) = \sum_{s=1}^{n} I_s(c)$. Wi
 $p_s = \Pr\{I_s(c)=1\}$ and pairwise probabilities $P_{st} = \Pr\{I_s(c)=1, I_t(c)=1\}$,
 
 $$
-\mathrm{E}[C] = \sum_{s=1}^{n} p_s, \qquad \mathrm{Var}(C) = \sum_{s=1}^{n} p_s(1-p_s) + 2\sum_{s<t}(P_{st} - p_s p_t).
+\mathrm{E}[C] = \sum_{s=1}^{n} p_s
+$$
+
+$$
+\mathrm{Var}(C) = \sum_{s=1}^{n} p_s(1-p_s) + 2\sum_{s<t}(P_{st} - p_s p_t)
 $$
 
 The mean is fixed by the marginals alone, because expectation is additive. The variance is not: it needs
